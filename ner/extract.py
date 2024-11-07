@@ -36,22 +36,27 @@ class NERextractor:
     def extract_entities(self, pdf_path):
         # diccionario, para no repetir entidades
         entities = {}
+        max_length = 100000  # tamaño máximo de chunk a procesar, que casca si es muy grande
+
         text = extract_text(pdf_path)
 
         if text:
-            doc = self.nlp(text)
-            for entity in doc.ents:
-                # al final cojo solo LOC y PER
-                # TODO: Cuando no registres etiquetas, cambiar de dict a set
-                if entity.label_ in ["PERSON", "LOC", "GPE", "ORG", "NORP", "FAC", "WORK_OF_ART", "EVENT"]:
-                    # solo letras
-                    clean_text = re.sub(r'[^A-Za-z\s]', '', entity.text)
-                    # Si se ha quitado un carácter, que me quite los espacios
-                    # (suelen tener muchos ', ó ^ nombres de elfos etc)
-                    if clean_text != entity.text:
-                        clean_text = clean_text.replace(" ", "")
-                    if clean_text:
-                        entities[clean_text] = entity.label_
+            text_chunks = [text[i:i + max_length] for i in range(0, len(text), max_length)]
+
+            for chunk in text_chunks:
+                doc = self.nlp(chunk)
+                for entity in doc.ents:
+                    # al final cojo solo LOC y PER
+                    # TODO: Cuando no registres etiquetas, cambiar de dict a set
+                    if entity.label_ in ["PERSON", "LOC", "GPE", "ORG", "NORP", "FAC", "WORK_OF_ART", "EVENT"]:
+                        # solo letras
+                        clean_text = re.sub(r'[^A-Za-z\s]', '', entity.text)
+                        # Si se ha quitado un carácter, que me quite los espacios
+                        # (suelen tener muchos ', ó ^ nombres de elfos etc)
+                        if clean_text != entity.text:
+                            clean_text = clean_text.replace(" ", "")
+                        if clean_text:
+                            entities[clean_text] = entity.label_
         return entities
 
     def extract_and_export(self, book_name):
@@ -69,7 +74,7 @@ class NERextractor:
 
 
 ner_extractor = NERextractor()
-ner_extractor.extract_and_export("lotr1.pdf")
+ner_extractor.extract_and_export("sw2.pdf")
 
 
 
