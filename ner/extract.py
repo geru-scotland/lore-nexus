@@ -13,6 +13,7 @@
 """
 from enum import Enum
 import re
+from pathlib import Path
 
 from pdfminer.high_level import extract_text
 import spacy
@@ -35,7 +36,7 @@ class NERextractor:
 
     def extract_entities(self, pdf_path):
         # diccionario, para no repetir entidades
-        entities = {}
+        entities = set()
         max_length = 100000  # tamaño máximo de chunk a procesar, que casca si es muy grande
 
         text = extract_text(pdf_path)
@@ -46,8 +47,6 @@ class NERextractor:
             for chunk in text_chunks:
                 doc = self.nlp(chunk)
                 for entity in doc.ents:
-                    # al final cojo solo LOC y PER
-                    # TODO: Cuando no registres etiquetas, cambiar de dict a set
                     if entity.label_ in ["PERSON", "LOC", "GPE", "ORG", "NORP", "FAC", "WORK_OF_ART", "EVENT"]:
                         # solo letras
                         clean_text = re.sub(r'[^A-Za-z\s]', '', entity.text)
@@ -56,25 +55,46 @@ class NERextractor:
                         if clean_text != entity.text:
                             clean_text = clean_text.replace(" ", "")
                         if clean_text:
-                            entities[clean_text] = entity.label_
+                            entities.add(clean_text)
         return entities
 
     def extract_and_export(self, book_name):
-        # TODO: hacer que lea todos los pdf de book folder
         bookpath = f"{PATHS.BOOKS}/{book_name}"
         output_file = f"{PATHS.OUTPUT}/{book_name.split(".")[0]}_entities.txt"
+
         try:
             entities = self.extract_entities(bookpath)
             with open(output_file, "w") as file:
-                for entity, label in entities.items():
-                    file.write(f"{entity}: {label}\n")
+                file.write("\n".join(entities))
             print(f"Entities extracted to {output_file}")
         except Exception as e:
             print(f"Error: {e}")
 
+    def process_all_pdfs_in_folder(self):
+        folder = Path(str(PATHS.BOOKS))
+        output_folder = Path(str(PATHS.OUTPUT))
+
+        # Cojo todos los pdfs
+        for pdf_file in folder.glob("*.pdf"):
+            output_file = output_folder / f"{pdf_file.stem}_entities.txt"
+
+            # Compruebo que no exista el output, mismo nombre que
+            # pdf pero terminante en _entities.txt
+            if not output_file.exists():
+                print(f"Processing: {pdf_file.name}")
+                entities = self.extract_entities(pdf_file)
+
+                output_file.parent.mkdir(parents=True, exist_ok=True)
+                with open(output_file, "w") as file:
+                    for entity in entities:
+                        file.write(f"{entity}\n")
+                print(f"Entities from {pdf_file.name} saved to {output_file}")
+            else:
+                print(f"Already processed, skipping: {pdf_file.name}")
+
 
 ner_extractor = NERextractor()
-ner_extractor.extract_and_export("sw2.pdf")
+ner_extractor.process_all_pdfs_in_folder()
 
 
 
