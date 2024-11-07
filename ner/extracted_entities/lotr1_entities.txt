@@ -12,19 +12,19 @@ Ford: ORG
 The Council of Elrond: WORK_OF_ART
 The Ring Goes: PERSON
 A Journey in the Dark: PERSON
-The Bridge of Khazad-duˆ: WORK_OF_ART
+TheBridgeofKhazaddu: WORK_OF_ART
 The Mirror of Galadriel: WORK_OF_ART
 The Great River: WORK_OF_ART
 The Breaking of the Fellowship: PERSON
-J.R.R. Tolkien: PERSON
-J.R.R. Tolkien’s: PERSON
+JRRTolkien: PERSON
+JRRTolkiens: PERSON
 The Lord of the Rings: PERSON
 The Fellowship of the Ring: WORK_OF_ART
 Great Britain: GPE
 London: GPE
-George Allen & Unwin: ORG
+GeorgeAllenUnwin: ORG
 American: NORP
-Houghton Mifﬂin: ORG
+HoughtonMifin: ORG
 Company
 : ORG
 Boston: GPE
@@ -45,8 +45,8 @@ Estella Bolger: PERSON
 Meriadoc: PERSON
 British: NORP
 Second Edition: WORK_OF_ART
-Allen & Unwin: ORG
-Allen &
+AllenUnwin: ORG
+Allen
 : ORG
 India: GPE
 Christopher Tolkien: PERSON
@@ -54,20 +54,20 @@ Unwin: ORG
 Hyman: ORG
 HarperCollins: ORG
 Houghton: ORG
-Hough-
-ton Mifﬂin: ORG
-this ‘Note on the
+Hough
+tonMifin: ORG
+thisNoteonthe
 : WORK_OF_ART
 The Lord of the: WORK_OF_ART
 Note: WORK_OF_ART
 Fellowship of the Ring: WORK_OF_ART
 Alan Lee: PERSON
-J.R.R. Tolkien: A Descriptive Bibliography: WORK_OF_ART
+JRRTolkienADescriptiveBibliography: WORK_OF_ART
 Wayne
-G. Hammond: PERSON
-Douglas A. Anderson: PERSON
-Christopher Tolkien’s: PERSON
-The History of Middle-earth: WORK_OF_ART
+GHammond: PERSON
+DouglasAAnderson: PERSON
+ChristopherTolkiens: PERSON
+TheHistoryofMiddleearth: WORK_OF_ART
 The Lord of the
 : WORK_OF_ART
 The Treason of
@@ -77,13 +77,13 @@ Isengard: GPE
 The War of the Ring: WORK_OF_ART
 Sauron
 : WORK_OF_ART
-The Peoples
-of Middle-earth: WORK_OF_ART
+ThePeoples
+ofMiddleearth: WORK_OF_ART
 The Lord
 of the Rings: WORK_OF_ART
 The Return of the Shadow: WORK_OF_ART
-Shelob’s Lair: WORK_OF_ART
-The Taming of Sme´agol: WORK_OF_ART
+ShelobsLair: WORK_OF_ART
+TheTamingofSmeagol: WORK_OF_ART
 The Lord of
 : WORK_OF_ART
 The Hobbit: WORK_OF_ART
@@ -102,17 +102,17 @@ Rayner Unwin: ORG
 Eric Thompson: PERSON
 The
 Fellowship of the Ring: WORK_OF_ART
-Steven M. Frisby: PERSON
+StevenMFrisby: PERSON
 Frisby: PERSON
 Banks Mebane: PERSON
 Prolegomena to a Variorum Tolkien: WORK_OF_ART
-Douglas A.: PERSON
+DouglasA: PERSON
 Anderson: PERSON
 Christina Scull: PERSON
-A Preliminary Study of Vari-
-ations in Editions of The Lord of the Rings: WORK_OF_ART
+APreliminaryStudyofVari
+ationsinEditionsofTheLordoftheRings: WORK_OF_ART
 Beyond Bree: WORK_OF_ART
-Wayne G. Hammond: PERSON
+WayneGHammond: PERSON
 David Bratman: PERSON
 A Corrigenda to The Lord of the Rings: WORK_OF_ART
 The Tolkien Collector: WORK_OF_ART
@@ -123,16 +123,15 @@ Joy: PERSON
 Hill: LOC
 The Lord
 : WORK_OF_ART
-Middle-earth: LOC
-Steve Frisby’s: PERSON
-Chris-
+Middleearth: LOC
+SteveFrisbys: PERSON
+Chris
 topher: PERSON
 House: ORG
 Sauron: GPE
 Morgoth: PERSON
 Barrowdowns: PERSON
 Bree Hill: PERSON
-Dru´adan: PERSON
 Druadan: PERSON
 Elvish: NORP
 The Silmarillion: WORK_OF_ART
@@ -150,7 +149,7 @@ Great War of the Ring: EVENT
 the Elder Days: EVENT
 Elrond: PERSON
 Gondolin: PERSON
-the High-elves: PERSON
+theHighelves: PERSON
 Durin: PERSON
 Gandalf: PERSON
 Necromancer: PERSON
@@ -158,12 +157,12 @@ the War of the Ring: EVENT
 Book One: WORK_OF_ART
 Balin: PERSON
 in Moria: GPE
-Lothlo´rien: PERSON
+Lothlorien: PERSON
 the
 Great River: LOC
-Ano´rien: WORK_OF_ART
-The´oden: WORK_OF_ART
-Harrow-
+Anorien: WORK_OF_ART
+Theoden: WORK_OF_ART
+Harrow
 dale: GPE
 Frodo: PERSON
 Mordor: GPE
@@ -172,7 +171,7 @@ RAF: ORG
 Ring: PERSON
 The
 Shadow of the Past: WORK_OF_ART
-Barad-duˆ r: LOC
+Baraddur: LOC
 Saruman: PERSON
 The Scouring of
 : WORK_OF_ART
@@ -181,7 +180,7 @@ Young: PERSON
 Sandyman: PERSON
 Foreword: WORK_OF_ART
 Prologue: WORK_OF_ART
-N.: PERSON
+N: PERSON
 Smith: PERSON
 PROLOGUE: WORK_OF_ART
 the Red Book of Westmarch: WORK_OF_ART
@@ -195,9 +194,9 @@ Bandobras Took: PERSON
 Bullroarer: PERSON
 Isumbras: PERSON
 Elves: NORP
-the North-West: LOC
+theNorthWest: LOC
 Sea: LOC
-in Bilbo’s: PERSON
+inBilbos: PERSON
 Shire: LOC
 Wandering Days: EVENT
 Anduin: GPE
@@ -223,7 +222,7 @@ the Mountains of Lune: LOC
 Westernesse: GPE
 Bree: GPE
 Chetwood: FAC
-the Du´ nedain: GPE
+theDunedain: GPE
 Arnor: GPE
 Gondor: GPE
 Belfalas: GPE
@@ -244,7 +243,7 @@ Brandywine: FAC
 Angmar: GPE
 Thain: NORP
 the Dark Plague: EVENT
-S.R. 37: WORK_OF_ART
+SR: WORK_OF_ART
 the Days of Dearth: EVENT
 the
 Brandywine Bridge: FAC
@@ -298,7 +297,7 @@ South: LOC
 West: LOC
 Tookland: LOC
 Bagginses: PERSON
-Bofﬁns: PERSON
+Bofns: PERSON
 the East and: LOC
 Westmarch: PERSON
 Norbury: GPE
@@ -346,11 +345,11 @@ War: EVENT
 Fellowship: ORG
 Peregrin: PERSON
 Findegil: PERSON
-the Thain’s Book: WORK_OF_ART
+theThainsBook: WORK_OF_ART
 Minas Tirith: GPE
 Elessar: PERSON
 the Red Book of the Periannath: WORK_OF_ART
-The Thain’s Book: WORK_OF_ART
+TheThainsBook: WORK_OF_ART
 Red: WORK_OF_ART
 Book: WORK_OF_ART
 The Tale of Aragorn and Arwen: WORK_OF_ART
@@ -365,13 +364,12 @@ Reckoning of Years: WORK_OF_ART
 Old
 Words and Names in the Shire: WORK_OF_ART
 Rohirrim: GPE
-Shire-: NORP
 and: LOC
-Nu´ menor: NORP
+Numenor: NORP
 The Tale of
 : WORK_OF_ART
 Years: WORK_OF_ART
-High-elven: NORP
+Highelven: NORP
 Celeborn: PERSON
 Galadriel: PERSON
 Bilbo Baggins: PERSON
@@ -387,7 +385,7 @@ Bag: PERSON
 End: LOC
 Holman: PERSON
 Sam Gamgee: PERSON
-Number 3 Bagshot Row: FAC
+NumberBagshotRow: FAC
 Hamfast: PERSON
 Old: PERSON
 Noakes: PERSON
@@ -399,26 +397,26 @@ Dad: PERSON
 a Baggins: PERSON
 Drogo: GPE
 Primula Brandybuck: PERSON
-the Old Took’s: PERSON
+theOldTooks: PERSON
 Gorbadoc: PERSON
 Bucklanders: NORP
-those Sackville-
+thoseSackville
 Bagginses: PERSON
 The Sackville: PERSON
 Michel
 : ORG
 Sam: PERSON
-Hobbi-
+Hobbi
 : GPE
-Brandy-
-wine Bridge: FAC
+Brandy
+wineBridge: FAC
 Party: ORG
 G: PERSON
 Bagshot Row: LOC
 Gaffer Gamgee: PERSON
 Water: LOC
 Grubbs: PERSON
-Bilbo Baggins’: PERSON
+BilboBaggins: PERSON
 Chubbs: PERSON
 Burrowses: PERSON
 Bolgers: PERSON
@@ -426,7 +424,7 @@ Bracegirdles: PERSON
 Brockhouses: PERSON
 Hornblowers: PERSON
 Proudfoots: PERSON
-The Sackville-Bagginses: PERSON
+TheSackvilleBagginses: PERSON
 Otho: PERSON
 Lobelia: PERSON
 Speech: ORG
@@ -434,7 +432,7 @@ Proudfeet: PERSON
 Proudfoot: PERSON
 Everard Took: PERSON
 Melilot: PERSON
-the Sackville-Bagginses: PERSON
+theSackvilleBagginses: PERSON
 Esgaroth: GPE
 Long: LOC
 Lake: LOC
@@ -457,29 +455,29 @@ Adelard: PERSON
 DORA: PERSON
 Dora: PERSON
 MILO BURROWS: PERSON
-B.B.: ORG
+BB: ORG
 Milo: PERSON
 ANGELICA: PERSON
 HUGO BRACEGIRDLE: PERSON
 Hugo: PERSON
-LOBELIA SACKVILLE-BAGGINS: PERSON
+LOBELIASACKVILLEBAGGINS: PERSON
 Rory: PERSON
 the fellowship of the ring: PERSON
 Merry Brandybuck: PERSON
-Sackville-Bagginses: PERSON
+SackvilleBagginses: PERSON
 Sancho Proudfoot: PERSON
-Odo Proudfoot’s: PERSON
+OdoProudfoots: PERSON
 Sancho: PERSON
 THE SHADOW OF THE PAST: PERSON
-a Hundred-
-weight Feast: EVENT
+aHundred
+weightFeast: EVENT
 the Old Took: PERSON
-Folco Bofﬁn: PERSON
+FolcoBofn: PERSON
 Fredegar Bolger: PERSON
 Peregrin Took: PERSON
 Pippin: PERSON
 The
-ancient East–West Road: FAC
+ancientEastWestRoad: FAC
 the Blue Mountains: LOC
 the Land of Mordor: LOC
 the White Council: ORG
@@ -504,7 +502,7 @@ Rings: ORG
 White: LOC
 Council: ORG
 the Battle of Five Armies: EVENT
-the Coun-
+theCoun
 : ORG
 Wise: PERSON
 the Common Tongue: WORK_OF_ART
@@ -514,15 +512,15 @@ Mortal: NORP
 Shadow: LOC
 Nine: ORG
 The Men of Westernesse: PERSON
-Gil-galad: PERSON
+Gilgalad: PERSON
 Isildur: PERSON
 the Great River: LOC
 the Gladden Fields: LOC
 the
 Gladden Fields: LOC
 the Council of the Wise: ORG
-Sme´agol: PERSON
-De´agol: PERSON
+Smeagol: PERSON
+Deagol: PERSON
 Dwarf: NORP
 Orc: NORP
 the shadow of the past: PERSON
@@ -536,7 +534,7 @@ Orodruin: GPE
 Cracks of Doom: WORK_OF_ART
 the Fiery Mountain: LOC
 Underhill: PERSON
-Sam Gamgee’s: PERSON
+SamGamgees: PERSON
 Lor: PERSON
 THREE: WORK_OF_ART
 Elrond Halfelven: PERSON
@@ -545,7 +543,7 @@ the Bag End: LOC
 Crickhollow: GPE
 Pippin Took: PERSON
 the
-Sackville-Bagginses: ORG
+SackvilleBagginses: ORG
 Fatty: PERSON
 Folco: PERSON
 Lotho: PERSON
@@ -555,7 +553,7 @@ the Green Hill: LOC
 Woodhall: GPE
 Stock: GPE
 the Bucklebury Ferry: FAC
-the Water-valley: LOC
+theWatervalley: LOC
 the Green Hills: LOC
 Woody End: LOC
 Eastfarthing: GPE
@@ -596,7 +594,7 @@ parts: LOC
 wood: LOC
 the Golden
 Perch: FAC
-the East-
+theEast
 farthing: LOC
 the Golden Perch: FAC
 Black Riders: NORP
@@ -607,7 +605,7 @@ Grip: PERSON
 Fang: PERSON
 Wolf: PERSON
 Master: PERSON
-the Brandy-
+theBrandy
 bucks: ORG
 supper: LOC
 the Buck Hill: LOC
@@ -626,9 +624,9 @@ Hall: GPE
 Fredegar: PERSON
 a: PERSON
 those Black Riders: PERSON
-the North-gate: FAC
+theNorthgate: FAC
 the East Road: LOC
-Fredegar horriﬁed: PERSON
+Fredegarhorried: PERSON
 Budgeford: GPE
 the
 Old Forest: LOC
@@ -637,10 +635,10 @@ Hedge: LOC
 the
 East Road: FAC
 the
-Bonﬁre Glade: LOC
+BonreGlade: LOC
 Downs: LOC
 East Road: FAC
-the Barrow-downs: LOC
+theBarrowdowns: LOC
 Withywindle valley: LOC
 cleft: LOC
 the River Withywindle: LOC
@@ -656,17 +654,17 @@ Bombadil: PERSON
 Goldberry: PERSON
 the Brandywine
 : LOC
-Tom Bombadil’s: PERSON
+TomBombadils: PERSON
 IN THE HOUSE OF TOM BOMBADIL: WORK_OF_ART
 at: PERSON
 Fair River: LOC
 tom bombadil: PERSON
-tom bombadil
+tombombadil
 
-165: PERSON
+: PERSON
 Old
 : PERSON
-grey Willow-man: PERSON
+greyWillowman: PERSON
 the Sea far: LOC
 the Great Willow: LOC
 the Great Barrows: LOC
@@ -682,19 +680,19 @@ He: PERSON
 fog: PERSON
 Wight: PERSON
 Carn
-Duˆ m: GPE
+Dum: GPE
 Fatty Lumpkin: PERSON
 Lumpkin: PERSON
 that Fatty Lumpkin: PERSON
-Carn Duˆ m: LOC
+CarnDum: LOC
 the Black Land: LOC
-Bree under
-Bree-hill: GPE
+Breeunder
+Breehill: GPE
 Barliman Butterbur: PERSON
 The Green Dragon: PERSON
-Bree-hill: FAC
+Breehill: FAC
 AT THE SIGN OF THE PRANCING PONY: WORK_OF_ART
-the Bree-land: LOC
+theBreeland: LOC
 Staddle: LOC
 Combe: LOC
 Archet: LOC
@@ -702,7 +700,7 @@ on: PERSON
 Kings: NORP
 the
 Great Sea: LOC
-the Brandy-
+theBrandy
 wine: LOC
 Bucklander: NORP
 Outsiders: NORP
@@ -733,11 +731,11 @@ Underhills: PERSON
 lands: LOC
 the Town Hole: FAC
 Will Whitfoot: PERSON
-the Bree-
+theBree
 : NORP
 The Man in the Moon: PERSON
 Barley: PERSON
-Bree-lander: NORP
+Breelander: NORP
 Mugwort: PERSON
 the Men of Bree: PERSON
 STRIDER: PERSON
@@ -760,9 +758,9 @@ strider: PERSON
 unhindered: GPE
 Sarn Ford: FAC
 Go: PERSON
-West-gate: FAC
-South-gate: LOC
-Bill Ferny’s: PERSON
+Westgate: FAC
+Southgate: LOC
+BillFernys: PERSON
 Southerner: PERSON
 Jumped over the Moon: WORK_OF_ART
 Plough: PERSON
@@ -773,7 +771,7 @@ Bill: PERSON
 Longshanks: PERSON
 Stick: PERSON
 Sammie: PERSON
-the South-gate: FAC
+theSouthgate: FAC
 Weathertop Hill: LOC
 Midgewater: LOC
 Marshes: LOC
@@ -783,9 +781,9 @@ The Old Road: FAC
 a knife in the dark: PERSON
 ring: LOC
 path: LOC
-Amon Suˆ l: LOC
+AmonSul: LOC
 the Last Alliance: ORG
-The Fall of Gil-galad: WORK_OF_ART
+TheFallofGilgalad: WORK_OF_ART
 the Old Road: FAC
 the Forsaken Inn: FAC
 the Ford: FAC
@@ -793,13 +791,13 @@ Bruinen: GPE
 Sam
 and: PERSON
 Tinu: PERSON
-Tinu´viel: PERSON
+Tinuviel: PERSON
 Beren: PERSON
 Elvenhome: GPE
 The Sundering Seas: LOC
-ann-thennath: WORK_OF_ART
-Lu´ thien Tinu´ viel: PERSON
-Lu´ thien: PERSON
+annthennath: WORK_OF_ART
+LuthienTinuviel: PERSON
+Luthien: PERSON
 Thingol: PERSON
 Angband: GPE
 Silmarils: WORK_OF_ART
@@ -810,14 +808,13 @@ Neldoreth: GPE
 Esgalduin: LOC
 Nightingale: PERSON
 Lu: PERSON
-Tinu´ viel: PERSON
 the Sundering Seas: LOC
-Lu´ thien was: PERSON
+Luthienwas: PERSON
 Kin: PERSON
-Dior Thingol’s: PERSON
+DiorThingols: PERSON
 Elwing
 the White: PERSON
-Ea¨rendil: PERSON
+Earendil: PERSON
 Silmaril: PERSON
 a Black Rider: PERSON
 the Men of the West: PERSON
@@ -838,11 +835,10 @@ Tim: PERSON
 Rover: PERSON
 Trover: PERSON
 Hoarwell: LOC
-273: FAC
-a Black Rider’s: PERSON
+aBlackRiders: PERSON
 Ai na vedui: NORP
 Mae govannen: PERSON
-Glorﬁndel: PERSON
+Glorndel: PERSON
 Hail: PERSON
 the Bridge
 of Mitheithel: FAC
@@ -858,21 +854,21 @@ Pony: FAC
 Morgul: GPE
 Men in the Shire: ORG
 this War of the Ring: EVENT
-Riven-
+Riven
 dell: LOC
 Firstborn: NORP
 The Dark Lord: PERSON
 Ringwraiths: ORG
 the Last Homely House: FAC
 Arwen: PERSON
-Undo´miel: PERSON
+Undomiel: PERSON
 Evenstar: PERSON
-Lo´rien: LOC
-Riven-
+Lorien: LOC
+Riven
 : LOC
 Elladan: PERSON
 Elrohir: PERSON
-Glo´in: PERSON
+Gloin: PERSON
 Grimbeorn: PERSON
 Beorn: PERSON
 Beornings: LOC
@@ -882,7 +878,7 @@ Bard: PERSON
 Bowman: PERSON
 Brand: PERSON
 Bain: PERSON
-Da´in: PERSON
+Dain: PERSON
 the Battle of Five: EVENT
 Dwalin: PERSON
 Dori: PERSON
@@ -891,21 +887,21 @@ Bifur: PERSON
 Bofur: PERSON
 Bombur: PERSON
 Ori: PERSON
-O´ in: PERSON
+Oin: PERSON
 Smaug: PERSON
 the
 Hall of Fire: FAC
-the Du´ nadan: PERSON
-The Du´ nadan: PERSON
-Hobbi-
+theDunadan: PERSON
+TheDunadan: PERSON
+Hobbi
 ton: GPE
 Enemy: ORG
-Du´ n-
+Dun
 
 adan: PERSON
-Du´ nadan: PERSON
-Nu´ meno´rean: NORP
-elven-tongues: WORK_OF_ART
+Dunadan: PERSON
+Numenorean: NORP
+elventongues: WORK_OF_ART
 Arvernien: GPE
 Nimbrethil: GPE
 the Narrow Ice: LOC
@@ -925,7 +921,7 @@ in Ilmarin: PERSON
 Mountain sheer: LOC
 Evereven: PERSON
 Mountain Wall: LOC
-World’s End: FAC
+WorldsEnd: FAC
 Norland: LOC
 in Elder Days: WORK_OF_ART
 Hither Shores: LOC
@@ -934,19 +930,19 @@ Lindir: PERSON
 the Hall of
 Fire: FAC
 A Elbereth Gilthoniel: PERSON
-Na-chaered: PERSON
+Nachaered: PERSON
 Fanuilos: PERSON
 the Blessed Realm: LOC
 THE COUNCIL OF ELROND: PERSON
 Erestor: PERSON
 Galdor: PERSON
-Cı´rdan: GPE
+Crdan: GPE
 Legolas: PERSON
 Thranduil: PERSON
 Northern Mirkwood: LOC
 Boromir: PERSON
 elrond: GPE
-Khazad-duˆ m: LOC
+Khazaddum: LOC
 Northern: NORP
 Sauron the Great: PERSON
 the council of elrond: PERSON
@@ -954,18 +950,18 @@ the Tale of the Ring: WORK_OF_ART
 Celebrimbor: PERSON
 the Kings of Men: PERSON
 Tall: NORP
-Ana´rion: PERSON
+Anarion: PERSON
 the Last Alliance of
 Elves and Men: ORG
 Beleriand: GPE
 Thangorodrim: PERSON
 Dior: PERSON
-Lu´ thien of
+Luthienof
 Doriath: PERSON
 the Battle of Dagorlad: EVENT
 the Black Gate of
 Mordor: FAC
-the Spear of Gil-galad: PERSON
+theSpearofGilgalad: PERSON
 the Sword of Elendil: PERSON
 Aeglos: PERSON
 Narsil: PERSON
@@ -973,12 +969,12 @@ Gil: PERSON
 galad: PERSON
 Ohtar: PERSON
 Valandil: GPE
-Gil-galad
-and Elendil: PERSON
+Gilgalad
+andElendil: PERSON
 Elves and Men: ORG
 Nu: NORP
 Gladden: PERSON
-Annu´ minas: GPE
+Annuminas: GPE
 Lake Evendim: LOC
 North Downs: LOC
 Osgiliath: GPE
@@ -991,10 +987,10 @@ the White Mountains: LOC
 Minas Anor: PERSON
 Tower
 : WORK_OF_ART
-Eresse¨a: LOC
+Eressea: LOC
 the Uttermost West: LOC
 Meneldil: PERSON
-the Nu´ meno´reans: NORP
+theNumenoreans: NORP
 Gorgoroth: GPE
 Minas Ithil: PERSON
 Minas Morgul: GPE
@@ -1010,18 +1006,18 @@ Ithilien: GPE
 Easterlings: NORP
 Haradrim: NORP
 Imladris: PERSON
-the council of elrond
+thecouncilofelrond
 
-321: PERSON
+: PERSON
 Denethor: PERSON
 Halfelven: NORP
 Loth: PERSON
 Tirith: GPE
-Isildur Elendil’s: PERSON
+IsildurElendils: PERSON
 the
 House of Elendil: ORG
 the Land of Gondor: LOC
-Rhuˆ n: GPE
+Rhun: GPE
 Sun: LOC
 Havens: LOC
 Dol Guldur: LOC
@@ -1037,7 +1033,7 @@ Black Land: LOC
 Tower: FAC
 Morgul Vale: GPE
 the Dead Marshes: LOC
-Ash nazg durbatuluˆk: PERSON
+Ashnazgdurbatuluk: PERSON
 ash nazg: PERSON
 Smiths: PERSON
 to: PERSON
@@ -1048,7 +1044,7 @@ Rhosgobel: GPE
 Orthanc: LOC
 the Gap of Rohan: LOC
 Ered Nimrais: LOC
-the Men of Nu´ menor: PERSON
+theMenofNumenor: PERSON
 Saruman
 the Wise: PERSON
 the Riders to the North: PERSON
@@ -1059,29 +1055,27 @@ the Riddermark of Rohan: LOC
 the Men of Rohan: ORG
 Riddermark: GPE
 Shadowfax: PERSON
-Amon Suˆ l.: LOC
-345: LOC
 call: GPE
 here: PERSON
 the Shire
 : LOC
-Iarwain Ben-adar: PERSON
+IarwainBenadar: PERSON
 Orald
 by: PERSON
 alone: PERSON
 Iarwain: GPE
 the White Towers: LOC
-Glor-
-ﬁndel: PERSON
+Glor
+ndel: PERSON
 the Free Lords of the Free: PERSON
 Argonath: LOC
 the Gates of Gondor: LOC
-Thro´r: PERSON
-Thra´in: PERSON
+Thror: PERSON
+Thrain: PERSON
 Hador: PERSON
-Hu´ rin: PERSON
-Tu´ rin: PERSON
-The Hunter’s Moon: LOC
+Hurin: PERSON
+Turin: PERSON
+TheHuntersMoon: LOC
 North Road: FAC
 the Gladden River: LOC
 the Redhorn Gate: FAC
@@ -1090,7 +1084,7 @@ the Eagles of the Misty Mountains: LOC
 The Company of the Ring: ORG
 Company: ORG
 The Sword of Elendil: WORK_OF_ART
-Andu´ ril: PERSON
+Anduril: PERSON
 the Hall of Fire: FAC
 Sting: WORK_OF_ART
 Ow: PERSON
@@ -1101,7 +1095,7 @@ Frodo my
 : PERSON
 the Last
 Homely House: FAC
-ﬁle: LOC
+le: LOC
 Hollin: GPE
 Baraz: PERSON
 Zirak: PERSON
@@ -1118,17 +1112,16 @@ Nanduhirion: LOC
 Dimrill: GPE
 Mirrormere: FAC
 the River Silverlode: LOC
-Kheled-zaˆram: LOC
-Kibil-naˆla: LOC
+Kheledzaram: LOC
+Kibilnala: LOC
 silvan: NORP
 the East Wind: LOC
 Fangorn: GPE
 that
 Fiery Mountain: LOC
-375: LOC
-the North-
+theNorth
 farthing: LOC
-the Fell Winter of 1311: EVENT
+theFellWinterof: EVENT
 Bill the: PERSON
 Elves
 and: ORG
@@ -1146,7 +1139,7 @@ Wargs: NORP
 Naur an edraith: NORP
 Naur dan i ngaurhoth: NORP
 Sirannon: LOC
-the Gate-stream: LOC
+theGatestream: LOC
 Stair: LOC
 Falls: LOC
 the Walls of Moria: LOC
@@ -1157,8 +1150,8 @@ Holly: PERSON
 the Lords of Moria: PERSON
 Doors: PERSON
 the Tree of the High Elves: WORK_OF_ART
-the Star of the House of Fe¨anor: WORK_OF_ART
-the West of Middle-
+theStaroftheHouseofFeanor: WORK_OF_ART
+theWestofMiddle
 earth: LOC
 Narvi: PERSON
 Celebrimbor of
@@ -1172,17 +1165,16 @@ Edro: PERSON
 Mellon: PERSON
 landing: LOC
 Dimrill Dale: LOC
-West-door: LOC
-East-gate: LOC
-Beru´ thiel: PERSON
+Westdoor: LOC
+Eastgate: LOC
+Beruthiel: PERSON
 Fool of a Took: PERSON
 Dwarrowdelf: LOC
 Nargothrond: PERSON
 The Western Seas: LOC
-Khazad-duˆm: LOC
 mithril: PERSON
 Mithril: PERSON
-Michel Delving Mathom-house: ORG
+MichelDelvingMathomhouse: ORG
 the Great Gates: FAC
 us: PERSON
 Men
@@ -1191,7 +1183,7 @@ balin: PERSON
 fundin: PERSON
 lord: PERSON
 moria: GPE
-THE BRIDGE OF KHAZAD-DUˆ M: WORK_OF_ART
+THEBRIDGEOFKHAZADDUM: WORK_OF_ART
 orcs: NORP
 dale: LOC
 Mirror mere: FAC
@@ -1202,18 +1194,16 @@ Mazarbul: GPE
 The Chamber of Records: FAC
 Third Deep: LOC
 orc: PERSON
-Lo´ni: PERSON
-Na´li: PERSON
-Westgate: FAC
+Loni: PERSON
+Nali: PERSON
 The Watcher in the Water: PERSON
 Watcher: PERSON
 the Book of Mazarbul: WORK_OF_ART
-khazad-duˆ m: GPE
-421: FAC
+khazaddum: GPE
 the Chamber of Mazarbul: FAC
 Balin Lord: PERSON
 Uruks: NORP
-the bridge of khazad-duˆ m: PERSON
+thebridgeofkhazaddum: PERSON
 Andu: PERSON
 Gates: LOC
 the Inn: FAC
@@ -1221,26 +1211,25 @@ the First Deep: LOC
 the Second Hall of Old Moria: FAC
 the First Hall: FAC
 Balrog: LOC
-Durin’s Bane: WORK_OF_ART
+DurinsBane: WORK_OF_ART
 the Mountains of Moria: LOC
 the Dimrill Stair: LOC
 glen: LOC
-Durin’s Stone: LOC
-Kheled-
-zaˆram: PERSON
-lothlo: PERSON
+DurinsStone: LOC
+Kheled
+zaram: PERSON
+lothlo: LOC
 has: PERSON
 athelas: PERSON
 the Golden Wood: LOC
 the
 Golden Wood: LOC
-Moria-gate: LOC
-lothlo´: LOC
+Moriagate: LOC
 Nimrodel: GPE
 Silvan: NORP
 the Bridge of Nimrodel: FAC
 the Westron Speech: WORK_OF_ART
-lothlo´ rien: PERSON
+lothlorien: PERSON
 Amroth: GPE
 the Hither Shore: LOC
 Celebrant: PERSON
@@ -1249,7 +1238,7 @@ Mellyrn: PERSON
 Daro: PERSON
 Of the Elves: WORK_OF_ART
 Haldir: PERSON
-Ru´ mil: PERSON
+Rumil: PERSON
 Orophin: PERSON
 the
 Dimrill Stair: LOC
@@ -1258,7 +1247,7 @@ Aragorn
 and Legolas: PERSON
 rien
 
-451: PERSON
+: PERSON
 Andy: PERSON
 Gore: PERSON
 Naith: LOC
@@ -1267,8 +1256,8 @@ Dwarf: PERSON
 Egladil: LOC
 Angle: LOC
 sea: LOC
-the Middle-earth: LOC
-the Naith of Lo´rien: GPE
+theMiddleearth: LOC
+theNaithofLorien: GPE
 Cerin Amroth: GPE
 elanor: PERSON
 niphredil: PERSON
@@ -1282,7 +1271,7 @@ Caras Galadhon: LOC
 the Lady: PERSON
 the City of the Trees: GPE
 galadriel: PERSON
-Cele-
+Cele
 
 born: PERSON
 Grey: PERSON
@@ -1306,7 +1295,7 @@ One Ring: WORK_OF_ART
 the One Ring: WORK_OF_ART
 the Morning
 : WORK_OF_ART
-lo´ rien: PERSON
+lorien: PERSON
 Forest River: LOC
 Boromir
 of Gondor: PERSON
@@ -1317,14 +1306,14 @@ The Ring of Power: PERSON
 Cram: PERSON
 the Northern Fences: LOC
 The Dimrill Dale: LOC
-the Land of Lo´rien: LOC
+theLandofLorien: LOC
 Ilmarin: LOC
-Ever-eve: LOC
+Evereve: LOC
 Elven Tirion: LOC
 Tongue: LOC
 There
 : LOC
-the River ﬂows: LOC
+theRiverows: LOC
 Tindrock: LOC
 Tol Brandir: LOC
 Nindalf: LOC
@@ -1337,31 +1326,31 @@ Noman: LOC
 Cirith Gorgor: GPE
 Forest of Fangorn: FAC
 Gap: LOC
-the White Moun-
+theWhiteMoun
 : LOC
-Celebrı´an: PERSON
-lo´ rien
+Celebran: PERSON
+lorien
 
-489: PERSON
+: PERSON
 Elfstone: PERSON
 Arwen Evenstar: PERSON
-Boro-
+Boro
 mir: PERSON
-Ring-bearer: PERSON
+Ringbearer: PERSON
 Ai: PERSON
-lantar lassi su´rinen: PERSON
-ye´ni u´no´time¨ ve ra´mar aldaron: PERSON
-yuldar ava´nier
+lantarlassisurinen: PERSON
+yeniunotimeveramaraldaron: PERSON
+yuldaravanier
 : PERSON
-oromardi lisse-miruvo´reva
-Andu´ne¨: PERSON
+oromardilissemiruvoreva
+Andune: PERSON
 Vardo tellumar: PERSON
 yassen tintilar: PERSON
 eleni
-o´maryo: PERSON
-ar hı´sie¨
-untu´pa: PERSON
-Ro´mello vanwa: PERSON
+omaryo: PERSON
+arhsie
+untupa: PERSON
+Romellovanwa: PERSON
 Valimar: GPE
 Varda: PERSON
 Mount Everwhite: LOC
@@ -1382,13 +1371,13 @@ Yrch: PERSON
 Elbereth Gilthoniel: PERSON
 a New Moon: EVENT
 the Gates of Argonath: LOC
-Rauros-foot: LOC
+Raurosfoot: LOC
 the North Stair: LOC
 Amon Hen: PERSON
 is: NORP
 Emyn Muil: LOC
-Valandil Isildur’s: GPE
-the ﬂowing River: LOC
+ValandilIsildurs: GPE
+theowingRiver: LOC
 Amon Lhaw: LOC
 the Hills of: LOC
 THE BREAKING OF THE FELLOWSHIP: WORK_OF_ART
@@ -1415,7 +1404,7 @@ Cracks of Doom: WORK_OF_ART
 the Seat of Amon Hen: LOC
 the Land
 : LOC
-j. r.r. tolkien: PERSON
+jrrtolkien: PERSON
 The Hobbit
 : WORK_OF_ART
 Niggle: ORG
@@ -1430,24 +1419,24 @@ the Green Knight: PERSON
 Pearl: PERSON
 Orfeo: PERSON
 The Father Christmas Letters: WORK_OF_ART
-The Letters of J.R.R. Tolkien: WORK_OF_ART
+TheLettersofJRRTolkien: WORK_OF_ART
 Hengest: PERSON
-The Monsters and the Critics & Other Essays: WORK_OF_ART
-The Children of Hu´ rin: WORK_OF_ART
-The Legend of Sigurd and Gudrún: WORK_OF_ART
+TheMonstersandtheCriticsOtherEssays: WORK_OF_ART
+TheChildrenofHurin: WORK_OF_ART
+TheLegendofSigurdandGudrn: WORK_OF_ART
 christopher tolkien: PERSON
 The Book of Lost Tales: WORK_OF_ART
 The Lays of Beleriand: WORK_OF_ART
-The Shaping of Middle-earth: WORK_OF_ART
+TheShapingofMiddleearth: WORK_OF_ART
 The Lost Road and Other Writings: WORK_OF_ART
 The Treason of Isengard: WORK_OF_ART
 The War of the Jewels: WORK_OF_ART
-The Peoples of Middle-earth: WORK_OF_ART
+ThePeoplesofMiddleearth: WORK_OF_ART
 Fulham Palace Road: FAC
 Hammersmith: GPE
 HarperCollinsPublishers: ORG
-The Trustees of the J.R.R.Tolkien 1967 Settlement: ORG
-The J.R.R. Tolkien Estate Limited: ORG
+TheTrusteesoftheJRRTolkienSettlement: ORG
+TheJRRTolkienEstateLimited: ORG
 Australia: GPE
 HarperCollins Publishers: ORG
 Pymble: GPE
@@ -1456,11 +1445,11 @@ Canada: GPE
 Toronto: GPE
 ON: GPE
 New Zealand: GPE
-HarperCollinsPublishers (New Zealand: ORG
+HarperCollinsPublishersNewZealand: ORG
 Auckland: GPE
 United Kingdom: GPE
-HarperCollins Publishers Ltd.: ORG
+HarperCollinsPublishersLtd: ORG
 UK: GPE
 United States: GPE
-HarperCollins Publishers Inc.: ORG
+HarperCollinsPublishersInc: ORG
 New York: GPE
