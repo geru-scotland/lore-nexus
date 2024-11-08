@@ -14,4 +14,5 @@
 - LTSM
 - CharacterBert
 
-<!-- Agrega más contenido o detalles aquí -->
+### Créditos y referencias
+- Imagen hecha por ChatGPT
