@@ -20,6 +20,7 @@ import unicodedata
 
 class DatasetFormats(Enum):
     CoNLL = "CoNLL"
+    FAST_TEXT = "FastText" # https://flairnlp.github.io/docs/tutorial-training/how-to-load-custom-dataset#fasttext-format
     SEPARATED_DATA_LABELS = "separated-data-labels"
 
     def __str__(self):
@@ -107,7 +108,7 @@ class WikidataProcessor:
         """
         """
 
-        def write_to_file(file_path, data, conll_format=False):
+        def write_to_file(file_path, data, conll_format=False, fast_text_format=False):
             """
             """
             with open(file_path, "w") as file:
@@ -116,6 +117,12 @@ class WikidataProcessor:
                     labels = data[1]
                     for name, label in zip(names, labels):
                         file.write(f"{name} {label}\n")
+
+                elif fast_text_format:
+                    names, labels = data
+                    for name, label in zip(names, labels):
+                        label = label.replace(" ", "")
+                        file.write(f"__label__{label} {name}\n")
                 else:
                     for item in data:
                         file.write(f"{item}\n")
@@ -136,6 +143,11 @@ class WikidataProcessor:
             write_to_file(names_file, data=names)
             write_to_file(labels_file, data=labels)
 
+        elif dataset_format == DatasetFormats.FAST_TEXT:
+            names = self.df['itemLabel']
+            labels = self.df['universeLabel']
+            output_file = f"{output_file_base}_FastText.txt"
+            write_to_file(output_file, data=[names, labels], fast_text_format=True)
         else:
             self.df.to_csv(self.output_file, index=False)
 
@@ -144,4 +156,4 @@ class WikidataProcessor:
 
 # Proceso todos los datos que he obtenido de Wikidata
 processor = WikidataProcessor(input_file='raw_data/wikidata-universes.csv')
-processor.process_data(dataset_format=DatasetFormats.SEPARATED_DATA_LABELS)
+processor.process_data(dataset_format=DatasetFormats.FAST_TEXT)
