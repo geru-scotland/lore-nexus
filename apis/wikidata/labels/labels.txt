@@ -1,4 +1,3 @@
-Star Wars Legends
 Star Wars
 DC
 Teenage Mutant Ninja Turtles
@@ -120,7 +119,7 @@ Earth-6311
 Vattisen Yaly
 Forest
 Muppets
-Disney's Winnie the Pooh
+Disney
 Toy Story
 Bert
 Space Jam
@@ -199,7 +198,7 @@ Touhou Project
 of Spirou & Fantasio
 Matrix
 Dragon Ball
-Tolkien's legendarium
+Tolkien
 SCP
 of The Legend of Zelda
 Fionna and Cake
@@ -282,7 +281,6 @@ The Faraway Paladin
 Pirates of the Caribbean
 Ultimate Marvel
 Peter Pan
-Disney's The Little Mermaid
 Gravity Falls
 Beauty and the Beast
 Inside Out
@@ -333,7 +331,6 @@ Earth-811
 Planescape
 Foundation
 Space Battleship Yamato
-Final Fantasy VII
 Jak and Daxter
 Marvel Mangaverse
 Earth-1191
@@ -472,7 +469,6 @@ Our Darker Purpose
 Dead by Daylight
 D4DJ
 Far Cry
-Final Fantasy XVI
 Command & Conquer
 Lupin III
 After Colony
@@ -565,7 +561,6 @@ World of Battle Angel Alita
 Noon
 Happy Feet
 Kung Fu Panda
-Disney's Pinocchio
 Water Margin
 Jin Ping Mei
 Silent Hill
@@ -623,7 +618,6 @@ FIFA
 Seiiki
 Earth-30847
 Flashback
-Disney's Peter Pan
 Splatoon
 My Little Pony
 Dota
@@ -720,7 +714,6 @@ Money Heist
 One Thousand and One Nights
 Mio
 Cinderella
-Disney's Tarzan
 Red October
 Sim City
 G.I. Joe
@@ -728,7 +721,6 @@ Dhar Mann
 Ongezellig
 Niskavuori
 Jeff the Killer mythos
-Disney's Snow White
 Hacks
 Honorverse
 Matter of France

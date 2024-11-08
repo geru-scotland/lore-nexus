@@ -29,21 +29,33 @@ class WikidataProcessor:
         """
         """
 
-        def adjust_universe_labels(text):
+        def adjust_and_homogenize_labels(text):
             universe_count = text.lower().count("universe")
             if universe_count == 1:
                 text = re.sub(r"\bUniverse\b", "", text, flags=re.IGNORECASE)
-            elif universe_count > 1:
-                # Pero si aparece más de una vez, que me quite la última
+            elif universe_count > 1: # Si hay más de una vez la palabra Universe, que me la quite
                 text = re.sub(r"(.*)\bUniverse\b", r"\1", text, count=1, flags=re.IGNORECASE)
-            return text.strip()
+            text = text.strip()
 
-        # TODO: Homogeneizar nombres de universos
-        def homogenize_universe_names(text):
-            pass
+            # TODO: Revisar bien las etiquetas, que tiene que haber muchas que difieran por poco
+            # y hay que homogeneizar bien
+            universe_mapping = {
+                "disney": "Disney",
+                "tolkien": "Tolkien",
+                "star wars": "Star Wars",
+                "final fantasy": "Final Fantasy",
+            }
 
-        self.df['universeLabel'] = self.df['universeLabel'].apply(adjust_universe_labels)
-        print("Labels processing finished.")
+            text_lower = text.lower()
+
+            for keyword, homogeinized_name in universe_mapping.items():
+                if keyword in text_lower:
+                    return homogeinized_name
+
+            return text
+
+        self.df['universeLabel'] = self.df['universeLabel'].apply(adjust_and_homogenize_labels)
+        print("Labels processing and homogenization completed.")
 
     def generate_label_list(self):
         """
@@ -67,6 +79,15 @@ class WikidataProcessor:
         self.df['itemLabel'] = self.df['itemLabel'].apply(normalize_unicode)
         print("Names processing completed.")
 
+    def process_data(self):
+        """
+        """
+        self.process_labels()
+        self.process_names()
+        self.save_processed_data()
+        print("Data processing completed.")
+
+
     def save_processed_data(self):
         """
         """
@@ -76,8 +97,4 @@ class WikidataProcessor:
 
 # Proceso todos los datos que he obtenido de Wikidata
 processor = WikidataProcessor(input_file='raw_data/wikidata-universes.csv')
-processor.generate_label_list()
-# processor.process_labels()
-# processor.generate_label_list()
-# processor.process_names()
-# processor.save_processed_data()
+processor.process_data()
