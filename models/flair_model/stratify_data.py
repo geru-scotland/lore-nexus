@@ -20,22 +20,12 @@ with open('data/dataset.txt', 'r', encoding='utf-8') as file:
     lines = file.readlines()
 
 data_by_label = defaultdict(list)
+
+# Organizo por label, para dividir equitativamente después, si no lo que me ha
+# ocurrido es que había alguna label en dev y test que no estaba en train
 for line in lines:
     label = line.split()[0]
-
-    # Estoy haciendo pruebas, creo que no me aprendía del todo bien por la ingente cantidad de etiquetas
-    # Voy a coger universos famosos y que sean relativamente diferenciables (por patrones de nombres)
-    if label in [
-        "__label__HarryPotter",
-        "__label__StarWars",
-        "__label__Tolkien",
-        "__label__Warcraft",
-        "__label__DragonBall",
-        "__label__Naruto",
-        "__label__ForgottenRealms",
-        "__label__FinalFantasy"
-    ]:
-        data_by_label[label].append(line)
+    data_by_label[label].append(line)
 
 # 80% train, 10% dev/val, 10% test
 train_lines, dev_lines, test_lines = [], [], []

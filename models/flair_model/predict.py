@@ -18,7 +18,7 @@ from flair.data import Sentence
 model_path = 'resources/taggers/universe_classifier/best-model.pt'
 classifier = TextClassifier.load(model_path)
 
-sentence = Sentence("Chewbawka")
+sentence = Sentence("Malffoy")
 
 classifier.predict(sentence)
 

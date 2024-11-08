@@ -38,8 +38,9 @@ embedding = DocumentRNNEmbeddings(
         # cacharrear a ver
         CharacterEmbeddings()
     ],
-    hidden_size=768,
+    hidden_size=1024, # TODO: 1024, pero ojo con overfitting, igual dropout++ y weight_decay++
     rnn_type='LSTM',
+    bidirectional=True,
     dropout=0.2
 )
 
@@ -58,7 +59,7 @@ trainer = ModelTrainer(classifier, corpus)
 trainer.train('resources/taggers/universe_classifier',
               learning_rate=0.001,
               mini_batch_size=16,
-              max_epochs=30,
+              max_epochs=40,
               optimizer=AdamW,
               weight_decay=0.01,
               embeddings_storage_mode='gpu' if torch.cuda.is_available() else 'cpu',
