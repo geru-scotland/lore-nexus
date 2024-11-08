@@ -49,6 +49,7 @@ class NERextractor:
                 for entity in doc.ents:
                     if entity.label_ in ["PERSON", "LOC", "GPE", "ORG", "NORP", "FAC", "WORK_OF_ART", "EVENT"]:
                         # solo letras
+                        # TODO: utilizar unicodedata para normalizar mejor
                         clean_text = re.sub(r'[^A-Za-z\s]', '', entity.text)
                         # Si se ha quitado un carácter, que me quite los espacios
                         # (suelen tener muchos ', ó ^ nombres de elfos etc)
