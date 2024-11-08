@@ -11,15 +11,25 @@
  * Description:
  *****************************************************
 """
+import os
+from enum import Enum
+
 import pandas as pd
 import re
 import unicodedata
 
+class DatasetFormats(Enum):
+    CoNLL = "CoNLL"
+    SEPARATED_DATA_LABELS = "separated-data-labels"
+
+    def __str__(self):
+        return self.value
 
 class WikidataProcessor:
     def __init__(self, input_file, output_file='processed_data/wikidata_dataset.csv', labels_file='labels/labels.txt'):
         """
         """
+
         self.input_file = input_file
         self.output_file = output_file
         self.labels_file = labels_file
@@ -40,10 +50,13 @@ class WikidataProcessor:
             # TODO: Revisar bien las etiquetas, que tiene que haber muchas que difieran por poco
             # y hay que homogeneizar bien
             universe_mapping = {
+                # "current (lower)": "homogenized_name"
                 "disney": "Disney",
                 "tolkien": "Tolkien",
                 "star wars": "Star Wars",
                 "final fantasy": "Final Fantasy",
+                "ice and fire": "Game of Thrones",
+                "whoniverse": "Doctor Who",
             }
 
             text_lower = text.lower()
@@ -60,6 +73,7 @@ class WikidataProcessor:
     def generate_label_list(self):
         """
         """
+
         self.process_labels()
         unique_labels = self.df['universeLabel'].unique()
         with open(self.labels_file, 'w') as file:
@@ -79,22 +93,55 @@ class WikidataProcessor:
         self.df['itemLabel'] = self.df['itemLabel'].apply(normalize_unicode)
         print("Names processing completed.")
 
-    def process_data(self):
+    def process_data(self, dataset_format=None):
         """
         """
+
         self.process_labels()
         self.process_names()
-        self.save_processed_data()
+        self.save_processed_data(dataset_format)
         print("Data processing completed.")
 
 
-    def save_processed_data(self):
+    def save_processed_data(self, dataset_format=None):
         """
         """
-        self.df.to_csv(self.output_file, index=False)
+
+        def write_to_file(file_path, data, conll_format=False):
+            """
+            """
+            with open(file_path, "w") as file:
+                if conll_format:
+                    names = data[0]
+                    labels = data[1]
+                    for name, label in zip(names, labels):
+                        file.write(f"{name} {label}\n")
+                else:
+                    for item in data:
+                        file.write(f"{item}\n")
+
+        output_file_base, extension = os.path.splitext(self.output_file)
+
+        if dataset_format == DatasetFormats.CoNLL:
+            names = self.df['itemLabel']
+            labels = self.df['universeLabel']
+            output_file = f"{output_file_base}_CoNLL.txt"
+            write_to_file(output_file, data=[names, labels], conll_format=True)
+
+        elif dataset_format == DatasetFormats.SEPARATED_DATA_LABELS:
+            names_file = f"{output_file_base}_names.txt"
+            labels_file = f"{output_file_base}_labels.txt"
+            names = self.df['itemLabel']
+            labels = self.df['universeLabel']
+            write_to_file(names_file, data=names)
+            write_to_file(labels_file, data=labels)
+
+        else:
+            self.df.to_csv(self.output_file, index=False)
+
         print(f"Processed data saved to {self.output_file}")
 
 
 # Proceso todos los datos que he obtenido de Wikidata
 processor = WikidataProcessor(input_file='raw_data/wikidata-universes.csv')
-processor.process_data()
+processor.process_data(dataset_format=DatasetFormats.SEPARATED_DATA_LABELS)

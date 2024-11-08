@@ -92,7 +92,7 @@ Lysandre,Pokémon
 Jazz Fenton,Danny Phantom
 Kevin Dooley,Resident Evil
 Cottonmouth,Marvel Cinematic
-Sil,Whoniverse
+Sil,Doctor Who
 Tremor,Image
 Valen,Babylon 5
 Vlad Drakov,Ravenloft
@@ -170,11 +170,11 @@ Peter Pevensie,Narnia
 Susan Pevensie,Narnia
 Aang,World of Avatar
 Ender Wiggin,Ender's Game
-Bran Stark,World of Ice and Fire
+Bran Stark,Game of Thrones
 Yue,World of Avatar
-Rickon Stark,World of Ice and Fire
-Shireen Baratheon,World of Ice and Fire
-Rhaenys Targaryen,World of Ice and Fire
+Rickon Stark,Game of Thrones
+Shireen Baratheon,Game of Thrones
+Rhaenys Targaryen,Game of Thrones
 Kevin McCallister,Home Alone
 Harrison Morgan,Dexter
 Robert,DC
@@ -212,15 +212,15 @@ Carlos Wu,Known Space
 Galen Tyrol,Battlestar Galactica
 Roco-Bai,Marvel
 Magtheridon,Warcraft
-Bernice Summerfield,Whoniverse
+Bernice Summerfield,Doctor Who
 David Sheridan,Babylon 5
-Evelyn Smythe,Whoniverse
+Evelyn Smythe,Doctor Who
 Bupu,Dragonlance
 Ivana Boritsi,Ravenloft
 Kamen Rider V3,Toei Tokusatsu
 Knightsabre,Image
 Korba,Dune
-Muriel Frost,Whoniverse
+Muriel Frost,Doctor Who
 Psilence,Image
 Sarah Kerrigan,StarCraft
 Sarah Kerrigan,StarCraft
@@ -374,7 +374,7 @@ Nightrunner,DC
 Bronze Tiger,DC
 Manchester Black,DC
 Andrea Beaumont,DC Animated
-Arya Stark,World of Ice and Fire
+Arya Stark,Game of Thrones
 Deathblow,Wildstorm
 Dinah Redmond,Earth-203
 Manhunter,DC
@@ -481,7 +481,7 @@ Anti-Matter Man,DC
 Madman,Marvel
 Arkillo,DC
 Armory,Marvel
-Beep the Meep,Whoniverse
+Beep the Meep,Doctor Who
 Bekka,DC
 Bibbo Bibbowski,DC
 Black Fury,Marvel
@@ -823,7 +823,7 @@ Zuko,World of Avatar
 Sokka,World of Avatar
 Ty Lee,World of Avatar
 Nemo,Finding Nemo
-Arya Stark,World of Ice and Fire
+Arya Stark,Game of Thrones
 Bow,Masters of the Universe
 Danny Torrance,Multiverse
 Hugo Simpson,The Simpsons
@@ -833,8 +833,8 @@ Catra,Masters of the Universe
 Frosta,Masters of the Universe
 Mai,World of Avatar
 Newt Jorden,Alien
-Robert Arryn,World of Ice and Fire
-Aegon Targaryen,World of Ice and Fire
+Robert Arryn,Game of Thrones
+Aegon Targaryen,Game of Thrones
 Batman,DC Animated
 Lonnie,Masters of the Universe
 Kyle,Masters of the Universe
@@ -999,7 +999,7 @@ Ratonhnaketon,Assassin's Creed
 Altair Ibn-LaAhad SUSCRIBANSE A @Ssan_sana,Assassin's Creed
 Garrus Vakarian,Mass Effect
 Aveline de Grandpre,Assassin's Creed
-Oberyn Martell,World of Ice and Fire
+Oberyn Martell,Game of Thrones
 Haytham Kenway,Assassin's Creed
 Jacob Frye,Assassin's Creed
 Evie Frye,Assassin's Creed
@@ -1062,10 +1062,10 @@ Haro,Cosmic Era
 Haymitch Abernathy,The Hunger Games
 Jerico Moonrider,Star Wars
 Kia,Mortal Kombat
-Jason Kane,Whoniverse
+Jason Kane,Doctor Who
 Joramy,Greyhawk
-Lucie Miller,Whoniverse
-Professor George Litefoot,Whoniverse
+Lucie Miller,Doctor Who
+Professor George Litefoot,Doctor Who
 Griselda Marchbanks,Harry Potter
 Ernie Macmillan,Harry Potter
 Eloise Midgen,Harry Potter
@@ -1139,7 +1139,7 @@ Wrath,Fullmetal Alchemist
 Coleman Kcaj,Star Wars
 Herb,Ranma ½
 Bigby,Greyhawk
-Charley Pollard,Whoniverse
+Charley Pollard,Doctor Who
 Curse,Image
 Hfuhruhurr,DC
 Monokuma,Danganronpa
@@ -1199,7 +1199,7 @@ Kavita Rao,Marvel
 Kavita Rao,Earth-616
 Kelda,Marvel
 Waverider,DC
-Kroton,Whoniverse
+Kroton,Doctor Who
 La Encantadora,DC
 Lightning,DC
 Little Mermaid,DC
@@ -1457,7 +1457,7 @@ Scarlet Scarab,Marvel
 Scorpia,Marvel
 Shathra,Marvel
 Shatterstar,Marvel
-Shayde,Whoniverse
+Shayde,Doctor Who
 Shear,Marvel
 Shellshock,Marvel
 Shrapnel,DC
@@ -1516,9 +1516,9 @@ Icicle,DC
 Roboute Guilliman,"Warhammer 40,000"
 Drahmin,Mortal Kombat
 Hondo Ohnaka,Star Wars
-Crizz,Whoniverse
+Crizz,Doctor Who
 Cyblade,Image
-Henry Gordon Jago,Whoniverse
+Henry Gordon Jago,Doctor Who
 Crysania Tarinius,Dragonlance
 Hederick,Dragonlance
 Kazuda Xiono,Star Wars
@@ -1697,7 +1697,7 @@ Ernst,Marvel
 Zantafio,of Spirou & Fantasio
 Dee Dee,DC
 Reelo Baruk,Star Wars
-Compassion,Whoniverse
+Compassion,Doctor Who
 Damien Darklord,Image
 Jenny Cesare,Marvel
 Yeoman Smith,Star Trek
@@ -1790,7 +1790,7 @@ Perry White,DC
 Nova,Marvel
 Rimfire,Biker Mice from Mars
 Aoba Yamashiro,Naruto
-Tamsin Drew,Whoniverse
+Tamsin Drew,Doctor Who
 Mikazuki Munechika,Touken Ranbu
 Rebecca,Dune
 Geo Hermes,Q46996074
@@ -2316,7 +2316,7 @@ Nemesis Prime,Transformers multiverse
 Anne-Marie Cortez,Marvel
 Donal Graeme,Childe Cycle
 Drawmij,Greyhawk
-Erimem,Whoniverse
+Erimem,Doctor Who
 Goldie,DC
 Gwildor,Masters of the Universe
 Curtis Miller,Resident Evil
@@ -2485,12 +2485,12 @@ Johnny Blaze,Earth-121347
 Wade Wilson,Earth-10005
 Wade Wilson,Revised X-Men film series timeline
 The Chosen One,Star Wars
-Irving Braxiatel,Whoniverse
+Irving Braxiatel,Doctor Who
 Jallarzi Sallavarian,Greyhawk
 Ustanak,Resident Evil
-Kadiatu Lethbridge-Stewart,Whoniverse
+Kadiatu Lethbridge-Stewart,Doctor Who
 Ultimate Captain Marvel,Marvel
-Professor Chronotis,Whoniverse
+Professor Chronotis,Doctor Who
 Toyo Harada,Valiant
 XHal,DC
 Lianna,DC
@@ -3677,7 +3677,7 @@ Mister Terrific,DC
 Red Bat,Donald Duck
 Proty,DC
 Shield,DC
-Alpha Centauri,Whoniverse
+Alpha Centauri,Doctor Who
 Blacklight,Image
 Chronos,DC
 Gravedigger,DC
@@ -3697,7 +3697,7 @@ Green Loontern,DC
 Sazed,Cosmere
 Lilith,Borderlands
 Agent Axis (DC Comics),DC
-Harold Saxon,Whoniverse
+Harold Saxon,Doctor Who
 I. P. Freely,The Simpsons
 Lumpy Space Princess,Adventure Time
 Al Coholic,The Simpsons
@@ -3795,7 +3795,7 @@ Cortana,Halo
 D.A.V.E.,DC
 Supreme Chancellor,Star Wars
 Indigo,DC
-Nyssa,Whoniverse
+Nyssa,Doctor Who
 Ship,Marvel
 Kammy Koopa,Super Mario
 Camilla the Chicken,Muppets
@@ -4292,7 +4292,7 @@ Deadalus,Marvel
 Deaths-Head (comics),Marvel
 Death Metal,Marvel
 Deimos,DC
-Destrii,Whoniverse
+Destrii,Doctor Who
 Digger,Marvel
 Dinah Soar,Marvel
 Diva,Wildstorm
@@ -4465,7 +4465,7 @@ Edwin Cord,Marvel
 Etta Candy,DC
 Eviless,DC
 Feron,Marvel
-Fey Truscott-Sade,Whoniverse
+Fey Truscott-Sade,Doctor Who
 First of the Fallen,DC
 Fly,DC
 Funky Flashman,DC
@@ -5235,7 +5235,7 @@ First Born,DC
 Ares,Xenaverse
 Demogorgon,Dungeons & Dragons
 Tulzscha,Cthulhu Mythos
-Iris Wildthyme,Whoniverse
+Iris Wildthyme,Doctor Who
 UL,fictional  of The Belgariad
 Ragarra,Al-Qadim
 Tharizdun,Dungeons & Dragons
@@ -5247,7 +5247,7 @@ Beerus,Dragon Ball
 Hestia,Is It Wrong to Try to Pick Up Girls in a Dungeon?
 Hermes,DC
 Rama Kushna,DC
-Rhllor,World of Ice and Fire
+Rhllor,Game of Thrones
 Skerrit,Forgotten Realms
 Skerrit,Dungeons & Dragons
 Jesus Christ,The Simpsons
@@ -5716,10 +5716,10 @@ Lobster Johnson,Hellboy
 Patchwork Man,DC
 Spectra Vondergeist,Monster High
 Spirit King,DC
-Beric Dondarrion,World of Ice and Fire
+Beric Dondarrion,Game of Thrones
 Simon Dark,DC
-Benjen Stark,World of Ice and Fire
-Gregor Clegane,World of Ice and Fire
+Benjen Stark,Game of Thrones
+Gregor Clegane,Game of Thrones
 Mima,Touhou Project
 Ragetti,Pirates of the Caribbean
 Elsa Frankenteen,Scooby Doo
@@ -5824,7 +5824,7 @@ Lady of Pain,Planescape
 Masada,Image
 Mechanic,Transformers multiverse
 Mopee,DC
-Nobody No-One,Whoniverse
+Nobody No-One,Doctor Who
 Photon,Image
 Poggle the Lesser,Star Wars
 Poggle the Lesser,Star Wars
@@ -5890,7 +5890,7 @@ D.A.V.E.,DC
 Emerl,Q123861879
 T3-M4,Star Wars
 Torgo,Marvel
-Yeti,Whoniverse
+Yeti,Doctor Who
 Hunter-Killer,Terminator
 Annihilator,DC
 Analyzer,Space Battleship Yamato
@@ -6741,7 +6741,7 @@ Alpha 5,Power Rangers
 Marvin the Paranoid Android,The Hitchhiker's Guide to the Galaxy
 Clank,Ratchet & Clank
 Arale Norimaki,Dragon Ball
-K9,Whoniverse
+K9,Doctor Who
 Zero,Mega Man
 Shiva,Marvel
 Gonzo the Mechanical Bastard,DC
@@ -10329,7 +10329,7 @@ Silver Swan,DC
 Skornn,Marvel
 Snake Marston,Marvel
 Spider-X,Marvel
-Ssard,Whoniverse
+Ssard,Doctor Who
 Stained Glass Scarlet,Marvel
 Sterling Silversmith,DC
 Stiletto,Marvel
@@ -10988,13 +10988,13 @@ Norinaga,Teenage Mutant Ninja Turtles
 Shinsho,Teenage Mutant Ninja Turtles
 Ariella Yahuda,Teenage Mutant Ninja Turtles
 Maxence,Teenage Mutant Ninja Turtles
-The Doctor,Whoniverse
+The Doctor,Doctor Who
 Kirby,Kirby
 Starro,DC
 "Shade, the Changing Man",DC
 Captain Olimar,Pikmin
 Pequeninos,Ender's Game
-Empress of the Racnoss,Whoniverse
+Empress of the Racnoss,Doctor Who
 Murk Lundi,Star Wars
 Spartan,Wildstorm
 Fallen One,Marvel
@@ -11180,7 +11180,7 @@ ISAAC,Marvel
 Lucien,DC
 Ibis the Invincible,DC
 Ironwolf,DC
-Izzy Sinclair,Whoniverse
+Izzy Sinclair,Doctor Who
 Sam Witwicky,Transformers multiverse
 Saul Karath,Star Wars
 Javelynn,Marvel
@@ -11847,7 +11847,7 @@ Doctor Doppler,Treasure Planet
 Taneleer Tivan,Marvel Cinematic
 Yivo,Futuramaverse
 The Other,Marvel Cinematic
-Andrea Quill,Whoniverse
+Andrea Quill,Doctor Who
 Swackhammer,Space Jam
 Jaylah,Star Trek
 E.T.,ET
@@ -12333,7 +12333,7 @@ Teron Gorefiend,Warcraft
 Mantis,Marvel Cinematic
 Letho of Gulet,The Witcher
 Kaguya Otsutsuki,Naruto
-Nardole,Whoniverse
+Nardole,Doctor Who
 Hera Syndulla,Star Wars
 Q45132153,World of Troy
 Q45312518,World of Troy
@@ -12667,7 +12667,7 @@ Arm-Fall-Off-Boy,DC
 Colour out of space,Cthulhu Mythos
 Egeria,Stargate
 Pleakley,Lilo & Stitch
-Sky Smith,Whoniverse
+Sky Smith,Doctor Who
 Union,Wildstorm
 Jhadur,Babylon 5
 Lak Sivrak,Star Wars
@@ -12876,7 +12876,7 @@ Kraid,Metroid
 Red Shift,Marvel
 Tyrant,Marvel
 Stone Boy,DC
-Beep the Meep,Whoniverse
+Beep the Meep,Doctor Who
 Gorrath,Megas XLR
 Bdg,DC
 Four Arms,Ben 10
@@ -13170,7 +13170,7 @@ Kerma,Teenage Mutant Ninja Turtles
 Drakus,Teenage Mutant Ninja Turtles
 Erk,Teenage Mutant Ninja Turtles
 Chompy Picasso,Teenage Mutant Ninja Turtles
-Charlie Smith,Whoniverse
+Charlie Smith,Doctor Who
 Rupert,Teenage Mutant Ninja Turtles
 Grybyx,Teenage Mutant Ninja Turtles
 Grillox,Teenage Mutant Ninja Turtles
@@ -14180,7 +14180,7 @@ Malulu,Isekai: Demon Waifu
 Trachtoum,Final Fantasy
 Raphael,Granblue Fantasy
 Shiverian Elder,Super Mario
-TARDIS,Whoniverse
+TARDIS,Doctor Who
 Shaggy Rogers,Scooby Doo
 Scooby-Doo,Scooby Doo
 Velma Dinkley,Scooby Doo
@@ -15555,7 +15555,7 @@ Yera Allon,DC
 Bloodshot,Valiant
 Captain Dynamo,Image
 Enchantress,DC
-Frobisher,Whoniverse
+Frobisher,Doctor Who
 Jasper Sitwell,Marvel
 Craig Sinclair,Marvel
 Craig Sinclair,Earth-616
@@ -15907,7 +15907,7 @@ Magus,Granblue Fantasy
 The Dark Gentleman,Cultist Simulator
 Jekadu,Cultist Simulator
 Gobwa,That Time I Got Reincarnated as a Slime
-Maestro,Whoniverse
+Maestro,Doctor Who
 Danica,Necromantic
 Momiji,That Time I Got Reincarnated as a Slime
 Izutsumi,Delicious in Dungeon
@@ -16631,8 +16631,8 @@ Auditors of Reality,Discworld
 Hex,Discworld
 Q5776589,Discworld
 Q5790797,Discworld
-Davos Seaworth,World of Ice and Fire
-Khal Drogo,World of Ice and Fire
+Davos Seaworth,Game of Thrones
+Khal Drogo,Game of Thrones
 Ysabell of Sto Helit,Discworld
 Hydro-Man,Marvel
 Kaine,Marvel
@@ -17332,11 +17332,11 @@ Methodia Rascal,Discworld
 Vorbis,Discworld
 Salacia von Humpeding,Discworld
 Binky,Discworld
-Margaery Tyrell,World of Ice and Fire
+Margaery Tyrell,Game of Thrones
 Beggars Guild,Discworld
 Bloody Stupid Johnson,Discworld
 Om,Discworld
-Loras Tyrell,World of Ice and Fire
+Loras Tyrell,Game of Thrones
 Q19946432,Discworld
 Q19946444,Discworld
 Q19946445,Discworld
@@ -17347,28 +17347,28 @@ Q19976985,Discworld
 Q19977000,Discworld
 Maurice,Discworld
 Black Aliss,Discworld
-Victarion Greyjoy,World of Ice and Fire
+Victarion Greyjoy,Game of Thrones
 Pteppic,Discworld
 Chrysoprase,Discworld
 Cheery Littlebottom,Discworld
 Fred Colon,Discworld
-Arianne Martell,World of Ice and Fire
-Joanna Lannister,World of Ice and Fire
-Steffon Baratheon,World of Ice and Fire
-Shireen Baratheon,World of Ice and Fire
-Kevan Lannister,World of Ice and Fire
-Maron Greyjoy,World of Ice and Fire
-Rickard Stark,World of Ice and Fire
-Benjen Stark,World of Ice and Fire
-Rhea Florent,World of Ice and Fire
-Rhaenys Targaryen,World of Ice and Fire
-Emmon Frey,World of Ice and Fire
-Meera Reed,World of Ice and Fire
-Obara Sand,World of Ice and Fire
-Rhaenyra Targaryen,World of Ice and Fire
-Jaehaerys I Targaryen,World of Ice and Fire
-Jeyne Poole,World of Ice and Fire
-Alysanne Targaryen,World of Ice and Fire
+Arianne Martell,Game of Thrones
+Joanna Lannister,Game of Thrones
+Steffon Baratheon,Game of Thrones
+Shireen Baratheon,Game of Thrones
+Kevan Lannister,Game of Thrones
+Maron Greyjoy,Game of Thrones
+Rickard Stark,Game of Thrones
+Benjen Stark,Game of Thrones
+Rhea Florent,Game of Thrones
+Rhaenys Targaryen,Game of Thrones
+Emmon Frey,Game of Thrones
+Meera Reed,Game of Thrones
+Obara Sand,Game of Thrones
+Rhaenyra Targaryen,Game of Thrones
+Jaehaerys I Targaryen,Game of Thrones
+Jeyne Poole,Game of Thrones
+Alysanne Targaryen,Game of Thrones
 Death of Rats,Discworld
 Exquisitor Vorbis,Discworld
 Q122863939,Discworld
@@ -17424,10 +17424,10 @@ Eru Iluvatar,Tolkien
 Kurgan,Highlander
 Tom Bombadil,Tolkien
 Silas,Highlander
-Jack Harkness,Whoniverse
-Sarah Jane Smith,Whoniverse
+Jack Harkness,Doctor Who
+Sarah Jane Smith,Doctor Who
 Amanda,Highlander
-Mickey Smith,Whoniverse
+Mickey Smith,Doctor Who
 Richie Ryan,Highlander
 Carter Wellan,Highlander
 Cassandra,Highlander
@@ -17435,54 +17435,54 @@ Connor MacLeod,Highlander
 Methos,Highlander
 Graham Ashe,Highlander
 Haresh Clay,Highlander
-Clara Oswald,Whoniverse
-Rose Tyler,Whoniverse
-Harry Sullivan,Whoniverse
+Clara Oswald,Doctor Who
+Rose Tyler,Doctor Who
+Harry Sullivan,Doctor Who
 Old Man Willow,Tolkien
 Glinda the Good Witch,Oz
-The Master,Whoniverse
-Martha Jones,Whoniverse
-River Song,Whoniverse
-Astrid Peth,Whoniverse
-Katarina,Whoniverse
-Cassandra,Whoniverse
-K9,Whoniverse
+The Master,Doctor Who
+Martha Jones,Doctor Who
+River Song,Doctor Who
+Astrid Peth,Doctor Who
+Katarina,Doctor Who
+Cassandra,Doctor Who
+K9,Doctor Who
 Darius,Highlander
-Face of Boe,Whoniverse
+Face of Boe,Doctor Who
 Hugh Fitzcairn,Highlander
-Meddling Monk,Whoniverse
+Meddling Monk,Doctor Who
 Good Witch of the North,Oz
 Wicked Witch of the East,Oz
 Wicked Witch of the West,Oz
-Brigadier Lethbridge-Stewart,Whoniverse
-Leela,Whoniverse
-Adam Mitchell,Whoniverse
-Alpha Centauri,Whoniverse
-Celestial Toymaker,Whoniverse
+Brigadier Lethbridge-Stewart,Doctor Who
+Leela,Doctor Who
+Adam Mitchell,Doctor Who
+Alpha Centauri,Doctor Who
+Celestial Toymaker,Doctor Who
 Jesse Pinkman,Gilliverse
-Miranda,Whoniverse
-Nimrod,Whoniverse
-Other,Whoniverse
-Pete Tyler,Whoniverse
-Sabbath,Whoniverse
-Sam Jones,Whoniverse
-Sharon,Whoniverse
-Vislor Turlough,Whoniverse
-Adric,Whoniverse
+Miranda,Doctor Who
+Nimrod,Doctor Who
+Other,Doctor Who
+Pete Tyler,Doctor Who
+Sabbath,Doctor Who
+Sam Jones,Doctor Who
+Sharon,Doctor Who
+Vislor Turlough,Doctor Who
+Adric,Doctor Who
 Walter White Jr.,Gilliverse
-Bill Potts,Whoniverse
+Bill Potts,Doctor Who
 Tuco Salamanca,Gilliverse
-Graham OBrien,Whoniverse
-Yasmin Khan,Whoniverse
-Ryan Sinclair,Whoniverse
+Graham OBrien,Doctor Who
+Yasmin Khan,Doctor Who
+Ryan Sinclair,Doctor Who
 Ximenez Lecerda,Gilliverse
 Tyrus Kitt,Gilliverse
 Victor,Gilliverse
 Kaylee Ehrmantraut,Gilliverse
-Penny Carter,Whoniverse
-Rose Noble,Whoniverse
-Cherry Sunday,Whoniverse
-Carla Sunday,Whoniverse
+Penny Carter,Doctor Who
+Rose Noble,Doctor Who
+Cherry Sunday,Doctor Who
+Carla Sunday,Doctor Who
 Demeter,Is It Wrong to Try to Pick Up Girls in a Dungeon?
 Lulune Louie,Is It Wrong to Try to Pick Up Girls in a Dungeon?
 Lissos,Is It Wrong to Try to Pick Up Girls in a Dungeon?
@@ -17974,49 +17974,49 @@ Shen Woo,The King of Fighters
 Aaron,Pokémon
 Dark Queen,Battletoads
 Igniz,The King of Fighters
-Eddard Stark,World of Ice and Fire
-Theon Greyjoy,World of Ice and Fire
-Tyrion Lannister,World of Ice and Fire
-Daenerys Targaryen,World of Ice and Fire
-Catelyn Stark,World of Ice and Fire
-Jon Snow,World of Ice and Fire
-Sansa Stark,World of Ice and Fire
-Arya Stark,World of Ice and Fire
-Bran Stark,World of Ice and Fire
-Cersei Lannister,World of Ice and Fire
-Illyrio Mopatis,World of Ice and Fire
-Jaime Lannister,World of Ice and Fire
-Jorah Mormont,World of Ice and Fire
-Varys,World of Ice and Fire
-Petyr Baelish,World of Ice and Fire
-Barristan Selmy,World of Ice and Fire
-Khal Drogo,World of Ice and Fire
-Mance Rayder,World of Ice and Fire
-Melisandre,World of Ice and Fire
-Jaqen Hghar,World of Ice and Fire
-Beric Dondarrion,World of Ice and Fire
-Brienne of Tarth,World of Ice and Fire
-Samwell Tarly,World of Ice and Fire
-Stannis Baratheon,World of Ice and Fire
-Rickon Stark,World of Ice and Fire
-Bronn,World of Ice and Fire
-Jeor Mormont,World of Ice and Fire
-Joffrey Baratheon,World of Ice and Fire
-Margaery Tyrell,World of Ice and Fire
-Shae,World of Ice and Fire
-Tywin Lannister,World of Ice and Fire
-Viserys Targaryen,World of Ice and Fire
-Robert Baratheon,World of Ice and Fire
-Janos Slynt,World of Ice and Fire
-Renly Baratheon,World of Ice and Fire
-Loras Tyrell,World of Ice and Fire
-Aerys II Targaryen,World of Ice and Fire
-Oberyn Martell,World of Ice and Fire
-Lysa Arryn,World of Ice and Fire
-Tommen Baratheon,World of Ice and Fire
-Ramsay Bolton,World of Ice and Fire
-Roose Bolton,World of Ice and Fire
-Myrcella Baratheon,World of Ice and Fire
+Eddard Stark,Game of Thrones
+Theon Greyjoy,Game of Thrones
+Tyrion Lannister,Game of Thrones
+Daenerys Targaryen,Game of Thrones
+Catelyn Stark,Game of Thrones
+Jon Snow,Game of Thrones
+Sansa Stark,Game of Thrones
+Arya Stark,Game of Thrones
+Bran Stark,Game of Thrones
+Cersei Lannister,Game of Thrones
+Illyrio Mopatis,Game of Thrones
+Jaime Lannister,Game of Thrones
+Jorah Mormont,Game of Thrones
+Varys,Game of Thrones
+Petyr Baelish,Game of Thrones
+Barristan Selmy,Game of Thrones
+Khal Drogo,Game of Thrones
+Mance Rayder,Game of Thrones
+Melisandre,Game of Thrones
+Jaqen Hghar,Game of Thrones
+Beric Dondarrion,Game of Thrones
+Brienne of Tarth,Game of Thrones
+Samwell Tarly,Game of Thrones
+Stannis Baratheon,Game of Thrones
+Rickon Stark,Game of Thrones
+Bronn,Game of Thrones
+Jeor Mormont,Game of Thrones
+Joffrey Baratheon,Game of Thrones
+Margaery Tyrell,Game of Thrones
+Shae,Game of Thrones
+Tywin Lannister,Game of Thrones
+Viserys Targaryen,Game of Thrones
+Robert Baratheon,Game of Thrones
+Janos Slynt,Game of Thrones
+Renly Baratheon,Game of Thrones
+Loras Tyrell,Game of Thrones
+Aerys II Targaryen,Game of Thrones
+Oberyn Martell,Game of Thrones
+Lysa Arryn,Game of Thrones
+Tommen Baratheon,Game of Thrones
+Ramsay Bolton,Game of Thrones
+Roose Bolton,Game of Thrones
+Myrcella Baratheon,Game of Thrones
 Q130750731,The Orca's
 Khravylava,The Orca's
 Varydavarah,The Orca's
@@ -18410,61 +18410,61 @@ Hachigen Ushouda,Bleach
 Marechiyo Omaeda,Bleach
 Maylene,Pokémon
 Mashiro Kuna,Bleach
-Asha Greyjoy,World of Ice and Fire
-Rhaegar Targaryen,World of Ice and Fire
-Aeron Greyjoy,World of Ice and Fire
-Talisa Stark,World of Ice and Fire
-Podrick Payne,World of Ice and Fire
-Daario Naharis,World of Ice and Fire
-Hoster Tully,World of Ice and Fire
-Balon Greyjoy,World of Ice and Fire
-Mace Tyrell,World of Ice and Fire
-Selyse Baratheon,World of Ice and Fire
-Shireen Baratheon,World of Ice and Fire
-Kevan Lannister,World of Ice and Fire
-Rickard Stark,World of Ice and Fire
-Benjen Stark,World of Ice and Fire
-Lyanna Stark,World of Ice and Fire
-Imry Florent,World of Ice and Fire
-Axell Florent,World of Ice and Fire
-Randyll Tarly,World of Ice and Fire
-Talla Tarly,World of Ice and Fire
-Dickon Tarly,World of Ice and Fire
-Lancel Lannister,World of Ice and Fire
-Brynden Tully,World of Ice and Fire
-Walder Frey,World of Ice and Fire
-Aemon Targaryen,World of Ice and Fire
-Gregor Clegane,World of Ice and Fire
-Gendry,World of Ice and Fire
-Meera Reed,World of Ice and Fire
-Grey Worm,World of Ice and Fire
-The High Sparrow,World of Ice and Fire
-Gilly,World of Ice and Fire
-Doran Martell,World of Ice and Fire
-Drogon,World of Ice and Fire
-Rhaegal,World of Ice and Fire
-Balerion,World of Ice and Fire
-Vhagar,World of Ice and Fire
-Night King,World of Ice and Fire
-Three-eyed raven,World of Ice and Fire
-Euron Greyjoy,World of Ice and Fire
-Hodor,World of Ice and Fire
-Nymeria Sand,World of Ice and Fire
-Trystane Martell,World of Ice and Fire
-Jojen Reed,World of Ice and Fire
-Eddison Tollett,World of Ice and Fire
-Tycho Nestoris,World of Ice and Fire
-Rodrik Cassel,World of Ice and Fire
-Tyene Sand,World of Ice and Fire
-Obara Sand,World of Ice and Fire
-Alliser Thorne,World of Ice and Fire
-Howland Reed,World of Ice and Fire
-Thoros,World of Ice and Fire
-Jeyne Poole,World of Ice and Fire
-Greatjon Umber,World of Ice and Fire
-Smalljon Umber,World of Ice and Fire
-Rhllor,World of Ice and Fire
-Walder Rivers,World of Ice and Fire
+Asha Greyjoy,Game of Thrones
+Rhaegar Targaryen,Game of Thrones
+Aeron Greyjoy,Game of Thrones
+Talisa Stark,Game of Thrones
+Podrick Payne,Game of Thrones
+Daario Naharis,Game of Thrones
+Hoster Tully,Game of Thrones
+Balon Greyjoy,Game of Thrones
+Mace Tyrell,Game of Thrones
+Selyse Baratheon,Game of Thrones
+Shireen Baratheon,Game of Thrones
+Kevan Lannister,Game of Thrones
+Rickard Stark,Game of Thrones
+Benjen Stark,Game of Thrones
+Lyanna Stark,Game of Thrones
+Imry Florent,Game of Thrones
+Axell Florent,Game of Thrones
+Randyll Tarly,Game of Thrones
+Talla Tarly,Game of Thrones
+Dickon Tarly,Game of Thrones
+Lancel Lannister,Game of Thrones
+Brynden Tully,Game of Thrones
+Walder Frey,Game of Thrones
+Aemon Targaryen,Game of Thrones
+Gregor Clegane,Game of Thrones
+Gendry,Game of Thrones
+Meera Reed,Game of Thrones
+Grey Worm,Game of Thrones
+The High Sparrow,Game of Thrones
+Gilly,Game of Thrones
+Doran Martell,Game of Thrones
+Drogon,Game of Thrones
+Rhaegal,Game of Thrones
+Balerion,Game of Thrones
+Vhagar,Game of Thrones
+Night King,Game of Thrones
+Three-eyed raven,Game of Thrones
+Euron Greyjoy,Game of Thrones
+Hodor,Game of Thrones
+Nymeria Sand,Game of Thrones
+Trystane Martell,Game of Thrones
+Jojen Reed,Game of Thrones
+Eddison Tollett,Game of Thrones
+Tycho Nestoris,Game of Thrones
+Rodrik Cassel,Game of Thrones
+Tyene Sand,Game of Thrones
+Obara Sand,Game of Thrones
+Alliser Thorne,Game of Thrones
+Howland Reed,Game of Thrones
+Thoros,Game of Thrones
+Jeyne Poole,Game of Thrones
+Greatjon Umber,Game of Thrones
+Smalljon Umber,Game of Thrones
+Rhllor,Game of Thrones
+Walder Rivers,Game of Thrones
 Naruto Uzumaki,Naruto
 Konan,Naruto
 Ash Ketchum,Pokémon
@@ -19280,47 +19280,47 @@ Gossip Junkie,World of Horror
 Ribcage Woman,World of Horror
 Stalk-Chan,World of Horror
 Bark Woman,World of Horror
-Eddard Stark,World of Ice and Fire
-Theon Greyjoy,World of Ice and Fire
-Tyrion Lannister,World of Ice and Fire
-Catelyn Stark,World of Ice and Fire
-Jon Snow,World of Ice and Fire
-Sansa Stark,World of Ice and Fire
-Bran Stark,World of Ice and Fire
-Cersei Lannister,World of Ice and Fire
-Illyrio Mopatis,World of Ice and Fire
-Jorah Mormont,World of Ice and Fire
-Barristan Selmy,World of Ice and Fire
-Mance Rayder,World of Ice and Fire
-Jaqen Hghar,World of Ice and Fire
-Beric Dondarrion,World of Ice and Fire
-Brienne of Tarth,World of Ice and Fire
-Samwell Tarly,World of Ice and Fire
-Stannis Baratheon,World of Ice and Fire
-Rickon Stark,World of Ice and Fire
-Bronn,World of Ice and Fire
-Jeor Mormont,World of Ice and Fire
-Joffrey Baratheon,World of Ice and Fire
-Shae,World of Ice and Fire
-Viserys Targaryen,World of Ice and Fire
-Robert Baratheon,World of Ice and Fire
-Janos Slynt,World of Ice and Fire
-Aerys II Targaryen,World of Ice and Fire
-Lysa Arryn,World of Ice and Fire
-Tommen Baratheon,World of Ice and Fire
-Roose Bolton,World of Ice and Fire
-Myrcella Baratheon,World of Ice and Fire
-Asha Greyjoy,World of Ice and Fire
-Aeron Greyjoy,World of Ice and Fire
-Podrick Payne,World of Ice and Fire
-Daario Naharis,World of Ice and Fire
-Hoster Tully,World of Ice and Fire
-Cassana Baratheon,World of Ice and Fire
-Rhaella Targaryen,World of Ice and Fire
-Balon Greyjoy,World of Ice and Fire
-Alannys Greyjoy,World of Ice and Fire
-Alerie Tyrell,World of Ice and Fire
-Minisa Tully,World of Ice and Fire
+Eddard Stark,Game of Thrones
+Theon Greyjoy,Game of Thrones
+Tyrion Lannister,Game of Thrones
+Catelyn Stark,Game of Thrones
+Jon Snow,Game of Thrones
+Sansa Stark,Game of Thrones
+Bran Stark,Game of Thrones
+Cersei Lannister,Game of Thrones
+Illyrio Mopatis,Game of Thrones
+Jorah Mormont,Game of Thrones
+Barristan Selmy,Game of Thrones
+Mance Rayder,Game of Thrones
+Jaqen Hghar,Game of Thrones
+Beric Dondarrion,Game of Thrones
+Brienne of Tarth,Game of Thrones
+Samwell Tarly,Game of Thrones
+Stannis Baratheon,Game of Thrones
+Rickon Stark,Game of Thrones
+Bronn,Game of Thrones
+Jeor Mormont,Game of Thrones
+Joffrey Baratheon,Game of Thrones
+Shae,Game of Thrones
+Viserys Targaryen,Game of Thrones
+Robert Baratheon,Game of Thrones
+Janos Slynt,Game of Thrones
+Aerys II Targaryen,Game of Thrones
+Lysa Arryn,Game of Thrones
+Tommen Baratheon,Game of Thrones
+Roose Bolton,Game of Thrones
+Myrcella Baratheon,Game of Thrones
+Asha Greyjoy,Game of Thrones
+Aeron Greyjoy,Game of Thrones
+Podrick Payne,Game of Thrones
+Daario Naharis,Game of Thrones
+Hoster Tully,Game of Thrones
+Cassana Baratheon,Game of Thrones
+Rhaella Targaryen,Game of Thrones
+Balon Greyjoy,Game of Thrones
+Alannys Greyjoy,Game of Thrones
+Alerie Tyrell,Game of Thrones
+Minisa Tully,Game of Thrones
 Matsuri,Naruto
 Moka Akashiya,Rosario + Vampire
 Rob Lucci,One Piece
@@ -19421,65 +19421,65 @@ Red Alert,Transformers multiverse
 Tom Riddle,Harry Potter
 Demolishor,Transformers multiverse
 Ramjet,Transformers multiverse
-Aegon V Targaryen,World of Ice and Fire
-Rodrik Greyjoy,World of Ice and Fire
-Lady of House Sunderly,World of Ice and Fire
-Lyarra Stark,World of Ice and Fire
-Lyanna Stark,World of Ice and Fire
-Betha Blackwood,World of Ice and Fire
-Rhaelle Targaryen,World of Ice and Fire
-Delena Florent,World of Ice and Fire
-Imry Florent,World of Ice and Fire
-Alester Florent,World of Ice and Fire
-Melara Florent,World of Ice and Fire
-Lynesse Hightower,World of Ice and Fire
-Mariya Darry,World of Ice and Fire
-Amerei Frey,World of Ice and Fire
-Selwyn Tarth,World of Ice and Fire
-Brynden Tully,World of Ice and Fire
-Walder Frey,World of Ice and Fire
-Aemon Targaryen,World of Ice and Fire
-Gregor Clegane,World of Ice and Fire
-Grey Worm,World of Ice and Fire
-The High Sparrow,World of Ice and Fire
-Drogon,World of Ice and Fire
-Euron Greyjoy,World of Ice and Fire
-Aegon I Targaryen,World of Ice and Fire
-Rhaenys Targaryen,World of Ice and Fire
-Brandon Stark,World of Ice and Fire
-Brynden Rivers,World of Ice and Fire
-Nymeria Sand,World of Ice and Fire
-Jojen Reed,World of Ice and Fire
-Eddison Tollett,World of Ice and Fire
-Rodrik Cassel,World of Ice and Fire
-Tyene Sand,World of Ice and Fire
-Aegon IV Targaryen,World of Ice and Fire
-Thoros,World of Ice and Fire
-Daenerys Targaryen (daughter of Aegon IV),World of Ice and Fire
-Aenys I Targaryen,World of Ice and Fire
-Orys Baratheon,World of Ice and Fire
-Brandon the Builder,World of Ice and Fire
-Jeyne Westerling,World of Ice and Fire
-Rhllor,World of Ice and Fire
-Corlys Velaryon,World of Ice and Fire
-Rhaenys Targaryen (daughter of Aemon),World of Ice and Fire
-Mysaria,World of Ice and Fire
-Rhaena Targaryen,World of Ice and Fire
-Harwin Strong,World of Ice and Fire
-Tyland Lannister,World of Ice and Fire
-Mellos,World of Ice and Fire
-Vaemond Velaryon,World of Ice and Fire
-Laenor Velaryon,World of Ice and Fire
-Helaena Targaryen,World of Ice and Fire
-Viserys II Targaryen,World of Ice and Fire
-Erryk Cargyll,World of Ice and Fire
-Arryk Cargyll,World of Ice and Fire
-Lucerys Velaryon,World of Ice and Fire
-Joffrey Velaryon,World of Ice and Fire
-Daeron Targaryen,World of Ice and Fire
-Boremund Baratheon,World of Ice and Fire
-Arlan of Pennytree,World of Ice and Fire
-Baelor I Targaryen,World of Ice and Fire
+Aegon V Targaryen,Game of Thrones
+Rodrik Greyjoy,Game of Thrones
+Lady of House Sunderly,Game of Thrones
+Lyarra Stark,Game of Thrones
+Lyanna Stark,Game of Thrones
+Betha Blackwood,Game of Thrones
+Rhaelle Targaryen,Game of Thrones
+Delena Florent,Game of Thrones
+Imry Florent,Game of Thrones
+Alester Florent,Game of Thrones
+Melara Florent,Game of Thrones
+Lynesse Hightower,Game of Thrones
+Mariya Darry,Game of Thrones
+Amerei Frey,Game of Thrones
+Selwyn Tarth,Game of Thrones
+Brynden Tully,Game of Thrones
+Walder Frey,Game of Thrones
+Aemon Targaryen,Game of Thrones
+Gregor Clegane,Game of Thrones
+Grey Worm,Game of Thrones
+The High Sparrow,Game of Thrones
+Drogon,Game of Thrones
+Euron Greyjoy,Game of Thrones
+Aegon I Targaryen,Game of Thrones
+Rhaenys Targaryen,Game of Thrones
+Brandon Stark,Game of Thrones
+Brynden Rivers,Game of Thrones
+Nymeria Sand,Game of Thrones
+Jojen Reed,Game of Thrones
+Eddison Tollett,Game of Thrones
+Rodrik Cassel,Game of Thrones
+Tyene Sand,Game of Thrones
+Aegon IV Targaryen,Game of Thrones
+Thoros,Game of Thrones
+Daenerys Targaryen (daughter of Aegon IV),Game of Thrones
+Aenys I Targaryen,Game of Thrones
+Orys Baratheon,Game of Thrones
+Brandon the Builder,Game of Thrones
+Jeyne Westerling,Game of Thrones
+Rhllor,Game of Thrones
+Corlys Velaryon,Game of Thrones
+Rhaenys Targaryen (daughter of Aemon),Game of Thrones
+Mysaria,Game of Thrones
+Rhaena Targaryen,Game of Thrones
+Harwin Strong,Game of Thrones
+Tyland Lannister,Game of Thrones
+Mellos,Game of Thrones
+Vaemond Velaryon,Game of Thrones
+Laenor Velaryon,Game of Thrones
+Helaena Targaryen,Game of Thrones
+Viserys II Targaryen,Game of Thrones
+Erryk Cargyll,Game of Thrones
+Arryk Cargyll,Game of Thrones
+Lucerys Velaryon,Game of Thrones
+Joffrey Velaryon,Game of Thrones
+Daeron Targaryen,Game of Thrones
+Boremund Baratheon,Game of Thrones
+Arlan of Pennytree,Game of Thrones
+Baelor I Targaryen,Game of Thrones
 Fif,Granblue Fantasy
 Eahta,Granblue Fantasy
 Anila,Granblue Fantasy
@@ -20078,17 +20078,17 @@ Beverly Johnson,Grand Theft Auto 3D
 Proto Man,Mega Man
 Wally B. Feed,Monkey Island world
 Garma Zabi,Universal Century
-Daenerys Targaryen,World of Ice and Fire
-Arya Stark,World of Ice and Fire
-Jaime Lannister,World of Ice and Fire
-Sandor Clegane,World of Ice and Fire
-Varys,World of Ice and Fire
-Petyr Baelish,World of Ice and Fire
-Davos Seaworth,World of Ice and Fire
-Melisandre,World of Ice and Fire
-Tywin Lannister,World of Ice and Fire
-Ygritte,World of Ice and Fire
-Robb Stark,World of Ice and Fire
+Daenerys Targaryen,Game of Thrones
+Arya Stark,Game of Thrones
+Jaime Lannister,Game of Thrones
+Sandor Clegane,Game of Thrones
+Varys,Game of Thrones
+Petyr Baelish,Game of Thrones
+Davos Seaworth,Game of Thrones
+Melisandre,Game of Thrones
+Tywin Lannister,Game of Thrones
+Ygritte,Game of Thrones
+Robb Stark,Game of Thrones
 Decapre,Street Fighter
 Cirno,Touhou Project
 Wally,Pokémon
@@ -20189,95 +20189,95 @@ Andre,One Piece
 Vierra,Mushoku Tensei
 Porchemy,One Piece
 Coribou,One Piece
-Renly Baratheon,World of Ice and Fire
-Oberyn Martell,World of Ice and Fire
-Jon Arryn,World of Ice and Fire
-Ramsay Bolton,World of Ice and Fire
-Rhaegar Targaryen,World of Ice and Fire
-Mace Tyrell,World of Ice and Fire
-Selyse Baratheon,World of Ice and Fire
-Luthor Tyrell,World of Ice and Fire
-Olenna Tyrell,World of Ice and Fire
-Edmure Tully,World of Ice and Fire
-Robert Arryn,World of Ice and Fire
-Tytos Lannister,World of Ice and Fire
-Jeyne Lannister,World of Ice and Fire
-Quellon Greyjoy,World of Ice and Fire
-Jaehaerys II Targaryen,World of Ice and Fire
-Shaera Targaryen,World of Ice and Fire
-Ormund Baratheon,World of Ice and Fire
-Leyton Hightower,World of Ice and Fire
-Edric Storm,World of Ice and Fire
-Ryam Florent,World of Ice and Fire
-Axell Florent,World of Ice and Fire
-Randyll Tarly,World of Ice and Fire
-Melessa Tarly,World of Ice and Fire
-Talla Tarly,World of Ice and Fire
-Dickon Tarly,World of Ice and Fire
-Domeric Bolton,World of Ice and Fire
-Bethany Bolton,World of Ice and Fire
-Walda Frey,World of Ice and Fire
-Merrett Frey,World of Ice and Fire
-Lancel Lannister,World of Ice and Fire
-Elia Martell,World of Ice and Fire
-Aegon Targaryen,World of Ice and Fire
-Willas Tyrell,World of Ice and Fire
-Garlan Tyrell,World of Ice and Fire
-Genna Frey,World of Ice and Fire
-Cleos Frey,World of Ice and Fire
-Hizdahr zo Loraq,World of Ice and Fire
-Ellaria Sand,World of Ice and Fire
-Tormund Giantsbane,World of Ice and Fire
-Missandei,World of Ice and Fire
-Gendry,World of Ice and Fire
-Gilly,World of Ice and Fire
-Doran Martell,World of Ice and Fire
-Alekyne Florent,World of Ice and Fire
-Viserion,World of Ice and Fire
-Rhaegal,World of Ice and Fire
-Balerion,World of Ice and Fire
-Vhagar,World of Ice and Fire
-Three-eyed raven,World of Ice and Fire
-Hodor,World of Ice and Fire
-Visenya Targaryen,World of Ice and Fire
-Young Griff,World of Ice and Fire
-Trystane Martell,World of Ice and Fire
-Yohn Royce,World of Ice and Fire
-Osha,World of Ice and Fire
-Tycho Nestoris,World of Ice and Fire
-Alliser Thorne,World of Ice and Fire
-Daemon I Blackfyre,World of Ice and Fire
-Aegor Rivers,World of Ice and Fire
-Daeron II Targaryen,World of Ice and Fire
-Aegon II Targaryen,World of Ice and Fire
-Shiera Seastar,World of Ice and Fire
-Howland Reed,World of Ice and Fire
-Aegon III Targaryen,World of Ice and Fire
-Daemon Targaryen,World of Ice and Fire
-Maegor I Targaryen,World of Ice and Fire
-Duncan the Tall,World of Ice and Fire
-Daeron I Targaryen,World of Ice and Fire
-Greatjon Umber,World of Ice and Fire
-Smalljon Umber,World of Ice and Fire
-Walder Rivers,World of Ice and Fire
-Viserys I Targaryen,World of Ice and Fire
-Alicent Hightower,World of Ice and Fire
-Criston Cole,World of Ice and Fire
-Otto Hightower,World of Ice and Fire
-Baela Targaryen,World of Ice and Fire
-Jacaerys Velaryon,World of Ice and Fire
-Jason Lannister,World of Ice and Fire
-Harrold Westerling,World of Ice and Fire
-Aemond Targaryen,World of Ice and Fire
-Larys Strong,World of Ice and Fire
-Lyman Beesbury,World of Ice and Fire
-Lyonel Strong,World of Ice and Fire
-Laena Velaryon,World of Ice and Fire
-Borros Baratheon,World of Ice and Fire
-Baelor Targaryen,World of Ice and Fire
-Aerion Targaryen,World of Ice and Fire
-Maekar I Targaryen,World of Ice and Fire
-Addam of Hull,World of Ice and Fire
+Renly Baratheon,Game of Thrones
+Oberyn Martell,Game of Thrones
+Jon Arryn,Game of Thrones
+Ramsay Bolton,Game of Thrones
+Rhaegar Targaryen,Game of Thrones
+Mace Tyrell,Game of Thrones
+Selyse Baratheon,Game of Thrones
+Luthor Tyrell,Game of Thrones
+Olenna Tyrell,Game of Thrones
+Edmure Tully,Game of Thrones
+Robert Arryn,Game of Thrones
+Tytos Lannister,Game of Thrones
+Jeyne Lannister,Game of Thrones
+Quellon Greyjoy,Game of Thrones
+Jaehaerys II Targaryen,Game of Thrones
+Shaera Targaryen,Game of Thrones
+Ormund Baratheon,Game of Thrones
+Leyton Hightower,Game of Thrones
+Edric Storm,Game of Thrones
+Ryam Florent,Game of Thrones
+Axell Florent,Game of Thrones
+Randyll Tarly,Game of Thrones
+Melessa Tarly,Game of Thrones
+Talla Tarly,Game of Thrones
+Dickon Tarly,Game of Thrones
+Domeric Bolton,Game of Thrones
+Bethany Bolton,Game of Thrones
+Walda Frey,Game of Thrones
+Merrett Frey,Game of Thrones
+Lancel Lannister,Game of Thrones
+Elia Martell,Game of Thrones
+Aegon Targaryen,Game of Thrones
+Willas Tyrell,Game of Thrones
+Garlan Tyrell,Game of Thrones
+Genna Frey,Game of Thrones
+Cleos Frey,Game of Thrones
+Hizdahr zo Loraq,Game of Thrones
+Ellaria Sand,Game of Thrones
+Tormund Giantsbane,Game of Thrones
+Missandei,Game of Thrones
+Gendry,Game of Thrones
+Gilly,Game of Thrones
+Doran Martell,Game of Thrones
+Alekyne Florent,Game of Thrones
+Viserion,Game of Thrones
+Rhaegal,Game of Thrones
+Balerion,Game of Thrones
+Vhagar,Game of Thrones
+Three-eyed raven,Game of Thrones
+Hodor,Game of Thrones
+Visenya Targaryen,Game of Thrones
+Young Griff,Game of Thrones
+Trystane Martell,Game of Thrones
+Yohn Royce,Game of Thrones
+Osha,Game of Thrones
+Tycho Nestoris,Game of Thrones
+Alliser Thorne,Game of Thrones
+Daemon I Blackfyre,Game of Thrones
+Aegor Rivers,Game of Thrones
+Daeron II Targaryen,Game of Thrones
+Aegon II Targaryen,Game of Thrones
+Shiera Seastar,Game of Thrones
+Howland Reed,Game of Thrones
+Aegon III Targaryen,Game of Thrones
+Daemon Targaryen,Game of Thrones
+Maegor I Targaryen,Game of Thrones
+Duncan the Tall,Game of Thrones
+Daeron I Targaryen,Game of Thrones
+Greatjon Umber,Game of Thrones
+Smalljon Umber,Game of Thrones
+Walder Rivers,Game of Thrones
+Viserys I Targaryen,Game of Thrones
+Alicent Hightower,Game of Thrones
+Criston Cole,Game of Thrones
+Otto Hightower,Game of Thrones
+Baela Targaryen,Game of Thrones
+Jacaerys Velaryon,Game of Thrones
+Jason Lannister,Game of Thrones
+Harrold Westerling,Game of Thrones
+Aemond Targaryen,Game of Thrones
+Larys Strong,Game of Thrones
+Lyman Beesbury,Game of Thrones
+Lyonel Strong,Game of Thrones
+Laena Velaryon,Game of Thrones
+Borros Baratheon,Game of Thrones
+Baelor Targaryen,Game of Thrones
+Aerion Targaryen,Game of Thrones
+Maekar I Targaryen,Game of Thrones
+Addam of Hull,Game of Thrones
 Gollum,Tolkien
 Frodo Baggins,Tolkien
 Samwise Gamgee,Tolkien
@@ -20747,35 +20747,35 @@ Juggernaut,Marvel
 Juggernaut,Earth-616
 Shaggy Rogers,Scooby Doo
 Scooby-Doo,Scooby Doo
-Eighth Doctor,Whoniverse
+Eighth Doctor,Doctor Who
 Yogi Bear,Yogi Bear
 Dash Parr,The Incredibles
 Desaad,DC
-Second Doctor,Whoniverse
+Second Doctor,Doctor Who
 Boo-Boo Bear,Yogi Bear
-Fifth Doctor,Whoniverse
-Seventh Doctor,Whoniverse
-Sixth Doctor,Whoniverse
-Third Doctor,Whoniverse
-Tenth Doctor,Whoniverse
-Fourth Doctor,Whoniverse
-Ninth Doctor,Whoniverse
-Eleventh Doctor,Whoniverse
+Fifth Doctor,Doctor Who
+Seventh Doctor,Doctor Who
+Sixth Doctor,Doctor Who
+Third Doctor,Doctor Who
+Tenth Doctor,Doctor Who
+Fourth Doctor,Doctor Who
+Ninth Doctor,Doctor Who
+Eleventh Doctor,Doctor Who
 Jack-Jack Parr,The Incredibles
-First Doctor,Whoniverse
+First Doctor,Doctor Who
 Elastigirl,The Incredibles
 Violet Parr,The Incredibles
 Jimmy Neutron,Jimmy Neutron
 The Tar Monster,Scooby Doo
 Frozone,The Incredibles
-Twelfth Doctor,Whoniverse
-War Doctor,Whoniverse
+Twelfth Doctor,Doctor Who
+War Doctor,Doctor Who
 Krushauer,The Incredibles
 Groot,Marvel Cinematic
 Rocket,Marvel Cinematic
 Bruce Banner,Marvel Cinematic
 Ultron,Marvel Cinematic
-Thirteenth Doctor,Whoniverse
+Thirteenth Doctor,Doctor Who
 Gazerbeam,The Incredibles
 Thunderhead,The Incredibles
 Stratogale,The Incredibles
@@ -20786,7 +20786,7 @@ Calvin Swanwick,DC Extended
 Steppenwolf,DC Extended
 Dee Dee Skyes,Scooby Doo
 Dee Dee Skyes,Hanna-Barbera
-Fugitive Doctor,Whoniverse
+Fugitive Doctor,Doctor Who
 Godzilla,MonsterVerse
 Migo,Smallfoot
 Percy Patterson,Smallfoot
@@ -20804,7 +20804,7 @@ Sarabi,The Lion King
 Nala,The Lion King
 Cerberus,Scooby Doo
 Curt Connors,Earth-120703
-Fifteenth Doctor,Whoniverse
+Fifteenth Doctor,Doctor Who
 Hestia,Is It Wrong to Try to Pick Up Girls in a Dungeon?
 General Blue,Dragon Ball
 Levi Ackerman,Attack on Titan
@@ -20965,22 +20965,22 @@ Satyr,Granblue Fantasy
 Isaac,The Last of Us
 Rat King,The Last of Us
 Nick,The Last of Us
-Sandor Clegane,World of Ice and Fire
-Ygritte,World of Ice and Fire
-Robb Stark,World of Ice and Fire
-Jon Arryn,World of Ice and Fire
-Olenna Tyrell,World of Ice and Fire
-Edmure Tully,World of Ice and Fire
-Robert Arryn,World of Ice and Fire
-Melessa Tarly,World of Ice and Fire
-Walda Frey,World of Ice and Fire
-Hizdahr zo Loraq,World of Ice and Fire
-Ellaria Sand,World of Ice and Fire
-Tormund Giantsbane,World of Ice and Fire
-Missandei,World of Ice and Fire
-Viserion,World of Ice and Fire
-Yohn Royce,World of Ice and Fire
-Osha,World of Ice and Fire
+Sandor Clegane,Game of Thrones
+Ygritte,Game of Thrones
+Robb Stark,Game of Thrones
+Jon Arryn,Game of Thrones
+Olenna Tyrell,Game of Thrones
+Edmure Tully,Game of Thrones
+Robert Arryn,Game of Thrones
+Melessa Tarly,Game of Thrones
+Walda Frey,Game of Thrones
+Hizdahr zo Loraq,Game of Thrones
+Ellaria Sand,Game of Thrones
+Tormund Giantsbane,Game of Thrones
+Missandei,Game of Thrones
+Viserion,Game of Thrones
+Yohn Royce,Game of Thrones
+Osha,Game of Thrones
 Nea Karlsson,Dead by Daylight
 Feng Min,Dead by Daylight
 Mr. House,Fallout
@@ -23562,7 +23562,7 @@ Pan,Dragon Ball
 Marrina Smallwood,Marvel
 Marrina Smallwood,Earth-616
 Gotenks,Dragon Ball
-River Song,Whoniverse
+River Song,Doctor Who
 Naga Sadow,Star Wars
 Cortana,Halo
 Abigail Brand,Marvel
@@ -23593,7 +23593,7 @@ Goku Jr.,Dragon Ball
 KEhleyr,Star Trek
 Jon Lane Kent,DC
 Aigis,Persona
-Ashildr,Whoniverse
+Ashildr,Doctor Who
 Jon Kent,DC
 Android 21,Dragon Ball
 Crush,DC
@@ -23691,7 +23691,7 @@ Maugrim,Narnia
 Detective Casey,Mickey Mouse
 Q2663068,Fabeltjesland
 Shadowfax,Tolkien
-K9,Whoniverse
+K9,Doctor Who
 Lil Bad Wolf,Forest
 Yabba Doo,Scooby Doo
 Glory-Bee,Mickey Mouse
@@ -27273,7 +27273,7 @@ Pilaf,Dragon Ball
 Zant,of The Legend of Zelda
 Magohamoth,World of Troy
 Mordred Deschain,Multiverse
-Mara,Whoniverse
+Mara,Doctor Who
 Wrackspurt,Harry Potter
 Demogorgon,Stranger Things
 |||,SCP
@@ -28220,7 +28220,7 @@ Lyla Lee,Donald Duck
 Q3880872,Donald Duck
 Ignotus Peverell,Harry Potter
 Hourman,DC
-Kamelion,Whoniverse
+Kamelion,Doctor Who
 Primus,Marvel
 Red Volcano,DC
 Arthur Weasley,Harry Potter
@@ -28742,7 +28742,7 @@ Nala Se,Star Wars
 Onaconda Farr,Star Wars
 Onaconda Farr,Star Wars
 Lady Salmakia,His Dark Materials
-Madame Vastra,Whoniverse
+Madame Vastra,Doctor Who
 Ungrim Ironfist,Warhammer Fantasy
 Eitri,Marvel
 Brok,God of War
@@ -29133,7 +29133,7 @@ Heimlich,A Bug's Life
 TPrynn,Star Trek
 Brick Bradley,Teenage Mutant Ninja Turtles
 Oh,Star Trek
-Ood Sigma,Whoniverse
+Ood Sigma,Doctor Who
 Alura Zor-El,Arrowverse
 VLas,Star Trek
 Reign,DC
@@ -29240,10 +29240,10 @@ Jessie,Pokémon
 General Revil,Universal Century
 Caribou,One Piece
 Arlong,One Piece
-The Doctor,Whoniverse
+The Doctor,Doctor Who
 Wonder Woman,DC
 Tealc,Stargate
-Susan Foreman,Whoniverse
+Susan Foreman,Doctor Who
 Jadzia Dax,Star Trek
 Nerzhul,Warcraft
 Nerzhul,Warcraft
@@ -29265,7 +29265,7 @@ Kira Nerys,Star Trek
 King Bob-omb,Super Mario
 Bardock,Dragon Ball
 Raditz,Dragon Ball
-The Master,Whoniverse
+The Master,Doctor Who
 Paragon,The Realm of the Elderlings
 Quark,Star Trek
 Vivacia,The Realm of the Elderlings
@@ -29275,7 +29275,7 @@ Antiope,DC
 Nubia,DC
 Dreyauc,Stargate
 Kira Meru,Star Trek
-Meddling Monk,Whoniverse
+Meddling Monk,Doctor Who
 Nog,Star Trek
 Q3418024,Stargate
 Rom,Star Trek
@@ -29289,17 +29289,17 @@ Kai Opaka,Star Trek
 Leeta,Star Trek
 Li Nalas,Star Trek
 Orana,DC
-Omega,Whoniverse
+Omega,Doctor Who
 Grace Choi,DC
-Iris Wildthyme,Whoniverse
-Jenny,Whoniverse
+Iris Wildthyme,Doctor Who
+Jenny,Doctor Who
 Cairne Bloodhoof,Warcraft
 Krang,Marvel
 Mala,DC
 Winn Adami,Star Trek
 Philippus,DC
-Rassilon,Whoniverse
-Romana,Whoniverse
+Rassilon,Doctor Who
+Romana,Doctor Who
 Ryac,Stargate
 Zek,Star Trek
 Bratac,Stargate
@@ -29315,7 +29315,7 @@ Ishka,Star Trek
 Prostetnic Vogon Jeltz,The Hitchhiker's Guide to the Galaxy
 Q30892889,Warcraft
 Falstad Wildhammer,Warcraft
-The General,Whoniverse
+The General,Doctor Who
 Wonder Woman,DC
 Brunt,Star Trek
 Wonder Woman,DC Extended
@@ -29474,7 +29474,7 @@ Skurge,Marvel Cinematic
 Delphini Riddle,Harry Potter
 Porpentina Goldstein,Harry Potter
 Queenie Goldstein,Harry Potter
-Night King,World of Ice and Fire
+Night King,Game of Thrones
 Actor Sif,Marvel Cinematic
 Credence Barebone,Harry Potter
 Tyr,Marvel Cinematic
@@ -29948,7 +29948,7 @@ Murrue Ramius,Cosmic Era
 Jake Muller,Resident Evil
 Airen Cracken,Star Wars
 Alistair Smythe,Marvel
-Andy Davidson,Whoniverse
+Andy Davidson,Doctor Who
 Angelica,Pirates of the Caribbean
 Aqua,Kingdom Hearts
 Lionet Ban,Saint Seiya
@@ -30043,11 +30043,11 @@ Eso,Jujutsu Kaisen
 Choso,Jujutsu Kaisen
 Tamae Okamine,Date a Live
 Charal,Star Wars
-Davos Seaworth,World of Ice and Fire
+Davos Seaworth,Game of Thrones
 Johnny Bravo,Johnny Bravo
 Joseph Schwartz,Foundation
 Human Target,DC
-Khal Drogo,World of Ice and Fire
+Khal Drogo,Game of Thrones
 Kren Blista-Vanee,Star Wars
 Hakan Brakan,Sune
 I Ching,DC
@@ -30503,7 +30503,7 @@ Askeladden,Nordic folklore
 A. J. Chegwidden,NCIS
 Alexandre LeRoi,DC
 Andrew Quick,Multiverse
-Anji Kapoor,Whoniverse
+Anji Kapoor,Doctor Who
 Anna Fortune,DC
 Madman,Marvel
 Moire,Amber
@@ -30970,7 +30970,7 @@ Mr. Granger,Harry Potter
 Ithaqua,Cthulhu Mythos
 Zsinj,Star Wars
 Fistandantilus,Dragonlance
-Lord John Roxton,Whoniverse
+Lord John Roxton,Doctor Who
 Margaret White,Multiverse
 Chunyu Dao,The Romance of the Three Kingdoms
 Pang Wanchun,Water Margin
@@ -31471,7 +31471,7 @@ La Encantadora,DC
 Lao Ma,Xenaverse
 Fistandantilus,Dragonlance
 Nakoruru,The King of Fighters
-Lord John Roxton,Whoniverse
+Lord John Roxton,Doctor Who
 Margaret White,Multiverse
 Chunyu Dao,The Romance of the Three Kingdoms
 Maya,DC
@@ -32142,7 +32142,7 @@ Mikoto Uchiha,Naruto
 John Parry,His Dark Materials
 Joe Carey,Star Trek
 David Mason,Call of Duty
-Margaery Tyrell,World of Ice and Fire
+Margaery Tyrell,Game of Thrones
 Humpty Dumpty,DC
 Jerry Lewis,Totally Spies!
 Mags,The Hunger Games
@@ -32168,16 +32168,16 @@ Pollux,The Hunger Games
 Finn,Star Wars
 Marcus Wright,Terminator
 James Gordon,Gotham
-Joanna Lannister,World of Ice and Fire
-Steffon Baratheon,World of Ice and Fire
+Joanna Lannister,Game of Thrones
+Steffon Baratheon,Game of Thrones
 General Gabriel,Marvel Cinematic
 Jimmy,Marvel Cinematic
-Kevan Lannister,World of Ice and Fire
-Maron Greyjoy,World of Ice and Fire
-Rickard Stark,World of Ice and Fire
-Benjen Stark,World of Ice and Fire
-Rhea Florent,World of Ice and Fire
-Emmon Frey,World of Ice and Fire
+Kevan Lannister,Game of Thrones
+Maron Greyjoy,Game of Thrones
+Rickard Stark,Game of Thrones
+Benjen Stark,Game of Thrones
+Rhea Florent,Game of Thrones
+Emmon Frey,Game of Thrones
 Michelle Jones,Marvel Cinematic
 Pepper Potts,Marvel Cinematic
 Natasha Romanoff,Marvel Cinematic
@@ -32191,7 +32191,7 @@ Noa Kaiba,Yu-Gi-Oh!
 Q25430740,Q104438515
 Tommy Monaghan,DC
 Phineas Mason,Marvel Cinematic
-Meera Reed,World of Ice and Fire
+Meera Reed,Game of Thrones
 Cynthia Dietrich,Alien
 Hyrum Graff,Ender's Game
 Mazer Rackham,Ender's Game
@@ -32432,7 +32432,7 @@ Q18679904,Salatut elämät
 Master of Yimsha,Robert E. Howard's fictional
 Arno Dorian,Assassin's Creed
 Q18760045,Salatut elämät
-Loras Tyrell,World of Ice and Fire
+Loras Tyrell,Game of Thrones
 Hot Coldman,Metal Gear
 Strangelove,Metal Gear
 Zafar Idinarohk,86
@@ -32751,7 +32751,7 @@ Polychrome,Oz
 Tevildo,Tolkien
 Sue Snell,Multiverse
 Theresa Wiggin,Ender's Game
-Timewyrm,Whoniverse
+Timewyrm,Doctor Who
 Trot,Oz
 Alviarin Freidhen,The Wheel of Time
 Vic Fontaine,Star Trek
@@ -33410,7 +33410,7 @@ Ginormica,Monsters vs. Aliens
 Dawn Lerner,The Walking Dead Television
 Tanya Spears,DC
 Dollar Bill,DC
-Victarion Greyjoy,World of Ice and Fire
+Victarion Greyjoy,Game of Thrones
 Q20254017,Salatut elämät
 Sean Hawk,Star Trek
 Mace Towani,Star Wars
@@ -33418,7 +33418,7 @@ Heinz Kruger,Marvel
 Heinz Kruger,Earth-616
 Mrs. Davis,Toy Story
 Cui Ye,Water Margin
-Arianne Martell,World of Ice and Fire
+Arianne Martell,Game of Thrones
 Sheana,Dune
 Robert Epps,Transformers multiverse
 Q21043806,Salatut elämät
@@ -34152,7 +34152,7 @@ Hiddukel,Dragonlance
 Wu Dalang,Water Margin
 Patchwork Girl,Oz
 Peter Sam,Thomas & Friends
-Pythia of Gallifrey,Whoniverse
+Pythia of Gallifrey,Doctor Who
 Reverend Mother Ramallo,Dune
 Irek Ismaren,Star Wars
 Lishan Laomu,Journey to the West
@@ -35070,8 +35070,8 @@ Merlin,Shrek
 Rapunzel,Shrek
 Doris the Ugly Stepsister,Shrek
 Jae,Star Trek
-Obara Sand,World of Ice and Fire
-Rhaenyra Targaryen,World of Ice and Fire
+Obara Sand,Game of Thrones
+Rhaenyra Targaryen,Game of Thrones
 Chae Lim,The King of Fighters
 Suwako Moriya,Touhou Project
 Aquamarine Hoshino,Oshi no Ko
@@ -35330,13 +35330,13 @@ Zhangshi of Prince Beijing Mansion,Dream of the Red Chamber
 Zhou Mama,Dream of the Red Chamber
 Ripper,Harry Potter
 Banhe,Dream of the Red Chamber
-Jaehaerys I Targaryen,World of Ice and Fire
-Jeyne Poole,World of Ice and Fire
+Jaehaerys I Targaryen,Game of Thrones
+Jeyne Poole,Game of Thrones
 Captain Hook,Shrek
 Rebecca,One Piece
 Dick Hardly,The Powerpuff Girls
 Aaron Cash,DC
-Alysanne Targaryen,World of Ice and Fire
+Alysanne Targaryen,Game of Thrones
 Jesse,The Last of Us
 Bernard Renault,Twin Peaks universum
 Medic,Team Fortress
@@ -36158,7 +36158,7 @@ Chen Da,Water Margin
 Merope Gaunt,Harry Potter
 Du Xing,Water Margin
 Ed Kealty,Ryanverse
-Emily Blandish,Whoniverse
+Emily Blandish,Doctor Who
 Tulzscha,Cthulhu Mythos
 Q5790797,Discworld
 Crysania Tarinius,Dragonlance
@@ -36168,7 +36168,7 @@ Reyna Avila Ramirez-Arellano,Camp Half-Blood chronicles
 Szass Tam,Forgotten Realms
 Szass Tam,Dungeons & Dragons
 Sadie Kane,Camp Half-Blood chronicles
-Iris Wildthyme,Whoniverse
+Iris Wildthyme,Doctor Who
 Jamie De Curry,Multiverse
 UL,fictional  of The Belgariad
 Zhu Gui,Water Margin
@@ -36258,7 +36258,7 @@ Jang La,Teenage Mutant Ninja Turtles
 Wally Cleaver,Teenage Mutant Ninja Turtles
 Tony Vivaldi,Teenage Mutant Ninja Turtles
 Pinky McFingers,Teenage Mutant Ninja Turtles
-Tanya Adeola,Whoniverse
+Tanya Adeola,Doctor Who
 Sonia,Pokémon
 Bugs Bunny,Space Jam
 Bugs Bunny,Looney Tunes
@@ -36434,7 +36434,7 @@ Mr. Tumnus,Narnia
 Asmodean,The Wheel of Time
 Kitiara uth Matar,Dragonlance
 Agelmar Jagad,The Wheel of Time
-Trix MacMillan,Whoniverse
+Trix MacMillan,Doctor Who
 Una Persson,Multiverse
 Couladin,The Wheel of Time
 Bria Tharen,Star Wars
@@ -37327,7 +37327,7 @@ Ellie Roberts,Earth-616
 Head of Yuntai Guan,Water Margin
 Joseph MacTaggert,Marvel
 Joseph MacTaggert,Earth-616
-Mellos,World of Ice and Fire
+Mellos,Game of Thrones
 Carl Maddicks,Marvel
 Carl Maddicks,Earth-616
 wife of An Daoquan,Water Margin
@@ -37687,7 +37687,7 @@ Patricia Pigg,Mickey Mouse
 Marshal Mouse,Mickey Mouse
 Millie,Mickey Mouse
 Bela Talbot,Supernatural
-Martha Jones,Whoniverse
+Martha Jones,Doctor Who
 Chibi Chibi,Sailor Moon
 Tisroc,Narnia
 Cleveland Brown Jr.,Family Guy
@@ -37750,7 +37750,7 @@ Puppet Master,Marvel
 Puppet Master,Earth-616
 Mu Guiying,The Generals of the Yang Family
 Jugo,Naruto
-Theon Greyjoy,World of Ice and Fire
+Theon Greyjoy,Game of Thrones
 Lily Baker,Supernatural
 Lin Chong,Water Margin
 Chi-Chi,Dragon Ball
@@ -37998,12 +37998,12 @@ Kusunoki,Lycoris Recoil
 Citra Talugmai,Far Cry
 Ajay Ghale,Far Cry
 Arisa Takamizawa,Kokuhaku Jikkō Iinkai
-Arryk Cargyll,World of Ice and Fire
-Lucerys Velaryon,World of Ice and Fire
+Arryk Cargyll,Game of Thrones
+Lucerys Velaryon,Game of Thrones
 Lu Hu,Jin Ping Mei
 Huang Yu,Jin Ping Mei
 Zhao Hongdao,Jin Ping Mei
-Baelor I Targaryen,World of Ice and Fire
+Baelor I Targaryen,Game of Thrones
 Machvise,One Piece
 Husband of Miss Zhou,Jin Ping Mei
 wife of Tongpan Cai,Jin Ping Mei
@@ -38073,7 +38073,7 @@ Berelain,The Wheel of Time
 Caelia,Arthurian
 Caius Prenlomnibus,Asterix
 Casey Jones,Teenage Mutant Ninja Turtles
-Cassandra,Whoniverse
+Cassandra,Doctor Who
 Cat Grant,DC
 Willie Lumpkin,Marvel
 Willie Lumpkin,Earth-616
@@ -38085,7 +38085,7 @@ Elsa Bloodstone,Marvel
 Elsa Bloodstone,Earth-616
 Ernest de Restaud,The human comedy
 Ernst Ellert,Perryverse
-Esther Drummond,Whoniverse
+Esther Drummond,Doctor Who
 Flore Brazier,The human comedy
 Frostbite,Danny Phantom
 Kate Brewster,Terminator
@@ -38745,7 +38745,7 @@ Red Shift,Marvel
 King Lac,Arthurian
 Ismo Laitela,Salatut elämät
 Sam Manson,Danny Phantom
-Sansa Stark,World of Ice and Fire
+Sansa Stark,Game of Thrones
 Slyde,Marvel
 Slyde,Earth-616
 Sulin,The Wheel of Time
@@ -38967,7 +38967,7 @@ Konatsu,Ranma ½
 Susan Pevensie,Narnia
 Mona Simpson,The Simpsons
 Dunno,Q4145045
-Clara Oswald,Whoniverse
+Clara Oswald,Doctor Who
 Rita Bennett,Dexter
 Bamm-Bamm Rubble,The Flintstones
 Silver Sable,Marvel
@@ -39170,7 +39170,7 @@ Murong Lie,The Romance of the Three Kingdoms
 Wang Hou,The Romance of the Three Kingdoms
 Xun Zheng,The Romance of the Three Kingdoms
 Daisuke Aramaki,World of Ghost in the Shell
-Samwell Tarly,World of Ice and Fire
+Samwell Tarly,Game of Thrones
 Q11861343,Salatut elämät
 Q11881170,Salatut elämät
 Ulla Taalasmaa,Salatut elämät
@@ -39793,14 +39793,14 @@ Striga,Castlevania
 Professor Pericles,Scooby Doo
 Tang Shen,Teenage Mutant Ninja Turtles
 Mrs. Dinkley,Scooby Doo
-Stannis Baratheon,World of Ice and Fire
+Stannis Baratheon,Game of Thrones
 Farder Coram,His Dark Materials
 Roger Parslow,His Dark Materials
 Ge Yong,The Romance of the Three Kingdoms
 Yue,World of Avatar
 Mei Terumi,Naruto
-Rickon Stark,World of Ice and Fire
-Viserys Targaryen,World of Ice and Fire
+Rickon Stark,Game of Thrones
+Viserys Targaryen,Game of Thrones
 "Beatrijs ""Bieke"" Crucke",F.C. De Kampioenen
 Deacon Blackfire,DC
 Frozone,The Incredibles
@@ -39819,8 +39819,8 @@ Daisuke Kosaka,Oreimo
 Ronia the Robbers Daughter,"Ronia, the Robber's Daughter"
 Elias Vikstedt,Salatut elämät
 Mr. Panucci,Futuramaverse
-Myrcella Baratheon,World of Ice and Fire
-Asha Greyjoy,World of Ice and Fire
+Myrcella Baratheon,Game of Thrones
+Asha Greyjoy,Game of Thrones
 Helena Sandsmark,DC
 Alysia Yeoh,DC
 Tyler Lockwood,The Vampire Diaries
@@ -39830,7 +39830,7 @@ Kevin Tran,Supernatural
 Jia Daishan,Dream of the Red Chamber
 Cobra,Fairy Tail
 Levy McGarden,Fairy Tail
-Kate Stewart,Whoniverse
+Kate Stewart,Doctor Who
 Candy Suxxx,Grand Theft Auto 3D
 Lieutenant Jackson,The Hunger Games
 Poe Dameron,Star Wars
@@ -40277,24 +40277,24 @@ Hammer,Earth-616
 Darim Ibn-LaAhad,Assassin's Creed
 Grant,Pokémon
 Parker Luciani,Resident Evil
-Courtney Woods,Whoniverse
-Hoster Tully,World of Ice and Fire
-Balon Greyjoy,World of Ice and Fire
-Minisa Tully,World of Ice and Fire
-Aegon V Targaryen,World of Ice and Fire
+Courtney Woods,Doctor Who
+Hoster Tully,Game of Thrones
+Balon Greyjoy,Game of Thrones
+Minisa Tully,Game of Thrones
+Aegon V Targaryen,Game of Thrones
 William Ginter Riva,Marvel Cinematic
 Omar,Marvel Cinematic
 Colonel Craig,Marvel Cinematic
-Lady of House Sunderly,World of Ice and Fire
-Lyarra Stark,World of Ice and Fire
-Rhaelle Targaryen,World of Ice and Fire
-Alester Florent,World of Ice and Fire
-Lynesse Hightower,World of Ice and Fire
-Mariya Darry,World of Ice and Fire
-Amerei Frey,World of Ice and Fire
+Lady of House Sunderly,Game of Thrones
+Lyarra Stark,Game of Thrones
+Rhaelle Targaryen,Game of Thrones
+Alester Florent,Game of Thrones
+Lynesse Hightower,Game of Thrones
+Mariya Darry,Game of Thrones
+Amerei Frey,Game of Thrones
 Martina,Marvel Cinematic
 Stanley,Marvel Cinematic
-Walder Frey,World of Ice and Fire
+Walder Frey,Game of Thrones
 Wanda Maximoff,Marvel Cinematic
 TChaka,Marvel
 Scott Lang,Marvel Cinematic
@@ -41284,12 +41284,12 @@ Daniel Elkins,Supernatural
 Uzumaki Himawari,Naruto
 Nakia,Marvel Cinematic
 Dr. Broussard,Marvel Cinematic
-Gregor Clegane,World of Ice and Fire
+Gregor Clegane,Game of Thrones
 Joan Lambert,Alien
 Gilbert Kane,Alien
 Al Apone,Alien
 Walter Golic,Alien
-The High Sparrow,World of Ice and Fire
+The High Sparrow,Game of Thrones
 Cassie Lang,Marvel Cinematic
 Stromboli,Disney
 Lampwick,Disney
@@ -41782,16 +41782,16 @@ Luo Zhenren,Water Margin
 Ma Lin,Water Margin
 Huang Kui,The Romance of the Three Kingdoms
 Yellow Wind Demon,Journey to the West
-Rhaenys Targaryen,World of Ice and Fire
+Rhaenys Targaryen,Game of Thrones
 Sleeping Beauty,Shrek
-Brandon Stark,World of Ice and Fire
-Brynden Rivers,World of Ice and Fire
-Nymeria Sand,World of Ice and Fire
+Brandon Stark,Game of Thrones
+Brynden Rivers,Game of Thrones
+Nymeria Sand,Game of Thrones
 Major Glory,The Powerpuff Girls
 Major Glory,Dexter's Laboratory
-Thoros,World of Ice and Fire
+Thoros,Game of Thrones
 Evelyn Deavor,The Incredibles
-Orys Baratheon,World of Ice and Fire
+Orys Baratheon,Game of Thrones
 Wan,World of Avatar
 Aya of Alexandria,Assassin's Creed
 Kyros,One Piece
@@ -42594,7 +42594,7 @@ Dong Guifei,The Romance of the Three Kingdoms
 Yuan Tan,The Romance of the Three Kingdoms
 Liu Yan,The Romance of the Three Kingdoms
 Miss Pauling,Team Fortress
-Jeyne Westerling,World of Ice and Fire
+Jeyne Westerling,Game of Thrones
 Mrs. Nahasapeemapetilon,The Simpsons
 Bilious Hale,Team Fortress
 Sarah,The Last of Us
@@ -43817,7 +43817,7 @@ Baxter Stockmans housemaid,Teenage Mutant Ninja Turtles
 Baxter Stockboy,Teenage Mutant Ninja Turtles
 Efraim von Trippelhatt,Selma
 Cai Qing,Water Margin
-Captain John Hart,Whoniverse
+Captain John Hart,Doctor Who
 Carl Grimes,The Walking Dead
 Comet,DC
 Cyrene,Xenaverse
@@ -44333,9 +44333,9 @@ Kirk Marston,Marvel
 Kirk Marston,Earth-616
 Zeng Suo,Water Margin
 Zeng Sheng,Water Margin
-Rhaena Targaryen,World of Ice and Fire
-Harwin Strong,World of Ice and Fire
-Tyland Lannister,World of Ice and Fire
+Rhaena Targaryen,Game of Thrones
+Harwin Strong,Game of Thrones
+Tyland Lannister,Game of Thrones
 Wen Da,Water Margin
 Tong Guan,Water Margin
 Di Taigong,Water Margin
@@ -44378,10 +44378,10 @@ Igniz,The King of Fighters
 Eric Koenig,Marvel
 Flamingo,DC
 Gong Wang,Water Margin
-Grace Holloway,Whoniverse
+Grace Holloway,Doctor Who
 Silhouette,DC
 Edward Ashford,Resident Evil
-Hex Schofield,Whoniverse
+Hex Schofield,Doctor Who
 Carly Shay,iCarly
 Sidrona Diath,Star Wars
 Sam Scudder,DC
@@ -44404,7 +44404,7 @@ Wrenga Jixton,Star Wars
 Wuyan Guang,Water Margin
 Zhang Pu,The Romance of the Three Kingdoms
 Xu Kang,The Romance of the Three Kingdoms
-Brienne of Tarth,World of Ice and Fire
+Brienne of Tarth,Game of Thrones
 Carolyn Lam,Stargate
 Enrico Marini,Resident Evil
 Hitomi,Dead or Alive
@@ -44453,7 +44453,7 @@ Debra Morgan,Dexter
 Marty McFly,Hill Valley fictive
 Agatha Harkness,Marvel Cinematic
 Agatha Harkness,Marvel
-Jamie McCrimmon,Whoniverse
+Jamie McCrimmon,Doctor Who
 Konohamaru Sarutobi,Naruto
 Rand alThor,The Wheel of Time
 Megan Parker,Drake & Josh
@@ -44463,7 +44463,7 @@ Ted Franklin,iCarly
 Hank Landry,Stargate
 Victor Vance,Grand Theft Auto 3D
 Aravis,Narnia
-Barbara Wright,Whoniverse
+Barbara Wright,Doctor Who
 Zoom,DC
 Shredder,Teenage Mutant Ninja Turtles
 Negative Man,DC
@@ -44888,7 +44888,7 @@ Gino Terwilliger,The Simpsons
 Juni,Street Fighter
 Ollie Williams,Family Guy
 Kyoshi,World of Avatar
-Jeor Mormont,World of Ice and Fire
+Jeor Mormont,Game of Thrones
 Professor Milo,DC
 Alfred Lanning,Foundation
 Dennis Nedry,Jurassic Park
@@ -44926,7 +44926,7 @@ Frederick Foswell,Earth-616
 Laszlo Carreidas,Tintin
 Tasha Yar,Star Trek
 Agent K,Men in Black
-Tyrion Lannister,World of Ice and Fire
+Tyrion Lannister,Game of Thrones
 Sora,Kingdom Hearts
 Doc Samson,Marvel
 Whistle,DC
@@ -44972,7 +44972,7 @@ Buddy,Looney Tunes
 Chuckie Finster,Rugrats
 Chemistro,Marvel
 Chevalier de Valois,The human comedy
-Donna Noble,Whoniverse
+Donna Noble,Doctor Who
 Eddie Dean,Multiverse
 Comtesse de Listomere-Landon,The human comedy
 Michael Akins,DC
@@ -45007,7 +45007,7 @@ Hinako Shijou,The King of Fighters
 Hugh Jones,Marvel
 Kenny Tennyson,Ben 10
 Luther West,Resident Evil
-Mance Rayder,World of Ice and Fire
+Mance Rayder,Game of Thrones
 Tito,Robert E. Howard's fictional
 The Governor,The Walking Dead
 Tanya Adams,Command & Conquer
@@ -45100,18 +45100,18 @@ Brad Carbunkle,My Life as a Teenage Robot
 Captain Blue SquarePants,SpongeBob SquarePants
 Donna Troy,DC
 Madame des Grassins,The human comedy
-Maria Jackson,Whoniverse
+Maria Jackson,Doctor Who
 King Snake,DC
 Maitre Derville,The human comedy
 Octa Butler,Dune
 Peter Pan,Disney
 Skein,Marvel
-Polly,Whoniverse
+Polly,Doctor Who
 Caesarion,Asterix
 Raoul Nathan,The human comedy
 Arymilla Marne,The Wheel of Time
 Rhuarc,The Wheel of Time
-Rhys Williams,Whoniverse
+Rhys Williams,Doctor Who
 Riza Hawkeye,Fullmetal Alchemist
 Roger Durling,Ryanverse
 Satele Shan,Star Wars
@@ -45124,13 +45124,13 @@ Lobot,Star Wars
 Sturgeon,Star Trek
 Jessica Lovejoy,The Simpsons
 Sunny Emmerich,Metal Gear
-Toshiko Sato,Whoniverse
+Toshiko Sato,Doctor Who
 Cobalt Blue,DC
 Hath-Set,DC
 Shriek,DC Animated
 Arcanna,Marvel
 Arcanna,Earth-712
-Vicki,Whoniverse
+Vicki,Doctor Who
 Wyatt Wingfoot,Marvel
 Wyatt Wingfoot,Earth-616
 Adelorna Bastine,The Wheel of Time
@@ -45159,10 +45159,10 @@ Mordenkainen,Greyhawk
 Ninjak,Valiant
 Raza,Marvel Cinematic
 Amira Ahmed,Marvel Cinematic
-Rodrik Greyjoy,World of Ice and Fire
-Delena Florent,World of Ice and Fire
-Selwyn Tarth,World of Ice and Fire
-Brynden Tully,World of Ice and Fire
+Rodrik Greyjoy,Game of Thrones
+Delena Florent,Game of Thrones
+Selwyn Tarth,Game of Thrones
+Brynden Tully,Game of Thrones
 Nick Fury,Marvel Cinematic
 Senator Stern,Marvel Cinematic
 Bucky Barnes,Marvel Cinematic
@@ -45176,7 +45176,7 @@ Anton Vanko,Marvel Cinematic
 Chess Roberts,Marvel Cinematic
 Noctis Lucis Caelum,Final Fantasy
 Maggie Lang,Marvel Cinematic
-Aemon Targaryen,World of Ice and Fire
+Aemon Targaryen,Game of Thrones
 Yogi Bizerk,DC
 Anais La Valette,The Witcher
 Hedwig of Malleore,The Witcher
@@ -45197,11 +45197,11 @@ Tenka Izumo,Chained Soldier
 Hina Setoguchi,Kokuhaku Jikkō Iinkai
 Enomoto Kotarou,Kokuhaku Jikkō Iinkai
 Filip Binder,The Teacher
-Erryk Cargyll,World of Ice and Fire
+Erryk Cargyll,Game of Thrones
 Maisie Lockwood,Jurassic Park
 daughter of Dong Guan,Jin Ping Mei
 Dong Guan,Jin Ping Mei
-Boremund Baratheon,World of Ice and Fire
+Boremund Baratheon,Game of Thrones
 deceased wife of Jiang Zhushan,Jin Ping Mei
 Rebecca,Cyberpunk
 Q114101911,Moomin world
@@ -45441,7 +45441,7 @@ Jonathan Kent,DC
 Sara Lance,Arrowverse
 Knightfall,DC
 Forrest Gates,Buffyverse
-Danny Pink,Whoniverse
+Danny Pink,Doctor Who
 Leah Clearwater,Twilight
 Mai,World of Avatar
 Commander Gree,Star Wars
@@ -45508,7 +45508,7 @@ Bernie Rosenthal,Marvel
 Bonnie Swanson,Family Guy
 Callisto,Xenaverse
 Cassio Tagge,Star Wars
-Cersei Lannister,World of Ice and Fire
+Cersei Lannister,Game of Thrones
 Choujuurou,Naruto
 Chris,Total Drama
 Cyrus,Pokémon
@@ -45524,7 +45524,7 @@ Garnet Til Alexandros XVII,Final Fantasy
 Mokap,Mortal Kombat
 Iruka Umino,Naruto
 Hank Summers,Buffyverse
-Victoria Waterfield,Whoniverse
+Victoria Waterfield,Doctor Who
 Jakeem Thunder,DC
 Jaxon Xavier,DC
 Jessica Hamby,True Blood fictional
@@ -45566,7 +45566,7 @@ Benjamin Kyle,Babylon 5
 Magius,Dragonlance
 Black Beetle,DC
 Knox Overstreet,Dead Poets Society
-Grey Worm,World of Ice and Fire
+Grey Worm,Game of Thrones
 Carter Burke,Alien
 Jenette Vasquez,Alien
 Harold Andrews,Alien
@@ -45657,8 +45657,8 @@ Sofia Constantinas,DC
 Space Cabbie,DC
 Spook,DC
 Tao,Wildstorm
-Sergeant Benton,Whoniverse
-Jo Grant,Whoniverse
+Sergeant Benton,Doctor Who
+Jo Grant,Doctor Who
 Beast Boy,DC
 Loretta Brown,Family Guy
 James Norrington,Pirates of the Caribbean
@@ -45698,12 +45698,12 @@ Xue Yong,Water Margin
 Sam Winchester,Supernatural
 Elena Gilbert,The Vampire Diaries
 Blue Mary,The King of Fighters
-Clyde Langer,Whoniverse
+Clyde Langer,Doctor Who
 Char Aznable,Universal Century
 Ford Prefect,The Hitchhiker's Guide to the Galaxy
 Shasta,Narnia
 Professor Oak,Pokémon
-Amy Pond,Whoniverse
+Amy Pond,Doctor Who
 Dash Parr,The Incredibles
 Danny Phantom,Danny Phantom
 Willow Rosenberg,Buffyverse
@@ -45815,7 +45815,7 @@ Nita,Brother Bear
 Sandwich Dog,"Go, Dog. Go!"
 The Joker,Nolanverse
 Tim Trench,DC
-Trinity Wells,Whoniverse
+Trinity Wells,Doctor Who
 Tyler Stone,Marvel
 Huma Dragonbane,Dragonlance
 Ysanne Isard,Star Wars
@@ -45849,12 +45849,12 @@ Sundowner,Metal Gear
 Steven Armstrong,Metal Gear
 Q18679611,Finnish mythology
 Paz Ortega Andrade,Metal Gear
-Aerys II Targaryen,World of Ice and Fire
+Aerys II Targaryen,Game of Thrones
 Laughing Octopus,Metal Gear
 Jeff the Killer,Jeff the Killer mythos
 Moira Burton,Resident Evil
 Jerry Horne,Twin Peaks universum
-Tommen Baratheon,World of Ice and Fire
+Tommen Baratheon,Game of Thrones
 Michelle,Futuramaverse
 Erron Black,Mortal Kombat
 Paco,DC
@@ -46486,7 +46486,7 @@ Jura Neekis,Fairy Tail
 Lisanna Strauss,Fairy Tail
 "Thomas Wayne, Jr.",DC
 Tolle Koenig,Cosmic Era
-Talisa Stark,World of Ice and Fire
+Talisa Stark,Game of Thrones
 Ace Morgan,DC
 X Drake,One Piece
 Basil Hawkins,One Piece
@@ -47177,7 +47177,7 @@ Mayor Inbur II,Foundation
 Master Eraqus,Kingdom Hearts
 Mabel the Ugly Stepsister,Shrek
 Vash,Star Trek
-Rodrik Cassel,World of Ice and Fire
+Rodrik Cassel,Game of Thrones
 Brock,Pokémon
 Ed,Street Fighter
 Siddiq,The Walking Dead
@@ -48488,10 +48488,10 @@ Brainiac 5,DC
 Miles OBrien,Star Trek
 Number Four,Battlestar Galactica
 Sokka,World of Avatar
-Second Doctor,Whoniverse
+Second Doctor,Doctor Who
 Polaris,Marvel
 Shiera Sanders Hall,DC
-Aegon I Targaryen,World of Ice and Fire
+Aegon I Targaryen,Game of Thrones
 Ultimate Green Goblin,Marvel
 Tommy Merlyn,DC
 Barbara Eileen Gordon,DC
@@ -48598,7 +48598,7 @@ Heinz Doofenshmirtz,Phineas and Ferb
 Father Callahan,Multiverse
 Eve,Buffyverse
 Stella Bonasera,CSI
-Luke Smith,Whoniverse
+Luke Smith,Doctor Who
 King Shark,DC
 Hugh Fitzcairn,Highlander
 Jamis,Dune
@@ -48907,7 +48907,7 @@ Faith,Buffyverse
 Steve Trevor,DC
 Tamara Johansen,Stargate
 David Hodges,CSI
-Sixth Doctor,Whoniverse
+Sixth Doctor,Doctor Who
 Jo Danville,CSI
 Illyria,Buffyverse
 Saartje Dubois,F.C. De Kampioenen
@@ -48934,7 +48934,7 @@ Triantafyllia,Wedding Song
 Arriet,Granblue Fantasy
 Yngwie,Granblue Fantasy
 Randall,Granblue Fantasy
-Jackson Lake,Whoniverse
+Jackson Lake,Doctor Who
 Vikala,Granblue Fantasy
 Damien Darhk,DC
 Lily Stein,Arrowverse
@@ -48948,12 +48948,12 @@ Unamed man (Yugis father),Yu-Gi-Oh!
 Johnny Newspaperseed,The Simpsons
 Husband of Granny Wang,Jin Ping Mei
 Leopold,The Simpsons
-Joffrey Velaryon,World of Ice and Fire
-Daeron Targaryen,World of Ice and Fire
+Joffrey Velaryon,Game of Thrones
+Daeron Targaryen,Game of Thrones
 Yuwen Xuzhong,Jin Ping Mei
 Han Zongren,Jin Ping Mei
 Wang Lian,Jin Ping Mei
-Arlan of Pennytree,World of Ice and Fire
+Arlan of Pennytree,Game of Thrones
 Gladius,One Piece
 Clem Andor,Star Wars
 Tong Tianyin,Jin Ping Mei
@@ -49021,7 +49021,7 @@ Q18679904,Salatut elämät
 Q18760045,Salatut elämät
 Kristiina Pohjonen,Salatut elämät
 Q19593734,Salatut elämät
-Grandfather Paradox,Whoniverse
+Grandfather Paradox,Doctor Who
 Tanya Spears,DC
 Q20254017,Salatut elämät
 Q21043806,Salatut elämät
@@ -49033,19 +49033,19 @@ Enos Fry,Futuramaverse
 Lucy Lane,Arrowverse
 Lady Gaga,The Simpsons
 Kamala Khan,Marvel Cinematic
-Arryk Cargyll,World of Ice and Fire
-Lucerys Velaryon,World of Ice and Fire
+Arryk Cargyll,Game of Thrones
+Lucerys Velaryon,Game of Thrones
 Leo Fitz,Marvel Cinematic
 Ford Pines,Gravity Falls
 Caleb Subramanian,The Walking Dead
 Eleven,Stranger Things
 Jon Kent,DC
-Nardole,Whoniverse
+Nardole,Doctor Who
 Simon,The Walking Dead
 Thea Queen,Arrowverse
 Harriet Cooper,DC
 Damien Darhk,Arrowverse
-Thirteenth Doctor,Whoniverse
+Thirteenth Doctor,Doctor Who
 Q44405137,Raumpatrouille-Orion-
 Q44406258,Raumpatrouille-Orion-
 Song Jiang,Water Margin
@@ -49185,12 +49185,12 @@ Yin Tianxi,Water Margin
 Gary Cody,Marvel
 Gary Cody,Earth-616
 Wang Yi,Water Margin
-Corlys Velaryon,World of Ice and Fire
-Rhaenys Targaryen (daughter of Aemon),World of Ice and Fire
+Corlys Velaryon,Game of Thrones
+Rhaenys Targaryen (daughter of Aemon),Game of Thrones
 Zeng Tu,Water Margin
-Mysaria,World of Ice and Fire
-Vaemond Velaryon,World of Ice and Fire
-Laenor Velaryon,World of Ice and Fire
+Mysaria,Game of Thrones
+Vaemond Velaryon,Game of Thrones
+Laenor Velaryon,Game of Thrones
 Carmen Pryde,Marvel
 Carmen Pryde,Earth-616
 Terri Pryde,Marvel
@@ -49338,8 +49338,8 @@ Tea Gardner,Yu-Gi-Oh!
 Belgarion,fictional  of The Belgariad
 Red Star,DC
 Blue Senturion,Power Rangers
-Rhaenyra Targaryen,World of Ice and Fire
-Jaehaerys I Targaryen,World of Ice and Fire
+Rhaenyra Targaryen,Game of Thrones
+Jaehaerys I Targaryen,Game of Thrones
 Bernard Renault,Twin Peaks universum
 Gangbang (Superhero Landing),Superhero Landing
 Pahusacheta Nahasapeemapetilon,The Simpsons
@@ -49365,7 +49365,7 @@ Eist Tuirseach,The Witcher
 Karin Andersson,Sune
 Madelene Olsson,Bert
 Michael Webber,Stargate
-Tanya Adeola,Whoniverse
+Tanya Adeola,Doctor Who
 Lilly Harper,Lilly Harper
 Female Changeling,Star Trek
 Richie Tozier,Multiverse
@@ -49394,7 +49394,7 @@ Tori Vega,Victorious
 Q6678133,Salatut elämät
 Zod,Earth-167
 Malcolm Reynolds,Serenityverse
-Mara,Whoniverse
+Mara,Doctor Who
 Seven of Nine,Star Trek
 Arnook,World of Avatar
 Roberta Tubbs,The Cleveland Show
@@ -49417,11 +49417,11 @@ Fortuona Athaem Devi Paendrag,The Wheel of Time
 Utakata,Naruto
 Flint,Pokémon
 Wanda Seldon,Foundation
-Brigadier Lethbridge-Stewart,Whoniverse
+Brigadier Lethbridge-Stewart,Doctor Who
 Eiji Kisaragi,The King of Fighters
 Alex,Street Fighter
 Sheila Broflovski,South Park
-Eddard Stark,World of Ice and Fire
+Eddard Stark,Game of Thrones
 Sallah,Indiana Jones
 Ash Ketchum,Pokémon
 Groundskeeper Willie,The Simpsons
@@ -49431,14 +49431,14 @@ Black Adam,DC
 Booster Gold,DC
 Sailor Mercury,Sailor Moon
 Abby Sciuto,NCIS
-Gwen Cooper,Whoniverse
+Gwen Cooper,Doctor Who
 Jek Porkins,Star Wars
 Captain Marvel,DC
 Jennifer Keller,Stargate
 Vicki Vale,DC
 Animal Man,DC
 Lich King,Warcraft
-Sarah Jane Smith,Whoniverse
+Sarah Jane Smith,Doctor Who
 Susannah Dean,Multiverse
 Christopher Pike,Star Trek
 Arthur Dent,The Hitchhiker's Guide to the Galaxy
@@ -49476,7 +49476,7 @@ Victor Henriksen,Supernatural
 Loial,The Wheel of Time
 Zoidberg,Futuramaverse
 Ludwig Von Drake,Donald Duck
-Clara Oswald,Whoniverse
+Clara Oswald,Doctor Who
 Shade,DC
 Karone,Power Rangers
 Reptile,Mortal Kombat
@@ -49634,7 +49634,7 @@ Sari Sumdac,Transformers multiverse
 Dinah de La Baudraye,The human comedy
 Drederick Tatum,The Simpsons
 Ferragus XXIII,The human comedy
-Ben Jackson,Whoniverse
+Ben Jackson,Doctor Who
 Frank Lundy,Dexter
 Maxie Zeus,DC
 Garrison Kane,Marvel
@@ -49652,7 +49652,7 @@ Charlotte Jones,Marvel
 Chen Da,Water Margin
 Chondu the Mystic,Marvel
 Clementine,The Walking Dead Comic
-Zoe Heriot,Whoniverse
+Zoe Heriot,Doctor Who
 David Graves,DC
 Salmoneus,Xenaverse
 Harry S. Truman,Twin Peaks universum
@@ -49709,7 +49709,7 @@ Harvey Dent,Burtonverse
 Rin Shima,Laid-Back Camp
 Ena Saito,Laid-Back Camp
 Sakura Kagamihara,Laid-Back Camp
-The Master,Whoniverse
+The Master,Doctor Who
 Boo-Boo Bear,Yogi Bear
 Warren Mears,Buffyverse
 Amygdala,DC
@@ -49721,7 +49721,7 @@ Kestra Troi,Star Trek
 Matt Donovan,The Vampire Diaries
 Freddy Van Overloop,F.C. De Kampioenen
 Renee Montoya,DC
-Fifth Doctor,Whoniverse
+Fifth Doctor,Doctor Who
 Bela Talbot,Supernatural
 Cleveland Brown Jr.,Family Guy
 Dorothy Gale,Oz
@@ -49736,13 +49736,13 @@ Alfred Bester,Babylon 5
 Anise,Stargate
 Constantine Drakon,DC
 Casey Jones,Teenage Mutant Ninja Turtles
-Cassandra,Whoniverse
+Cassandra,Doctor Who
 Cat Grant,DC
-First Doctor,Whoniverse
+First Doctor,Doctor Who
 Dark Danny,Danny Phantom
-Davros,Whoniverse
+Davros,Doctor Who
 Karai,Teenage Mutant Ninja Turtles
-Dodo Chaplet,Whoniverse
+Dodo Chaplet,Doctor Who
 Wilma Flintstone,The Flintstones
 Barney Rubble,The Flintstones
 Betty Rubble,The Flintstones
@@ -49881,11 +49881,11 @@ Farder Coram,His Dark Materials
 Roger Parslow,His Dark Materials
 Yue,World of Avatar
 Foo-Foo,Muppets
-Twelfth Doctor,Whoniverse
+Twelfth Doctor,Doctor Who
 Dwight Conrad,Futuramaverse
 Negan,The Walking Dead
 Arik Soong,Star Trek
-Great Intelligence,Whoniverse
+Great Intelligence,Doctor Who
 Amy,The Walking Dead
 Sasha Williams,The Walking Dead
 "Theodore ""T-Dog"" Douglas",The Walking Dead
@@ -49900,7 +49900,7 @@ Milva,The Witcher
 Silja Hickley,Salatut elämät
 Jefferson Pierce,Arrowverse
 Ian Noble,Action Man
-Mellos,World of Ice and Fire
+Mellos,Game of Thrones
 Erica Ortegas,Star Trek
 Hwi Noree,Dune
 Jake Sisko,Star Trek
@@ -49981,10 +49981,10 @@ Rio Seibu,Shine Post
 Glitter,Bob's Burgers
 Du Xing,Water Margin
 Ed Kealty,Ryanverse
-Emily Blandish,Whoniverse
+Emily Blandish,Doctor Who
 Etta Candy,DC
 Eve,Xenaverse
-Fey Truscott-Sade,Whoniverse
+Fey Truscott-Sade,Doctor Who
 Fly,DC
 Funky Flashman,DC
 Glenn Rhee,The Walking Dead Television
@@ -50029,7 +50029,7 @@ Joey Quinn,Dexter
 Faradn Corrino,Dune
 Frostbite,Danny Phantom
 Helena Cain,Battlestar Galactica
-Meddling Monk,Whoniverse
+Meddling Monk,Doctor Who
 Louanne Katraine,Battlestar Galactica
 Max Guevara,Dark Angel
 Michael,Supernatural
@@ -50055,11 +50055,11 @@ Iris West,DC
 Lady Shiva,DC
 Leland Palmer,Twin Peaks universum
 Rick Flag,DC
-Sabalom Glitz,Whoniverse
+Sabalom Glitz,Doctor Who
 Shrapnel,DC
 Tom Barnaby,Chief Inspector Barnaby
 Tom Barnaby,Midsomer
-Vislor Turlough,Whoniverse
+Vislor Turlough,Doctor Who
 Walter,Muppets
 Tuvok,Star Trek
 Cahir aep Ceallach,The Witcher
@@ -50080,13 +50080,13 @@ Lari Vaananen,Salatut elämät
 Elias Vikstedt,Salatut elämät
 Mr. Panucci,Futuramaverse
 URL,Futuramaverse
-Asha Greyjoy,World of Ice and Fire
+Asha Greyjoy,Game of Thrones
 Tyler Lockwood,The Vampire Diaries
 Riley Dawson,Terminator
 Kevin Tran,Supernatural
 Toothless,How to Train Your Dragon
 Non,DC
-Kate Stewart,Whoniverse
+Kate Stewart,Doctor Who
 Vorik,Star Trek
 Adam West,Family Guy
 Andreas von Strucker,Marvel
@@ -50148,12 +50148,12 @@ Onyx,DC
 Christine Everhart,Marvel
 Ellie,The Last of Us
 Hikari Horaki,Neon Genesis Evangelion
-Craig Owens,Whoniverse
+Craig Owens,Doctor Who
 Franklin Storm,Marvel
 Mitchell Carson,Marvel
-Francine Jones,Whoniverse
+Francine Jones,Doctor Who
 Darcy Lewis,Marvel Cinematic
-Aeron Greyjoy,World of Ice and Fire
+Aeron Greyjoy,Game of Thrones
 Mark Watney,The Martian
 Crysania Tarinius,Dragonlance
 Demetrius Zaarin,Star Wars
@@ -50164,7 +50164,7 @@ Lucas,Pokémon
 Tanin Majere,Dragonlance
 Inspector Henderson,DC
 Sadie Kane,Camp Half-Blood chronicles
-Iris Wildthyme,Whoniverse
+Iris Wildthyme,Doctor Who
 "James Gordon, Jr.",DC
 Jamie De Curry,Multiverse
 Jesse Pinkman,Gilliverse
@@ -50175,7 +50175,7 @@ Asami Sato,World of Avatar
 Kick-Ass,Marvel
 Flamingo,DC
 Geomancer,DC
-Grace Holloway,Whoniverse
+Grace Holloway,Doctor Who
 Gypsy,DC
 Hazard,DC
 Carly Shay,iCarly
@@ -50204,7 +50204,7 @@ Arthur Dallas,Alien
 Scott Gorman,Alien
 Mark Drake,Alien
 David Postlethwaite,Alien
-Courtney Woods,Whoniverse
+Courtney Woods,Doctor Who
 Loki,Marvel Cinematic
 Madison Clark,The Walking Dead Television
 Adda,The Witcher
@@ -50254,14 +50254,14 @@ Hyena,The King of Fighters
 Yang Ling,The Romance of the Three Kingdoms
 Jyazu,The King of Fighters
 Gao Lian,Water Margin
-Beric Dondarrion,World of Ice and Fire
+Beric Dondarrion,Game of Thrones
 Demavend of Aedirn,The Witcher
 Henselt of Kaedwen,The Witcher
 Q11849656,Salatut elämät
 Q11870404,Salatut elämät
 Q11884705,Salatut elämät
 Panu Kaukovaara,Salatut elämät
-The General,Whoniverse
+The General,Doctor Who
 Mr. Beaver,Narnia
 Q44408651,Raumpatrouille-Orion-
 Q44408831,Raumpatrouille-Orion-
@@ -50292,17 +50292,17 @@ Fish Mooney,Gotham
 Kylo Ren,Star Wars
 Annie Cresta,The Hunger Games
 Alberta Scrubb,Narnia
-Daario Naharis,World of Ice and Fire
+Daario Naharis,Game of Thrones
 Makoto Naegi,Danganronpa
 Lei Kung,Marvel
 Lei Kung,Earth-616
 Maggie Murdock,Marvel
 Maggie Murdock,Earth-616
-Rhaella Targaryen,World of Ice and Fire
-Alerie Tyrell,World of Ice and Fire
-Lyanna Stark,World of Ice and Fire
-Imry Florent,World of Ice and Fire
-Melara Florent,World of Ice and Fire
+Rhaella Targaryen,Game of Thrones
+Alerie Tyrell,Game of Thrones
+Lyanna Stark,Game of Thrones
+Imry Florent,Game of Thrones
+Melara Florent,Game of Thrones
 Flash Thompson,Marvel Cinematic
 Ivan Vanko,Marvel Cinematic
 Howard Stark,Marvel Cinematic
@@ -50326,9 +50326,9 @@ Abraham Ford,The Walking Dead Television
 Tara Chambler,The Walking Dead
 Inara Serra,Serenityverse
 Benny Lafitte,Supernatural
-Romana,Whoniverse
+Romana,Doctor Who
 Thara Ak-Var,DC
-Trinity Wells,Whoniverse
+Trinity Wells,Doctor Who
 Veronica Cale,DC
 Sabrina Glevissig,The Witcher
 Sigismund Dijkstra,The Witcher
@@ -50361,8 +50361,8 @@ Geordi La Forge,Star Trek
 Spectre,DC
 Carson Beckett,Stargate
 Clayface,DC
-Sergeant Benton,Whoniverse
-Jo Grant,Whoniverse
+Sergeant Benton,Doctor Who
+Jo Grant,Doctor Who
 Beast Boy,DC
 Loretta Brown,Family Guy
 Montgomery Scott,Star Trek
@@ -50381,17 +50381,17 @@ Blade,Marvel
 Blade,Earth-616
 Sam Winchester,Supernatural
 Elena Gilbert,The Vampire Diaries
-Clyde Langer,Whoniverse
-Erryk Cargyll,World of Ice and Fire
-Boremund Baratheon,World of Ice and Fire
+Clyde Langer,Doctor Who
+Erryk Cargyll,Game of Thrones
+Boremund Baratheon,Game of Thrones
 Ximenez Lecerda,Gilliverse
 Ronnie Raymond,DC
-Jake Simmonds,Whoniverse
+Jake Simmonds,Doctor Who
 James Horton,Highlander
 John Blackthorne,Shogun
 Leo Johnson,Twin Peaks universum
 Sweetums,Muppets
-Kamelion,Whoniverse
+Kamelion,Doctor Who
 Kelex,DC
 Lance Hunter,Marvel Cinematic
 Lance Hunter,Marvel
@@ -50404,7 +50404,7 @@ Quex-Ul,DC
 Rainbow Raider,DC
 Reactron,DC
 Reverend Mother Ramallo,Dune
-Euron Greyjoy,World of Ice and Fire
+Euron Greyjoy,Game of Thrones
 Red,South Park
 Hettar,fictional  of The Belgariad
 Lady Cop,DC
@@ -50412,7 +50412,7 @@ Artur Hawkwing,The Wheel of Time
 Genma Saotome,Ranma ½
 Luminus,DC Animated
 Maggie Sawyer,DC
-Mel Bush,Whoniverse
+Mel Bush,Doctor Who
 Mikado,DC
 Mysto,DC
 Nyssa Raatko,DC
@@ -50479,7 +50479,7 @@ Suki,World of Avatar
 Ma Han,The Romance of the Three Kingdoms
 Gajeel Redfox,Fairy Tail
 Lawrence Jacoby,Twin Peaks universum
-Joffrey Baratheon,World of Ice and Fire
+Joffrey Baratheon,Game of Thrones
 Doctor Poison,DC
 Human Cannonball,Marvel
 Human Cannonball,Earth-616
@@ -50519,7 +50519,7 @@ Cosmic Boy,DC
 Q2998361,Fabeltjesland
 Sari Sumdac,Transformers multiverse
 Drederick Tatum,The Simpsons
-Ben Jackson,Whoniverse
+Ben Jackson,Doctor Who
 Geofram Bornhald,The Wheel of Time
 Glossu Rabban,Dune
 Jake Sisko,Star Trek
@@ -50538,7 +50538,7 @@ Electrocutioner,DC
 Tigress,DC
 Dinah Redmond,Earth-203
 Emory Erickson,Star Trek
-Amy Pond,Whoniverse
+Amy Pond,Doctor Who
 Danny Phantom,Danny Phantom
 Willow Rosenberg,Buffyverse
 Vladimir Harkonnen,Dune
@@ -50582,11 +50582,11 @@ Mira,Mirakel
 Marta Colt,Mirakel
 Frank Castle,Marvel Cinematic
 Nivellen,The Witcher
-Corlys Velaryon,World of Ice and Fire
-Rhaenys Targaryen (daughter of Aemon),World of Ice and Fire
-Mysaria,World of Ice and Fire
-Vaemond Velaryon,World of Ice and Fire
-Laenor Velaryon,World of Ice and Fire
+Corlys Velaryon,Game of Thrones
+Rhaenys Targaryen (daughter of Aemon),Game of Thrones
+Mysaria,Game of Thrones
+Vaemond Velaryon,Game of Thrones
+Laenor Velaryon,Game of Thrones
 Cha Cha,Bob's Burgers
 Glitter,Bob's Burgers
 Aaron Doral,Battlestar Galactica
@@ -50600,7 +50600,7 @@ Lorne,Buffyverse
 Debra Morgan,Dexter
 Meneer de Uil,Fabeltjesland
 Adam,Buffyverse
-Jamie McCrimmon,Whoniverse
+Jamie McCrimmon,Doctor Who
 Rand alThor,The Wheel of Time
 Megan Parker,Drake & Josh
 T-Bo,iCarly
@@ -50609,7 +50609,7 @@ Weather Wizard,DC
 Copperhead,DC
 Hank Landry,Stargate
 Geralt of Rivia,The Witcher
-Barbara Wright,Whoniverse
+Barbara Wright,Doctor Who
 Captain Boomerang,DC
 Janet Fraiser,Stargate
 Mahna Mahna,Muppets
@@ -50617,7 +50617,7 @@ Elayne Trakand,The Wheel of Time
 Azazel,Supernatural
 Blink,Marvel
 Kimberly Hart,Power Rangers
-Fourth Doctor,Whoniverse
+Fourth Doctor,Doctor Who
 Carmine Falcone,DC
 Sal Maroni,DC
 Sarek,Star Trek
@@ -50632,7 +50632,7 @@ Spike Witwicky,Transformers multiverse
 Asterix,Asterix
 Tobias Whale,DC
 Tommy Tomorrow,DC
-Trix MacMillan,Whoniverse
+Trix MacMillan,Doctor Who
 Una Persson,Multiverse
 Couladin,The Wheel of Time
 Bria Tharen,Star Wars
@@ -50679,9 +50679,9 @@ Sneakers OToole,Family Guy
 Benito Antonanzas,Money Heist
 Matt Murdock,Marvel Cinematic
 Malsquando,Dave the Barbarian
-Rhaena Targaryen,World of Ice and Fire
-Harwin Strong,World of Ice and Fire
-Tyland Lannister,World of Ice and Fire
+Rhaena Targaryen,Game of Thrones
+Harwin Strong,Game of Thrones
+Tyland Lannister,Game of Thrones
 Ida Davis,Family Guy
 Hive,Marvel Cinematic
 Q3805520,Stargate
@@ -50692,10 +50692,10 @@ Arnook,World of Avatar
 Roberta Tubbs,The Cleveland Show
 Share,Stargate
 Ares,Xenaverse
-Brigadier Lethbridge-Stewart,Whoniverse
+Brigadier Lethbridge-Stewart,Doctor Who
 Q4294531,Muppets
 Ahriman,Highlander
-Celestial Toymaker,Whoniverse
+Celestial Toymaker,Doctor Who
 Jia Rui,Dream of the Red Chamber
 Lady Xing,Dream of the Red Chamber
 Garma Zabi,Universal Century
@@ -50723,7 +50723,7 @@ Jennifer Shreyan,Star Trek
 Opal,The Simpsons
 Jonathan Kent,DC
 Sara Lance,Arrowverse
-Danny Pink,Whoniverse
+Danny Pink,Doctor Who
 Mai,World of Avatar
 Jerry Horne,Twin Peaks universum
 Michelle,Futuramaverse
@@ -50743,7 +50743,7 @@ Bao,The King of Fighters
 Hypno-Hustler,Marvel
 Hypno-Hustler,Earth-616
 Eriol Hiiragizawa,Cardcaptor Sakura
-Jaqen Hghar,World of Ice and Fire
+Jaqen Hghar,Game of Thrones
 Mike Newton,Twilight
 Perona,One Piece
 Yoko Suzuki,Resident Evil
@@ -50774,7 +50774,7 @@ Jia Lan,Dream of the Red Chamber
 Jia Cong,Dream of the Red Chamber
 Jack Mort,Multiverse
 Lai Shangrong,Dream of the Red Chamber
-Zoe Heriot,Whoniverse
+Zoe Heriot,Doctor Who
 Etta Candy,DC
 Eve,Xenaverse
 First of the Fallen,DC
@@ -50816,7 +50816,7 @@ Arnold Flass,DC
 Lan Mandragoran,The Wheel of Time
 Billy Keikeya,Battlestar Galactica
 Chuckie Finster,Rugrats
-Donna Noble,Whoniverse
+Donna Noble,Doctor Who
 Michael Akins,DC
 Dani Phantom,Danny Phantom
 Donna Duck,Donald Duck
@@ -50825,10 +50825,10 @@ Lennier,Babylon 5
 Heimdall,Stargate
 Jack Fisk,Battlestar Galactica
 Presence,DC
-Maria Jackson,Whoniverse
+Maria Jackson,Doctor Who
 Merlin,Stargate
-Polly,Whoniverse
-Rhys Williams,Whoniverse
+Polly,Doctor Who
+Rhys Williams,Doctor Who
 Shanauc,Stargate
 Sturgeon,Star Trek
 Louise Belcher,Bob's Burgers
@@ -50875,13 +50875,13 @@ Jiri Viitamaki,Salatut elämät
 Deanna Monroe,The Walking Dead
 Lindsey Naegle,The Simpsons
 Onyx,DC
-Borusa,Whoniverse
+Borusa,Doctor Who
 Ellie,The Last of Us
-Craig Owens,Whoniverse
-Francine Jones,Whoniverse
+Craig Owens,Doctor Who
+Francine Jones,Doctor Who
 Caitlin Snow,DC
 Fish Mooney,Gotham
-Ashildr,Whoniverse
+Ashildr,Doctor Who
 Maggie Simpson,The Simpsons
 Q,Star Trek
 James T. Kirk,Star Trek
@@ -50907,7 +50907,7 @@ Negative Man,DC
 Poison Ivy,DC
 Booster Gold,DC
 Abby Sciuto,NCIS
-Gwen Cooper,Whoniverse
+Gwen Cooper,Doctor Who
 Captain Marvel,DC
 Jennifer Keller,Stargate
 Oppo Rancisis,Star Wars
@@ -50917,7 +50917,7 @@ Gerak,Stargate
 Beautiful Dreamer,Marvel
 Beautiful Dreamer,Earth-616
 Tealc,Stargate
-Susan Foreman,Whoniverse
+Susan Foreman,Doctor Who
 Black Lightning,DC
 The Riddler,DC
 Cameron,Terminator
@@ -50941,10 +50941,10 @@ Dandelion,The Witcher
 Number Six,Battlestar Galactica
 Iron Fist,Marvel
 Jessica Lovejoy,The Simpsons
-Toshiko Sato,Whoniverse
+Toshiko Sato,Doctor Who
 Hath-Set,DC
 Blacksmith,DC
-Vicki,Whoniverse
+Vicki,Doctor Who
 Robotman,DC
 Ben Horne,Twin Peaks universum
 Bonnie Swanson,Family Guy
@@ -50952,7 +50952,7 @@ Callisto,Xenaverse
 Don Karnage,Talespin
 Donna Tubbs-Brown,The Cleveland Show
 Hank Summers,Buffyverse
-Victoria Waterfield,Whoniverse
+Victoria Waterfield,Doctor Who
 Jaxon Xavier,DC
 Jessica Hamby,True Blood fictional
 Lucy Camden,7th Heaven
@@ -50967,8 +50967,8 @@ Asami Sato,World of Avatar
 Lady Cop,DC
 Maggie Sawyer,DC
 Mazikeen,DC
-Mel Bush,Whoniverse
-Nyssa,Whoniverse
+Mel Bush,Doctor Who
+Nyssa,Doctor Who
 Nyssa Raatko,DC
 Professor Pyg,DC
 Melinda May,Marvel Cinematic
@@ -51028,9 +51028,9 @@ Sylvie,Marvel Cinematic
 Alexandra Trese,Trese
 Q109887571,Money Heist
 Dick Grayson,Titansverse
-Helaena Targaryen,World of Ice and Fire
+Helaena Targaryen,Game of Thrones
 Saito,World of Ghost in the Shell
-Sky Smith,Whoniverse
+Sky Smith,Doctor Who
 Tobias Whale,DC
 Ryac,Stargate
 Tim lOrso,The Cleveland Show
@@ -51079,7 +51079,7 @@ Toruviel,The Witcher
 Crach an Craite,The Witcher
 Renfri,The Witcher
 Ake Nordin,Bert
-Charlie Smith,Whoniverse
+Charlie Smith,Doctor Who
 Louie,Talespin
 Jerry,The Walking Dead
 Index,Star Trek
@@ -51089,7 +51089,7 @@ Judith Grimes,The Walking Dead Comic
 Klingon Player #2,Star Trek
 Bjayzl,Star Trek
 Gabriel Hwang,Star Trek
-Jackson Lake,Whoniverse
+Jackson Lake,Doctor Who
 Lily Stein,Arrowverse
 Nora Darhk,Arrowverse
 Sandy Palmer,Arrowverse
@@ -51110,7 +51110,7 @@ Lar Gand,Arrowverse
 Ressu Mattila,Salatut elämät
 Hange Zoe,Attack on Titan
 Lonnie Machin,Arrowverse
-Fugitive Doctor,Whoniverse
+Fugitive Doctor,Doctor Who
 Brad Boimler,Star Trek
 Sam Monroe,The Simpsons
 Vam Mi,Teenage Mutant Ninja Turtles
@@ -51128,15 +51128,15 @@ Thadiun Okona,Star Trek
 Arne Magnusson,Half-Life / Portal
 Professor,Money Heist
 Clay Kaczmarek,Assassin's Creed
-Jojen Reed,World of Ice and Fire
-Eddison Tollett,World of Ice and Fire
-Tyene Sand,World of Ice and Fire
-Aegon IV Targaryen,World of Ice and Fire
-Daenerys Targaryen (daughter of Aegon IV),World of Ice and Fire
-Aenys I Targaryen,World of Ice and Fire
+Jojen Reed,Game of Thrones
+Eddison Tollett,Game of Thrones
+Tyene Sand,Game of Thrones
+Aegon IV Targaryen,Game of Thrones
+Daenerys Targaryen (daughter of Aegon IV),Game of Thrones
+Aenys I Targaryen,Game of Thrones
 Honey Best,The Incredibles
 Garterbelt,Panty & Stocking with Garterbelt
-Brandon the Builder,World of Ice and Fire
+Brandon the Builder,Game of Thrones
 Stephen Shin,DC
 Miss Valentine,One Piece
 Jenny Jurwich,DC Extended
@@ -51184,7 +51184,7 @@ Zefram Cochrane,Star Trek
 Lobo,DC
 Mrs. Risotto,The Simpsons
 Jordan Kent,Arrowverse
-Viserys II Targaryen,World of Ice and Fire
+Viserys II Targaryen,Game of Thrones
 Kareel Odan,Star Trek
 Aaron Glassman,The Good Doctor
 Cassie Chan,Power Rangers
@@ -51206,7 +51206,7 @@ Dream,DC
 Korra,World of Avatar
 Tara Maclay,Buffyverse
 Q2572579,Fabeltjesland
-Third Doctor,Whoniverse
+Third Doctor,Doctor Who
 Shane Walsh,The Walking Dead Television
 Shane Walsh,The Walking Dead Comic
 Duff Killigan,Kim Possible
@@ -51322,7 +51322,7 @@ The Penguin,DC
 Kahless,Star Trek
 Darkseid,DC
 Benjamin Sisko,Star Trek
-Mike Yates,Whoniverse
+Mike Yates,Doctor Who
 Bobby Singer,Supernatural
 Wally West,DC
 Daisy Duck,Donald Duck
@@ -51360,7 +51360,7 @@ Nadja Nilsson,Bert
 Anna Andersson,Sune
 Eddie Kaspbrak,Multiverse
 Lambert,The Witcher
-Matteusz Andrzejewski,Whoniverse
+Matteusz Andrzejewski,Doctor Who
 Agnes Jurati,Star Trek
 Iris West-Allen,Arrowverse
 Eddie Thawne,Arrowverse
@@ -51448,7 +51448,7 @@ Pamela Swynford De Beaufort,True Blood fictional
 Amanda Waller,DC
 Rainier Wolfcastle,The Simpsons
 Zuko,World of Avatar
-Rose Tyler,Whoniverse
+Rose Tyler,Doctor Who
 Lyra Belacqua,His Dark Materials
 Kaat,F.C. De Kampioenen
 Thor,Stargate
@@ -51520,9 +51520,9 @@ Gwyn,Star Trek
 Eithne,The Witcher
 Lois Lane,Arrowverse
 Luanne Platter,King of the Hill
-Criston Cole,World of Ice and Fire
-Baela Targaryen,World of Ice and Fire
-Larys Strong,World of Ice and Fire
+Criston Cole,Game of Thrones
+Baela Targaryen,Game of Thrones
+Larys Strong,Game of Thrones
 Dale Horvath,The Walking Dead
 Deathbolt,DC
 Dorothy Spinner,DC
@@ -51530,7 +51530,7 @@ Eddie Fyers,DC
 Miro Holm,Salatut elämät
 Hera Agathon,Battlestar Galactica
 Hourman,DC
-Jenny,Whoniverse
+Jenny,Doctor Who
 Perdicas,Xenaverse
 Oona Kiviranta,Salatut elämät
 Katariina Makela,Salatut elämät
@@ -51542,8 +51542,8 @@ Nicholas,The Walking Dead
 Q20251595,Salatut elämät
 Michael Kenmore,Stargate
 Drusilla,DC
-Petronella Osgood,Whoniverse
-Sylvia Noble,Whoniverse
+Petronella Osgood,Doctor Who
+Sylvia Noble,Doctor Who
 John Diggle,Arrowverse
 Eve Teschmacher,DC
 Lucky Roux,One Piece
@@ -51610,7 +51610,7 @@ Eli Wallace,Stargate
 Will Parry,His Dark Materials
 Batman,DC
 Janice Rand,Star Trek
-Daenerys Targaryen,World of Ice and Fire
+Daenerys Targaryen,Game of Thrones
 Moiraine Damodred,The Wheel of Time
 Hourman,DC
 Calleigh Duquesne,CSI
@@ -51628,7 +51628,7 @@ Morgan Brody,CSI
 Alan Pangborn,Multiverse
 Billy Cranston,Power Rangers
 Brick,DC
-Omega,Whoniverse
+Omega,Doctor Who
 Zed,Men in Black
 Melissa Bowen,Marvel Cinematic
 Melissa Bowen,Marvel
@@ -51664,12 +51664,12 @@ Moira Queen,Arrowverse
 Borg Queen,Star Trek
 Talas,Star Trek
 Amara,The Vampire Diaries
-Madame Vastra,Whoniverse
-Strax,Whoniverse
+Madame Vastra,Doctor Who
+Strax,Doctor Who
 Annika Settergren,Pippi Longstocking
 Axel,The Walking Dead
 Heidi Aaltonen,Salatut elämät
-Black Guardian,Whoniverse
+Black Guardian,Doctor Who
 Borch Three Jackdaws,The Witcher
 Elijah Mikaelson,The Vampire Diaries
 Curt Connors,Earth-96283
@@ -51686,7 +51686,7 @@ Johnny Smith,Multiverse
 King Arthur,DC
 Psi,DC
 Rampage,DC
-Rassilon,Whoniverse
+Rassilon,Doctor Who
 Nat,Bob's Burgers
 Elise,For All Mankind
 Lillian Luthor,Earth-167
@@ -51700,11 +51700,11 @@ Mom,Futuramaverse
 Thylek Shran,Star Trek
 Rain,Mortal Kombat
 Duckworth,Donald Duck
-Tenth Doctor,Whoniverse
-Ian Chesterton,Whoniverse
-Ninth Doctor,Whoniverse
+Tenth Doctor,Doctor Who
+Ian Chesterton,Doctor Who
+Ninth Doctor,Doctor Who
 Q2663068,Fabeltjesland
-Rory Williams,Whoniverse
+Rory Williams,Doctor Who
 Ashley Hammond,Power Rangers
 Morgan Edge,DC
 Evan Lorne,Stargate
@@ -51796,7 +51796,7 @@ Silas,Highlander
 Deadshot,DC
 D.B. Russell,CSI
 Mera,DC
-Jack Harkness,Whoniverse
+Jack Harkness,Doctor Who
 Viper,Marvel
 Viper,Earth-616
 Rat King,Teenage Mutant Ninja Turtles
@@ -51816,7 +51816,7 @@ Captain Comet,DC
 Ziva David,NCIS
 Zatanna,DC
 Wellington Yueh,Dune
-Eighth Doctor,Whoniverse
+Eighth Doctor,Doctor Who
 Jigsaw,Marvel
 Jasmine,Buffyverse
 Gil Grissom,CSI
@@ -52004,11 +52004,11 @@ Seyg-El,DC
 Tolaris,Star Trek
 Jadis,The Walking Dead
 Jacques Renault,Twin Peaks universum
-Andrea Quill,Whoniverse
+Andrea Quill,Doctor Who
 Pure Evil (Superhero Landing),Superhero Landing
 Me Hani Ika Hali Ka Po,Star Trek
-Graham OBrien,Whoniverse
-Ryan Sinclair,Whoniverse
+Graham OBrien,Doctor Who
+Ryan Sinclair,Doctor Who
 Kurt Fletcher,Dear White People
 Troy Fairbanks,Dear White People
 Fallout Boy,The Simpsons
@@ -52119,14 +52119,14 @@ Eddie,The Simpsons
 Hope,Xenaverse
 Jonathan Weed,Family Guy
 Gabriel,Supernatural
-Harriet Jones,Whoniverse
-Lady Christina de Souza,Whoniverse
+Harriet Jones,Doctor Who
+Lady Christina de Souza,Doctor Who
 Larrin,Stargate
 Ty Lee,World of Avatar
 Livewire,DC
 Ged,Earthsea
 Alain Johns,Multiverse
-Nestene,Whoniverse
+Nestene,Doctor Who
 Sid Hammerback,CSI
 Carl Draper,DC
 Cornelius Stirk,DC
@@ -52149,7 +52149,7 @@ Maurice Lalonde,Highlander
 Mercy Graves,DC
 Mnemoth,DC
 Morgan Jones,The Walking Dead
-Peri Brown,Whoniverse
+Peri Brown,Doctor Who
 Robert Crichton,DC
 Romo Lampkin,Battlestar Galactica
 Ron Troupe,DC
@@ -52188,7 +52188,7 @@ Robert Queen,Arrowverse
 Hugh Culber,Star Trek
 Katrina Cornwell,Star Trek
 Emiko Queen,DC
-Adelaide Brooke,Whoniverse
+Adelaide Brooke,Doctor Who
 Jayna-Zod,DC
 Justine Cooper,Buffyverse
 Nora Allen,DC
@@ -52196,11 +52196,11 @@ Peter Gambi,DC
 Alissa Nikkinen,Salatut elämät
 Damar,Star Trek
 Hedonismbot,Futuramaverse
-Daemon Targaryen,World of Ice and Fire
+Daemon Targaryen,Game of Thrones
 Adrian Chase,DC
 Jean Renault,Twin Peaks universum
 No Name (Superhero Landing),Superhero Landing
-Yasmin Khan,Whoniverse
+Yasmin Khan,Doctor Who
 Hank Scorpio,The Simpsons
 Mr. Teeny,The Simpsons
 Elsa Frankenteen,Scooby Doo
@@ -52262,7 +52262,7 @@ Kingpin,Earth-616
 Abra Kadabra,DC
 Fiddler,DC
 Tara Price,CSI
-Wilfred Mott,Whoniverse
+Wilfred Mott,Doctor Who
 Metallo,DC
 Q2010026,Fabeltjesland
 Q2069524,Fabeltjesland
@@ -52271,7 +52271,7 @@ Eustace Scrubb,Narnia
 Randall Flagg,Multiverse
 Tommie,Muppets
 Q2229945,Fabeltjesland
-Harry Sullivan,Whoniverse
+Harry Sullivan,Doctor Who
 Liu Kang,Mortal Kombat
 Mat Cauthon,The Wheel of Time
 Spike,Buffyverse
@@ -52317,7 +52317,7 @@ Su Ding,Water Margin
 father of Yan Qing,Water Margin
 mother of Yan Qing,Water Margin
 Cupitan,Granblue Fantasy
-Helaena Targaryen,World of Ice and Fire
+Helaena Targaryen,Game of Thrones
 Kongmu Zhang,Water Margin
 Wang Ding,Water Margin
 mother of Zhang Heng and Zhang Shun,Water Margin
@@ -52391,7 +52391,7 @@ Zuko,World of Avatar
 Pelleas,Arthurian
 Sudhana,Journey to the West
 Snake,The Simpsons
-Rose Tyler,Whoniverse
+Rose Tyler,Doctor Who
 Lyra Belacqua,His Dark Materials
 Kaat,F.C. De Kampioenen
 Pow Wow Smith,DC
@@ -52490,17 +52490,17 @@ Scruffy,Futuramaverse
 Tulip OHare,DC
 Vibe,DC
 Yennefer of Vengerberg,The Witcher
-Rani,Whoniverse
+Rani,Doctor Who
 Abby Holland,DC
 Acrata,DC
 Aphrodite,Xenaverse
 Borias,Xenaverse
 Hugo Simpson,The Simpsons
-Tegan Jovanka,Whoniverse
+Tegan Jovanka,Doctor Who
 Thunder,DC
 Torque,DC
 Ulkesh,Babylon 5
-The Valeyard,Whoniverse
+The Valeyard,Doctor Who
 Victoria Hand,Marvel
 Zor-El,DC
 Allison Taylor,The Simpsons
@@ -52563,7 +52563,7 @@ Tights,Dragon Ball
 Moon Knight,Marvel Cinematic
 Juri Hattori,Kokuhaku Jikkō Iinkai
 Haru Glory,Rave Master
-Viserys II Targaryen,World of Ice and Fire
+Viserys II Targaryen,Game of Thrones
 Ruta Skadi,His Dark Materials
 Tom Tucker,Family Guy
 Arex Na Eth,Star Trek
@@ -52585,7 +52585,7 @@ Thomas Logan,Marvel
 Tian Hu,Water Margin
 Demora Sulu,Star Trek
 Yui Ikari,Neon Genesis Evangelion
-Vera Juarez,Whoniverse
+Vera Juarez,Doctor Who
 Yang Zongbao,The Generals of the Yang Family
 Zheng Biao,Water Margin
 Rallo Tubbs,The Cleveland Show
@@ -52612,8 +52612,8 @@ Kari Taalasmaa,Salatut elämät
 Black Arts Viper,Metal Gear
 Li Gui,The Romance of the Three Kingdoms
 Owen Paris,Star Trek
-Lysa Arryn,World of Ice and Fire
-Roose Bolton,World of Ice and Fire
+Lysa Arryn,Game of Thrones
+Roose Bolton,Game of Thrones
 Dr. Mario,Super Mario
 Nicholas,The Walking Dead
 Esterad Thyssen,The Witcher
@@ -52631,10 +52631,10 @@ Sophocles Sarcophagus,Tintin
 Mon Mothma,Star Wars
 Mon Mothma,Star Wars
 Dracule Mihawk,One Piece
-Ian Chesterton,Whoniverse
+Ian Chesterton,Doctor Who
 Justin Hammer,Marvel
 Justin Hammer,Earth-616
-Rory Williams,Whoniverse
+Rory Williams,Doctor Who
 Alti,Xenaverse
 Maman de Praetere,F.C. De Kampioenen
 Camile Wray,Stargate
@@ -52707,7 +52707,7 @@ Goldmoon,Dragonlance
 Bushido,DC
 Salvatore Leone,Grand Theft Auto 3D
 Carrie Kelley,DC
-Catelyn Stark,World of Ice and Fire
+Catelyn Stark,Game of Thrones
 Charcoal,Marvel
 Vexatius Sinusitus,Asterix
 Commander Bly,Star Wars
@@ -52817,7 +52817,7 @@ Khufu,DC
 Mousesack,The Witcher
 Filavandrel,The Witcher
 Marie Picard,Star Trek
-Ram Singh,Whoniverse
+Ram Singh,Doctor Who
 Beta,The Walking Dead
 Bruce,Bucky O'Hare
 Cristobal Rios,Star Trek
@@ -52851,7 +52851,7 @@ Black Canary (Dinah Lance),DC
 Rhea,Arrowverse
 VLas,Star Trek
 Carter Hall,Arrowverse
-Mickey Smith,Whoniverse
+Mickey Smith,Doctor Who
 Kara Zor-El,DC
 Gorilla Grodd,DC
 Count Vertigo,DC
@@ -52934,15 +52934,15 @@ Henry Emily,Five Nights at Freddy's
 Odfel,The Elder Scrolls
 Mahiro Oyama,Onimai: I'm Now Your Sister!
 Aaron Glassman,The Good Doctor
-Cassana Baratheon,World of Ice and Fire
-Alannys Greyjoy,World of Ice and Fire
+Cassana Baratheon,Game of Thrones
+Alannys Greyjoy,Game of Thrones
 Major Allen,Marvel Cinematic
 Ahmed,Marvel Cinematic
 Samuel Kirk,Star Trek
-Betha Blackwood,World of Ice and Fire
-Leyton Hightower,World of Ice and Fire
-Randyll Tarly,World of Ice and Fire
-Talla Tarly,World of Ice and Fire
+Betha Blackwood,Game of Thrones
+Leyton Hightower,Game of Thrones
+Randyll Tarly,Game of Thrones
+Talla Tarly,Game of Thrones
 Deckard Cain,Diablo
 Zemo,Marvel Cinematic
 Sharon Carter,Marvel Cinematic
@@ -53022,7 +53022,7 @@ Link Hogthrob,Muppets
 Aamu Korhonen,Salatut elämät
 Vesemir,The Witcher
 Poochie,The Simpsons
-Steven Taylor,Whoniverse
+Steven Taylor,Doctor Who
 The Miniature Killer,CSI
 Girder,DC
 Cicada,DC
@@ -53052,9 +53052,9 @@ Daisy Johnson,Marvel Cinematic
 Barbara Millicent Roberts,Barbie
 Alberto Vicuna,Money Heist
 Blade,Earth-26320
-Alicent Hightower,World of Ice and Fire
-Lyonel Strong,World of Ice and Fire
-Fifteenth Doctor,Whoniverse
+Alicent Hightower,Game of Thrones
+Lyonel Strong,Game of Thrones
+Fifteenth Doctor,Doctor Who
 Laan Noonien-Singh,Star Trek
 Isabelle,The Walking Dead
 Isabelle,The Walking Dead Television
@@ -53096,11 +53096,11 @@ Hsu Hao,Mortal Kombat
 Haruna Sairenji,To Love Ru
 Q3784066,Saint Seiya
 Henry Archer,Star Trek
-Illyrio Mopatis,World of Ice and Fire
+Illyrio Mopatis,Game of Thrones
 Inspector Clamp Grosky,Professor Layton
 Izumo Kamizuki,Naruto
 Jamie Reyes,DC
-Jorah Mormont,World of Ice and Fire
+Jorah Mormont,Game of Thrones
 Jordan Chase,Dexter
 Juilin Sandar,The Wheel of Time
 Jur Grady,The Wheel of Time
@@ -53144,12 +53144,12 @@ Perry,The Last of Us
 Wendy Sage,The Simpsons
 Jarko Dornick,Foundation
 Ariadna Cascales,Money Heist
-Otto Hightower,World of Ice and Fire
-Jacaerys Velaryon,World of Ice and Fire
-Jason Lannister,World of Ice and Fire
-Aemond Targaryen,World of Ice and Fire
-Lyman Beesbury,World of Ice and Fire
-Laena Velaryon,World of Ice and Fire
+Otto Hightower,Game of Thrones
+Jacaerys Velaryon,Game of Thrones
+Jason Lannister,Game of Thrones
+Aemond Targaryen,Game of Thrones
+Lyman Beesbury,Game of Thrones
+Laena Velaryon,Game of Thrones
 Cuthbert Allgood,Multiverse
 Dale Horvath,The Walking Dead
 Debrii,Marvel
@@ -53203,14 +53203,14 @@ Sune Andersson,Sune
 Tinny Tim,Futuramaverse
 Jessie Anderson,The Walking Dead Television
 Felicity Smoak,Arrowverse
-Tish Jones,Whoniverse
+Tish Jones,Doctor Who
 "Paul ""Jesus"" Monroe",The Walking Dead Television
 "Paul ""Jesus"" Monroe",The Walking Dead Comic
-Alan Jackson,Whoniverse
+Alan Jackson,Doctor Who
 Missouri Moseley,Supernatural
-Dorium Maldovar,Whoniverse
+Dorium Maldovar,Doctor Who
 Dick Hallorann,Multiverse
-Bill Potts,Whoniverse
+Bill Potts,Doctor Who
 Daisy Johnson,Marvel Cinematic
 Radovid V the Stern,The Witcher
 Ofelia Salazar,The Walking Dead Television
@@ -53224,7 +53224,7 @@ Huang Lee,Grand Theft Auto HD
 The Lady,Gotham
 Eddie Munson,Stranger Things
 Kollos,Star Trek
-Barristan Selmy,World of Ice and Fire
+Barristan Selmy,Game of Thrones
 Cindy Lennox,Resident Evil
 Darth Caedus,Star Wars
 David King,Resident Evil
@@ -53234,7 +53234,7 @@ Jimmy Hopkins,Bully
 Tika Waylan,Dragonlance
 Shisui Uchiha,Naruto
 Ironwolf,DC
-Izzy Sinclair,Whoniverse
+Izzy Sinclair,Doctor Who
 Sam Witwicky,Transformers multiverse
 Saul Karath,Star Wars
 Vice,The King of Fighters
@@ -53259,11 +53259,11 @@ Xini,The Romance of the Three Kingdoms
 Pathik,World of Avatar
 Ryder,Grand Theft Auto 3D
 Palin Majere,Dragonlance
-Bronn,World of Ice and Fire
-Shae,World of Ice and Fire
+Bronn,Game of Thrones
+Shae,Game of Thrones
 Hester Shaw,Mortal Engines
 King Standish,DC
-Robert Baratheon,World of Ice and Fire
+Robert Baratheon,Game of Thrones
 Kolonel Vandesijpe,F.C. De Kampioenen
 Shando Vernius,Dune
 Cecil Terwilliger,The Simpsons
@@ -53285,7 +53285,7 @@ Anne Lindsey,Highlander
 Aoi Rokusho,Naruto
 Bolivar Trask,Marvel
 Bolivar Trask,Earth-616
-Bran Stark,World of Ice and Fire
+Bran Stark,Game of Thrones
 Talia Winters,Babylon 5
 Carlinya,The Wheel of Time
 Cay Qel-Droma,Star Wars
@@ -53307,7 +53307,7 @@ Lily Luna Potter,Harry Potter
 Ghetsis,Pokémon
 Ismael Qati,Ryanverse
 James Johnson,Metal Gear
-Jon Snow,World of Ice and Fire
+Jon Snow,Game of Thrones
 Kailea Vernius,Dune
 Lena Luthor,DC
 Gong Jing,The Romance of the Three Kingdoms
@@ -53384,8 +53384,8 @@ Superboy,DC
 Kensi Blye,NCIS
 Catherine Martell,Twin Peaks universum
 Pete Martell,Twin Peaks universum
-War Doctor,Whoniverse
-Jenny Flint,Whoniverse
+War Doctor,Doctor Who
+Jenny Flint,Doctor Who
 Dipper Pines,Gravity Falls
 Miia Laitela,Salatut elämät
 Tim Speedle,CSI
@@ -53406,7 +53406,7 @@ The Mayor,Buffyverse
 Firefly,DC
 John Constantine,DC
 Ronald Greer,Stargate
-Eleventh Doctor,Whoniverse
+Eleventh Doctor,Doctor Who
 Barriss Offee,Star Wars
 Barriss Offee,Star Wars
 Perrin Aybara,The Wheel of Time
@@ -53435,7 +53435,7 @@ Lucy Stillman,Assassin's Creed
 Zemos Wife,Marvel Cinematic
 Josef,Marvel Cinematic
 Arnim Zola,Marvel Cinematic
-Gendry,World of Ice and Fire
+Gendry,Game of Thrones
 Francis Aaron,Alien
 Elizabeth Shaw,Alien
 Peter Weyland,Alien
@@ -53457,13 +53457,13 @@ Yuno Gasai,Future Diary
 Skorpio,DC
 Xue Baoqin,Dream of the Red Chamber
 Lai Da,Dream of the Red Chamber
-Hodor,World of Ice and Fire
+Hodor,Game of Thrones
 Bala-Tik,Star Wars
 Alissa Nikkinen,Salatut elämät
 Jennifer Sisko,Star Trek
-Aegor Rivers,World of Ice and Fire
-Howland Reed,World of Ice and Fire
-Daemon Targaryen,World of Ice and Fire
+Aegor Rivers,Game of Thrones
+Howland Reed,Game of Thrones
+Daemon Targaryen,Game of Thrones
 Misty,Pokémon
 Asuka Kasen,Grand Theft Auto 3D
 Adrian Chase,DC
@@ -53488,14 +53488,14 @@ Junkrat,Overwatch
 Ana,Overwatch
 Chef Hatchet,Total Drama
 Kevin Crawford,Paradise PD
-Yasmin Khan,Whoniverse
+Yasmin Khan,Doctor Who
 Andy Bellefleur,True Blood fictional
 Cyborg,DC Extended
 Saxton Hale,Team Fortress
 Ann Mulhall,Star Trek
 Stockholm (Monica Gaztambide),Money Heist
 King Tut,DC
-Aegon III Targaryen,World of Ice and Fire
+Aegon III Targaryen,Game of Thrones
 Trelane,Star Trek
 Joel,The Last of Us
 Marlene,The Last of Us
@@ -53521,7 +53521,7 @@ Phillip Jeffries,Twin Peaks universum
 Sedusa,The Powerpuff Girls
 Count Veger,Jak and Daxter
 Syndrome,The Incredibles
-Adelaide Brooke,Whoniverse
+Adelaide Brooke,Doctor Who
 Gilbert Huph,The Incredibles
 Justine Cooper,Buffyverse
 Nora Allen,DC
@@ -53574,17 +53574,17 @@ Aggregor,Ben 10
 Max Tennyson,Ben 10
 Ruby,Supernatural
 Aloysius Animo,Ben 10
-Liz Shaw,Whoniverse
+Liz Shaw,Doctor Who
 Madame Rouge,DC
 Grindor,Transformers multiverse
 Prometheus,DC
-Empress of the Racnoss,Whoniverse
+Empress of the Racnoss,Doctor Who
 Ishamael,The Wheel of Time
-Jackie Tyler,Whoniverse
+Jackie Tyler,Doctor Who
 Janus,Stargate
 Lunch Lady Ghost,Danny Phantom
-Rani Chandra,Whoniverse
-Sara Kingdom,Whoniverse
+Rani Chandra,Doctor Who
+Sara Kingdom,Doctor Who
 Sara Pezzini,Image
 Javelin,DC
 Morgaine le Fey,DC
@@ -53598,7 +53598,7 @@ Marshmallow,Bob's Burgers
 Patty Spivot,DC
 Quentin Turnbull,DC
 Reptar,Rugrats
-White Guardian,Whoniverse
+White Guardian,Doctor Who
 Lois Lane,Earth-167
 Matches Malone,DC
 Nico Minoru,Marvel
@@ -53678,14 +53678,14 @@ Owen Grady,Jurassic Park
 Everett K. Ross,Marvel
 Aldrich Killian,Marvel
 Tang Bin,Water Margin
-Sylvia Noble,Whoniverse
+Sylvia Noble,Doctor Who
 Venom Snake,Metal Gear
 Raven Ramirez,CSI
 Ghoul,DC
 John Diggle,Arrowverse
 Alma Coin,The Hunger Games
 Boggs,The Hunger Games
-Podrick Payne,World of Ice and Fire
+Podrick Payne,Game of Thrones
 Eve Teschmacher,DC
 Eric Sacks,Teenage Mutant Ninja Turtles
 Kaido,One Piece
@@ -53704,7 +53704,7 @@ Raquel Murillo (Lisbon),Money Heist
 Edith Keeler,Star Trek
 Brett Mahoney,Marvel
 Landok,Buffyverse
-Aegon II Targaryen,World of Ice and Fire
+Aegon II Targaryen,Game of Thrones
 Riley,The Last of Us
 Princess Kashmir,The Simpsons
 Ted Grant,DC
@@ -53726,11 +53726,11 @@ Gold Nine,Star Wars
 Admiral Gorin,Star Wars
 Hammerhead Captain,Star Wars
 Hamir the Hermit,Marvel
-Gilly,World of Ice and Fire
+Gilly,Game of Thrones
 Ritchie Simpson,DC
 Jessica Stanley,Twilight
 Gene Belcher,Bob's Burgers
-Ellaria Sand,World of Ice and Fire
+Ellaria Sand,Game of Thrones
 Chief OHara,DC
 Marge Gunderson,Fargo
 Gus Grimly,Fargo
@@ -53751,7 +53751,7 @@ White Tiger,Marvel
 White Tiger,Earth-616
 John Brannigan,Revelation Space
 Gato,The King of Fighters
-Janos Slynt,World of Ice and Fire
+Janos Slynt,Game of Thrones
 Han Bolong,Water Margin
 Sunset Shimmer,Equestria Girls
 Catarine Towani,Star Wars
@@ -53765,7 +53765,7 @@ Pete Ross,Earth-167
 Sherlock Holmes,Sherlock Holmes
 Mickey Mouse,Mickey Mouse
 Minnie Mouse,Mickey Mouse
-The Doctor,Whoniverse
+The Doctor,Doctor Who
 Darth Maul,Star Wars
 Jabba the Hutt,Star Wars
 Han Solo,Star Wars
@@ -53795,7 +53795,7 @@ Julie Finlay,CSI
 Cinnamon,DC
 Jacob Carter,Stargate
 Niklaus Mikaelson,The Vampire Diaries
-Borros Baratheon,World of Ice and Fire
+Borros Baratheon,Game of Thrones
 Amina Ramsey,Star Trek
 Vecna,Stranger Things
 Tyrus Kitt,Gilliverse
@@ -53807,7 +53807,7 @@ Sineya,Buffyverse
 Robert Tubbs,The Cleveland Show
 Tessa Noel,Highlander
 Tsukune Aono,Rosario + Vampire
-Ace,Whoniverse
+Ace,Doctor Who
 Amarice,Xenaverse
 Clem,Buffyverse
 Black Pirate,DC
@@ -54015,7 +54015,7 @@ Fuzzy Lumpkins,The Powerpuff Girls
 Kya,World of Avatar
 Krrsantan,Star Wars
 Angela Valdes,Power
-Ruby Sunday,Whoniverse
+Ruby Sunday,Doctor Who
 Sandmannchen,Sandmännchen
 Oliver Pook,Nickelodeon
 Simon Eriksson,Young Royals
@@ -54057,15 +54057,15 @@ Red Dagger,Marvel Cinematic
 Red Dagger,Marvel
 Chilli Heeler,Bluey
 Glory,Buffyverse
-Rex Matheson,Whoniverse
-Andy Davidson,Whoniverse
-Esther Drummond,Whoniverse
-Ianto Jones,Whoniverse
-Captain John Hart,Whoniverse
-Jilly Kitzinger,Whoniverse
-Oswald Danes,Whoniverse
-Vera Juarez,Whoniverse
-Owen Harper,Whoniverse
+Rex Matheson,Doctor Who
+Andy Davidson,Doctor Who
+Esther Drummond,Doctor Who
+Ianto Jones,Doctor Who
+Captain John Hart,Doctor Who
+Jilly Kitzinger,Doctor Who
+Oswald Danes,Doctor Who
+Vera Juarez,Doctor Who
+Owen Harper,Doctor Who
 TPring,Star Trek
 Julio Franco,The Simpsons
 Bandit Heeler,Bluey
@@ -54082,7 +54082,7 @@ Homer Simpson,The Simpsons
 Philip J. Fry,Futuramaverse
 Zapp Brannigan,Futuramaverse
 Groundskeeper Willie,The Simpsons
-Sarah Jane Smith,Whoniverse
+Sarah Jane Smith,Doctor Who
 Salvor Hardin,Foundation
 Moe Szyslak,The Simpsons
 Krusty the Clown,The Simpsons
@@ -54103,10 +54103,10 @@ Nelson Muntz,The Simpsons
 Morgan,One Piece
 Shanks,One Piece
 Monkey D. Garp,One Piece
-Martha Jones,Whoniverse
+Martha Jones,Doctor Who
 Buggy,One Piece
 Dracule Mihawk,One Piece
-River Song,Whoniverse
+River Song,Doctor Who
 Charles Evans,Star Trek
 Eto Demerzel,Foundation
 Gaal Dornick,Foundation
@@ -54124,7 +54124,7 @@ Jayne Cobb,Serenityverse
 Kaylee Frye,Serenityverse
 Simon Tam,Serenityverse
 Koby,One Piece
-Podrick Payne,World of Ice and Fire
+Podrick Payne,Game of Thrones
 Philip Boyce,Star Trek
 Vina,Star Trek
 Jose I. Mendez,Star Trek
@@ -54358,9 +54358,9 @@ Swift Wind,Masters of the Universe
 Frosta,Masters of the Universe
 Madame Razz,Masters of the Universe
 Entrapta,Masters of the Universe
-Aegon V Targaryen,World of Ice and Fire
+Aegon V Targaryen,Game of Thrones
 Claire Temple,Marvel Cinematic
-Duncan the Tall,World of Ice and Fire
+Duncan the Tall,Game of Thrones
 Huntara,Masters of the Universe
 Mermista,Masters of the Universe
 Sea Hawk,Masters of the Universe
@@ -54371,16 +54371,16 @@ Lonnie,Masters of the Universe
 Kyle,Masters of the Universe
 Double Trouble,Masters of the Universe
 Flutterina,Masters of the Universe
-Baelor Targaryen,World of Ice and Fire
-Aerion Targaryen,World of Ice and Fire
-Maekar I Targaryen,World of Ice and Fire
+Baelor Targaryen,Game of Thrones
+Aerion Targaryen,Game of Thrones
+Maekar I Targaryen,Game of Thrones
 Angella,Masters of the Universe
 AvatarKage (Blue Knight),J9
 Mable Eclipse Jackson,J9
 Julia Ash Anderson,J9
 Natima Lang,Star Trek
 Old Man Walker,SpongeBob SquarePants
-Addam of Hull,World of Ice and Fire
+Addam of Hull,Game of Thrones
 Squadron Leader,DC Animated
 SCU Officer,DC Animated
 Paramedic,DC Animated
@@ -54454,7 +54454,7 @@ Bob Bobba Heeler,Bluey
 Chris Nana Heeler,Bluey
 Cranky the Crane,Thomas & Friends
 Maseo Yamashiro,Arrowverse
-Walder Rivers,World of Ice and Fire
+Walder Rivers,Game of Thrones
 Carrie Cutter,Arrowverse
 Silva La Forge,Star Trek
 Van Gelt Familys butler,Teenage Mutant Ninja Turtles
@@ -54514,8 +54514,8 @@ Jorge de Burgos,The Name of the Rose
 Inej Ghafa,Grishaverse
 Akira Kurosawa,The Simpsons
 Kenneth Carson,Barbie
-Viserys I Targaryen,World of Ice and Fire
-Harrold Westerling,World of Ice and Fire
+Viserys I Targaryen,Game of Thrones
+Harrold Westerling,Game of Thrones
 Candace,The Simpsons
 Jean-Luc Picard,Star Trek
 Luke Skywalker,Star Wars
@@ -54551,7 +54551,7 @@ Isaac Chroner,Multiverse
 Torque,The Witcher
 Yvonne Blixt,Sune
 Q76532801,Stargate
-April MacLean,Whoniverse
+April MacLean,Doctor Who
 Statler,Muppets
 Waldorf,Muppets
 Old Jewish Man,The Simpsons
@@ -54559,7 +54559,7 @@ Eobard Thawne,Arrowverse
 Raffi Musiker,Star Trek
 Arlene,Garfield
 Jose Tyler,Star Trek
-Rosita,Whoniverse
+Rosita,Doctor Who
 Malcolm Merlyn,Arrowverse
 Clarissa Stein,Arrowverse
 Sutra,Star Trek
@@ -54571,7 +54571,7 @@ Karla,Kaj & Andrea
 Nate Heywood,Arrowverse
 Nasreen Tarazi,Arrowverse
 Ray Palmer,Arrowverse
-Ood Sigma,Whoniverse
+Ood Sigma,Doctor Who
 Joss Jackam,Arrowverse
 Dinah Drake,Arrowverse
 William Clayton,Arrowverse
@@ -54841,12 +54841,12 @@ Happy,7th Heaven
 Sam Camden,7th Heaven
 David Camden,7th Heaven
 Slushy,Lilo & Stitch
-Rose Noble,Whoniverse
-Maestro,Whoniverse
-Cherry Sunday,Whoniverse
-Carla Sunday,Whoniverse
+Rose Noble,Doctor Who
+Maestro,Doctor Who
+Cherry Sunday,Doctor Who
+Carla Sunday,Doctor Who
 Echo,Marvel Cinematic
-Rogue,Whoniverse
+Rogue,Doctor Who
 Bart Simpson,The Simpsons
 Lisa Simpson,The Simpsons
 Khan Noonien Singh,Star Trek
@@ -54882,7 +54882,7 @@ Milla Donovan,Marvel
 Milla Donovan,Earth-616
 Trickster,DC
 D.B. Russell,CSI
-Jack Harkness,Whoniverse
+Jack Harkness,Doctor Who
 Goenitz,The King of Fighters
 Edmund Pevensie,Narnia
 Rat King,Teenage Mutant Ninja Turtles
@@ -55014,12 +55014,12 @@ Sun Wenxiang,Jin Ping Mei
 Will Parry,His Dark Materials
 Wade,Kim Possible
 Wonder Girl,DC
-River Song,Whoniverse
+River Song,Doctor Who
 Rowena Ravenclaw,Harry Potter
 Batman,DC
 Hal Emmerich,Metal Gear
 Janice Rand,Star Trek
-Daenerys Targaryen,World of Ice and Fire
+Daenerys Targaryen,Game of Thrones
 Mazrim Taim,The Wheel of Time
 Dr. Gero,Dragon Ball
 Moiraine Damodred,The Wheel of Time
@@ -55157,10 +55157,10 @@ Bai Yuqiao,Water Margin
 Jason Grey,Marvel
 Jason Grey,Earth-616
 Zhizhai Tang,Water Margin
-Criston Cole,World of Ice and Fire
-Baela Targaryen,World of Ice and Fire
+Criston Cole,Game of Thrones
+Baela Targaryen,Game of Thrones
 Lady Jia,Water Margin
-Larys Strong,World of Ice and Fire
+Larys Strong,Game of Thrones
 mother of Hao Siwen,Water Margin
 father of Wang Dingliu,Water Margin
 Li Qiaonu,Water Margin
@@ -55312,7 +55312,7 @@ Estelle Matsuko,Honorverse
 Shinn Asuka,Cosmic Era
 Graydon Creed,Marvel
 Great White Shark,DC
-Harriet Jones,Whoniverse
+Harriet Jones,Doctor Who
 Luke Castellan,Camp Half-Blood chronicles
 Jaden Korr,Star Wars
 Jason Grace,Camp Half-Blood chronicles
@@ -55320,7 +55320,7 @@ Jimmy the Hand,The Riftwar
 Juan Rico,Starship Troopers
 Karin,Naruto
 Koumyou Sanzo,Saiyuki
-Lady Christina de Souza,Whoniverse
+Lady Christina de Souza,Doctor Who
 Lady Quark,DC
 Q3221223,World of Troy
 The Peddler,Aladdin
@@ -55461,7 +55461,7 @@ Yuka Moriyama,Yandere School
 Mitsu,Teenage Mutant Ninja Turtles
 Mister Tyler,Teenage Mutant Ninja Turtles
 Wilbur Weazell,Teenage Mutant Ninja Turtles
-Matteusz Andrzejewski,Whoniverse
+Matteusz Andrzejewski,Doctor Who
 Monsieur Olaf,Teenage Mutant Ninja Turtles
 Fischbein,Teenage Mutant Ninja Turtles
 Horatio Stressbar,Teenage Mutant Ninja Turtles
@@ -55680,7 +55680,7 @@ Hercules,Xenaverse
 Impala,DC
 Izzy,Total Drama
 Jaichim Carridin,The Wheel of Time
-Jaime Lannister,World of Ice and Fire
+Jaime Lannister,Game of Thrones
 James Marcus,Resident Evil
 Janice Quatlane,Professor Layton
 Jin Kisaragi,BlazBlue
@@ -55698,7 +55698,7 @@ Li Li,Water Margin
 Fred Canning,Magic Land
 Abby Holland,DC
 Abraham Cornelius,Marvel
-Adam Mitchell,Whoniverse
+Adam Mitchell,Doctor Who
 Alex Quartararo,Battlestar Galactica
 Alpha,DC
 Alvida,One Piece
@@ -56185,7 +56185,7 @@ Naru,Predator
 Matter Master,DC
 Giovanni,Pokémon
 Tara Price,CSI
-Wilfred Mott,Whoniverse
+Wilfred Mott,Doctor Who
 Thunderbolt Ross,Marvel
 Thunderbolt Ross,Earth-616
 Chun-Li,Street Fighter
@@ -56204,7 +56204,7 @@ Anya Kuro,Star Wars
 Serra Keto,Star Wars
 Dick Dastardly,Wacky Races
 Dick Dastardly,Yogi Bear
-Harry Sullivan,Whoniverse
+Harry Sullivan,Doctor Who
 Rahvin,The Wheel of Time
 Akuma,Street Fighter
 Khan Noonien Singh,Star Trek
@@ -56383,7 +56383,7 @@ Gloss,The Hunger Games
 Nero,Star Trek
 Venia,The Hunger Games
 Mrs. Everdeen,The Hunger Games
-Oberyn Martell,World of Ice and Fire
+Oberyn Martell,Game of Thrones
 Newt Jorden,Alien
 Sune Andersson,Sune
 Smitty,Futuramaverse
@@ -56393,7 +56393,7 @@ General Anatoly Gogol,James Bond
 Duke Devlin,Yu-Gi-Oh!
 Noa Briqualon,Star Wars
 Jeremitt Towani,Star Wars
-Rhaegar Targaryen,World of Ice and Fire
+Rhaegar Targaryen,Game of Thrones
 Q20850416,Marvel
 King Jerrod,Mortal Kombat
 Blake Tower,Marvel
@@ -56402,26 +56402,26 @@ Wen Zhongrong,Water Margin
 Handsome Jack,Borderlands
 Issho,One Piece
 Skull Face,Metal Gear
-Tish Jones,Whoniverse
+Tish Jones,Doctor Who
 Bonk,DC Animated
-Thomas Brewster,Whoniverse
-Flip Jackson,Whoniverse
+Thomas Brewster,Doctor Who
+Flip Jackson,Doctor Who
 Kuvira,World of Avatar
 Rey,Star Wars
 Gerald Broflovski,South Park
-Alan Jackson,Whoniverse
-Selyse Baratheon,World of Ice and Fire
-Luthor Tyrell,World of Ice and Fire
+Alan Jackson,Doctor Who
+Selyse Baratheon,Game of Thrones
+Luthor Tyrell,Game of Thrones
 Pratt,Marvel Cinematic
-Quellon Greyjoy,World of Ice and Fire
-Edric Storm,World of Ice and Fire
-Axell Florent,World of Ice and Fire
-Dickon Tarly,World of Ice and Fire
-Bethany Bolton,World of Ice and Fire
-Merrett Frey,World of Ice and Fire
-Lancel Lannister,World of Ice and Fire
+Quellon Greyjoy,Game of Thrones
+Edric Storm,Game of Thrones
+Axell Florent,Game of Thrones
+Dickon Tarly,Game of Thrones
+Bethany Bolton,Game of Thrones
+Merrett Frey,Game of Thrones
+Lancel Lannister,Game of Thrones
 General Joe Greller,Marvel Cinematic
-Cleos Frey,World of Ice and Fire
+Cleos Frey,Game of Thrones
 James Rhodes,Marvel Cinematic
 Tallulah Black,DC
 Isabela Alvarez,Marvel Cinematic
@@ -56434,8 +56434,8 @@ Jessica Cruz,DC
 Baron Zemo,Marvel
 Baron Zemo,Earth-616
 Sewer King,DC
-Alekyne Florent,World of Ice and Fire
-Three-eyed raven,World of Ice and Fire
+Alekyne Florent,Game of Thrones
+Three-eyed raven,Game of Thrones
 Ichirouta Kazemaru,Inazuma Eleven
 Stinky Cartman,South Park
 Gabriel Lorca,Star Trek
@@ -56509,7 +56509,7 @@ Zufa Cenva,Dune
 Wallace,Pokémon
 Adso of Melk,The Name of the Rose
 Anaiya,The Wheel of Time
-Arya Stark,World of Ice and Fire
+Arya Stark,Game of Thrones
 Batman,Earth-Two
 Ben,Buffyverse
 Bill,Pokémon
@@ -56566,10 +56566,10 @@ Myron MacLain,Marvel
 Myron MacLain,Earth-616
 Nick Wolfe,Highlander
 Number One,Babylon 5
-Oswald Danes,Whoniverse
+Oswald Danes,Doctor Who
 Paul Westfield,DC
 Pearl Slaghoople,The Flintstones
-Peri Brown,Whoniverse
+Peri Brown,Doctor Who
 Pinger,Dream of the Red Chamber
 Plunderer,Marvel
 Plunderer,Earth-616
@@ -56578,7 +56578,7 @@ Serra,Multiverse
 Harrison,Pokémon
 Solan,Xenaverse
 Sterling Silversmith,DC
-Tegan Jovanka,Whoniverse
+Tegan Jovanka,Doctor Who
 Togusa,World of Ghost in the Shell
 Torque,DC
 Turner D. Century,Marvel
@@ -56613,7 +56613,7 @@ Red Sonya of Rogatino,Robert E. Howard's fictional
 Vin,Cosmere
 Q18679855,Salatut elämät
 Q18760134,Salatut elämät
-Renly Baratheon,World of Ice and Fire
+Renly Baratheon,Game of Thrones
 Chico,Metal Gear
 Cecile Cosima Caminades,Metal Gear
 Mary Darling,Disney
@@ -56633,7 +56633,7 @@ Pao,Star Wars
 Bistan,Star Wars
 Olivia,The Walking Dead Television
 Olivia,The Walking Dead Comic
-Doran Martell,World of Ice and Fire
+Doran Martell,Game of Thrones
 James Goodwin,Magic Land
 Elrood IX Corrino,Dune
 Charlotte Cracker,One Piece
@@ -56855,10 +56855,10 @@ Gale,Marvel Cinematic
 Junior CDE Executive,Muppets
 Security Guard,Marvel Cinematic
 Muu,Naruto
-Tywin Lannister,World of Ice and Fire
+Tywin Lannister,Game of Thrones
 Egghead,DC
 Sophia Peletier,The Walking Dead
-Owen Harper,Whoniverse
+Owen Harper,Doctor Who
 Carth Onasi,Star Wars
 King Randor,Masters of the Universe
 Cecelia,The Hunger Games
@@ -56912,7 +56912,7 @@ Magneto,Revised X-Men film series timeline
 Q106466938,Star Wars
 Grandmother of the Troublemaker Street children,Bråkmakargatan
 Raphael,Teenage Mutant Ninja Turtles
-Mila,Whoniverse
+Mila,Doctor Who
 "Paul ""Jesus"" Monroe",The Walking Dead Television
 "Paul ""Jesus"" Monroe",The Walking Dead Comic
 Elijah Mundo,CSI
@@ -56973,7 +56973,7 @@ Snapper Carr,DC
 Hoodwink,Marvel
 Sturm Majere,Dragonlance
 Max Shreck,DC
-Melisandre,World of Ice and Fire
+Melisandre,Game of Thrones
 Walter Harriman,Stargate
 Ulin Majere,Dragonlance
 Val,Star Wars
@@ -57500,15 +57500,15 @@ Barry Allen,DC
 Tia Dalma,Pirates of the Caribbean
 Gladion,Pokémon
 Thelonious,Shrek
-Trystane Martell,World of Ice and Fire
-Tycho Nestoris,World of Ice and Fire
-Alliser Thorne,World of Ice and Fire
-Daemon I Blackfyre,World of Ice and Fire
-Daeron II Targaryen,World of Ice and Fire
+Trystane Martell,Game of Thrones
+Tycho Nestoris,Game of Thrones
+Alliser Thorne,Game of Thrones
+Daemon I Blackfyre,Game of Thrones
+Daeron II Targaryen,Game of Thrones
 Dan Garret,DC
 Jadis,The Walking Dead
-Greatjon Umber,World of Ice and Fire
-Smalljon Umber,World of Ice and Fire
+Greatjon Umber,Game of Thrones
+Smalljon Umber,Game of Thrones
 Monsieur Hood,Shrek
 Nadeshiko Kinomoto,Cardcaptor Sakura
 Mayor of Townsville,The Powerpuff Girls
@@ -57524,8 +57524,8 @@ Dane Vogel,Saints Row
 Daniel Lamb,Manhunt
 Sandra,Sleeping Dogs
 Christy Martin,Bully
-Graham OBrien,Whoniverse
-Ryan Sinclair,Whoniverse
+Graham OBrien,Doctor Who
+Ryan Sinclair,Doctor Who
 Wizard,DC Extended
 Kavi Nahasapeemapetilon,The Simpsons
 Carl Conrad Coreander,Fantastica
@@ -57709,7 +57709,7 @@ Mikaela Banes,Transformers multiverse
 Heather MacLeod,Highlander
 Henri Ducard,DC
 The Postal Dude,Postal
-Ianto Jones,Whoniverse
+Ianto Jones,Doctor Who
 Isendre,The Wheel of Time
 Ling Bouvier,The Simpsons
 Luis Sera,Resident Evil
@@ -57846,7 +57846,7 @@ Akari Furutaka,Yandere School
 McDonald Crump,Teenage Mutant Ninja Turtles
 Fu Sheng,Teenage Mutant Ninja Turtles
 Mang-Thrasha,Teenage Mutant Ninja Turtles
-Ram Singh,Whoniverse
+Ram Singh,Doctor Who
 Chief OHara,DC
 Erik Killmonger,Marvel Cinematic
 Ayo,Marvel Cinematic
@@ -57927,7 +57927,7 @@ Alicia Masters,Marvel
 Alicia Masters,Earth-616
 Scorpius Malfoy,Harry Potter
 Conrad Ecklie,CSI
-Astrid Peth,Whoniverse
+Astrid Peth,Doctor Who
 Baigujing,Journey to the West
 Asa-Nisse,Åsa-Nisse
 John Barnaby,Midsomer
@@ -58014,7 +58014,7 @@ Philippe Bridau,The human comedy
 Raquella Berto-Anirul,Dune
 Truus Pinckers,F.C. De Kampioenen
 Robby Jackson,Ryanverse
-Steven Taylor,Whoniverse
+Steven Taylor,Doctor Who
 Martyn Tallanvor,The Wheel of Time
 Q3516374,Asterix
 Terror Inc.,Marvel
@@ -58059,7 +58059,7 @@ Kung Lao,Mortal Kombat
 Ranma Saotome,Ranma ½
 Might Guy,Naruto
 Jack ONeill,Stargate
-Mickey Smith,Whoniverse
+Mickey Smith,Doctor Who
 Usagi Tsukino,Sailor Moon
 Trevor Bruttenholm,Hellboy
 Commander Kraken,Marvel
@@ -58451,7 +58451,7 @@ Laman Damodred,The Wheel of Time
 Luann Van Houten,The Simpsons
 "Yancy Fry, Jr.",Futuramaverse
 Elika,Prince of Persia
-Jenny Flint,Whoniverse
+Jenny Flint,Doctor Who
 Dipper Pines,Gravity Falls
 Jiang Zhong,Water Margin
 Miia Laitela,Salatut elämät
@@ -58469,13 +58469,13 @@ Trixie Tang,The Fairly OddParents
 Uga Fantozzi,Fantozzi fictional
 Ultimate Black Cat,Marvel
 Usha Majere,Dragonlance
-Varys,World of Ice and Fire
+Varys,Game of Thrones
 Yelena Belova,Marvel
 Welk,Star Wars
 Uncle Marvel,DC
 Gennady Komov,Noon
 Tam Sventon,Tam Sventon
-Petyr Baelish,World of Ice and Fire
+Petyr Baelish,Game of Thrones
 Ralf Jones,The King of Fighters
 Oswald,The King of Fighters
 Serious Sam,Serious Sam
@@ -58792,13 +58792,13 @@ Tongah,Earth-616
 mother of Ling Zhen,Water Margin
 wife of Xu Ning,Water Margin
 Zeng Kui,Water Margin
-Otto Hightower,World of Ice and Fire
-Jacaerys Velaryon,World of Ice and Fire
+Otto Hightower,Game of Thrones
+Jacaerys Velaryon,Game of Thrones
 Nicky,Broken Masquerade
-Jason Lannister,World of Ice and Fire
-Aemond Targaryen,World of Ice and Fire
-Lyman Beesbury,World of Ice and Fire
-Laena Velaryon,World of Ice and Fire
+Jason Lannister,Game of Thrones
+Aemond Targaryen,Game of Thrones
+Lyman Beesbury,Game of Thrones
+Laena Velaryon,Game of Thrones
 Taishou Wang,Water Margin
 Cheng Wanli,Water Margin
 Banzhi Wang,Water Margin
@@ -58861,7 +58861,7 @@ Khemsa,Robert E. Howard's fictional
 Thugra Khotan,Robert E. Howard's fictional
 Jack,DC Animated
 Rufus Turner,Supernatural
-Ramsay Bolton,World of Ice and Fire
+Ramsay Bolton,Game of Thrones
 Kung Jin,Mortal Kombat
 Spencer Monroe,The Walking Dead
 Fred Colon,Discworld
@@ -58876,7 +58876,7 @@ Eli,Xenaverse
 Epoch,DC
 Zombozo,Ben 10
 Faiza Hussain,Marvel
-Fitz Kreiner,Whoniverse
+Fitz Kreiner,Doctor Who
 Gil Hamilton,Known Space
 Betsy Ross,Marvel
 Betsy Ross,Earth-616
@@ -58923,14 +58923,14 @@ Enobaria,The Hunger Games
 Phasma,Star Wars
 Yadan,The Romance of the Three Kingdoms
 General Hux,Star Wars
-Mace Tyrell,World of Ice and Fire
-Olenna Tyrell,World of Ice and Fire
-Edmure Tully,World of Ice and Fire
+Mace Tyrell,Game of Thrones
+Olenna Tyrell,Game of Thrones
+Edmure Tully,Game of Thrones
 Abu Bakaar,Marvel Cinematic
-Jaehaerys II Targaryen,World of Ice and Fire
-Ormund Baratheon,World of Ice and Fire
-Ryam Florent,World of Ice and Fire
-Melessa Tarly,World of Ice and Fire
+Jaehaerys II Targaryen,Game of Thrones
+Ormund Baratheon,Game of Thrones
+Ryam Florent,Game of Thrones
+Melessa Tarly,Game of Thrones
 Kollos,Star Trek
 Walter Donovan,Indiana Jones
 Joseph Cooper,Interstellar
@@ -58965,8 +58965,8 @@ Rebel MP,Star Wars
 Blue Three,Star Wars
 Corporal Rostok,Star Wars
 Floyd Gerhardt,Fargo
-Willas Tyrell,World of Ice and Fire
-Bill Potts,Whoniverse
+Willas Tyrell,Game of Thrones
+Bill Potts,Doctor Who
 TChalla,Marvel Cinematic
 TChaka,Marvel Cinematic
 Thaddeus Ross,Marvel Cinematic
@@ -58974,10 +58974,10 @@ Daisy Johnson,Marvel Cinematic
 Peter Quill,Marvel Cinematic
 Johann Schmidt,Marvel Cinematic
 LeFou,Beauty and the Beast
-Hizdahr zo Loraq,World of Ice and Fire
+Hizdahr zo Loraq,Game of Thrones
 Junior CDE Executive,Muppets
-Tormund Giantsbane,World of Ice and Fire
-Missandei,World of Ice and Fire
+Tormund Giantsbane,Game of Thrones
+Missandei,Game of Thrones
 Radovid V the Stern,The Witcher
 Millegarda,The Witcher
 Gwenpool,Marvel
@@ -59003,7 +59003,7 @@ Jiro Yakuin,"More Than a Married Couple, But Not Lovers"
 Sadaharu Kamo,"More Than a Married Couple, But Not Lovers"
 Natsumi Ohashi,"More Than a Married Couple, But Not Lovers"
 Wang Fu,Jin Ping Mei
-Aerion Targaryen,World of Ice and Fire
+Aerion Targaryen,Game of Thrones
 Tsuki Uzaki,Uzaki-chan Wants to Hang Out!
 Buguigua Pozi,Jin Ping Mei
 mother of Cai Yun,Jin Ping Mei
@@ -59362,14 +59362,14 @@ Vaclav Littmann,The Teacher
 Aknamkanon,Yu-Gi-Oh!
 Banchina,One Piece
 Li Kui,Jin Ping Mei
-Borros Baratheon,World of Ice and Fire
+Borros Baratheon,Game of Thrones
 Sachi Takamiya,"More Than a Married Couple, But Not Lovers"
 Colleen,Marvel
 Colleen,Earth-5311
 Rikaine Delmarre,Foundation
 Lucy,Cyberpunk
-Baelor Targaryen,World of Ice and Fire
-Maekar I Targaryen,World of Ice and Fire
+Baelor Targaryen,Game of Thrones
+Maekar I Targaryen,Game of Thrones
 Hugh Neutron,Jimmy Neutron
 Prince Yun,Jin Ping Mei
 Cao He,Jin Ping Mei
@@ -59524,7 +59524,7 @@ Doctor Doom,Earth-616
 Robin Wood,Buffyverse
 Orihime Inoue,Bleach
 Princess Peach,Super Mario
-Rex Matheson,Whoniverse
+Rex Matheson,Doctor Who
 Haku,Naruto
 Zhou Cang,The Romance of the Three Kingdoms
 Human Torch,Marvel
@@ -59572,7 +59572,7 @@ Bugsy,Pokémon
 Raynar Thul,Star Wars
 Relena Darlian,After Colony
 Robert Tubbs,The Cleveland Show
-Sandor Clegane,World of Ice and Fire
+Sandor Clegane,Game of Thrones
 Sentaro Daimonji,Ranma ½
 Silviana,The Wheel of Time
 Spirit Albarn,Soul Eater
@@ -59737,7 +59737,7 @@ Natalie de Manerville,The human comedy
 Norma Cenva,Dune
 Octave de Camps,The human comedy
 Howdoo,Asterix
-Rani Chandra,Whoniverse
+Rani Chandra,Doctor Who
 Robert Crater,Star Trek
 Roj Nemenuh Sarton,Foundation
 Sara Pezzini,Image
@@ -59784,11 +59784,11 @@ Dutch,Predator
 Mort Goldman,Family Guy
 Sam Hanna,NCIS
 Zhong Shen,The Romance of the Three Kingdoms
-Ygritte,World of Ice and Fire
+Ygritte,Game of Thrones
 Geppetto (Fables character),DC
 Geppetto (Fables character),Fables
 Samantha Simpson,Totally Spies!
-Robb Stark,World of Ice and Fire
+Robb Stark,Game of Thrones
 Cashmere,The Hunger Games
 Brutus,The Hunger Games
 Foxface,The Hunger Games
@@ -59841,13 +59841,13 @@ Regis Lucis Caelum,Final Fantasy
 Raquel Murillo (Lisbon),Money Heist
 Edith Keeler,Star Trek
 Brett Mahoney,Marvel
-Young Griff,World of Ice and Fire
-Yohn Royce,World of Ice and Fire
+Young Griff,Game of Thrones
+Yohn Royce,Game of Thrones
 Manella Dubanqua,Foundation
 Iden Versio,Star Wars
-Aegon II Targaryen,World of Ice and Fire
-Duncan the Tall,World of Ice and Fire
-Daeron I Targaryen,World of Ice and Fire
+Aegon II Targaryen,Game of Thrones
+Duncan the Tall,Game of Thrones
+Daeron I Targaryen,Game of Thrones
 Spatula Woman,The Fairly OddParents
 Zeff,One Piece
 Ted Hoffman,Earth-96283
@@ -60016,7 +60016,7 @@ Alberto Falcone,DC
 Charlie Swan,Twilight
 Doctor Demonicus,Marvel
 Aloysius Animo,Ben 10
-Liz Shaw,Whoniverse
+Liz Shaw,Doctor Who
 Eto Demerzel,Foundation
 Lady of the Green Kirtle,Narnia
 John Sheridan,Babylon 5
@@ -60030,7 +60030,7 @@ Marcus Hamilton,Buffyverse
 Helena Richese,Dune
 Ishamael,The Wheel of Time
 Jack Carver,Far Cry
-Jackie Tyler,Whoniverse
+Jackie Tyler,Doctor Who
 Jean-Joachim Goriot,The human comedy
 Josiah X,Marvel
 Soap MacTavish,Call of Duty
@@ -60043,7 +60043,7 @@ Bunda Chand,Robert E. Howard's fictional
 Amanda Valenciano Libre,Metal Gear
 Noah,The Walking Dead
 Linda Tran,Supernatural
-Jon Arryn,World of Ice and Fire
+Jon Arryn,Game of Thrones
 Sarada Uchiha,Naruto
 Bian Xiang,Water Margin
 Master of Lake-town,Tolkien
@@ -60054,7 +60054,7 @@ Fancy Dan,Marvel
 Fancy Dan,Earth-616
 Sophia Hapgood,Indiana Jones
 Jia Min,Dream of the Red Chamber
-Molly OSullivan,Whoniverse
+Molly OSullivan,Doctor Who
 Diamondback,Marvel
 Diamondback,Earth-616
 Sylvia Tilly,Star Trek
@@ -60133,7 +60133,7 @@ NDare,Marvel
 NDare,Earth-616
 Betsy Wilford,Marvel
 Betsy Wilford,Earth-616
-Ace,Whoniverse
+Ace,Doctor Who
 Amarice,Xenaverse
 Andre LeBlanc,DC
 Bakuto,Marvel
@@ -60271,12 +60271,12 @@ Tandy Snow,Earth-616
 Kyle Jinadu,Marvel
 Kyle Jinadu,Earth-616
 Taishou He,Water Margin
-Alicent Hightower,World of Ice and Fire
+Alicent Hightower,Game of Thrones
 Dayuan,Water Margin
 Mr. Chambers,Marvel
 Mr. Chambers,Earth-616
 Li Gu,Water Margin
-Lyonel Strong,World of Ice and Fire
+Lyonel Strong,Game of Thrones
 Persephone Brimstone,Agents of Mayhem
 Wang Jiang,Water Margin
 Lionel Dibbs,Marvel
@@ -60300,15 +60300,15 @@ Mont Blanc Noland,One Piece
 Q23039827,Salatut elämät
 Ramirez,Marvel Cinematic
 Winona Kirk,Star Trek
-Tytos Lannister,World of Ice and Fire
-Jeyne Lannister,World of Ice and Fire
-Shaera Targaryen,World of Ice and Fire
-Domeric Bolton,World of Ice and Fire
-Walda Frey,World of Ice and Fire
+Tytos Lannister,Game of Thrones
+Jeyne Lannister,Game of Thrones
+Shaera Targaryen,Game of Thrones
+Domeric Bolton,Game of Thrones
+Walda Frey,Game of Thrones
 Major Kathleen Sparr,Marvel Cinematic
-Elia Martell,World of Ice and Fire
-Garlan Tyrell,World of Ice and Fire
-Genna Frey,World of Ice and Fire
+Elia Martell,Game of Thrones
+Garlan Tyrell,Game of Thrones
+Genna Frey,Game of Thrones
 Wilson,Marvel Cinematic
 Tony Stark,Marvel Cinematic
 Justin Hammer,Marvel Cinematic
@@ -60322,7 +60322,7 @@ Jason Macendale,Marvel
 Jasper Sitwell,Marvel
 Jasper Sitwell,Earth-616
 Jia Tanchun,Dream of the Red Chamber
-Jilly Kitzinger,Whoniverse
+Jilly Kitzinger,Doctor Who
 Katz Kobayashi,Universal Century
 Kid Devil,DC
 Kobalt,DC
@@ -60472,7 +60472,7 @@ Opal Tanaka,Earth-616
 Hank Pym,Marvel Cinematic
 Saw Gerrera,Star Wars
 Vera Sweet,DC
-Ellaria Sand,World of Ice and Fire
+Ellaria Sand,Game of Thrones
 Chief OHara,DC
 Red Ryan,DC
 Haytham Kenway,Assassin's Creed
@@ -60501,7 +60501,7 @@ Nite-Wing,DC
 Pan Samochodzik,Pan Samochodzik
 Patrick Danville,Multiverse
 Patty Spivot,DC
-Pete Tyler,Whoniverse
+Pete Tyler,Doctor Who
 Qingwen,Dream of the Red Chamber
 Professor Night,Image
 Quentin Turnbull,DC
@@ -60650,7 +60650,7 @@ Romeo,Granblue Fantasy
 Pengy,Granblue Fantasy
 Owen,Granblue Fantasy
 Spinnah,Granblue Fantasy
-Rosita,Whoniverse
+Rosita,Doctor Who
 Tabina,Granblue Fantasy
 Malcolm Merlyn,Arrowverse
 Clarissa Stein,Arrowverse
@@ -61576,7 +61576,7 @@ Teresa Carste,Reign of the Seven Spellblades
 Chloe Halford,Reign of the Seven Spellblades
 Frances Gilchrist,Reign of the Seven Spellblades
 Vanessa Aldiss,Reign of the Seven Spellblades
-Penny Carter,Whoniverse
+Penny Carter,Doctor Who
 Ralph Kane,Wait Till your Father Gets Home
 Harry Boyle,Wait Till your Father Gets Home
 Irma Boyle,Wait Till your Father Gets Home
@@ -61882,15 +61882,15 @@ Jiang Ji,The Romance of the Three Kingdoms
 Sun Jiao,The Romance of the Three Kingdoms
 Zhu Ran,The Romance of the Three Kingdoms
 Stockholm (Monica Gaztambide),Money Heist
-Visenya Targaryen,World of Ice and Fire
+Visenya Targaryen,Game of Thrones
 Cinderella,Shrek
 Snow White,Shrek
 Rico Rodriguez,Just Cause
 King Tut,DC
-Osha,World of Ice and Fire
-Shiera Seastar,World of Ice and Fire
-Aegon III Targaryen,World of Ice and Fire
-Maegor I Targaryen,World of Ice and Fire
+Osha,Game of Thrones
+Shiera Seastar,Game of Thrones
+Aegon III Targaryen,Game of Thrones
+Maegor I Targaryen,Game of Thrones
 Cletus Kasady,Marvel
 Cletus Kasady,Earth-616
 Bayek of Siwa,Assassin's Creed
@@ -61920,7 +61920,7 @@ Edward Tanaka,Sonic X
 John Blackstar,Blackstar
 Rick Valassi,The Division
 Higgins,Teenage Mutant Ninja Turtles
-April MacLean,Whoniverse
+April MacLean,Doctor Who
 Samuel Wipper,The Onion
 Basher,Teenage Mutant Ninja Turtles
 Billy Jim Bob McJames,Teenage Mutant Ninja Turtles
@@ -62037,10 +62037,10 @@ Nereel,Earth-616
 wife of Ling Zhen,Water Margin
 Child of Xu Ning,Water Margin
 mother of Shi En,Water Margin
-Viserys I Targaryen,World of Ice and Fire
+Viserys I Targaryen,Game of Thrones
 Miss Locke,Marvel
 Miss Locke,Earth-616
-Harrold Westerling,World of Ice and Fire
+Harrold Westerling,Game of Thrones
 Junzhu,Water Margin
 Zhao Ding,Water Margin
 Steel Guardian,Marvel
@@ -62990,7 +62990,7 @@ Simon Camden,7th Heaven
 Granny Dibble,Top Cat
 Chantel DuBois,Madagascar
 Naru,Predator
-Ruby Sunday,Whoniverse
+Ruby Sunday,Doctor Who
 Tracy,Teenage Mutant Ninja Turtles
 Samuel Deever,Grand Theft Auto 2D
 Robert Seragliano,Grand Theft Auto 2D
@@ -63337,9 +63337,9 @@ Dalmatian,One Piece
 Lubble,Teenage Mutant Ninja Turtles
 Damrada,That Time I Got Reincarnated as a Slime
 Granbell Rosso,That Time I Got Reincarnated as a Slime
-Rose Noble,Whoniverse
-Cherry Sunday,Whoniverse
-Carla Sunday,Whoniverse
+Rose Noble,Doctor Who
+Cherry Sunday,Doctor Who
+Carla Sunday,Doctor Who
 Zhuge Liang,The Romance of the Three Kingdoms
 Jia Xu,The Romance of the Three Kingdoms
 Huchier,The Romance of the Three Kingdoms
@@ -63742,7 +63742,7 @@ Lepre,One Piece
 Tesoros Mother,One Piece
 Douglas Bullet,One Piece
 Q126486549,Magic Land
-Rogue,Whoniverse
+Rogue,Doctor Who
 Rashid,Street Fighter
 Buena Festa,One Piece
 Donald Moderate,One Piece
@@ -64407,7 +64407,7 @@ Fluder Paradyne,Overlord
 Arche Eeb Rile Furt,Overlord
 Ulbert Alain Odle,Overlord
 Ankoro Mocchi Mochi,Overlord
-Addam of Hull,World of Ice and Fire
+Addam of Hull,Game of Thrones
 Nigun Grid Luin,Overlord
 Lakyus Alvein Dale Aindra,Overlord
 Philip Dayton LEyre Montserrat,Overlord
@@ -65327,8 +65327,8 @@ Raksor,Earth-616
 Captain Toad,Super Mario
 Dorrek VII,Marvel
 Dorrek VII,Earth-616
-Gregor Clegane,World of Ice and Fire
-Viserion,World of Ice and Fire
+Gregor Clegane,Game of Thrones
+Viserion,Game of Thrones
 SCP-173,SCP
 Grea,Granblue Fantasy
 Gage Creed,Multiverse
@@ -65970,10 +65970,10 @@ Tehanu,Earthsea
 Shirahoshi,One Piece
 Borch Three Jackdaws,The Witcher
 Toothless,How to Train Your Dragon
-Drogon,World of Ice and Fire
-Rhaegal,World of Ice and Fire
-Balerion,World of Ice and Fire
-Vhagar,World of Ice and Fire
+Drogon,Game of Thrones
+Rhaegal,Game of Thrones
+Balerion,Game of Thrones
+Vhagar,Game of Thrones
 King Neptune,SpongeBob SquarePants
 Mindy the Mermaid,SpongeBob SquarePants
 Alduin,The Elder Scrolls
@@ -66119,7 +66119,7 @@ Saffron,Ranma ½
 Katla,The Brothers Lionheart
 Dragon,Shrek
 Glenstorm,Narnia
-Viserion,World of Ice and Fire
+Viserion,Game of Thrones
 Lord Tirek,My Little Pony G4-G5
 Trogdor,Homestar Runner
 Centorea Shianus,Monster Musume
