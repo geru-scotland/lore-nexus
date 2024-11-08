@@ -89,6 +89,7 @@ class WikidataProcessor:
         def normalize_unicode(text):
             normalized_text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('ascii')
             normalized_text = re.sub(r"['’]", "", normalized_text)
+            normalized_text = re.sub(r"[.-]", "", normalized_text)
             return normalized_text
 
         self.df['itemLabel'] = self.df['itemLabel'].apply(normalize_unicode)
