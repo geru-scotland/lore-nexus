@@ -1,4 +1,16 @@
-import os
+"""
+*****************************************************
+ * Universidad del País Vasco (UPV/EHU)
+ * Facultad de Informática - Donostia-San Sebastián
+ * Asignatura: Procesamiento de Lenguaje Natural
+ * Proyecto: Lore Nexus
+ *
+ * File: mythdata.py
+ * Author: geru-scotland
+ * GitHub: https://github.com/geru-scotland
+ * Description:
+ *****************************************************
+"""
 import re
 import unicodedata
 from enum import Enum

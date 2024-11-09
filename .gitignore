@@ -92,3 +92,5 @@ Desktop.ini
 # Temp files
 tmp/
 temp/
+
+__pycache__/

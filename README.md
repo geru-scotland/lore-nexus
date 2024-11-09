@@ -4,7 +4,7 @@
   <h1>LoreNexus</h1>
 </div>
 <div align="center">
-  <img src="images/LoreNexus.png" width="400" alt="PyAtlas">
+  <img src="images/LoreNexus.png" width="600" alt="LoreNexus">
 </div>
 
 ## Descripción
