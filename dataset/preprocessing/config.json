@@ -1,4 +1,14 @@
 {
+    "datasets": [
+        {
+            "name": "Wikidata",
+            "path": "apis/wikidata/processed_data/wikidata_dataset_FastText.txt"
+        },
+        {
+            "name": "Mythdata",
+            "path": "apis/mythology/processed_data/myth_dataset.txt"
+        }
+    ],
     "labels": [
         "HarryPotter",
         "StarWars",
@@ -8,6 +18,7 @@
         "Naruto",
         "ForgottenRealms",
         "FinalFantasy",
-        "GameofThrones"
+        "GameofThrones",
+        "Mythology"
     ]
 }

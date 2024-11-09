@@ -19,9 +19,11 @@ model_path = 'resources/taggers/universe_classifier/best-model.pt'
 classifier = TextClassifier.load(model_path)
 
 # OJO IGUAL MEJOR PASA A MINUSCULAS!!!
-sentence = Sentence("Arthaslol")
+sentence = Sentence("Greymmane".lower())
 
-classifier.predict(sentence)
+classifier.predict(sentence, return_probabilities_for_all_classes=True)
 
-print(f"Predicted label: {sentence.labels[0].value}")
-print(f"Confidence: {sentence.labels[0].score:.4f}")
+top_labels = sorted(sentence.labels, key=lambda label: label.score, reverse=True)[:4]
+
+for i, label in enumerate(top_labels, start=1):
+    print(f"Prediction {i}: {label.value} with confidence {label.score:.4f}")

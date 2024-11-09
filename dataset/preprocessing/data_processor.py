@@ -17,10 +17,11 @@ from textattack.transformations.word_swaps.word_swap_neighboring_character_swap 
 
 
 class DataProcessor:
-    def __init__(self, input_path="apis/wikidata/processed_data/wikidata_dataset_FastText.txt", output_path="output/dataset.txt", config_path="config.json"):
-        self.input_path = input_path
+    def __init__(self,  config_path="config.json", output_path="output/dataset.txt"):
+        self.config_path = config_path
         self.output_path = output_path
         self.allowed_labels = self._load_labels(config_path)
+        self.datasets = self._load_datasets()
         self.data = self._load_data()
 
     def _load_labels(self, config_path):
@@ -37,20 +38,36 @@ class DataProcessor:
 
         return allowed_labels
 
+    def _load_datasets(self):
+        """
+        """
+        with open(self.config_path, 'r', encoding='utf-8') as config_file:
+            config = json.load(config_file)
+            return config.get("datasets", [])
+
     def _load_data(self):
         """
         """
         filtered_data = []
-        with open(self.input_path, 'r', encoding='utf-8') as file:
-            for line in file:
-                if any(line.startswith(label) for label in self.allowed_labels):
-                    filtered_data.append(line.strip())
+        for dataset in self.datasets:
+            try:
+                dataset_path = dataset["path"]
+                with open(dataset_path, 'r', encoding='utf-8') as file:
+                    for line in file:
+                        if any(line.startswith(label) for label in self.allowed_labels):
+                            filtered_data.append(line.strip())
+            except FileNotFoundError:
+                print(f"Dataset {dataset['name']} not found in path {dataset["path"]}")
         return filtered_data
 
     class DataAugmentator:
         def __init__(self, outer_instance):
             self.data_processor = outer_instance
-            self.augmenter = Augmenter(transformation=WordSwapNeighboringCharacterSwap(), pct_words_to_swap=0.5, transformations_per_example=3)
+            self.augmenter = Augmenter(
+                transformation=WordSwapNeighboringCharacterSwap(),
+                pct_words_to_swap=0.5,
+                transformations_per_example=3
+            )
         def augment(self):
             """
 
