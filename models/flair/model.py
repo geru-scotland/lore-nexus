@@ -115,8 +115,6 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
         """
         if self._mode == "eval":
             classifier = TextClassifier.load(model_path)
-
-            # OJO IGUAL MEJOR PASA A MINUSCULAS!!!
             sentence = Sentence(name.lower())
 
             classifier.predict(sentence, return_probabilities_for_all_classes=True)
@@ -127,5 +125,5 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
                 print(f"Prediction {i}: {label.value} with confidence {label.score:.4f}")
 
 
-ln_flair_model = LoreNexusFlairModel(mode="train")
-ln_flair_model.train()
+ln_flair_model = LoreNexusFlairModel(mode="eval")
+ln_flair_model.predict(name="driz dourdenn")
