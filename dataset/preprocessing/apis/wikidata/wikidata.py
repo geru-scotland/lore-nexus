@@ -27,12 +27,12 @@ class DatasetFormats(Enum):
         return self.value
 
 class WikidataProcessor:
-    def __init__(self, input_file, output_file='processed_data/wikidata_dataset.csv', labels_file='labels/labels.txt'):
+    def __init__(self, input_file, output_folder, labels_file):
         """
         """
 
         self.input_file = input_file
-        self.output_file = output_file
+        self.output_folder = output_folder
         self.labels_file = labels_file
         self.df = pd.read_csv(self.input_file)
 
@@ -73,6 +73,8 @@ class WikidataProcessor:
 
     def generate_label_list(self):
         """
+        Simplemente para generar un fichero con todas las etiquetas únicas
+        Por curiosidad, no forma parte del proceso de pipeline.
         """
 
         self.process_labels()
@@ -128,33 +130,27 @@ class WikidataProcessor:
                     for item in data:
                         file.write(f"{item}\n")
 
-        output_file_base, extension = os.path.splitext(self.output_file)
-
         if dataset_format == DatasetFormats.CoNLL:
+            output_file = os.path.join(self.output_folder, "wikidata_dataset_CoNLL.txt")
             names = self.df['itemLabel']
             labels = self.df['universeLabel']
-            output_file = f"{output_file_base}_CoNLL.txt"
             write_to_file(output_file, data=[names, labels], conll_format=True)
 
         elif dataset_format == DatasetFormats.SEPARATED_DATA_LABELS:
-            names_file = f"{output_file_base}_names.txt"
-            labels_file = f"{output_file_base}_labels.txt"
+            names_file = os.path.join(self.output_folder, "wikidata_dataset_names.txt")
+            labels_file = os.path.join(self.output_folder, "wikidata_dataset_labels.txt")
             names = self.df['itemLabel']
             labels = self.df['universeLabel']
             write_to_file(names_file, data=names)
             write_to_file(labels_file, data=labels)
 
         elif dataset_format == DatasetFormats.FAST_TEXT:
+            output_file = os.path.join(self.output_folder, "wikidata_dataset_FastText.txt")
             names = self.df['itemLabel']
             labels = self.df['universeLabel']
-            output_file = f"{output_file_base}_FastText.txt"
             write_to_file(output_file, data=[names, labels], fast_text_format=True)
         else:
-            self.df.to_csv(self.output_file, index=False)
+            output_file = os.path.join(self.output_folder, "wikidata_dataset.csv")
+            self.df.to_csv(output_file, index=False)
 
-        print(f"Processed data saved to {self.output_file}")
-
-
-# Proceso todos los datos que he obtenido de Wikidata
-processor = WikidataProcessor(input_file='raw_data/wikidata-universes.csv')
-processor.process_data(dataset_format=DatasetFormats.FAST_TEXT)
+        print(f"Processed data saved to {self.output_folder}")

@@ -11,6 +11,7 @@
  * Description:
  *****************************************************
 """
+import os
 import json
 import random
 from collections import defaultdict
@@ -30,41 +31,34 @@ class MythLabels(Enum):
         return self.value
 
 class DataProcessor:
-    def __init__(self, config_path="config.json", output_path="output/dataset.txt"):
-        self.config_path = config_path
-        self.output_path = output_path
-        self.allowed_labels = self._load_labels(config_path)
-        self.datasets = self._load_datasets()
+    def __init__(self, datasets, labels, output_folder, output_file, train_file, dev_file, test_file):
+        self.datasets = datasets
+        self.allowed_labels = self._load_labels(labels)
         self.data = self._load_data()
 
-    def _load_labels(self, config_path):
+        # Rutas de salida
+        self.output_path = os.path.join(output_folder, output_file)
+        self.train_path = os.path.join(output_folder, train_file)
+        self.dev_path = os.path.join(output_folder, dev_file)
+        self.test_path = os.path.join(output_folder, test_file)
+
+    def _load_labels(self, labels):
         """
         """
         allowed_labels = []
-        with open(config_path, 'r', encoding='utf-8') as config_file:
-            config = json.load(config_file)
 
-            raw_labels = config.get("labels", [])
-
-            for label in raw_labels:
-                allowed_labels.append(f"__label__{label}")
+        for label in labels:
+            allowed_labels.append(f"__label__{label}")
 
         return allowed_labels
-
-    def _load_datasets(self):
-        """
-        """
-        with open(self.config_path, 'r', encoding='utf-8') as config_file:
-            config = json.load(config_file)
-            return config.get("datasets", [])
 
     def _load_data(self):
         """
         """
         filtered_data = []
         for dataset in self.datasets:
+            dataset_path = os.path.join(dataset["path"], dataset["output_folder"], dataset["processed_file"])
             try:
-                dataset_path = dataset["path"]
                 with open(dataset_path, 'r', encoding='utf-8') as file:
                     for line in file:
                         if any(line.startswith(label) for label in self.allowed_labels):
@@ -153,7 +147,7 @@ class DataProcessor:
         random.seed(42)
 
         data_by_label = defaultdict(list)
-        with open('output/dataset.txt', 'r', encoding='utf-8') as file:
+        with open(self.output_path, 'r', encoding='utf-8') as file:
             lines = file.readlines()
             # Organizo por label, para dividir equitativamente después, si no lo que me ha
             # ocurrido es que había alguna label en dev y test que no estaba en train
@@ -180,18 +174,13 @@ class DataProcessor:
             # random.shuffle(test_lines)
 
             try:
-                with open('output/train.txt', 'w', encoding='utf-8') as file:
+                with open(self.train_path, 'w', encoding='utf-8') as file:
                     file.writelines(train_lines)
 
-                with open('output/dev.txt', 'w', encoding='utf-8') as file:
+                with open(self.dev_path, 'w', encoding='utf-8') as file:
                     file.writelines(dev_lines)
 
-                with open('output/test.txt', 'w', encoding='utf-8') as file:
+                with open(self.test_path, 'w', encoding='utf-8') as file:
                     file.writelines(test_lines)
             except FileNotFoundError:
                 print("Error saving stratified data.")
-
-
-
-dataprocessor = DataProcessor()
-dataprocessor.run_pipeline()

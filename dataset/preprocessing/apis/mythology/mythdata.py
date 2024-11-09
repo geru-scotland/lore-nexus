@@ -27,7 +27,7 @@ class MythLabels(Enum):
 
 # TODO: Crear clase base de la que hereden todos los "processors", como este, el de WikiData, etc.
 class MythdataProcessor:
-    def __init__(self, input_file, output_file='processed_data/myth_dataset.txt'):
+    def __init__(self, input_file, output_file):
         """
         """
         self.input_file = input_file
@@ -71,5 +71,5 @@ class MythdataProcessor:
         self.save_processed_data()
         print("Data processing completed.")
 
-processor = MythdataProcessor(input_file='raw_data/myth_dataset.csv')
-processor.process_data()
+# processor = MythdataProcessor(input_file='raw_data/myth_dataset.csv')
+# processor.process_data()
