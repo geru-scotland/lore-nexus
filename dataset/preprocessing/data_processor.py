@@ -12,6 +12,9 @@
  *****************************************************
 """
 import json
+from textattack.augmentation import Augmenter
+from textattack.transformations.word_swaps.word_swap_neighboring_character_swap import WordSwapNeighboringCharacterSwap
+
 
 class DataProcessor:
     def __init__(self, input_path="apis/wikidata/processed_data/wikidata_dataset_FastText.txt", output_path="output/dataset.txt", config_path="config.json"):
@@ -47,7 +50,7 @@ class DataProcessor:
     class DataAugmentator:
         def __init__(self, outer_instance):
             self.data_processor = outer_instance
-
+            self.augmenter = Augmenter(transformation=WordSwapNeighboringCharacterSwap(), pct_words_to_swap=0.5, transformations_per_example=3)
         def augment(self):
             """
 
@@ -59,10 +62,11 @@ class DataProcessor:
             for line in self.data_processor.data:
                 if line.startswith("__label__"):
                     label, name = line.split(" ", 1)
-                    name_parts = name.strip().split()
+                    name = name.strip().lower() # OJO: Estoy pasando todo a minusculas para reducir el espacio OJO EN TEST!!
+                    name_parts = name.split()
 
                     # Multiples palabras por nombre, este tiene que ir, si o si.
-                    augmented_data.append(line.strip())
+                    augmented_data.append(line.strip().lower())
 
                     # Y ahora, si el nombre tiene más de una palabra, la agrego
                     # como instancia también, CREO que puede ayudar.
@@ -70,6 +74,17 @@ class DataProcessor:
                         for part in name_parts:
                             new_line = f"{label} {part}"
                             augmented_data.append(new_line)
+
+                        # OJO! igual no es buena idea pero:
+                        # Asha Greyjoy -> AshaGreyjoy
+                        # Que en juegos se hace muchísimo esto.
+                        name_no_spaces = "".join(name_parts)
+                        augmented_data.append(f"{label} {name_no_spaces}")
+
+                    # Esto es de textattack, creo que será buena idea... veamos.
+                    augmented_names = self.augmenter.augment(name)
+                    for aug_name in augmented_names:
+                        augmented_data.append(f"{label} {aug_name}")
 
             return augmented_data
 
