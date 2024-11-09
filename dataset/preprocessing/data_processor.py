@@ -83,9 +83,9 @@ class DataProcessor:
                 transformations_per_example=random.randint(1, 3)
             )
 
-            self.augmenter_insert = Augmenter(
+            self.insert_augmenter = Augmenter(
                 transformation=WordSwapRandomCharacterInsertion(),
-                pct_words_to_swap=0.5,
+                pct_words_to_swap=0.4,
                 transformations_per_example=random.randint(1, 3)
             )
 
@@ -125,7 +125,7 @@ class DataProcessor:
 
                     # Esto es de textattack, creo que será buena idea... veamos.
                     swapped_names = self.swap_augmenter.augment(name)
-                    insertions_names = self.augmenter_insert.augment(name)
+                    insertions_names = self.insert_augmenter.augment(name)
 
                     for aug_name in swapped_names + insertions_names:
                         augmented_data.append(f"{label} {aug_name}")
