@@ -9,7 +9,7 @@
 
 
 ---
-## Tabla de contenidos
+## Tabla de contenidos [WIP!]
 1. [Visión general del pipeline de datos](#visión-general-del-pipeline-de-datos)
 2. [Configuración](#configuracion)
 3. [Componentes de pipeline](#componentes-del-pipeline)
