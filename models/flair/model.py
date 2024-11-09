@@ -12,11 +12,15 @@
  *****************************************************
 """
 from abc import ABC
+import sys
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 from models.lorenexus.lorenexus import LoreNexusWrapper
 
 from flair.datasets import ClassificationCorpus
-from flair.data import Corpus, Sentence
+from flair.data import Sentence
 from flair.embeddings import CharacterEmbeddings, DocumentRNNEmbeddings
 from flair.models import TextClassifier
 from flair.trainers import ModelTrainer
@@ -25,7 +29,7 @@ import torch
 
 
 class LoreNexusFlairModel(LoreNexusWrapper, ABC):
-    def __init__(self, mode="train", data_folder='data/'):
+    def __init__(self, mode="train", data_folder='data/', model_path=None):
         """
         """
         super().__init__(mode)
@@ -37,6 +41,10 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
             self._label_dict = self._create_vocab()
             self._embedding = self._initialize_embeddings()
             self._classifier = self._initialize_classifier()
+        elif self._mode == "cli_app":
+            # Solo una vez, que al cabrón a veces le cuesta levantarse
+            self._classifier = TextClassifier.load(model_path)
+            print("LoreNexus model loaded for CLI predictions.")
 
     @LoreNexusWrapper._train_mode_only
     def _load_data(self, data_folder):
@@ -84,7 +92,7 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
         return classifier
 
     @LoreNexusWrapper._train_mode_only
-    def train(self, output_path='resources/taggers/universe_classifier', lr=0.001, batch_size=32, epochs=10):
+    def train(self, output_path='resources/taggers/universe_classifier', lr=0.001, batch_size=16, epochs=30):
         """
         TODO: Cargar del config.json
         """
@@ -110,20 +118,16 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
         """
         pass
 
-    def predict(self, model_path='resources/taggers/universe_classifier/best-model.pt', name=""):
+    def predict_name(self, name):
         """
         """
-        if self._mode == "eval":
-            classifier = TextClassifier.load(model_path)
-            sentence = Sentence(name.lower())
+        sentence = Sentence(name.lower())
+        self._classifier.predict(sentence, return_probabilities_for_all_classes=True)
 
-            classifier.predict(sentence, return_probabilities_for_all_classes=True)
+        top_labels = sorted(sentence.labels, key=lambda label: label.score, reverse=True)[:4]
 
-            top_labels = sorted(sentence.labels, key=lambda label: label.score, reverse=True)[:4]
+        results = {}
+        for i, label in enumerate(top_labels):
+            results[f"Prediction {i + 1}"] = (label.value, label.score)
 
-            for i, label in enumerate(top_labels, start=1):
-                print(f"Prediction {i}: {label.value} with confidence {label.score:.4f}")
-
-
-ln_flair_model = LoreNexusFlairModel(mode="eval")
-ln_flair_model.predict(name="driz dourdenn")
+        return results

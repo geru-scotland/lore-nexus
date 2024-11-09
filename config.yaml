@@ -1,0 +1,3 @@
+# LoreNexus app configuration file
+model:
+  path: "models/flair/resources/taggers/universe_classifier/best-model.pt"

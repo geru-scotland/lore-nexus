@@ -10,7 +10,7 @@
 ## Descripción
 
 ## Modelos disponibles
-- Flair
+- Flair: [Huggin Face: basajaun-scotland/lore-nexus-bilstm-flair](basajaun-scotland/lore-nexus-bilstm-flair)
 - LTSM
 - CharacterBert
 
