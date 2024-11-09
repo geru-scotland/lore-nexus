@@ -49,7 +49,8 @@ class MythdataProcessor:
             normalized_text = re.sub(r"[0-9.'’]", "", normalized_text)
             normalized_text = re.sub(r"[.-]", " ", normalized_text)
 
-            label = MythLabels.MAIN_LABEL  # A considerar si coger row['pantheon'] o no
+            # A considerar si coger row['pantheon'] o no, esto es, ahora fuerzo a que sea Mythology
+            label = MythLabels.MAIN_LABEL
             normalized_text = f"__label__{label} {normalized_text}"
             return normalized_text
 
@@ -70,6 +71,3 @@ class MythdataProcessor:
         self.process_names()
         self.save_processed_data()
         print("Data processing completed.")
-
-# processor = MythdataProcessor(input_file='raw_data/myth_dataset.csv')
-# processor.process_data()

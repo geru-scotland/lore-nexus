@@ -5,7 +5,7 @@
  * Asignatura: Procesamiento de Lenguaje Natural
  * Proyecto: Lore Nexus
  *
- * File: extract.py
+ * File: ner_corpus_builder.py
  * Author: geru-scotland
  * GitHub: https://github.com/geru-scotland
  * Description:
@@ -27,72 +27,78 @@ class PATHS(Enum):
     def __str__(self):
         return self.value
 
+
 class EntityCorpusBuilder:
-    # modelo pre-entrenado de spaCy, el de "es_core_news_sm" no iba muy bien
-    # Este es una bestia, utiliza RoBERTa
+    class Extractor:
+        def __init__(self, nlp):
+            self.nlp = nlp
+
+        def extract_entities(self, pdf_path):
+            entities = set() # diccionario, para no repetir entidades
+            max_length = 100000  # tamaño máximo de chunk a procesar, que casca si es muy grande
+
+            text = extract_text(pdf_path)
+
+            if text:
+                text_chunks = [text[i:i + max_length] for i in range(0, len(text), max_length)]
+                for chunk in text_chunks:
+                    doc = self.nlp(chunk)
+                    for entity in doc.ents:
+                        if entity.label_ in ["LOC", "GPE"]:
+                            # solo letras
+                            # TODO: utilizar unicodedata para normalizar mejor
+                            clean_text = re.sub(r'[^A-Za-z\s]', '', entity.text).replace(" ", "")
+                            if clean_text != entity.text:
+                                clean_text = clean_text.replace(" ", "")
+                            if clean_text and len(clean_text) > 3:
+                                entities.add(clean_text)
+            return entities
+
+        def process_all_pdfs_in_folder(self):
+            folder = Path(str(PATHS.BOOKS))
+            output_folder = Path(str(PATHS.OUTPUT))
+
+            # Cojo todos los pdfs
+            for pdf_file in folder.glob("*.pdf"):
+                output_file = output_folder / f"{pdf_file.stem}_entities.txt"
+
+                # Compruebo que no exista el output, mismo nombre que
+                # pdf pero terminante en _entities.txt
+                if not output_file.exists():
+                    print(f"Extracting entities from: {pdf_file.name}")
+                    entities = self.extract_entities(pdf_file)
+                    output_file.parent.mkdir(parents=True, exist_ok=True)
+                    with open(output_file, "w") as file:
+                        for entity in entities:
+                            file.write(f"{entity}\n")
+                    print(f"Entities from {pdf_file.name} saved to {output_file}")
+                else:
+                    print(f"Already processed, skipping: {pdf_file.name}")
+
     def __init__(self, model="en_core_web_trf"):
+        # modelo pre-entrenado de spaCy, el de "es_core_news_sm" no iba muy bien
+        # Este es una bestia, utiliza RoBERTa
         self.nlp = spacy.load(model)
         self.nlp.max_length = 2000000
+        self.extractor = self.Extractor(self.nlp)
 
-    def extract_entities(self, pdf_path):
-        # diccionario, para no repetir entidades
-        entities = set()
-        max_length = 100000  # tamaño máximo de chunk a procesar, que casca si es muy grande
-
-        text = extract_text(pdf_path)
-
-        if text:
-            text_chunks = [text[i:i + max_length] for i in range(0, len(text), max_length)]
-
-            for chunk in text_chunks:
-                doc = self.nlp(chunk)
-                for entity in doc.ents:
-                    if entity.label_ in ["LOC", "GPE"]:
-                        # solo letras
-                        # TODO: utilizar unicodedata para normalizar mejor
-                        clean_text = re.sub(r'[^A-Za-z\s]', '', entity.text)
-                        # Si se ha quitado un carácter, que me quite los espacios
-                        # (suelen tener muchos ', ó ^ nombres de elfos etc)
-                        if clean_text != entity.text:
-                            clean_text = clean_text.replace(" ", "")
-                        if clean_text and len(clean_text) > 3:
-                            entities.add(clean_text)
-        return entities
-
-    def extract_and_export(self, book_name):
-        bookpath = f"{PATHS.BOOKS}/{book_name}"
-        output_file = f"{PATHS.OUTPUT}/{book_name.split(".")[0]}_entities.txt"
-
-        try:
-            entities = self.extract_entities(bookpath)
-            with open(output_file, "w") as file:
-                for entity, label in entities:
-                    file.write(f"{entity} ({label})\n")
-            print(f"Entities extracted to {output_file}")
-        except Exception as e:
-            print(f"Error: {e}")
-
-    def process_all_pdfs_in_folder(self):
-        folder = Path(str(PATHS.BOOKS))
-        output_folder = Path(str(PATHS.OUTPUT))
-
-        # Cojo todos los pdfs
-        for pdf_file in folder.glob("*.pdf"):
-            output_file = output_folder / f"{pdf_file.stem}_entities.txt"
-
-            # Compruebo que no exista el output, mismo nombre que
-            # pdf pero terminante en _entities.txt
-            if not output_file.exists():
-                print(f"Processing: {pdf_file.name}")
-                entities = self.extract_entities(pdf_file)
-
-                output_file.parent.mkdir(parents=True, exist_ok=True)
+    def build(self, book_name=None):
+        if book_name:
+            bookpath = f"{PATHS.BOOKS}/{book_name}"
+            output_file = f"{PATHS.OUTPUT}/{book_name.split('.')[0]}_entities.txt"
+            print(f"Extracting entities from: {bookpath}")
+            try:
+                entities = self.extractor.extract_entities(bookpath)
                 with open(output_file, "w") as file:
                     for entity in entities:
                         file.write(f"{entity}\n")
-                print(f"Entities from {pdf_file.name} saved to {output_file}")
-            else:
-                print(f"Already processed, skipping: {pdf_file.name}")
+                print(f"Entities extracted to {output_file}")
+            except Exception as e:
+                print(f"Error: {e}")
+        else:
+            self.extractor.process_all_pdfs_in_folder()
+
+
 
 
 # 1) Que el extractor extraiga todo
@@ -101,9 +107,10 @@ class EntityCorpusBuilder:
 # 4) Etiquetarlas con el universo, con un mapping es suficiente (+formato FastText)
 # 5) Dejar en ouptut y que el data processor lo incluya en el dataset
 # 6) En el config.json, añadir el NER dataset
+# Notas: Quitar los "thes" y "Thes", nombres de paises también...
 
-ner_extractor = EntityCorpusBuilder()
-ner_extractor.process_all_pdfs_in_folder()
+corpus_builder = EntityCorpusBuilder()
+corpus_builder.build()
 
 
 
