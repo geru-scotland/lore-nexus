@@ -104,7 +104,6 @@ class EntityCorpusBuilder:
 
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
-        # Definir los prefijos y etiquetas
         label_map = {
             "got": "__label__GameofThrones",
             "lotr": "__label__Tolkien",
@@ -130,15 +129,6 @@ class EntityCorpusBuilder:
                         print(f"Processed file: {file.name}")
                     else:
                         print(f"No label found for file: {file.name}, skipping.")
-
-
-# 1) Que el extractor extraiga todo
-# 2) Coger por universo, hacer entidades únicas.
-# 3) Limpiar las que sean 3 o menos letras
-# 4) Etiquetarlas con el universo, con un mapping es suficiente (+formato FastText)
-# 5) Dejar en ouptut y que el data processor lo incluya en el dataset
-# 6) En el config.json, añadir el NER dataset
-# Notas: Quitar los "thes" y "Thes", nombres de paises también...
 
 corpus_builder = EntityCorpusBuilder()
 corpus_builder.label_and_filter_entities()

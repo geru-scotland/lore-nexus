@@ -43,8 +43,13 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
             self._classifier = self._initialize_classifier()
         elif self._mode == "cli_app":
             # Solo una vez, que al cabrón a veces le cuesta levantarse
-            self._classifier = TextClassifier.load(model_path)
-            print("LoreNexus model loaded for CLI predictions.")
+            try:
+                self._classifier = TextClassifier.load(model_path)
+                print("LoreNexus loaded for CLI predictions: ")
+                print(f"Model: {model_path}")
+            except Exception as e:
+                print(f"Error loading model: {e}")
+                sys.exit(1)
 
     @LoreNexusWrapper._train_mode_only
     def _load_data(self, data_folder):
@@ -132,5 +137,5 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
 
         return results
 
-model = LoreNexusFlairModel(mode="train")
-model.train()
+# model = LoreNexusFlairModel(mode="train")
+# model.train()
