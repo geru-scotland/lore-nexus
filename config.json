@@ -16,6 +16,13 @@
             "dataset_file": "myth_dataset.csv",
             "output_file": "myth_dataset.txt",
             "processed_file": "myth_dataset.txt"
+        },
+        {
+            "name": "NERdata",
+            "path": "dataset/preprocessing/ner",
+            "input_folder": "raw_data",
+            "output_folder": "processed_data",
+            "processed_file": "ner_dataset.txt"
         }
     ],
 
@@ -26,6 +33,9 @@
         "train_file": "train.txt",
         "dev_file": "dev.txt",
         "test_file": "test.txt",
+        "train_size": 0.85,
+        "dev_size": 0.15,
+        "test_size": 0.1,
         "labels": [
             "HarryPotter",
             "StarWars",

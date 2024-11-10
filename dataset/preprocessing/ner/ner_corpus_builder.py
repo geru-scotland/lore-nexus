@@ -98,7 +98,38 @@ class EntityCorpusBuilder:
         else:
             self.extractor.process_all_pdfs_in_folder()
 
+    def label_and_filter_entities(self, input_dir="raw_data", output_file="processed_data/ner_dataset.txt"):
+        input_path = Path(input_dir)
+        output_path = Path(output_file)
 
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+
+        # Definir los prefijos y etiquetas
+        label_map = {
+            "got": "__label__GameofThrones",
+            "lotr": "__label__Tolkien",
+            "sw": "__label__StarWars",
+            "wow-wotlk": "__label__Warcraft",
+            "hp": "__label__HarryPotter"
+        }
+
+        with open(output_path, "w") as f_out:
+            for file in input_path.glob("*.txt"):
+                match = re.match(r"([a-zA-Z\-]+)", file.stem)
+                if match:
+                    file_prefix = match.group(1)
+                    label = label_map.get(file_prefix, None)
+
+                    if label:
+                        with open(file, "r") as f_in:
+                            for line in f_in:
+                                entity = line.strip()
+
+                                if len(entity) > 3:
+                                    f_out.write(f"{label} {entity}\n")
+                        print(f"Processed file: {file.name}")
+                    else:
+                        print(f"No label found for file: {file.name}, skipping.")
 
 
 # 1) Que el extractor extraiga todo
@@ -110,7 +141,7 @@ class EntityCorpusBuilder:
 # Notas: Quitar los "thes" y "Thes", nombres de paises también...
 
 corpus_builder = EntityCorpusBuilder()
-corpus_builder.build()
+corpus_builder.label_and_filter_entities()
 
 
 

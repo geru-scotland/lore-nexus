@@ -31,10 +31,14 @@ class MythLabels(Enum):
         return self.value
 
 class DataProcessor:
-    def __init__(self, datasets, labels, output_folder, output_file, train_file, dev_file, test_file):
+    def __init__(self, datasets, labels, output_folder, output_file, train_file, dev_file, test_file, train_pct=0.8, dev_pct=0.1, test_pct=0.1):
         self.datasets = datasets
         self.allowed_labels = self._load_labels(labels)
         self.data = self._load_data()
+
+        self.train_pct = train_pct
+        self.dev_pct = dev_pct
+        self.test_pct = test_pct
 
         # Rutas de salida
         self.output_path = os.path.join(output_folder, output_file)
@@ -161,9 +165,9 @@ class DataProcessor:
                 random.shuffle(items)
 
                 total_items = len(items)
-                train_size = int(0.88 * total_items)
-                dev_size = int(0.12 * total_items)
-                # test_size = total_items - train_size - dev_size
+                train_size = int(self.train_pct * total_items)
+                dev_size = int(self.dev_pct * total_items)
+                test_size = total_items - train_size - dev_size
 
                 train_lines.extend(items[:train_size])
                 dev_lines.extend(items[train_size:train_size + dev_size])

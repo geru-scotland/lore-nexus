@@ -92,7 +92,7 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
         return classifier
 
     @LoreNexusWrapper._train_mode_only
-    def train(self, output_path='resources/taggers/universe_classifier', lr=0.001, batch_size=16, epochs=30):
+    def train(self, output_path='resources/taggers/universe_classifier', lr=0.001, batch_size=32, epochs=30):
         """
         TODO: Cargar del config.json
         """
@@ -131,3 +131,6 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
             results[f"Prediction {i + 1}"] = (label.value, label.score)
 
         return results
+
+model = LoreNexusFlairModel(mode="train")
+model.train()

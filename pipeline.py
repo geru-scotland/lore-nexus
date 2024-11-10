@@ -17,6 +17,7 @@ import json
 from dataset.preprocessing.apis.mythology.mythdata import MythdataProcessor
 from dataset.preprocessing.apis.wikidata.wikidata import WikidataProcessor, DatasetFormats
 from dataset.preprocessing.data_processor import DataProcessor
+from dataset.preprocessing.ner.ner_corpus_builder import EntityCorpusBuilder
 
 
 class Config:
@@ -68,6 +69,19 @@ class DataPipeline:
             except Exception as e:
                 print(f"Error processing Mythdata: {e}")
 
+    def process_nerdata(self):
+        nerdata_config = self.config.get_dataset("NERdata")
+        if nerdata_config:
+            try:
+                mythdata_processor = EntityCorpusBuilder()
+                mythdata_processor.label_and_filter_entities(
+                    input_dir=f"{nerdata_config['path']}/{nerdata_config['input_folder']}",
+                    output_file=f"{nerdata_config['path']}/{nerdata_config['output_folder']}/{nerdata_config['processed_file']}"
+                )
+                print("NERdata processing completed.")
+            except Exception as e:
+                print(f"Error processing NERdata: {e}")
+
     def run_data_processor(self):
         data_processor_config = self.config.get_data_processor_config()
         base_path = data_processor_config["path"]
@@ -80,7 +94,10 @@ class DataPipeline:
                 output_file=data_processor_config["output_file"],
                 train_file=data_processor_config["train_file"],
                 dev_file=data_processor_config["dev_file"],
-                test_file=data_processor_config["test_file"]
+                test_file=data_processor_config["test_file"],
+                train_pct=data_processor_config["train_size"],
+                dev_pct=data_processor_config["dev_size"],
+                test_pct=data_processor_config["test_size"]
             )
             data_processor.run_pipeline()
             print("Data processing pipeline completed.")
@@ -93,6 +110,7 @@ class DataPipeline:
         print("Starting Data Pipeline...")
         self.process_wikidata()
         self.process_mythdata()
+        self.process_nerdata()
         self.run_data_processor()
         print("Data Pipeline completed.")
 
