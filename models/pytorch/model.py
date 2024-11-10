@@ -112,11 +112,14 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
             return padded_vector, label
 
         def tokenize_data(self):
-            self._char_vocab.buid_vocab(self._data)
+            self._char_vocab.build_vocab(self._data)
 
     class BiLSTMCharacterLevel(torch.nn.Module):
         def __init__(self, vocab_size, embedding_dim, hidden_dim, output_dim, n_layers, dropout):
             super().__init__()
+
+            # En este caso, no es necesario utilizar nn.Parameters, no utilizo
+            # tensores custom, estos los gestiona internamente PyTorch
             self.character_embeddings = torch.nn.Embedding(vocab_size, embedding_dim)
 
             self.bi_lstm = torch.nn.LSTM(
@@ -159,6 +162,8 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
             # como es batch first, shape es (batch_size, num_layers * num_directions, hidden_dim)
             # y si concateno por dim 2 el resultado es (batch_size, hidden_dim * 2)
             # lo uqe me interesa es unir o concatenar los dos vectores en uno solo, y eso se hace uniendo columnas
+
+            # Básicamente estoy concatenando los estados ocultos finales de las dos direcciones
             hidden = torch.cat((hidden_state[-2, :, :], hidden_state[-1, :, :]), dim=2)
 
             out = self.fc(hidden)
@@ -211,9 +216,91 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         dev_dataset = self.Dataset(dev_data, char_vocab)
         test_dataset = self.Dataset(test_data, char_vocab)
 
-        train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-        dev_loader = DataLoader(dev_dataset, batch_size=batch_size, shuffle=False)
-        test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+        # Me devuelve iterables, que son los batches
+        train_batches = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+        dev_batches = DataLoader(dev_dataset, batch_size=batch_size, shuffle=False)
+        tes_batches = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+
+        # Creo el modelo
+        self._model = self.BiLSTMCharacterLevel(
+            vocab_size=len(char_vocab),
+            embedding_dim=256,
+            hidden_dim=256,
+            output_dim=5,
+            n_layers=1,
+            dropout=0.2
+        ).to(self._device)
+
+        weight_decay = 0.01
+        criterion = torch.nn.CrossEntropyLoss()
+        optimizer = torch.optim.AdamW(self._model.parameters(), weight_decay=weight_decay, lr=lr)
+
+        # TODO: Como tengo clases un poco desbalanceadas, utilizaré métrica F1 para que
+        # mida el rendimiento un poco más completo
+
+        best_validation_loss = float("inf")
+
+        for epoch in range(epochs):
+            self._model.train()
+            train_loss = 0.0
+            for train_batch_names, train_batch_labels in train_batches:
+                train_batch_names = train_batch_names.to(self._device)
+                train_batch_labels = train_batch_labels.to(self._device)
+
+                # forward
+                optimizer.zero_grad() # siempre hay que resetear gradientes después de un forward
+                train_predictions = self._model(train_batch_names) # forward
+                loss = criterion(train_predictions, train_batch_labels)
+                train_loss += loss.item()
+
+                # backward
+                loss.backward() # solo calcula los gradientes
+                optimizer.step() # y esto ya, updatea pesos
+
+            # Logística para calculo de pérdida en cada epoch, de entre todos los batches
+            average_train_loss = train_loss / len(train_batches)
+
+            # TODO: mejorar el output
+            print(f"Epoch {epoch + 1}/{epochs} - Training Loss: {average_train_loss:.4f}")
+
+            # Por último, validación, SIN updatear los gradientes, solo forward
+
+            self._model.eval()
+
+            validation_loss = 0.0
+            correct = 0
+            total = 0
+            # TODO: Cambiar nombres de variables, lo hago por mi pero lo hace un poco engorroso el código.
+            # sklearn.metrics.f1_score
+            with torch.no_grad():
+                for validation_batch_names, validation_batch_labels in dev_batches:
+                    validation_batch_names = validation_batch_names.to(self._device)
+                    validation_batch_labels = validation_batch_labels.to(self._device)
+
+                    # forward
+                    validation_predictions = self._model(validation_batch_names)
+                    loss = criterion(validation_predictions, validation_batch_labels)
+
+                    validation_loss += loss.item()
+
+                    # validation_predictions es un tensor, con los logits sin normalizar
+                    # max coge el máximo, para poder saber cual es la clase predicham dimension 1 porque
+                    # la cero es cada instancia y las características todas las labels
+                    # Nombre StarWars  LOTR  GOT
+                    # nedstark  1.2     2.7  3.5
+                    _, predicted_labels = torch.max(validation_predictions, 1)
+                    correct += (predicted_labels == validation_batch_labels).sum().item() # conteo de correctas
+                    total += validation_batch_names.size(0) # tamaño del batch
+
+                average_validation_loss = validation_loss / len(dev_batches)
+                validation_accuracy = correct / total
+                print(f"Epoch {epoch + 1}/{epochs} - Validation Loss: {average_validation_loss:.4f}, "
+                      f"Validation Accuracy: {validation_accuracy:.4f}")
+
+            if average_validation_loss < best_validation_loss:
+                best_validation_loss = average_validation_loss
+                torch.save(self._model.state_dict(), f"checkpoints/best_model.pth")
+                print(f"Model saved with the best validation loss: {best_validation_loss}")
 
 
 
