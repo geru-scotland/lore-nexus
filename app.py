@@ -51,6 +51,7 @@ class LoreNexusApp:
 
     def display_title(self):
         """
+        Thanks to https://fsymbols.com/generators/carty/
         """
         title = """
 ██╗░░░░░░█████╗░██████╗░███████╗ ███╗░░██╗███████╗██╗░░██╗██╗░░░██╗░██████╗
