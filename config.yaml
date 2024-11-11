@@ -1,3 +1,5 @@
-# LoreNexus app configuration file
 model:
-  path: "models/flair/resources/taggers/universe_classifier/best-model.pt"
+  flair:
+    path: "models/flair/resources/taggers/universe_classifier/best-model.pt"
+  pytorch:
+    path: "models/pytorch/checkpoints/best_model.pth"

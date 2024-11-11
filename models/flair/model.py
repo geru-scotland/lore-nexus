@@ -45,7 +45,7 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
             # Solo una vez, que al cabrón a veces le cuesta levantarse
             try:
                 self._classifier = TextClassifier.load(model_path)
-                print("LoreNexus loaded for CLI predictions: ")
+                print("LoreNexus (BiLSTM-Flair) loaded for CLI predictions: ")
                 print(f"Model: {model_path}")
             except Exception as e:
                 print(f"Error loading model: {e}")
@@ -118,7 +118,7 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
         """
         return ModelTrainer(self._classifier, self._corpus)
 
-    def evaluate(self, eval_data):
+    def evaluate(self):
         """
         """
         pass

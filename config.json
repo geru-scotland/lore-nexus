@@ -33,8 +33,8 @@
         "train_file": "train.txt",
         "dev_file": "dev.txt",
         "test_file": "test.txt",
-        "train_size": 0.85,
-        "dev_size": 0.15,
+        "train_size": 0.80,
+        "dev_size": 0.1,
         "test_size": 0.1,
         "labels": [
             "HarryPotter",

@@ -19,6 +19,7 @@ import yaml
 
 sys.path.append(str(Path(__file__).resolve().parents[2]))
 from models.flair.model import LoreNexusFlairModel
+from models.pytorch.model import LoreNexusPytorchModel
 
 class UserOptions(Enum):
     UNVEIL_LORE = 1
@@ -36,8 +37,8 @@ class LoreNexusApp:
         """
         """
         config = self.load_config()
-        model_path = config['model']['path']
-        self.lore_nexus = LoreNexusFlairModel(mode="cli_app", model_path=model_path)
+        model_path = config['model']['pytorch']['path']
+        self.lore_nexus = LoreNexusPytorchModel(mode="cli_app", model_path=model_path)
         self.display_title()
         print("📜 The Lore Nexus is ready to unveil the mysteries of any name you provide 📜 ")
 

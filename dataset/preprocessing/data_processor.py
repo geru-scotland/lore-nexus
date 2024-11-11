@@ -167,15 +167,14 @@ class DataProcessor:
                 total_items = len(items)
                 train_size = int(self.train_pct * total_items)
                 dev_size = int(self.dev_pct * total_items)
-                test_size = total_items - train_size - dev_size
 
                 train_lines.extend(items[:train_size])
                 dev_lines.extend(items[train_size:train_size + dev_size])
-                # test_lines.extend(items[train_size + dev_size:])
+                test_lines.extend(items[train_size + dev_size:])
 
             random.shuffle(train_lines)
             random.shuffle(dev_lines)
-            # random.shuffle(test_lines)
+            random.shuffle(test_lines)
 
             try:
                 with open(self.train_path, 'w', encoding='utf-8') as file:
