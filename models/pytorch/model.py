@@ -13,17 +13,21 @@
 """
 from abc import ABC
 import sys
+from collections import Counter
 from enum import Enum
 from pathlib import Path
 
 import torch.utils.data
+import torch.nn.functional as F
 
 sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 from models.lorenexus.lorenexus import LoreNexusWrapper
 
+from sklearn.metrics import classification_report
+from torch.optim.lr_scheduler import StepLR
 from torch.utils.data import DataLoader
-
+from torch import tensor
 
 class SpecialTokens(Enum):
     PAD = "<PAD>"
@@ -51,10 +55,10 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                 raise ValueError("Key must be either int or str")
 
         def _add_special_tokens(self):
-            self.char2index[SpecialTokens.PAD] = 0
-            self.index2char[0] = SpecialTokens.PAD
-            self.char2index[SpecialTokens.UNK] = 1
-            self.index2char[1] = SpecialTokens.UNK
+            self.char2index[str(SpecialTokens.PAD)] = 0
+            self.index2char[0] = str(SpecialTokens.PAD)
+            self.char2index[str(SpecialTokens.UNK)] = 1
+            self.index2char[1] = str(SpecialTokens.UNK)
 
         def encode(self, word):
             tokenized_chars = []
@@ -63,17 +67,18 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                     index = len(self)
                     self.char2index[char] = index
                     self.index2char[index] = char
-                    tokenized_chars.append(index)
+                tokenized_chars.append(self.char2index[char])
             return tokenized_chars
 
         def get_index(self, char=None):
-            return self.char2index.get(char, self.char2index[SpecialTokens.UNK])
+            return self.char2index.get(char, self.char2index[str(SpecialTokens.UNK)])
 
         def get_char(self, index=None):
-            return self.index2char.get(index, SpecialTokens.UNK)
+            return self.index2char.get(index, str(SpecialTokens.UNK))
 
         def decode(self, indices):
-            # Implemento decode porque en un futuro intentaré generar nombres
+            if isinstance(indices, int):
+                indices = [indices]
             return "".join([self.index2char[index] for index in indices if index in self.index2char])
 
         def build_vocab(self, data):
@@ -83,36 +88,41 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
 
 
     class Dataset(torch.utils.data.Dataset):
-        def __init__(self, data, char_vocab, max_length=20):
+        def __init__(self, data, char_vocab, max_length=40, build_vocab=False):
             self._max_length = max_length
-            self._data = data
+            self.names, self.labels = data # desempaqueto, estaba gestionando esto mal
+            assert len(self.names) == len(self.labels), "names and labels need to have same length"
             self._char_vocab = char_vocab
-            self.tokenize_data()
+            if build_vocab:
+                self.tokenize_data()
+
 
         def __len__(self):
-            return len(self._data[0])
+            return len(self.names)
 
         def __getitem__(self, index):
             """
             Tengo que devolver el nombre tokenizado y label, esto lo llamará el DataLoader
             para pasar inputs y targets al modelo.
             Tokenizo el nombre y lo corto si es más largo que el máximo
-            TODO: Mirar como determinar el máximo, ahora pongo 20 a lo loco
+            TODO: Mirar como determinar el máximo, ahora pongo 40 a lo loco
+            Quizá simplemente coger el máximo de entre todas las secuencias
             """
-            names, labels = self._data[index]
-            name, label = names[index], labels[index]
+
+            name, label = self.names[index], self.labels[index]
 
             tokenized_name = self._char_vocab.encode(name)
             padded_vector = tokenized_name[:self._max_length] # corto, si faltan va a haber que rellenar
             padding_size = self._max_length - len(padded_vector)
 
             if padding_size > 0:
-                padded_vector.extend([self._char_vocab.get_index(SpecialTokens.PAD)]*padding_size)
+                padded_vector.extend([self._char_vocab.get_index("<PAD>")]*padding_size)
 
-            return padded_vector, label
+            # devuelvo 2 tensores
+            return tensor(padded_vector, dtype=torch.long), tensor(label, dtype=torch.long)
 
         def tokenize_data(self):
-            self._char_vocab.build_vocab(self._data)
+            self._char_vocab.build_vocab(self.names)
 
     class BiLSTMCharacterLevel(torch.nn.Module):
         def __init__(self, vocab_size, embedding_dim, hidden_dim, output_dim, n_layers, dropout):
@@ -120,69 +130,65 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
 
             # En este caso, no es necesario utilizar nn.Parameters, no utilizo
             # tensores custom, estos los gestiona internamente PyTorch
-            self.character_embeddings = torch.nn.Embedding(vocab_size, embedding_dim)
+            self.character_embeddings = torch.nn.Embedding(num_embeddings=vocab_size, embedding_dim=embedding_dim)
 
             self.bi_lstm = torch.nn.LSTM(
-                embedding_dim=embedding_dim,
-                hidden_dim=hidden_dim,
+                input_size=embedding_dim,
+                hidden_size=hidden_dim,
                 num_layers=n_layers,
                 bidirectional=True,
                 batch_first=True, # por compatibilidad, con shape (batch_size, sequence_len, embedding_dim)
-                dropout=dropout)
+                dropout=dropout
+            )
 
             # OJO! bidireccional, por eso el *2 en el hidden_dim, uno para cada dirección
             self.fc = torch.nn.Linear(hidden_dim*2, output_dim)
-        def forward(self, input_tensor):
-            # input_tensor shape: (batch_size, sequence_len)
-            # Ejemplo que me ayuda a verlo:
-            # input_tensor = torch.tensor([
-            #     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 3, 12, 4, 11, 0],  # "Luke Skywalker" + padding
-            #     [6, 2, 11, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]  # "Sue" + padding
-            # ])
-            embedded_tensor = self.character_embeddings(input_tensor)
-            # embedded_tensor shape: (batch_size, sequence_len, embedding_dim)
-            # Cada capa 2D del stack, tiene tantas filas como caracteres en el nombre completo
-            # y tantas columnas como dimensiones en el embedding. Y tantas capas como palabras.
 
-            # colección de los estados ocultos intermedios
-            # hidden state es el final
-            # cell state, el estado de la celda lstm
+        def forward(self, input_tensor):
+
+            embedded_tensor = self.character_embeddings(input_tensor)
             lstm_out, (hidden_state, cell) = self.bi_lstm(embedded_tensor)
 
-            # Shape de lstm_out: (batch_size, max_length, hidden_dim * 2)
-            # Shape de hidden: (batch_size, num_layers * num_directions (2), hidden_dim)
-
-            # Imagina (50 nombres por batch, 1 capa * 2 direcciones, 20 de hidden_dim)
-            # si concatenamos por la dim=1, es por el numero de estados hidden, 1 por direccion (si una capa). Así que
-            # si teniamos 50 channels stackeados de 2x20, ahora tendremos 1 channel de 50*2x20
-
-            # TODO: Revisar bien esta concatenación para comprender bien
-            # Tenemos 2 conjuntos de estados ocultos, uno para izquierda y otro para derecha
-            # La idea es concatenar los estados ocultos de cada dirección
-            # como es batch first, shape es (batch_size, num_layers * num_directions, hidden_dim)
-            # y si concateno por dim 2 el resultado es (batch_size, hidden_dim * 2)
-            # lo uqe me interesa es unir o concatenar los dos vectores en uno solo, y eso se hace uniendo columnas
-
             # Básicamente estoy concatenando los estados ocultos finales de las dos direcciones
-            hidden = torch.cat((hidden_state[-2, :, :], hidden_state[-1, :, :]), dim=2)
-
+            hidden = torch.cat((hidden_state[-2, :, :], hidden_state[-1, :, :]), dim=1)
             out = self.fc(hidden)
 
             return out
 
-    def __init__(self, mode="train", data_folder='data/', model_path=None):
+    def __init__(self, mode="train", data_folder='data/', model_path="checkpoints/best_model.pth"):
         """
         """
         super().__init__(mode)
 
         self._mode = mode
+        self._char_vocab = None
         self._data_folder = data_folder
+        self._label_to_index = {}
+        self._index_to_label = {}
 
-    def _load_data(self, data_folder):
+        if self._mode == "cli_app":
+            # Solo una vez, que al cabrón a veces le cuesta levantarse
+            try:
+                self.load_model(model_path)
+                print("LoreNexus (BiLSTM-Pytorch) loaded for CLI predictions: ")
+                print(f"Model: {model_path}")
+            except Exception as e:
+                print(f"Error loading model: {e}")
+                sys.exit(1)
+
+    @LoreNexusWrapper._train_mode_only
+    def _create_vocab(self):
+        return self.CharacterVocab()
+
+    @LoreNexusWrapper._train_mode_only
+    def _load_data(self, data_folder, splits=None):
         """
         """
         data = {}
-        for split in ['train', 'dev', 'test']:
+        if splits is None:
+            splits = ['train', 'dev', 'test']
+
+        for split in splits:
             file_path = Path(data_folder) / f"{split}.txt"
             names, labels = [], []
 
@@ -193,15 +199,22 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                     parts = line.split(' ', 1)
                     label = parts[0].replace('__label__', '')
                     name = parts[1]
+
+                    # Necesito que las labels sean enteros, asigno uno a cada una
+                    if label not in self._label_to_index and split == 'train':
+                        index = len(self._label_to_index)
+                        self._label_to_index[label] = index
+                        self._index_to_label[index] = label
+
+                    labels.append(self._label_to_index[label])
                     names.append(name)
-                    labels.append(label)
 
             data[split] = (names, labels)
 
-        return data['train'], data['dev'], data['test']
+        return {split: data[split] for split in splits}
 
     @LoreNexusWrapper._train_mode_only
-    def train(self, output_path='', lr=0.001, batch_size=32, epochs=10):
+    def train(self, output_path='', lr=0.001, batch_size=32, epochs=15):
         """
         TODO: Cargar del config.json
         """
@@ -209,47 +222,62 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         # 2) Cargo los datos
         # 3) Creo el modelo
         # 4) Entreno
-        char_vocab = self.CharacterVocab()
-        train_data, dev_data, test_data = self._load_data(self._data_folder)
+        self._char_vocab = self._create_vocab()
+        unique_labels = set()
 
-        train_dataset = self.Dataset(train_data, char_vocab)
-        dev_dataset = self.Dataset(dev_data, char_vocab)
-        test_dataset = self.Dataset(test_data, char_vocab)
+
+        # Son tuplas (names, labels), cada una. Ignoro test, lo cargo al evaluar
+        data_splits = self._load_data(self._data_folder, splits=['train', 'dev'])
+        train_data, dev_data = data_splits['train'], data_splits['dev']
+
+        _, labels = train_data
+        for label in labels:
+            unique_labels.add(label)
+
+        train_dataset = self.Dataset(train_data, self._char_vocab, build_vocab=True)
+        dev_dataset = self.Dataset(dev_data, self._char_vocab)
 
         # Me devuelve iterables, que son los batches
         train_batches = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
         dev_batches = DataLoader(dev_dataset, batch_size=batch_size, shuffle=False)
-        tes_batches = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
         # Creo el modelo
         self._model = self.BiLSTMCharacterLevel(
-            vocab_size=len(char_vocab),
+            vocab_size=len(self._char_vocab),
             embedding_dim=256,
-            hidden_dim=256,
-            output_dim=5,
+            hidden_dim=768,
+            output_dim=len(unique_labels),
             n_layers=1,
-            dropout=0.2
+            dropout=0.3 # si pones dropout > 0, hay que poner más capas, no solo 1 (docu de Pytorch)
         ).to(self._device)
 
-        weight_decay = 0.01
         criterion = torch.nn.CrossEntropyLoss()
-        optimizer = torch.optim.AdamW(self._model.parameters(), weight_decay=weight_decay, lr=lr)
+
+        optimizer = torch.optim.AdamW(self._model.parameters(), lr=lr, weight_decay=0.02)
+        scheduler = StepLR(optimizer, step_size=5, gamma=0.5)
 
         # TODO: Como tengo clases un poco desbalanceadas, utilizaré métrica F1 para que
         # mida el rendimiento un poco más completo
 
-        best_validation_loss = float("inf")
+        best_validation_accuracy = 0.0
 
         for epoch in range(epochs):
             self._model.train()
             train_loss = 0.0
+
             for train_batch_names, train_batch_labels in train_batches:
+
                 train_batch_names = train_batch_names.to(self._device)
                 train_batch_labels = train_batch_labels.to(self._device)
 
                 # forward
-                optimizer.zero_grad() # siempre hay que resetear gradientes después de un forward
+                optimizer.zero_grad() # se me olvida siempre, siempre hay que resetear gradientes después de un forward
                 train_predictions = self._model(train_batch_names) # forward
+
+                # para debuggin, sublista de predicciones y label reales, para logs
+                # predicted_labels = torch.argmax(train_predictions, dim=1)
+                # self.display_batch_info(train_batch_names, train_batch_labels, predicted_labels, char_vocab)
+
                 loss = criterion(train_predictions, train_batch_labels)
                 train_loss += loss.item()
 
@@ -257,21 +285,20 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                 loss.backward() # solo calcula los gradientes
                 optimizer.step() # y esto ya, updatea pesos
 
-            # Logística para calculo de pérdida en cada epoch, de entre todos los batches
             average_train_loss = train_loss / len(train_batches)
 
             # TODO: mejorar el output
             print(f"Epoch {epoch + 1}/{epochs} - Training Loss: {average_train_loss:.4f}")
 
             # Por último, validación, SIN updatear los gradientes, solo forward
-
             self._model.eval()
 
-            validation_loss = 0.0
+            validation_accuracy = 0.0
             correct = 0
             total = 0
             # TODO: Cambiar nombres de variables, lo hago por mi pero lo hace un poco engorroso el código.
             # sklearn.metrics.f1_score
+
             with torch.no_grad():
                 for validation_batch_names, validation_batch_labels in dev_batches:
                     validation_batch_names = validation_batch_names.to(self._device)
@@ -281,35 +308,161 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                     validation_predictions = self._model(validation_batch_names)
                     loss = criterion(validation_predictions, validation_batch_labels)
 
-                    validation_loss += loss.item()
+                    validation_accuracy += loss.item()
 
-                    # validation_predictions es un tensor, con los logits sin normalizar
-                    # max coge el máximo, para poder saber cual es la clase predicham dimension 1 porque
-                    # la cero es cada instancia y las características todas las labels
-                    # Nombre StarWars  LOTR  GOT
-                    # nedstark  1.2     2.7  3.5
                     _, predicted_labels = torch.max(validation_predictions, 1)
-                    correct += (predicted_labels == validation_batch_labels).sum().item() # conteo de correctas
-                    total += validation_batch_names.size(0) # tamaño del batch
+                    correct += (predicted_labels == validation_batch_labels).sum().item()
+                    total += validation_batch_names.size(0)
 
-                average_validation_loss = validation_loss / len(dev_batches)
+
+                average_validation_loss = validation_accuracy / len(dev_batches)
                 validation_accuracy = correct / total
                 print(f"Epoch {epoch + 1}/{epochs} - Validation Loss: {average_validation_loss:.4f}, "
                       f"Validation Accuracy: {validation_accuracy:.4f}")
 
-            if average_validation_loss < best_validation_loss:
-                best_validation_loss = average_validation_loss
-                torch.save(self._model.state_dict(), f"checkpoints/best_model.pth")
-                print(f"Model saved with the best validation loss: {best_validation_loss}")
+            scheduler.step()
 
+            current_lr = scheduler.get_last_lr()[0]
+            print(f"Epoch {epoch + 1}/{epochs} - Learning rate adjusted to: {current_lr:.6f}")
 
+            if validation_accuracy > best_validation_accuracy:
+                best_validation_accuracy = validation_accuracy
+                torch.save({
+                    'model_state_dict': self._model.state_dict(),
+                    'optimizer_state_dict': optimizer.state_dict(),
+                    'accuracy': best_validation_accuracy,
+                    'epoch': epoch,
+                    'char_vocab': self._char_vocab,
+                    'label_to_index': self._label_to_index,
+                    'index_to_label': self._index_to_label
+                }, f"checkpoints/best_model.pth")
 
-    def evaluate(self, eval_data):
+                print(f"Model saved with the best validation accuracy: {best_validation_accuracy:.4f}")
+
+    @LoreNexusWrapper._train_mode_only
+    def display_batch_info(self, train_batch_names, train_batch_labels, predicted_labels, char_vocab):
         """
         """
-        pass
+
+        print("Label to Index mapping:", self._label_to_index)
+        print("Index to Label mapping:", self._index_to_label)
+
+        # pongo cap de 12, para que no se me vaya de madre el output
+        decoded_names = [char_vocab.decode(name)[:12] for name in train_batch_names.tolist()]
+        print(f"Name (tokenized and padded): {decoded_names}")
+
+        print(f"Prediction vector (argmax): {predicted_labels}")
+        print(f"True label vector         : {train_batch_labels.tolist()}")
+
+        correct_predictions = (predicted_labels == train_batch_labels).sum().item()
+        print(f"Correct predictions in this batch: {correct_predictions}/{len(train_batch_labels)}")
+
+        input("Press Enter to continue to the next batch...")
+
+
+    def load_model(self, model_path='checkpoints/best_model.pth'):
+        checkpoint = torch.load(model_path, map_location=self._device, weights_only=False)
+
+        self._char_vocab = checkpoint['char_vocab']
+        self._label_to_index = checkpoint['label_to_index']
+        self._index_to_label = checkpoint['index_to_label']
+
+        unique_labels = set(self._label_to_index.values())
+
+        self._model = self.BiLSTMCharacterLevel(
+            vocab_size=len(self._char_vocab),
+            embedding_dim=256,
+            hidden_dim=768,
+            output_dim=len(unique_labels),
+            n_layers=1,
+            dropout=0
+        ).to(self._device)
+
+        self._model.load_state_dict(checkpoint['model_state_dict'])
+        self._model.eval()
 
     def predict_name(self, name):
+        if self._model is None or self._char_vocab is None:
+            raise ValueError("Model is not loaded")
+
+        max_length = 40  # chapuza el hardcodear esto, carga de config.json para todo
+        tokenized_name = self._char_vocab.encode(name)
+        padded_vector = tokenized_name[:max_length]
+        padding_size = max_length - len(padded_vector)
+
+        if padding_size > 0:
+            padded_vector.extend([self._char_vocab.get_index(str(SpecialTokens.PAD))] * padding_size)
+
+        input_tensor = tensor([padded_vector], dtype=torch.long).to(self._device)
+
+        with torch.no_grad():
+            logits = self._model(input_tensor)
+
+            probabilities = F.softmax(logits, dim=1).squeeze()
+
+            top_indices = torch.argsort(probabilities, descending=True)[:4]
+
+            results = {}
+            for i, index in enumerate(top_indices):
+                label = self._index_to_label[index.item()]
+                score = probabilities[index].item()
+                results[f"Prediction {i + 1}"] = (label, score)
+
+        return results
+
+    def evaluate(self):
         """
         """
-        pass
+
+        if self._mode == "cli_app":
+            raise ValueError("Method evaluateis only available in train mode.")
+
+        # TODO: Preparar buen sistema de logging
+        if self._model is None:
+            print("Loading model...")
+            self.load_model()
+        else:
+            self._model.eval()
+
+        test_split = self._load_data(self._data_folder, splits=['test'])
+        test_data = test_split['test']
+
+        test_dataset = self.Dataset(test_data, self._char_vocab)
+        test_batches = DataLoader(test_dataset, batch_size=32, shuffle=False)
+
+        all_preds = []
+        all_labels = []
+
+        with torch.no_grad():
+            for batch_names, batch_labels in test_batches:
+                batch_names, batch_labels = batch_names.to(self._device), batch_labels.to(self._device)
+
+                # forward
+                outputs = self._model(batch_names)
+
+                _, preds = torch.max(outputs, 1)
+
+                all_preds.extend(preds.cpu().numpy())
+                all_labels.extend(batch_labels.cpu().numpy())
+
+
+        report = classification_report(all_labels, all_preds,
+                                       labels=list(self._index_to_label.keys()),
+                                       target_names=list(self._index_to_label.values()))
+
+        print("Test set evaluation report:\n", report)
+
+def predict_test(name):
+
+    model = LoreNexusPytorchModel(mode="cli_app")
+
+    results = model.predict_name(name)
+
+    print(f"Prediction results for '{name}':")
+    for prediction, (label, score) in results.items():
+        print(f"{prediction}: {label} with probability {score:.4f}")
+
+
+ln_pytorch_model = LoreNexusPytorchModel(mode='train')
+# ln_pytorch_model.train()
+ln_pytorch_model.evaluate()

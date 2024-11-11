@@ -51,7 +51,13 @@ class LoreNexusWrapper(ABC):
         pass
 
     @abstractmethod
-    def evaluate(self, eval_data):
+    def evaluate(self):
+        """
+        """
+        pass
+
+    @abstractmethod
+    def predict_name(self, name):
         """
         """
         pass
