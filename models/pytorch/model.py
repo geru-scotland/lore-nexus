@@ -165,6 +165,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         self._data_folder = data_folder
         self._label_to_index = {}
         self._index_to_label = {}
+        self._hyperparams = {}
 
         if self._mode == "cli_app":
             # Solo una vez, que al cabrón a veces le cuesta levantarse
@@ -214,7 +215,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         return {split: data[split] for split in splits}
 
     @LoreNexusWrapper._train_mode_only
-    def train(self, output_path='', save_model=True, lr=0.001, batch_size=32, epochs=15, weight_decay=0.02,
+    def train(self, output_path='checkpoints', save_model=True, lr=0.001, batch_size=32, epochs=15, weight_decay=0.02,
               hidden_dim=768, embeddings_dim=256, num_layers=1, dropout=0.2):
         """
         TODO: Cargar del config.json
@@ -226,6 +227,18 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         self._char_vocab = self._create_vocab()
         unique_labels = set()
 
+        hyperparams = {
+            'lr': lr,
+            'batch_size': batch_size,
+            'epochs': epochs,
+            'weight_decay': weight_decay,
+            'hidden_dim': hidden_dim,
+            'embedding_dim': embeddings_dim,
+            'num_layers': num_layers,
+            'dropout': dropout
+        }
+
+        self._hyperparams = hyperparams
 
         # Son tuplas (names, labels), cada una. Ignoro test, lo cargo al evaluar
         data_splits = self._load_data(self._data_folder, splits=['train', 'dev'])
@@ -330,18 +343,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                 best_validation_accuracy = validation_accuracy
 
                 if save_model:
-                    model_file = f"{output_path}/best_model_{lr}_{batch_size}_{epochs}.pth"
-
-                    hyperparams = {
-                        'lr': lr,
-                        'batch_size': batch_size,
-                        'epochs': epochs,
-                        'weight_decay': weight_decay,
-                        'hidden_dim': hidden_dim,
-                        'embedding_dim': embeddings_dim,
-                        'num_layers': num_layers,
-                        'dropout': dropout
-                    }
+                    model_file = f"{output_path}/best_model_{batch_size}_{epochs}.pth"
 
                     torch.save({
                         'model_state_dict': self._model.state_dict(),
@@ -384,11 +386,16 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         self._label_to_index = checkpoint['label_to_index']
         self._index_to_label = checkpoint['index_to_label']
 
-        hyperparams = checkpoint['hyperparams']
-        embedding_dim = hyperparams['embeddings_dim']
-        hidden_dim = hyperparams['hidden_dim']
-        num_layers = hyperparams['num_layers']
-        dropout = hyperparams['dropout']
+        hyperparams = checkpoint.get('hyperparams', {})
+        embedding_dim = hyperparams.get('embedding_dim', 256)
+        hidden_dim = hyperparams.get('hidden_dim', 768)
+        num_layers = hyperparams.get('num_layers', 1)
+        dropout = hyperparams.get('dropout', 0.0)
+
+        self._hyperparams = hyperparams
+
+        print(f"Loaded Hyperparameters: embedding_dim={embedding_dim}, hidden_dim={hidden_dim}, "
+              f"num_layers={num_layers}, dropout={dropout}")
 
         unique_labels = set(self._label_to_index.values())
 
@@ -403,6 +410,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
 
         self._model.load_state_dict(checkpoint['model_state_dict'])
         self._model.eval()
+
 
     def predict_name(self, name):
         if self._model is None or self._char_vocab is None:
@@ -433,7 +441,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
 
         return results
 
-    def evaluate(self, batch_size=32, verbose=True):
+    def evaluate(self, verbose=True, model=None):
         """
         """
 
@@ -442,8 +450,11 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
 
         # TODO: Preparar buen sistema de logging
         if self._model is None:
-            print("Loading model...")
-            self.load_model()
+            if model is not None:
+                print("Using provided model for evaluation.")
+                self.load_model(model_path=f"checkpoints/{model}")
+            else:
+                self.load_model()
         else:
             self._model.eval()
 
@@ -451,7 +462,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         test_data = test_split['test']
 
         test_dataset = self.Dataset(test_data, self._char_vocab)
-        test_batches = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+        test_batches = DataLoader(test_dataset, batch_size=self._hyperparams.get('batch_size', 32), shuffle=False)
 
         all_preds = []
         all_labels = []
@@ -490,6 +501,6 @@ def predict_test(name):
         print(f"{prediction}: {label} with probability {score:.4f}")
 
 
-# ln_pytorch_model = LoreNexusPytorchModel(mode='train')
-# ln_pytorch_model.train()
-# ln_pytorch_model.evaluate()
+ln_pytorch_model = LoreNexusPytorchModel(mode='train')
+# ln_pytorch_model.train(save_model=True, epochs=2,  batch_size=64, dropout=0.2, num_layers=2)
+# ln_pytorch_model.evaluate(model="best_model_64_1.pth")

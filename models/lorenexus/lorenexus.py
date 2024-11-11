@@ -51,7 +51,7 @@ class LoreNexusWrapper(ABC):
         pass
 
     @abstractmethod
-    def evaluate(self, batch_size, verbose):
+    def evaluate(self, verbose, model=None):
         """
         """
         pass
