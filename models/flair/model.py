@@ -105,7 +105,8 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
         return classifier
 
     @LoreNexusWrapper._train_mode_only
-    def train(self, output_path='resources/taggers/universe_classifier', lr=0.001, batch_size=32, epochs=10):
+    def train(self, output_path='resources/taggers/universe_classifier', save_model=True, lr=0.001, batch_size=32,
+              epochs=10, weight_decay=0.01, hidden_dim=256, embeddings_dim=100, num_layers=1, dropout=0.2):
         """
         TODO: Cargar del config.json
         """
@@ -116,8 +117,9 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
             mini_batch_size=batch_size,
             max_epochs=epochs,
             optimizer=AdamW,
-            weight_decay=0.01,
-            embeddings_storage_mode='gpu' if torch.cuda.is_available() else 'cpu'
+            weight_decay=weight_decay,
+            embeddings_storage_mode='gpu' if torch.cuda.is_available() else 'cpu',
+            save_final_model=save_model
         )
 
     @LoreNexusWrapper._train_mode_only
@@ -126,7 +128,7 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
         """
         return ModelTrainer(self._classifier, self._corpus)
 
-    def evaluate(self, output_path='resources/taggers/universe_classifier'):
+    def evaluate(self, output_path='resources/taggers/universe_classifier', batch_size=32, verbose=True):
         """
         """
         if self._classifier is None:
@@ -135,11 +137,18 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
 
         result = self._classifier.evaluate(
             self._corpus.test,
-            mini_batch_size=32,
+            mini_batch_size=batch_size,
             embeddings_storage_mode='gpu' if torch.cuda.is_available() else 'cpu',
             gold_label_type='class'
         )
-        print(result.detailed_results)
+
+        accuracy = result.main_score
+
+        if verbose:
+            print(result.detailed_results)
+            print(f"Test Accuracy: {accuracy:.4f}")
+
+        return accuracy, result.detailed_results
 
     def predict_name(self, name):
         """
@@ -155,7 +164,7 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
 
         return results
 
-model = LoreNexusFlairModel(mode="train",
-                            model_path='resources/taggers/universe_classifier/best-model.pt')
-model.train()
-model.evaluate()
+# model = LoreNexusFlairModel(mode="train",
+#                             model_path='resources/taggers/universe_classifier/best-model.pt')
+# model.train()
+# model.evaluate()

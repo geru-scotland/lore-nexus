@@ -24,7 +24,7 @@ sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 from models.lorenexus.lorenexus import LoreNexusWrapper
 
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, accuracy_score
 from torch.optim.lr_scheduler import StepLR
 from torch.utils.data import DataLoader
 from torch import tensor
@@ -214,7 +214,8 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         return {split: data[split] for split in splits}
 
     @LoreNexusWrapper._train_mode_only
-    def train(self, output_path='', lr=0.001, batch_size=32, epochs=15):
+    def train(self, output_path='', save_model=True, lr=0.001, batch_size=32, epochs=15, weight_decay=0.02,
+              hidden_dim=768, embeddings_dim=256, num_layers=1, dropout=0.2):
         """
         TODO: Cargar del config.json
         """
@@ -244,16 +245,16 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         # Creo el modelo
         self._model = self.BiLSTMCharacterLevel(
             vocab_size=len(self._char_vocab),
-            embedding_dim=256,
-            hidden_dim=768,
+            embedding_dim=embeddings_dim,
+            hidden_dim=hidden_dim,
             output_dim=len(unique_labels),
-            n_layers=1,
-            dropout=0.3 # si pones dropout > 0, hay que poner más capas, no solo 1 (docu de Pytorch)
+            n_layers=num_layers,
+            dropout=dropout # si pones dropout > 0, hay que poner más capas, no solo 1 (docu de Pytorch)
         ).to(self._device)
 
         criterion = torch.nn.CrossEntropyLoss()
 
-        optimizer = torch.optim.AdamW(self._model.parameters(), lr=lr, weight_decay=0.02)
+        optimizer = torch.optim.AdamW(self._model.parameters(), lr=lr, weight_decay=weight_decay)
         scheduler = StepLR(optimizer, step_size=5, gamma=0.5)
 
         # TODO: Como tengo clases un poco desbalanceadas, utilizaré métrica F1 para que
@@ -327,17 +328,33 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
 
             if validation_accuracy > best_validation_accuracy:
                 best_validation_accuracy = validation_accuracy
-                torch.save({
-                    'model_state_dict': self._model.state_dict(),
-                    'optimizer_state_dict': optimizer.state_dict(),
-                    'accuracy': best_validation_accuracy,
-                    'epoch': epoch,
-                    'char_vocab': self._char_vocab,
-                    'label_to_index': self._label_to_index,
-                    'index_to_label': self._index_to_label
-                }, f"checkpoints/best_model.pth")
 
-                print(f"Model saved with the best validation accuracy: {best_validation_accuracy:.4f}")
+                if save_model:
+                    model_file = f"{output_path}/best_model_{lr}_{batch_size}_{epochs}.pth"
+
+                    hyperparams = {
+                        'lr': lr,
+                        'batch_size': batch_size,
+                        'epochs': epochs,
+                        'weight_decay': weight_decay,
+                        'hidden_dim': hidden_dim,
+                        'embedding_dim': embeddings_dim,
+                        'num_layers': num_layers,
+                        'dropout': dropout
+                    }
+
+                    torch.save({
+                        'model_state_dict': self._model.state_dict(),
+                        'optimizer_state_dict': optimizer.state_dict(),
+                        'accuracy': best_validation_accuracy,
+                        'epoch': epoch,
+                        'char_vocab': self._char_vocab,
+                        'label_to_index': self._label_to_index,
+                        'index_to_label': self._index_to_label,
+                        'hyperparams': hyperparams
+                    }, model_file)
+
+                    print(f"Model saved with the best validation accuracy: {best_validation_accuracy:.4f}")
 
     @LoreNexusWrapper._train_mode_only
     def display_batch_info(self, train_batch_names, train_batch_labels, predicted_labels, char_vocab):
@@ -367,15 +384,21 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         self._label_to_index = checkpoint['label_to_index']
         self._index_to_label = checkpoint['index_to_label']
 
+        hyperparams = checkpoint['hyperparams']
+        embedding_dim = hyperparams['embeddings_dim']
+        hidden_dim = hyperparams['hidden_dim']
+        num_layers = hyperparams['num_layers']
+        dropout = hyperparams['dropout']
+
         unique_labels = set(self._label_to_index.values())
 
         self._model = self.BiLSTMCharacterLevel(
             vocab_size=len(self._char_vocab),
-            embedding_dim=256,
-            hidden_dim=768,
+            embedding_dim=embedding_dim,
+            hidden_dim=hidden_dim,
             output_dim=len(unique_labels),
-            n_layers=1,
-            dropout=0
+            n_layers=num_layers,
+            dropout=dropout
         ).to(self._device)
 
         self._model.load_state_dict(checkpoint['model_state_dict'])
@@ -410,7 +433,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
 
         return results
 
-    def evaluate(self):
+    def evaluate(self, batch_size=32, verbose=True):
         """
         """
 
@@ -428,7 +451,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         test_data = test_split['test']
 
         test_dataset = self.Dataset(test_data, self._char_vocab)
-        test_batches = DataLoader(test_dataset, batch_size=32, shuffle=False)
+        test_batches = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
         all_preds = []
         all_labels = []
@@ -450,7 +473,11 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                                        labels=list(self._index_to_label.keys()),
                                        target_names=list(self._index_to_label.values()))
 
-        print("Test set evaluation report:\n", report)
+        accuracy = accuracy_score(all_labels, all_preds)
+        if verbose:
+            print("Test set evaluation report:\n", report)
+            print(f"Test accuracy: {accuracy:.4f}")
+        return accuracy, report
 
 def predict_test(name):
 
@@ -463,6 +490,6 @@ def predict_test(name):
         print(f"{prediction}: {label} with probability {score:.4f}")
 
 
-ln_pytorch_model = LoreNexusPytorchModel(mode='train')
+# ln_pytorch_model = LoreNexusPytorchModel(mode='train')
 # ln_pytorch_model.train()
-ln_pytorch_model.evaluate()
+# ln_pytorch_model.evaluate()

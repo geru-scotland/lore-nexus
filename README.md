@@ -23,9 +23,16 @@
 5. [Modelos](#modelos)
    - [Flair Model Wrapper](#flair-model-wrapper)
 6. [Aplicación](#aplicación)
+7. [Hyperparameter Tuner](#hyperparameter-tuner)
 
 ---
 
+## Instrucciones de uso
+
+Ejecutar esto en la terminal (TODO: Cambiar ruta antes de entregar proyecto):
+```bash
+export PYTHONPATH=$PYTHONPATH:/home/basajaun/workspace/university/cuarto/pln/lore-nexus/
+```
 ## Visión general del pipeline de datos
 La **Data pipeline de Lore Nexus** 
 - **Data loaders/processors** 

@@ -45,13 +45,13 @@ class LoreNexusWrapper(ABC):
         pass
 
     @abstractmethod
-    def train(self, train_data):
+    def train(self):
         """
         """
         pass
 
     @abstractmethod
-    def evaluate(self):
+    def evaluate(self, batch_size, verbose):
         """
         """
         pass
