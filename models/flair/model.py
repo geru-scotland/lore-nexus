@@ -41,6 +41,15 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
             self._label_dict = self._create_vocab()
             self._embedding = self._initialize_embeddings()
             self._classifier = self._initialize_classifier()
+        elif self._mode == "evaluate":
+            self._corpus = self._load_data(data_folder)
+            try:
+                self._classifier = TextClassifier.load(model_path)
+                print("Model loaded for evaluation: ")
+                print(f"Model: {model_path}")
+            except Exception as e:
+                print(f"Error while loading the model: {e}")
+                sys.exit(1)
         elif self._mode == "cli_app":
             # Solo una vez, que al cabrón a veces le cuesta levantarse
             try:
@@ -51,7 +60,6 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
                 print(f"Error loading model: {e}")
                 sys.exit(1)
 
-    @LoreNexusWrapper._train_mode_only
     def _load_data(self, data_folder):
         """
         """
@@ -97,7 +105,7 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
         return classifier
 
     @LoreNexusWrapper._train_mode_only
-    def train(self, output_path='resources/taggers/universe_classifier', lr=0.001, batch_size=32, epochs=30):
+    def train(self, output_path='resources/taggers/universe_classifier', lr=0.001, batch_size=32, epochs=10):
         """
         TODO: Cargar del config.json
         """
@@ -118,10 +126,20 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
         """
         return ModelTrainer(self._classifier, self._corpus)
 
-    def evaluate(self):
+    def evaluate(self, output_path='resources/taggers/universe_classifier'):
         """
         """
-        pass
+        if self._classifier is None:
+            print("The model is not initialized.")
+            return
+
+        result = self._classifier.evaluate(
+            self._corpus.test,
+            mini_batch_size=32,
+            embeddings_storage_mode='gpu' if torch.cuda.is_available() else 'cpu',
+            gold_label_type='class'
+        )
+        print(result.detailed_results)
 
     def predict_name(self, name):
         """
@@ -137,5 +155,7 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
 
         return results
 
-# model = LoreNexusFlairModel(mode="train")
-# model.train()
+model = LoreNexusFlairModel(mode="train",
+                            model_path='resources/taggers/universe_classifier/best-model.pt')
+model.train()
+model.evaluate()
