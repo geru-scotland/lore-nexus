@@ -11,19 +11,25 @@
  * Description:
  *****************************************************
 """
+import os.path
 from abc import ABC
 import sys
-from collections import Counter
+from datetime import datetime
 from enum import Enum
 from pathlib import Path
 
 import torch.utils.data
 import torch.nn.functional as F
+from torch.nn import init
+
+from paths import DATA_OUTPUT_DIR
 
 sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 from models.lorenexus.lorenexus import LoreNexusWrapper
 
+import matplotlib.pyplot as plt
+import seaborn as sns
 from sklearn.metrics import classification_report, accuracy_score
 from torch.optim.lr_scheduler import StepLR
 from torch.utils.data import DataLoader
@@ -143,6 +149,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
 
             # OJO! bidireccional, por eso el *2 en el hidden_dim, uno para cada dirección
             self.fc = torch.nn.Linear(hidden_dim*2, output_dim)
+            self.apply(self._init_weights)
 
         def forward(self, input_tensor):
 
@@ -154,6 +161,18 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
             out = self.fc(hidden)
 
             return out
+
+        def _init_weights(self, module):
+            if isinstance(module, torch.nn.Linear):
+                init.xavier_uniform_(module.weight)
+                if module.bias is not None:
+                    init.zeros_(module.bias)
+            elif isinstance(module, torch.nn.LSTM):
+                for name, param in module.named_parameters():
+                    if 'weight' in name:
+                        init.kaiming_uniform_(param)
+                    elif 'bias' in name:
+                        init.zeros_(param)
 
     def __init__(self, mode="train", data_folder='data/', model_path="checkpoints/best_model.pth"):
         """
@@ -190,7 +209,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
             splits = ['train', 'dev', 'test']
 
         for split in splits:
-            file_path = Path(data_folder) / f"{split}.txt"
+            file_path = os.path.join(DATA_OUTPUT_DIR, f"{split}.txt")
             names, labels = [], []
 
             with open(file_path, 'r') as f:
@@ -226,6 +245,8 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         # 4) Entreno
         self._char_vocab = self._create_vocab()
         unique_labels = set()
+        train_losses = []
+        validation_losses = []
 
         hyperparams = {
             'lr': lr,
@@ -339,6 +360,9 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
             current_lr = scheduler.get_last_lr()[0]
             print(f"Epoch {epoch + 1}/{epochs} - Learning rate adjusted to: {current_lr:.6f}")
 
+            train_losses.append(average_train_loss)
+            validation_losses.append(average_validation_loss)
+
             if validation_accuracy > best_validation_accuracy:
                 best_validation_accuracy = validation_accuracy
 
@@ -357,6 +381,35 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                     }, model_file)
 
                     print(f"Model saved with the best validation accuracy: {best_validation_accuracy:.4f}")
+
+        self.plot_training_validation_loss(epochs, train_losses, validation_losses, hyperparams)
+
+    def plot_training_validation_loss(self, epochs, train_losses, validation_losses, hyperparams):
+        sns.set(style="whitegrid", palette="muted")
+        epochs_range = list(range(1, epochs + 1))
+
+        plt.figure(figsize=(12, 6))
+        plt.plot(epochs_range, train_losses, label='Training Loss', linewidth=2.5, marker='o', markersize=7)
+        plt.plot(epochs_range, validation_losses, label='Validation Loss', linewidth=2.5, marker='s', markersize=7)
+        plt.fill_between(epochs_range, train_losses, validation_losses, color="lightcoral", alpha=0.2)
+
+        plt.title("Training and Validation Loss Across Epochs", fontsize=18)
+        plt.xlabel("Epochs", fontsize=14)
+        plt.ylabel("Loss", fontsize=14)
+        plt.xticks(epochs_range)
+        plt.legend(loc="upper right", fontsize=12, bbox_to_anchor=(1.15, 1))
+        plt.grid(visible=True, color="gray", linestyle="--", linewidth=0.5, alpha=0.7)
+
+        hyperparams_text = '\n'.join([f"{k}: {v}" for k, v in hyperparams.items()])
+        plt.text(0.95, 0.05, hyperparams_text, fontsize=10, ha='right', va='bottom', transform=plt.gca().transAxes,
+                 bbox=dict(facecolor='white', alpha=0.6, edgecolor='black'))
+
+        plt.tight_layout()
+        timestamp = datetime.now().strftime("%d_%m_%Y_%H_%M")
+        filename = f"training_validation_loss_{timestamp}.png"
+        plt.savefig(filename)
+        print(f"Gráfico de métricas guardado como '{filename}'")
+        plt.show()
 
     @LoreNexusWrapper._train_mode_only
     def display_batch_info(self, train_batch_names, train_batch_labels, predicted_labels, char_vocab):
@@ -501,6 +554,6 @@ def predict_test(name):
         print(f"{prediction}: {label} with probability {score:.4f}")
 
 
-ln_pytorch_model = LoreNexusPytorchModel(mode='train')
-# ln_pytorch_model.train(save_model=True, epochs=2,  batch_size=64, dropout=0.2, num_layers=2)
-# ln_pytorch_model.evaluate(model="best_model_64_1.pth")
+# ln_pytorch_model = LoreNexusPytorchModel(mode='train')
+# ln_pytorch_model.train(save_model=True, epochs=15,  hidden_dim=768, batch_size=32, dropout=0.4, num_layers=2, weight_decay=0.03)
+# ln_pytorch_model.evaluate()

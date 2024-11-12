@@ -2,4 +2,4 @@ models:
   flair:
     checkpoint: "../resources/taggers/universe_classifier/best-model.pt"
   pytorch:
-    checkpoint: "best_model.pth"
+    checkpoint: "best_model_32_15.pth"

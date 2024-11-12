@@ -39,9 +39,10 @@ class LoreNexusApp:
         """
         """
         config = self.load_config()
-        model_name = config['models']['flair']['checkpoint']
-        model_path = f'{get_checkpoints_dir("flair")}/{model_name}'
-        self.lore_nexus = LoreNexusFlairModel(mode="cli_app", model_path=model_path)
+        model_name = config['models']['pytorch']['checkpoint']
+        model_path = f'{get_checkpoints_dir("pytorch")}/{model_name}'
+        print(f"Loading model from {model_path}...")
+        self.lore_nexus = LoreNexusPytorchModel(mode="cli_app", model_path=model_path)
         self.display_title()
         print("📜 The Lore Nexus is ready to unveil the mysteries of any name you provide 📜 ")
 
@@ -99,7 +100,7 @@ class LoreNexusApp:
                 choice = input("Your choice: ").strip()
 
                 if choice == str(UserOptions.UNVEIL_LORE.value):
-                    name = input("Enter a name to uncover its Lore: ").strip()
+                    name = input("Enter a name to uncover its Lore: ").lower().strip()
 
                     if not name or not re.match("^[a-zA-Z0-9 ]*$", name):
                         print("Please provide a correct name.")
