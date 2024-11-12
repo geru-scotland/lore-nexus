@@ -1,5 +1,5 @@
-model:
+models:
   flair:
-    path: "models/flair/checkpoints/30_epochs_AWESOME/best-model.pt"
+    checkpoint: "../resources/taggers/universe_classifier/best-model.pt"
   pytorch:
-    path: "models/pytorch/checkpoints/best_model.pth"
+    checkpoint: "best_model.pth"

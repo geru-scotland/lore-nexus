@@ -13,11 +13,13 @@
 """
 
 import json
+import os
 
 from dataset.preprocessing.apis.mythology.mythdata import MythdataProcessor
 from dataset.preprocessing.apis.wikidata.wikidata import WikidataProcessor, DatasetFormats
 from dataset.preprocessing.data_processor import DataProcessor
 from dataset.preprocessing.ner.ner_corpus_builder import EntityCorpusBuilder
+from paths import APIS_DIR, NER_DIR
 
 
 class Config:
@@ -46,11 +48,17 @@ class DataPipeline:
         wikidata_config = self.config.get_dataset("Wikidata")
         if wikidata_config:
             try:
+                wikidata_path = os.path.join(APIS_DIR, wikidata_config['path'])
+                input_file_path =  os.path.join(str(wikidata_path), wikidata_config['input_folder'], wikidata_config['dataset_file'])
+                output_file_path = os.path.join(str(wikidata_path), wikidata_config['output_folder'], wikidata_config['output_file'])
+                labels_path = os.path.join(str(wikidata_path), wikidata_config['labels_folder'], wikidata_config['labels_file'])
+
                 wikidata_processor = WikidataProcessor(
-                    input_file=f"{wikidata_config['path']}/{wikidata_config['input_folder']}/{wikidata_config['dataset_file']}",
-                    output_folder=f"{wikidata_config['path']}/{wikidata_config['output_folder']}",
-                    labels_file=f"{wikidata_config['path']}/labels/labels.txt"
+                    input_file=f"{input_file_path}",
+                    output_file=f"{output_file_path}",
+                    labels_file=f"{labels_path}"
                 )
+
                 wikidata_processor.process_data(DatasetFormats.FAST_TEXT)
                 print("Wikidata processing completed.")
             except Exception as e:
@@ -60,10 +68,13 @@ class DataPipeline:
         mythdata_config = self.config.get_dataset("Mythdata")
         if mythdata_config:
             try:
-                mythdata_processor = MythdataProcessor(
-                    input_file=f"{mythdata_config['path']}/{mythdata_config['input_folder']}/{mythdata_config['dataset_file']}",
-                    output_file=f"{mythdata_config['path']}/{mythdata_config['output_folder']}/{mythdata_config['output_file']}"
-                )
+
+                mythdata_path = os.path.join(APIS_DIR, mythdata_config['path'])
+                input_file_path =  os.path.join(str(mythdata_path), mythdata_config['input_folder'], mythdata_config['dataset_file'])
+                output_file_path = os.path.join(str(mythdata_path), mythdata_config['output_folder'], mythdata_config['output_file'])
+
+                mythdata_processor = MythdataProcessor(input_file=f"{input_file_path}", output_file=f"{output_file_path}")
+
                 mythdata_processor.process_data()
                 print("Mythdata processing completed.")
             except Exception as e:
@@ -74,10 +85,12 @@ class DataPipeline:
         if nerdata_config:
             try:
                 mythdata_processor = EntityCorpusBuilder()
-                mythdata_processor.label_and_filter_entities(
-                    input_dir=f"{nerdata_config['path']}/{nerdata_config['input_folder']}",
-                    output_file=f"{nerdata_config['path']}/{nerdata_config['output_folder']}/{nerdata_config['processed_file']}"
-                )
+
+                ner_input_path = os.path.join(NER_DIR, nerdata_config['input_folder'])
+                ner_output_file = os.path.join(NER_DIR, nerdata_config['output_folder'], nerdata_config["output_file"])
+
+                mythdata_processor.label_and_filter_entities(input_dir=f"{ner_input_path}", output_file=f"{ner_output_file}")
+
                 print("NERdata processing completed.")
             except Exception as e:
                 print(f"Error processing NERdata: {e}")
@@ -90,7 +103,6 @@ class DataPipeline:
             data_processor = DataProcessor(
                 datasets=self.config.config["datasets"],
                 labels=data_processor_config["labels"],
-                output_folder=f"{base_path}/{data_processor_config['output_folder']}",
                 output_file=data_processor_config["output_file"],
                 train_file=data_processor_config["train_file"],
                 dev_file=data_processor_config["dev_file"],

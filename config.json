@@ -2,33 +2,33 @@
     "datasets": [
         {
             "name": "Wikidata",
-            "path": "dataset/preprocessing/apis/wikidata",
+            "path": "wikidata",
             "input_folder": "raw_data",
             "output_folder": "processed_data",
+            "labels_folder": "labels",
+            "labels_file": "labels.txt",
             "dataset_file": "wikidata-universes.csv",
-            "processed_file": "wikidata_dataset_FastText.txt"
+            "output_file": "wikidata_dataset_FastText.txt"
         },
         {
             "name": "Mythdata",
-            "path": "dataset/preprocessing/apis/mythology",
+            "path": "mythology",
             "input_folder": "raw_data",
             "output_folder": "processed_data",
             "dataset_file": "myth_dataset.csv",
-            "output_file": "myth_dataset.txt",
-            "processed_file": "myth_dataset.txt"
+            "output_file": "myth_dataset.txt"
         },
         {
             "name": "NERdata",
-            "path": "dataset/preprocessing/ner",
+            "path": "ner",
             "input_folder": "raw_data",
             "output_folder": "processed_data",
-            "processed_file": "ner_dataset.txt"
+            "output_file": "ner_dataset.txt"
         }
     ],
 
     "data_processor": {
         "path": "dataset/preprocessing",
-        "output_folder": "output",
         "output_file": "dataset.txt",
         "train_file": "train.txt",
         "dev_file": "dev.txt",
@@ -46,6 +46,9 @@
             "ForgottenRealms",
             "FinalFantasy",
             "GameofThrones",
+            "TheWitcher",
+            "DoctorWho",
+            "Discworld",
             "Mythology"
         ]
     }

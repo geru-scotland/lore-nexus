@@ -12,7 +12,6 @@
  *****************************************************
 """
 import os
-import json
 import random
 from collections import defaultdict
 from enum import Enum
@@ -20,6 +19,9 @@ from enum import Enum
 from textattack.augmentation import Augmenter
 from textattack.transformations import WordSwapRandomCharacterInsertion
 from textattack.transformations.word_swaps.word_swap_neighboring_character_swap import WordSwapNeighboringCharacterSwap
+
+from paths import DATA_OUTPUT_DIR, APIS_DIR, PREPROCESSING_DIR
+
 
 class MythLabels(Enum):
     """
@@ -31,7 +33,7 @@ class MythLabels(Enum):
         return self.value
 
 class DataProcessor:
-    def __init__(self, datasets, labels, output_folder, output_file, train_file, dev_file, test_file, train_pct=0.8, dev_pct=0.1, test_pct=0.1):
+    def __init__(self, datasets, labels, output_file, train_file, dev_file, test_file, train_pct=0.8, dev_pct=0.1, test_pct=0.1):
         self.datasets = datasets
         self.allowed_labels = self._load_labels(labels)
         self.data = self._load_data()
@@ -41,10 +43,10 @@ class DataProcessor:
         self.test_pct = test_pct
 
         # Rutas de salida
-        self.output_path = os.path.join(output_folder, output_file)
-        self.train_path = os.path.join(output_folder, train_file)
-        self.dev_path = os.path.join(output_folder, dev_file)
-        self.test_path = os.path.join(output_folder, test_file)
+        self.output_path = os.path.join(DATA_OUTPUT_DIR, output_file)
+        self.train_path = os.path.join(DATA_OUTPUT_DIR, train_file)
+        self.dev_path = os.path.join(DATA_OUTPUT_DIR, dev_file)
+        self.test_path = os.path.join(DATA_OUTPUT_DIR, test_file)
 
     def _load_labels(self, labels):
         """
@@ -61,14 +63,15 @@ class DataProcessor:
         """
         filtered_data = []
         for dataset in self.datasets:
-            dataset_path = os.path.join(dataset["path"], dataset["output_folder"], dataset["processed_file"])
+            data_dir = PREPROCESSING_DIR if dataset["path"] == "ner" else APIS_DIR
+            dataset_path = os.path.join(data_dir, dataset["path"], dataset['output_folder'], dataset["output_file"])
             try:
                 with open(dataset_path, 'r', encoding='utf-8') as file:
                     for line in file:
                         if any(line.startswith(label) for label in self.allowed_labels):
                             filtered_data.append(line.strip())
             except FileNotFoundError:
-                print(f"Dataset {dataset['name']} not found in path {dataset["path"]}")
+                print(f"Dataset {dataset['name']} not found in path {data_dir}")
         return filtered_data
 
     class DataAugmentator:
@@ -132,11 +135,12 @@ class DataProcessor:
 
     def run_pipeline(self):
         augmented_data = self.augment()
+        # TODO: Investigar bien esto!
         # mejores resultados sin eliminar duplicados...
         # no creo que sea bueno...
-        #unique_data = list(set(augmented_data))
-        self._save_data(augmented_data)
-        self._stratify_data(augmented_data)
+        unique_data = list(set(augmented_data))
+        self._save_data(unique_data)
+        self._stratify_data(unique_data)
 
     def augment(self):
         augmenter = self.DataAugmentator(self)
