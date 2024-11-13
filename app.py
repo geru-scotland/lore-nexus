@@ -11,6 +11,7 @@
  * Description:
  *****************************************************
 """
+import os
 import re
 import sys
 from enum import Enum
@@ -20,6 +21,7 @@ import yaml
 sys.path.append(str(Path(__file__).resolve().parents[2]))
 from models.flair.model import LoreNexusFlairModel
 from models.pytorch.model import LoreNexusPytorchModel
+from paths import BASE_DIR, get_checkpoints_dir
 
 class UserOptions(Enum):
     UNVEIL_LORE = 1
@@ -37,7 +39,9 @@ class LoreNexusApp:
         """
         """
         config = self.load_config()
-        model_path = config['model']['pytorch']['path']
+        model_name = config['models']['pytorch']['checkpoint']
+        model_path = f'{get_checkpoints_dir("pytorch")}/{model_name}'
+        print(f"Loading model from {model_path}...")
         self.lore_nexus = LoreNexusPytorchModel(mode="cli_app", model_path=model_path)
         self.display_title()
         print("📜 The Lore Nexus is ready to unveil the mysteries of any name you provide 📜 ")
@@ -45,7 +49,7 @@ class LoreNexusApp:
     def load_config(self):
         """
         """
-        config_path = "config.yaml"
+        config_path = os.path.join(BASE_DIR, "config.yaml")
         with open(config_path, 'r') as file:
             config = yaml.safe_load(file)
         return config
@@ -96,7 +100,7 @@ class LoreNexusApp:
                 choice = input("Your choice: ").strip()
 
                 if choice == str(UserOptions.UNVEIL_LORE.value):
-                    name = input("Enter a name to uncover its Lore: ").strip()
+                    name = input("Enter a name to uncover its Lore: ").lower().strip()
 
                     if not name or not re.match("^[a-zA-Z0-9 ]*$", name):
                         print("Please provide a correct name.")

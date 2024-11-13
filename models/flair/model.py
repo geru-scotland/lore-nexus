@@ -18,6 +18,7 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 from models.lorenexus.lorenexus import LoreNexusWrapper
+from paths import DATA_OUTPUT_DIR
 
 from flair.datasets import ClassificationCorpus
 from flair.data import Sentence
@@ -29,7 +30,7 @@ import torch
 
 
 class LoreNexusFlairModel(LoreNexusWrapper, ABC):
-    def __init__(self, mode="train", data_folder='data/', model_path=None):
+    def __init__(self, mode="train", data_folder=DATA_OUTPUT_DIR, model_path=None):
         """
         """
         super().__init__(mode)
@@ -106,7 +107,7 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
 
     @LoreNexusWrapper._train_mode_only
     def train(self, output_path='resources/taggers/universe_classifier', save_model=True, lr=0.001, batch_size=32,
-              epochs=10, weight_decay=0.01, hidden_dim=256, embeddings_dim=100, num_layers=1, dropout=0.2):
+              epochs=30, weight_decay=0.01, hidden_dim=256, embeddings_dim=100, num_layers=1, dropout=0.2):
         """
         TODO: Cargar del config.json
         """
@@ -164,7 +165,6 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
 
         return results
 
-# model = LoreNexusFlairModel(mode="train",
-#                             model_path='resources/taggers/universe_classifier/best-model.pt')
+# model = LoreNexusFlairModel(mode="train")
 # model.train()
 # model.evaluate()

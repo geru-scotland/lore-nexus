@@ -18,6 +18,9 @@ import pandas as pd
 import re
 import unicodedata
 
+from paths import APIS_DIR
+
+
 class DatasetFormats(Enum):
     CoNLL = "CoNLL"
     FAST_TEXT = "FastText" # https://flairnlp.github.io/docs/tutorial-training/how-to-load-custom-dataset#fasttext-format
@@ -27,12 +30,12 @@ class DatasetFormats(Enum):
         return self.value
 
 class WikidataProcessor:
-    def __init__(self, input_file, output_folder, labels_file):
+    def __init__(self, input_file, output_file, labels_file):
         """
         """
 
         self.input_file = input_file
-        self.output_folder = output_folder
+        self.output_file = output_file
         self.labels_file = labels_file
         self.df = pd.read_csv(self.input_file)
 
@@ -131,26 +134,23 @@ class WikidataProcessor:
                         file.write(f"{item}\n")
 
         if dataset_format == DatasetFormats.CoNLL:
-            output_file = os.path.join(self.output_folder, "wikidata_dataset_CoNLL.txt")
             names = self.df['itemLabel']
             labels = self.df['universeLabel']
-            write_to_file(output_file, data=[names, labels], conll_format=True)
+            write_to_file(self.output_file, data=[names, labels], conll_format=True)
 
         elif dataset_format == DatasetFormats.SEPARATED_DATA_LABELS:
-            names_file = os.path.join(self.output_folder, "wikidata_dataset_names.txt")
-            labels_file = os.path.join(self.output_folder, "wikidata_dataset_labels.txt")
+            names_file = os.path.join(APIS_DIR, "wikidata", "labels", "wikidata_dataset_names.txt")
             names = self.df['itemLabel']
             labels = self.df['universeLabel']
             write_to_file(names_file, data=names)
-            write_to_file(labels_file, data=labels)
+            write_to_file(self.labels_file, data=labels)
 
         elif dataset_format == DatasetFormats.FAST_TEXT:
-            output_file = os.path.join(self.output_folder, "wikidata_dataset_FastText.txt")
             names = self.df['itemLabel']
             labels = self.df['universeLabel']
-            write_to_file(output_file, data=[names, labels], fast_text_format=True)
+            write_to_file(self.output_file, data=[names, labels], fast_text_format=True)
         else:
-            output_file = os.path.join(self.output_folder, "wikidata_dataset.csv")
+            output_file = os.path.join(APIS_DIR, "wikidata", "wikidata_dataset.csv")
             self.df.to_csv(output_file, index=False)
 
-        print(f"Processed data saved to {self.output_folder}")
+        print(f"Processed data saved to {self.output_file}")
