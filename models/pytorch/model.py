@@ -406,7 +406,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
 
         plt.tight_layout()
         timestamp = datetime.now().strftime("%d_%m_%Y_%H_%M")
-        filename = f"training_validation_loss_{timestamp}.png"
+        filename = f"runs/training_validation_loss_{timestamp}.png"
         plt.savefig(filename)
         print(f"Gráfico de métricas guardado como '{filename}'")
         plt.show()
