@@ -31,7 +31,9 @@
 
 Ejecutar esto en la terminal (TODO: Cambiar ruta antes de entregar proyecto):
 ```bash
-export PYTHONPATH=$PYTHONPATH:/home/basajaun/workspace/university/cuarto/pln/lore-nexus/
+export PYTHONPATH=$PYTHONPATH:$(pwd)
+python -m spacy download en_core_web_trf
+
 ```
 ## Visión general del pipeline de datos
 La **Data pipeline de Lore Nexus** 
@@ -141,7 +143,7 @@ La aplicación de **Lore Nexus** interfaz mediante CLI para predecir nombres - p
 
 ## Modelos disponibles
 - Flair: [Huggin Face: basajaun-scotland/lore-nexus-bilstm-flair](https://huggingface.co/basajaun-scotland/lore-nexus-bilstm-flair)
-- LTSM
+- LTSM: [Huggin Face: basajaun-scotland/lore-nexus-bilstm-pytorch](https://huggingface.co/basajaun-scotland/lore-nexus-bilstm-pytorch)
 - CharacterBert
 
 ### Créditos y referencias
