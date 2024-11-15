@@ -16,8 +16,8 @@ from enum import Enum
 
 import pandas as pd
 import re
-import unicodedata
 
+from dataset.preprocessing.data_normalizer import DataNormalizer
 from paths import APIS_DIR
 
 
@@ -30,6 +30,9 @@ class DatasetFormats(Enum):
         return self.value
 
 class WikidataProcessor:
+    """
+        TODO: Crear clase base de la que hereden todos los processors , como este, el de MythData etc, etc.
+    """
     def __init__(self, input_file, output_file, labels_file):
         """
         """
@@ -38,6 +41,7 @@ class WikidataProcessor:
         self.output_file = output_file
         self.labels_file = labels_file
         self.df = pd.read_csv(self.input_file)
+        self.normalizer = DataNormalizer()
 
     def process_labels(self):
         """
@@ -91,13 +95,7 @@ class WikidataProcessor:
         """
         """
 
-        def normalize_unicode(text):
-            normalized_text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('ascii')
-            normalized_text = re.sub(r"['’]", "", normalized_text)
-            normalized_text = re.sub(r"[.-]", "", normalized_text)
-            return normalized_text
-
-        self.df['itemLabel'] = self.df['itemLabel'].apply(normalize_unicode)
+        self.df['itemLabel'] = self.df['itemLabel'].apply(self.normalizer.normalize)
         print("Names processing completed.")
 
     def process_data(self, dataset_format=None):

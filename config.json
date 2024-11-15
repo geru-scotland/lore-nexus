@@ -24,6 +24,14 @@
             "input_folder": "raw_data",
             "output_folder": "processed_data",
             "output_file": "ner_dataset.txt"
+        },
+        {
+            "name": "Slurs",
+            "path": "slurs",
+            "input_folder": "raw_data",
+            "output_folder": "processed_data",
+            "dataset_file": "profanity.csv",
+            "output_file": "slurs.txt"
         }
     ],
 
@@ -33,9 +41,57 @@
         "train_file": "train.txt",
         "dev_file": "dev.txt",
         "test_file": "test.txt",
+        "config_dump": "data_config.info",
         "train_size": 0.85,
         "dev_size": 0.15,
         "test_size": 0,
+        "augmentation": {
+            "enabled": true,
+            "swap_characters": {
+                "enabled": true,
+                "pct_words_to_swap": 0.4,
+                "transformations_per_example": {
+                    "min": 1,
+                    "max": 3
+                }
+            },
+            "insert_characters": {
+                "enabled": true,
+                "pct_words_to_swap": 0.4,
+                "transformations_per_example": {
+                    "min": 1,
+                    "max": 3
+                }
+            },
+            "delete_characters": {
+                "enabled": true,
+                "pct_words_to_swap": 0.4,
+                "transformations_per_example": {
+                    "min": 1,
+                    "max": 3
+                }
+            },
+            "duplicate_characters": {
+                "enabled": true,
+                "pct_words_to_swap": 0.2,
+                "transformations_per_example": 1
+            },
+            "split_names": {
+                "enabled": true,
+                "join_parts": true
+            },
+            "label_exclusion": {
+                "enabled": true,
+                "excluded_labels": [
+                    "Mythology",
+                    "Offensive"
+                ]
+            },
+            "internal_swap": {
+                "enabled": true,
+                "swap_probability": 0.5
+            }
+        },
         "labels": [
             "HarryPotter",
             "StarWars",
@@ -49,7 +105,8 @@
             "TheWitcher",
             "DoctorWho",
             "Discworld",
-            "Mythology"
+            "Mythology",
+            "Offensive"
         ]
     }
 }

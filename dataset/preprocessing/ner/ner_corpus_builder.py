@@ -18,6 +18,9 @@ from pathlib import Path
 from pdfminer.high_level import extract_text
 import spacy
 
+from dataset.preprocessing.data_normalizer import DataNormalizer
+
+
 class PATHS(Enum):
     BOOKS = "books"
     OUTPUT = "extracted_entities"
@@ -32,6 +35,7 @@ class EntityCorpusBuilder:
     class Extractor:
         def __init__(self, nlp):
             self.nlp = nlp
+            self.normalizer = DataNormalizer()
 
         def extract_entities(self, pdf_path):
             entities = set() # diccionario, para no repetir entidades
@@ -47,7 +51,7 @@ class EntityCorpusBuilder:
                         if entity.label_ in ["LOC", "GPE"]:
                             # solo letras
                             # TODO: utilizar unicodedata para normalizar mejor
-                            clean_text = re.sub(r'[^A-Za-z\s]', '', entity.text).replace(" ", "")
+                            clean_text = self.normalizer.normalize().replace(" ", "")
                             if clean_text != entity.text:
                                 clean_text = clean_text.replace(" ", "")
                             if clean_text and len(clean_text) > 3:

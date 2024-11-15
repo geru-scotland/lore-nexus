@@ -36,9 +36,10 @@ class MythLabels(Enum):
         return self.value
 
 class DataProcessor:
-    def __init__(self, datasets, labels, output_file, train_file, dev_file, test_file, train_pct=0.8, dev_pct=0.1, test_pct=0.1):
+    def __init__(self, datasets, labels, augmentation, output_file, train_file, dev_file, test_file, train_pct=0.8, dev_pct=0.1, test_pct=0.1):
         self.datasets = datasets
         self.allowed_labels = self._load_labels(labels)
+        self.augmentation_config = augmentation
         self.data = self._load_data()
 
         self.train_pct = train_pct
@@ -78,32 +79,51 @@ class DataProcessor:
         return filtered_data
 
     class DataAugmentator:
+        class AugmentationConfig:
+            def __init__(self, config):
+
+                self.config = config
+
+                self.swap_augmenter = self._create_augmenter(
+                    "swap_characters", WordSwapNeighboringCharacterSwap()
+                )
+                self.insert_augmenter = self._create_augmenter(
+                    "insert_characters", WordSwapRandomCharacterInsertion()
+                )
+                self.delete_augmenter = self._create_augmenter(
+                    "delete_characters", WordSwapRandomCharacterDeletion()
+                )
+                self.duplicate_char_augmenter = self._create_augmenter(
+                    "duplicate_characters", WordSwapRandomCharacterInsertion()
+                )
+
+                self.internal_swap_enabled = config["internal_swap"]["enabled"]
+                self.internal_swap_probability = config["internal_swap"]["swap_probability"]
+                self.split_names_enabled = config["split_names"]["enabled"]
+                self.join_parts = config["split_names"].get("join_parts", False)
+                self.label_exclusion_enabled = config["label_exclusion"]["enabled"]
+                self.excluded_labels = config["label_exclusion"].get("excluded_labels", [])
+
+            def _create_augmenter(self, key, transformation):
+                if self.config[key]["enabled"]:
+                    transform_num = 0
+                    if key == "duplicate_characters":
+                        transform_num = self.config[key]["transformations_per_example"]
+                    else:
+                        transform_num = random.randint(
+                        self.config[key]["transformations_per_example"]["min"],
+                        self.config[key]["transformations_per_example"]["max"]
+                        )
+                    return Augmenter(
+                        transformation=transformation,
+                        pct_words_to_swap=self.config[key]["pct_words_to_swap"],
+                        transformations_per_example=transform_num
+                    )
+                return None
+
         def __init__(self, outer_instance):
             self.data_processor = outer_instance
-
-            self.swap_augmenter = Augmenter(
-                transformation=WordSwapNeighboringCharacterSwap(),
-                pct_words_to_swap=0.4,
-                transformations_per_example=random.randint(1, 3)
-            )
-
-            self.insert_augmenter = Augmenter(
-                transformation=WordSwapRandomCharacterInsertion(),
-                pct_words_to_swap=0.4,
-                transformations_per_example=random.randint(1, 3)
-            )
-
-            self.delete_augmenter = Augmenter(
-                transformation=WordSwapRandomCharacterDeletion(),
-                pct_words_to_swap=0.4,
-                transformations_per_example=random.randint(1, 3)
-            )
-
-            self.duplicate_char_augmenter = Augmenter(
-                transformation=WordSwapRandomCharacterInsertion(),
-                pct_words_to_swap=0.2,
-                transformations_per_example=1 # solo 1
-            )
+            self.config = self.AugmentationConfig(outer_instance.augmentation_config)
 
         def augment(self):
             """
@@ -117,44 +137,58 @@ class DataProcessor:
                 if line.startswith("__label__"):
                     label, name = line.split(" ", 1)
                     name = name.strip().lower() # OJO: Estoy pasando todo a minusculas para reducir el espacio OJO EN TEST!!
-                    name_parts = name.split()
 
                     # La original, este tiene que ir, si o si.
                     augmented_data.append(f"{label} {name}")
 
                     # No quiero aumentar mythology, por ahora se come a todas si no
-                    if label ==  f"__label__{MythLabels.MAIN_LABEL}":
-                        continue
+                    # Modifico esto para exluir más lables, desde el config fácilmente
+                    if self.config.label_exclusion_enabled:
+                        excluded_labels = []
+                        for excluded_label in self.config.excluded_labels:
+                            excluded_labels.append(f"__label__{excluded_label}")
+
+                        if label in excluded_labels:
+                            continue
 
                     # swap de chars internos, sin tocar el primero y último
-                    internal_swap_name = self._internal_swap(name)
-                    augmented_data.append(f"{label} {internal_swap_name}")
+                    if self.config.internal_swap_enabled:
+                        internal_swap_name = self._internal_swap(name)
+                        augmented_data.append(f"{label} {internal_swap_name}")
 
                     # duplico aleatoriamente un char, para casos como Jon Snow -> Jonn Snow
-                    duplicated_char_names = self.duplicate_char_augmenter.augment(name)
-                    augmented_data.extend([f"{label} {dup_name}" for dup_name in duplicated_char_names])
+                    if self.config.duplicate_char_augmenter:
+                        duplicated_char_names = self.config.duplicate_char_augmenter.augment(name)
+                        augmented_data.extend([f"{label} {dup_name}" for dup_name in duplicated_char_names])
+
 
                     # Y ahora, si el nombre tiene más de una palabra, la agrego
                     # como instancia también, CREO que puede ayudar.
-                    if len(name_parts) > 1:
-                        for part in name_parts:
-                            new_line = f"{label} {part}"
-                            augmented_data.append(new_line)
+                    if self.config.split_names_enabled:
+                        name_parts = name.split()
+                        if len(name_parts) > 1:
+                            for part in name_parts:
+                                augmented_data.append(f"{label} {part}")
+                            if self.config.join_parts:
+                                # OJO! igual no es buena idea pero:
+                                # Asha Greyjoy -> AshaGreyjoy
+                                # Que en juegos se hace muchísimo esto.
+                                name_no_spaces = "".join(name_parts)
+                                augmented_data.append(f"{label} {name_no_spaces}")
 
-                        # OJO! igual no es buena idea pero:
-                        # Asha Greyjoy -> AshaGreyjoy
-                        # Que en juegos se hace muchísimo esto.
-                        name_no_spaces = "".join(name_parts)
-                        augmented_data.append(f"{label} {name_no_spaces}")
 
                     # Esto es de textattack, creo que será buena idea... veamos.
-                    swapped_names = self.swap_augmenter.augment(name)
-                    insertions_names = self.insert_augmenter.augment(name)
-                    deletions_names = self.delete_augmenter.augment(name)
+                    if self.config.swap_augmenter:
+                        swapped_names = self.config.swap_augmenter.augment(name)
+                        augmented_data.extend([f"{label} {aug_name}" for aug_name in swapped_names])
 
-                    for aug_name in swapped_names + insertions_names + deletions_names:
-                        augmented_data.append(f"{label} {aug_name}")
+                    if self.config.insert_augmenter:
+                        insertions_names = self.config.insert_augmenter.augment(name)
+                        augmented_data.extend([f"{label} {aug_name}" for aug_name in insertions_names])
 
+                    if self.config.delete_augmenter:
+                        deletions_names = self.config.delete_augmenter.augment(name)
+                        augmented_data.extend([f"{label} {aug_name}" for aug_name in deletions_names])
 
             return augmented_data
 
