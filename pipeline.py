@@ -16,6 +16,7 @@ import json
 import os
 
 from dataset.preprocessing.apis.mythology.mythdata import MythdataProcessor
+from dataset.preprocessing.apis.slurs.slurs import SlursProcessor
 from dataset.preprocessing.apis.wikidata.wikidata import WikidataProcessor, DatasetFormats
 from dataset.preprocessing.data_processor import DataProcessor
 from dataset.preprocessing.ner.ner_corpus_builder import EntityCorpusBuilder
@@ -123,6 +124,19 @@ class DataPipeline:
             except Exception as e:
                 print(f"Error processing NERdata: {e}")
 
+    def process_slurs(self):
+        slurs_config = self.config.get_dataset("Slurs")
+        if slurs_config:
+            try:
+                slurs_processor = SlursProcessor(
+                    input_file=os.path.join(APIS_DIR, slurs_config['path'], slurs_config['input_folder'], slurs_config['dataset_file']),
+                    output_file=os.path.join(APIS_DIR, slurs_config['path'], slurs_config['output_folder'], slurs_config['output_file'])
+                )
+                slurs_processor.process()
+                print("Slurs processing completed.")
+            except Exception as e:
+                print(f"Error processing Slurs: {e}")
+
     def run_data_processor(self):
         data_processor_config = self.config.get_data_processor_config()
 
@@ -152,6 +166,7 @@ class DataPipeline:
         self.process_wikidata()
         self.process_mythdata()
         self.process_nerdata()
+        self.process_slurs()
         self.run_data_processor()
         print("Data Pipeline completed.")
 
