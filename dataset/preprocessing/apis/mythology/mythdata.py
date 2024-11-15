@@ -17,6 +17,9 @@ from enum import Enum
 
 import pandas as pd
 
+from dataset.preprocessing.data_normalizer import DataNormalizer
+
+
 class MythLabels(Enum):
     """
     """
@@ -25,14 +28,17 @@ class MythLabels(Enum):
     def __str__(self):
         return self.value
 
-# TODO: Crear clase base de la que hereden todos los "processors", como este, el de WikiData, etc.
 class MythdataProcessor:
+    """
+        TODO: Crear clase base de la que hereden todos los "processors", como este, el de WikiData, etc.
+    """
     def __init__(self, input_file, output_file):
         """
         """
         self.input_file = input_file
         self.output_file = output_file
         self.df = pd.read_csv(self.input_file)
+        self.normalizer = DataNormalizer()
 
     def process_names(self):
         """
@@ -44,10 +50,7 @@ class MythdataProcessor:
             if pd.isna(text):
                 return ""
 
-            normalized_text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('ascii')
-            normalized_text = re.sub(r"\(.*?\)", "", normalized_text)
-            normalized_text = re.sub(r"[0-9.'’]", "", normalized_text)
-            normalized_text = re.sub(r"[.-]", " ", normalized_text)
+            normalized_text = self.normalizer.normalize(text)
 
             # A considerar si coger row['pantheon'] o no, esto es, ahora fuerzo a que sea Mythology
             label = MythLabels.MAIN_LABEL
