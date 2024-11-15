@@ -24,6 +24,14 @@
             "input_folder": "raw_data",
             "output_folder": "processed_data",
             "output_file": "ner_dataset.txt"
+        },
+        {
+            "name": "Slurs",
+            "path": "slurs",
+            "input_folder": "raw_data",
+            "output_folder": "processed_data",
+            "dataset_file": "profanity.csv",
+            "output_file": "slurs.txt"
         }
     ],
 
@@ -75,7 +83,8 @@
             "label_exclusion": {
                 "enabled": true,
                 "excluded_labels": [
-                    "Mythology"
+                    "Mythology",
+                    "Offensive"
                 ]
             },
             "internal_swap": {
@@ -96,7 +105,8 @@
             "TheWitcher",
             "DoctorWho",
             "Discworld",
-            "Mythology"
+            "Mythology",
+            "Offensive"
         ]
     }
 }
