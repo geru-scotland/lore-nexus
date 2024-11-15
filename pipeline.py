@@ -19,7 +19,7 @@ from dataset.preprocessing.apis.mythology.mythdata import MythdataProcessor
 from dataset.preprocessing.apis.wikidata.wikidata import WikidataProcessor, DatasetFormats
 from dataset.preprocessing.data_processor import DataProcessor
 from dataset.preprocessing.ner.ner_corpus_builder import EntityCorpusBuilder
-from paths import APIS_DIR, NER_DIR
+from paths import APIS_DIR, NER_DIR, DATA_OUTPUT_DIR
 
 
 class Config:
@@ -39,6 +39,34 @@ class Config:
         """
         """
         return self.config.get("data_processor", {})
+
+    def dump_config_to_file(self):
+        """
+        Generates a .info file with the configuration used for processing.
+        """
+        data_processor_config = self.get_data_processor_config()
+        config_dump_path = os.path.join(DATA_OUTPUT_DIR, data_processor_config["config_dump"])
+
+        try:
+            with open(config_dump_path, 'w', encoding='utf-8') as file:
+                file.write("*****************************************************\n")
+                file.write("* Data Processing Configuration\n")
+                file.write("*****************************************************\n")
+                for key, value in data_processor_config.items():
+                    if key == "augmentation":
+                        file.write(f"{key}:\n")
+                        for aug_key, aug_value in value.items():
+                            file.write(f"  {aug_key}: {aug_value}\n")
+                    else:
+                        file.write(f"{key}: {value}\n")
+                file.write("\nDatasets:\n")
+                for dataset in self.config.get("datasets", []):
+                    file.write(f"  - {dataset['name']}:\n")
+                    for k, v in dataset.items():
+                        file.write(f"      {k}: {v}\n")
+            print(f"Configuration dumped successfully to {config_dump_path}")
+        except Exception as e:
+            print(f"Error dumping configuration to file: {e}")
 
 class DataPipeline:
     def __init__(self, config_path='config.json'):
@@ -97,21 +125,22 @@ class DataPipeline:
 
     def run_data_processor(self):
         data_processor_config = self.config.get_data_processor_config()
-        base_path = data_processor_config["path"]
 
         try:
             data_processor = DataProcessor(
                 datasets=self.config.config["datasets"],
                 labels=data_processor_config["labels"],
+                augmentation=data_processor_config["augmentation"],
                 output_file=data_processor_config["output_file"],
                 train_file=data_processor_config["train_file"],
                 dev_file=data_processor_config["dev_file"],
                 test_file=data_processor_config["test_file"],
                 train_pct=data_processor_config["train_size"],
                 dev_pct=data_processor_config["dev_size"],
-                test_pct=data_processor_config["test_size"]
+                test_pct=data_processor_config["test_size"],
             )
             data_processor.run_pipeline()
+            self.config.dump_config_to_file()
             print("Data processing pipeline completed.")
         except Exception as e:
             print(f"Error in data processing pipeline: {e}")

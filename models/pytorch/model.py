@@ -174,7 +174,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                     elif 'bias' in name:
                         init.zeros_(param)
 
-    def __init__(self, mode="train", data_folder='data/', model_path="checkpoints/best_model.pth"):
+    def __init__(self, mode="train", data_folder='data/', model_path="checkpoints/best_model.pth", config_info_dump="data_config.info"):
         """
         """
         super().__init__(mode)
@@ -185,6 +185,16 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         self._label_to_index = {}
         self._index_to_label = {}
         self._hyperparams = {}
+
+        config_dump_path = os.path.join(DATA_OUTPUT_DIR, config_info_dump)
+        if config_dump_path:
+            try:
+                with open(config_dump_path, 'r', encoding='utf-8') as file:
+                    self.config_dump_info = file.read()
+            except FileNotFoundError:
+                self.config_dump_info = "Configuration file not found."
+            except Exception as e:
+                self.config_dump_info = f"Error reading configuration file: {e}"
 
         if self._mode == "cli_app":
             # Solo una vez, que al cabrón a veces le cuesta levantarse
@@ -406,10 +416,27 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
 
         plt.tight_layout()
         timestamp = datetime.now().strftime("%d_%m_%Y_%H_%M")
-        filename = f"runs/training_validation_loss_{timestamp}.png"
+        filename = f"runs/train_run_{timestamp}.png"
         plt.savefig(filename)
-        print(f"Gráfico de métricas guardado como '{filename}'")
+        print(f"Metrics file stored as '{filename}'")
+        self._save_info_file(filename, hyperparams)
         plt.show()
+
+    def _save_info_file(self, filename, hyperparams):
+        """
+        """
+        info_file_path = filename.replace(".png", ".info")
+        with open(info_file_path, "w", encoding="utf-8") as f:
+            f.write("*****************************************************\n")
+            f.write("* Experiment Configuration and Results\n")
+            f.write("*****************************************************\n\n")
+            f.write("Hyperparameters:\n")
+            for key, value in hyperparams.items():
+                f.write(f"{key}: {value}\n")
+            f.write("\nData Configuration:\n")
+            f.write(self.config_dump_info)
+            f.write("\n")
+        print(f"Data configuration file saved as: {info_file_path}")
 
     @LoreNexusWrapper._train_mode_only
     def display_batch_info(self, train_batch_names, train_batch_labels, predicted_labels, char_vocab):
@@ -554,6 +581,6 @@ def predict_test(name):
         print(f"{prediction}: {label} with probability {score:.4f}")
 
 
-# ln_pytorch_model = LoreNexusPytorchModel(mode='train')
-# ln_pytorch_model.train(save_model=True, epochs=15,  hidden_dim=768, batch_size=32, dropout=0.4, num_layers=2, weight_decay=0.03)
+ln_pytorch_model = LoreNexusPytorchModel(mode='train')
+ln_pytorch_model.train(save_model=True, epochs=2,  hidden_dim=128, batch_size=32, dropout=0.1, num_layers=1, weight_decay=0.02)
 # ln_pytorch_model.evaluate()
