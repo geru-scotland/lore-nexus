@@ -36,9 +36,10 @@ class MythLabels(Enum):
         return self.value
 
 class DataProcessor:
-    def __init__(self, datasets, labels, augmentation, output_file, train_file, dev_file, test_file, train_pct=0.8, dev_pct=0.1, test_pct=0.1):
+    def __init__(self, datasets, labels, unique_names, augmentation, output_file, train_file, dev_file, test_file, train_pct=0.8, dev_pct=0.1, test_pct=0.1):
         self.datasets = datasets
         self.allowed_labels = self._load_labels(labels)
+        self.unique_names = unique_names
         self.augmentation_config = augmentation
         self.data = self._load_data()
 
@@ -141,7 +142,15 @@ class DataProcessor:
                     # La original, este tiene que ir, si o si.
                     augmented_data.append(f"{label} {name}")
 
-                    # No quiero aumentar mythology, por ahora se come a todas si no
+                    # Coloco aquí para que las que están excluidas, al menos se
+                    # cree una instancia para aquellas que son palabras compuestas
+                    if self.config.join_parts:
+                        # OJO! igual no es buena idea pero:
+                        # Asha Greyjoy -> AshaGreyjoy
+                        # Que en juegos se hace muchísimo esto.
+                        name_no_spaces = "".join(name.split())
+                        augmented_data.append(f"{label} {name_no_spaces}")
+
                     # Modifico esto para exluir más lables, desde el config fácilmente
                     if self.config.label_exclusion_enabled:
                         excluded_labels = []
@@ -169,13 +178,6 @@ class DataProcessor:
                         if len(name_parts) > 1:
                             for part in name_parts:
                                 augmented_data.append(f"{label} {part}")
-                            if self.config.join_parts:
-                                # OJO! igual no es buena idea pero:
-                                # Asha Greyjoy -> AshaGreyjoy
-                                # Que en juegos se hace muchísimo esto.
-                                name_no_spaces = "".join(name_parts)
-                                augmented_data.append(f"{label} {name_no_spaces}")
-
 
                     # Esto es de textattack, creo que será buena idea... veamos.
                     if self.config.swap_augmenter:
@@ -203,13 +205,18 @@ class DataProcessor:
             return ''.join(name_chars)
 
     def run_pipeline(self):
-        augmented_data = self.augment()
+        if self.augmentation_config.get("enabled", False):
+            data = self.augment()
+        else:
+            data = self.data
         # TODO: Investigar bien esto!
         # mejores resultados sin eliminar duplicados...
         # no creo que sea bueno...
-        # unique_data = list(set(augmented_data))
-        self._save_data(augmented_data)
-        self._stratify_data(augmented_data)
+        if self.unique_names:
+            data = list(set(data))
+
+        self._save_data(data)
+        self._stratify_data(data)
 
     def augment(self):
         augmenter = self.DataAugmentator(self)
