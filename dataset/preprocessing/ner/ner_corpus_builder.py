@@ -134,8 +134,6 @@ class EntityCorpusBuilder:
                     else:
                         print(f"No label found for file: {file.name}, skipping.")
 
-corpus_builder = EntityCorpusBuilder()
-corpus_builder.label_and_filter_entities()
 
 
 
