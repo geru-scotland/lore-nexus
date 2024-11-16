@@ -15,6 +15,7 @@ import json
 
 import logging
 import os
+import shutil
 from pathlib import Path
 from datetime import datetime
 
@@ -38,7 +39,7 @@ class HyperparameterTuner:
 
         def run(self, output_path):
             self.logger.info(f"Starting training with params: {self.params}")
-            self.model.train(output_path=output_path, save_model=False, **self.params)
+            self.model.train(output_path=output_path, save_model=False, log_results=False, **self.params)
             self.result = self.model.evaluate()
             return self.result
 
@@ -123,7 +124,10 @@ class HyperparameterTuner:
     # en un principio parecia buena idea tener un logger por modelo, pero igual lo quito
     # TODO: Echar una pensada a esto
     def _get_model_logger(self, model_name, timestamp):
-        log_file = self.log_dir / f"{model_name}_hyperparameter_tuning_{timestamp}.log"
+        timestamp = datetime.now().strftime("%d_%m_%Y_%H_%M")
+        arena = f"{self.log_dir}/arena_{timestamp}"
+        os.makedirs(f"{arena}", exist_ok=True)
+        log_file = Path(arena) / f"{model_name}_hyperparameter_tuning_{timestamp}.log"
         logger = logging.getLogger(model_name)
 
         if not logger.hasHandlers():
@@ -160,3 +164,12 @@ if __name__ == "__main__":
     # TODO: Hacer que busque el mejor valor de learning rate (generar una grid con rango de valores en lugar de cargarla)
     tuner = HyperparameterTuner(models, param_grid)
     tuner.run()
+
+    # Hack feo para borrar los modelos de flair que se generan en cada iteración
+    # no consigo encontrar la manera de que flair no lo guarde en el train
+    current_dir = os.getcwd()
+    for item in os.listdir(current_dir):
+        full_path = os.path.join(current_dir, item)
+        if os.path.isdir(full_path) and item.startswith("FlairModel"):
+            shutil.rmtree(full_path)
+            print(f"Deleting: {full_path}")

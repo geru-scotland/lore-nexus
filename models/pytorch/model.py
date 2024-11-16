@@ -14,6 +14,7 @@
 import os.path
 from abc import ABC
 import sys
+from collections import Counter
 from datetime import datetime
 from enum import Enum
 from pathlib import Path
@@ -244,7 +245,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         return {split: data[split] for split in splits}
 
     @LoreNexusWrapper._train_mode_only
-    def train(self, output_path='checkpoints', save_model=True, lr=0.001, batch_size=32, epochs=15, weight_decay=0.02,
+    def train(self, output_path='checkpoints', save_model=True, log_results=True, lr=0.001, batch_size=32, epochs=15, weight_decay=0.02,
               hidden_dim=768, embeddings_dim=256, num_layers=1, dropout=0.2):
         """
         TODO: Cargar del config.json
@@ -282,6 +283,17 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         train_dataset = self.Dataset(train_data, self._char_vocab, build_vocab=True)
         dev_dataset = self.Dataset(dev_data, self._char_vocab)
 
+        label_counts = Counter(labels)
+        label_list = sorted(label_counts.keys())
+        total_labels = sum(label_counts.values())
+        weights = []
+
+        for label in label_list:
+            weight = total_labels / label_counts[label]
+            weights.append(weight)
+
+        class_weights = torch.tensor(weights, dtype=torch.float).to(self._device)
+
         # Me devuelve iterables, que son los batches
         train_batches = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
         dev_batches = DataLoader(dev_dataset, batch_size=batch_size, shuffle=False)
@@ -296,7 +308,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
             dropout=dropout # si pones dropout > 0, hay que poner más capas, no solo 1 (docu de Pytorch)
         ).to(self._device)
 
-        criterion = torch.nn.CrossEntropyLoss()
+        criterion = torch.nn.CrossEntropyLoss(weight=class_weights)
 
         optimizer = torch.optim.AdamW(self._model.parameters(), lr=lr, weight_decay=weight_decay)
         scheduler = StepLR(optimizer, step_size=5, gamma=0.5)
@@ -305,6 +317,10 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         # mida el rendimiento un poco más completo
 
         best_validation_accuracy = 0.0
+        best_results = {}
+
+        # Para report
+        label_list = [self._index_to_label[i] for i in range(len(self._index_to_label))]
 
         for epoch in range(epochs):
             self._model.train()
@@ -341,6 +357,9 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
             validation_accuracy = 0.0
             correct = 0
             total = 0
+            epoch_all_predicted_labels = []
+            epoch_all_true_labels = []
+
             # TODO: Cambiar nombres de variables, lo hago por mi pero lo hace un poco engorroso el código.
             # sklearn.metrics.f1_score
 
@@ -359,9 +378,13 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                     correct += (predicted_labels == validation_batch_labels).sum().item()
                     total += validation_batch_names.size(0)
 
+                    epoch_all_predicted_labels.extend(predicted_labels.cpu().numpy())
+                    epoch_all_true_labels.extend(validation_batch_labels.cpu().numpy())
+
 
                 average_validation_loss = validation_accuracy / len(dev_batches)
                 validation_accuracy = correct / total
+
                 print(f"Epoch {epoch + 1}/{epochs} - Validation Loss: {average_validation_loss:.4f}, "
                       f"Validation Accuracy: {validation_accuracy:.4f}")
 
@@ -376,8 +399,24 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
             if validation_accuracy > best_validation_accuracy:
                 best_validation_accuracy = validation_accuracy
 
+                report = classification_report(epoch_all_true_labels, epoch_all_true_labels,
+                                               labels=list(self._index_to_label.keys()),
+                                               target_names=list(self._index_to_label.values())                                               )
+
+                acc_score = accuracy_score(epoch_all_true_labels, epoch_all_true_labels)
+
+                best_results = {
+                    "accuracy": validation_accuracy,
+                    "train_loss": average_train_loss,
+                    "val_loss": average_validation_loss,
+                    "epoch": epoch + 1,
+                    "report": f"Classification Report for Epoch {epoch + 1}:\n{report}\n",
+                    "acc_score_sklearn": acc_score
+                }
+
                 if save_model:
-                    model_file = f"{output_path}/best_model_{batch_size}_{epochs}.pth"
+                    timestamp = datetime.now().strftime("%d_%m_%Y_%H_%M")
+                    model_file = f"{output_path}/best_model_{timestamp}.pth"
 
                     torch.save({
                         'model_state_dict': self._model.state_dict(),
@@ -392,9 +431,11 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
 
                     print(f"Model saved with the best validation accuracy: {best_validation_accuracy:.4f}")
 
-        self.plot_training_validation_loss(epochs, train_losses, validation_losses, hyperparams)
+        if log_results:
+            self.plot_and_log_results(epochs, train_losses, validation_losses, hyperparams, best_results)
 
-    def plot_training_validation_loss(self, epochs, train_losses, validation_losses, hyperparams):
+    # Esto de logger, fuera. Tiene que ir en la clase base LoreNexusWrapper
+    def plot_and_log_results(self, epochs, train_losses, validation_losses, hyperparams, best_results):
         sns.set(style="whitegrid", palette="muted")
         epochs_range = list(range(1, epochs + 1))
 
@@ -415,28 +456,51 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                  bbox=dict(facecolor='white', alpha=0.6, edgecolor='black'))
 
         plt.tight_layout()
-        timestamp = datetime.now().strftime("%d_%m_%Y_%H_%M")
-        filename = f"runs/train_run_{timestamp}.png"
-        plt.savefig(filename)
-        print(f"Metrics file stored as '{filename}'")
-        self._save_info_file(filename, hyperparams)
-        plt.show()
 
-    def _save_info_file(self, filename, hyperparams):
-        """
-        """
-        info_file_path = filename.replace(".png", ".info")
+        timestamp = datetime.now().strftime("%d_%m_%Y_%H_%M")
+
+        log_dir = f"logs/{timestamp}"
+        os.makedirs(log_dir, exist_ok=True)
+        filename = os.path.join(log_dir, f"train_run_{timestamp}.png")
+        plt.savefig(filename)
+
+        print(f"Metrics file stored as '{filename}'")
+
+        info_file_path = filename.replace(".png", ".log")
+
         with open(info_file_path, "w", encoding="utf-8") as f:
             f.write("*****************************************************\n")
-            f.write("* Experiment Configuration and Results\n")
-            f.write("*****************************************************\n\n")
-            f.write("Hyperparameters:\n")
+            f.write("* Best Results\n")
+            f.write("*****************************************************\n")
+            f.write(f"Best validation accuracy: {best_results['accuracy']:.4f}\n")
+            f.write(f"Best Epoch: {best_results['epoch']}\n")
+            f.write(f"Best training loss: {best_results['train_loss']:.4f}\n")
+            f.write(f"Best validation loss: {best_results['val_loss']:.4f}\n\n")
+
+            f.write("*****************************************************\n")
+            f.write("* Hyperparameters\n")
+            f.write("*****************************************************\n")
+
             for key, value in hyperparams.items():
                 f.write(f"{key}: {value}\n")
-            f.write("\nData Configuration:\n")
+
+            f.write("\n*****************************************************\n")
+            f.write("* Best Classification Report\n")
+            f.write("*****************************************************\n")
+            f.write(best_results.get('report', 'No report available'))
+
+            f.write("\n*****************************************************\n")
+            f.write("* SK Learn Accuracy score\n")
+            f.write("*****************************************************\n")
+            f.write(f"Best score: {best_results['acc_score_sklearn']:.4f}\n\n")
+
+            f.write("\n*****************************************************\n")
+            f.write("* Data Configuration\n")
+            f.write("*****************************************************\n")
             f.write(self.config_dump_info)
             f.write("\n")
-        print(f"Data configuration file saved as: {info_file_path}")
+
+        print(f"Configuration and results file saved as: {info_file_path}")
 
     @LoreNexusWrapper._train_mode_only
     def display_batch_info(self, train_batch_names, train_batch_labels, predicted_labels, char_vocab):
@@ -581,6 +645,6 @@ def predict_test(name):
         print(f"{prediction}: {label} with probability {score:.4f}")
 
 
-ln_pytorch_model = LoreNexusPytorchModel(mode='train')
-ln_pytorch_model.train(save_model=True, epochs=2,  hidden_dim=128, batch_size=32, dropout=0.1, num_layers=1, weight_decay=0.02)
+# ln_pytorch_model = LoreNexusPytorchModel(mode='train')
+# ln_pytorch_model.train(save_model=True, epochs=2,  hidden_dim=256, embeddings_dim=128, batch_size=32, dropout=0, num_layers=1, weight_decay=0.01)
 # ln_pytorch_model.evaluate()

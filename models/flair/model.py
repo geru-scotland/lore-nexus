@@ -106,7 +106,7 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
         return classifier
 
     @LoreNexusWrapper._train_mode_only
-    def train(self, output_path='resources/taggers/universe_classifier', save_model=True, lr=0.001, batch_size=32,
+    def train(self, output_path='resources/taggers/universe_classifier', save_model=True, log_results=True, lr=0.001, batch_size=32,
               epochs=30, weight_decay=0.01, hidden_dim=256, embeddings_dim=100, num_layers=1, dropout=0.2):
         """
         TODO: Cargar del config.json
