@@ -14,6 +14,7 @@
 import os.path
 from abc import ABC
 import sys
+from collections import Counter
 from datetime import datetime
 from enum import Enum
 from pathlib import Path
@@ -28,8 +29,6 @@ sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 from models.lorenexus.lorenexus import LoreNexusWrapper
 
-import matplotlib.pyplot as plt
-import seaborn as sns
 from sklearn.metrics import classification_report, accuracy_score
 from torch.optim.lr_scheduler import StepLR
 from torch.utils.data import DataLoader
@@ -91,6 +90,38 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
             self._add_special_tokens()
             for word in data:
                 self.encode(word)
+
+    class LabelEndoder:
+        def __init__(self):
+            self.label_to_index = {}
+            self.index_to_label = {}
+
+        def __len__(self):
+            return len(self.label_to_index)
+
+        def __getitem__(self, item):
+            if isinstance(item, str):
+                return self.label_to_index.get(item, None)
+            elif isinstance(item, int):
+                return self.index_to_label.get(item, None)
+            raise ValueError("Item must be either str or int")
+
+        def encode(self, label):
+            if label not in self.label_to_index:
+                index = len(self)
+                self.label_to_index[label] = index
+                self.index_to_label[index] = label
+            return self.label_to_index.get(label, None)
+
+        def decode(self, index):
+            return self.index_to_label.get(index, None)
+
+        def unpack_indexes(self):
+            return self.index_to_label.keys(), self.index_to_label.values()
+
+        def unpack_labels(self):
+            return self.label_to_index.keys(), self.label_to_index.values()
+
 
 
     class Dataset(torch.utils.data.Dataset):
@@ -177,24 +208,13 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
     def __init__(self, mode="train", data_folder='data/', model_path="checkpoints/best_model.pth", config_info_dump="data_config.info"):
         """
         """
-        super().__init__(mode)
+        super().__init__(mode, config_info_dump)
 
         self._mode = mode
         self._char_vocab = None
+        self._label_encoder = None
         self._data_folder = data_folder
-        self._label_to_index = {}
-        self._index_to_label = {}
         self._hyperparams = {}
-
-        config_dump_path = os.path.join(DATA_OUTPUT_DIR, config_info_dump)
-        if config_dump_path:
-            try:
-                with open(config_dump_path, 'r', encoding='utf-8') as file:
-                    self.config_dump_info = file.read()
-            except FileNotFoundError:
-                self.config_dump_info = "Configuration file not found."
-            except Exception as e:
-                self.config_dump_info = f"Error reading configuration file: {e}"
 
         if self._mode == "cli_app":
             # Solo una vez, que al cabrón a veces le cuesta levantarse
@@ -231,12 +251,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                     name = parts[1]
 
                     # Necesito que las labels sean enteros, asigno uno a cada una
-                    if label not in self._label_to_index and split == 'train':
-                        index = len(self._label_to_index)
-                        self._label_to_index[label] = index
-                        self._index_to_label[index] = label
-
-                    labels.append(self._label_to_index[label])
+                    labels.append(self._label_encoder.encode(label))
                     names.append(name)
 
             data[split] = (names, labels)
@@ -244,7 +259,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         return {split: data[split] for split in splits}
 
     @LoreNexusWrapper._train_mode_only
-    def train(self, output_path='checkpoints', save_model=True, lr=0.001, batch_size=32, epochs=15, weight_decay=0.02,
+    def train(self, output_path='checkpoints', save_model=True, log_results=True, lr=0.001, batch_size=32, epochs=15, weight_decay=0.02,
               hidden_dim=768, embeddings_dim=256, num_layers=1, dropout=0.2):
         """
         TODO: Cargar del config.json
@@ -254,6 +269,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         # 3) Creo el modelo
         # 4) Entreno
         self._char_vocab = self._create_vocab()
+        self._label_encoder = self.LabelEndoder()
         unique_labels = set()
         train_losses = []
         validation_losses = []
@@ -282,6 +298,17 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         train_dataset = self.Dataset(train_data, self._char_vocab, build_vocab=True)
         dev_dataset = self.Dataset(dev_data, self._char_vocab)
 
+        label_counts = Counter(labels)
+        label_list = sorted(label_counts.keys())
+        total_labels = sum(label_counts.values())
+        weights = []
+
+        for label in label_list:
+            weight = total_labels / label_counts[label]
+            weights.append(weight)
+
+        class_weights = torch.tensor(weights, dtype=torch.float).to(self._device)
+
         # Me devuelve iterables, que son los batches
         train_batches = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
         dev_batches = DataLoader(dev_dataset, batch_size=batch_size, shuffle=False)
@@ -296,7 +323,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
             dropout=dropout # si pones dropout > 0, hay que poner más capas, no solo 1 (docu de Pytorch)
         ).to(self._device)
 
-        criterion = torch.nn.CrossEntropyLoss()
+        criterion = torch.nn.CrossEntropyLoss(weight=class_weights)
 
         optimizer = torch.optim.AdamW(self._model.parameters(), lr=lr, weight_decay=weight_decay)
         scheduler = StepLR(optimizer, step_size=5, gamma=0.5)
@@ -305,6 +332,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         # mida el rendimiento un poco más completo
 
         best_validation_accuracy = 0.0
+        best_results = {}
 
         for epoch in range(epochs):
             self._model.train()
@@ -341,6 +369,9 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
             validation_accuracy = 0.0
             correct = 0
             total = 0
+            epoch_all_predicted_labels = []
+            epoch_all_true_labels = []
+
             # TODO: Cambiar nombres de variables, lo hago por mi pero lo hace un poco engorroso el código.
             # sklearn.metrics.f1_score
 
@@ -359,9 +390,13 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                     correct += (predicted_labels == validation_batch_labels).sum().item()
                     total += validation_batch_names.size(0)
 
+                    epoch_all_predicted_labels.extend(predicted_labels.cpu().numpy())
+                    epoch_all_true_labels.extend(validation_batch_labels.cpu().numpy())
+
 
                 average_validation_loss = validation_accuracy / len(dev_batches)
                 validation_accuracy = correct / total
+
                 print(f"Epoch {epoch + 1}/{epochs} - Validation Loss: {average_validation_loss:.4f}, "
                       f"Validation Accuracy: {validation_accuracy:.4f}")
 
@@ -376,8 +411,25 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
             if validation_accuracy > best_validation_accuracy:
                 best_validation_accuracy = validation_accuracy
 
+                indexes, label_str = self._label_encoder.unpack_indexes()
+                report = classification_report(epoch_all_true_labels, epoch_all_true_labels,
+                                               labels=list(indexes),
+                                               target_names=list(label_str))
+
+                acc_score = accuracy_score(epoch_all_true_labels, epoch_all_true_labels)
+
+                best_results = {
+                    "accuracy": validation_accuracy,
+                    "train_loss": average_train_loss,
+                    "val_loss": average_validation_loss,
+                    "epoch": epoch + 1,
+                    "report": f"Classification Report for Epoch {epoch + 1}:\n{report}\n",
+                    "acc_score_sklearn": acc_score
+                }
+
                 if save_model:
-                    model_file = f"{output_path}/best_model_{batch_size}_{epochs}.pth"
+                    timestamp = datetime.now().strftime("%d_%m_%Y_%H_%M")
+                    model_file = f"{output_path}/best_model_{timestamp}.pth"
 
                     torch.save({
                         'model_state_dict': self._model.state_dict(),
@@ -385,66 +437,23 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                         'accuracy': best_validation_accuracy,
                         'epoch': epoch,
                         'char_vocab': self._char_vocab,
-                        'label_to_index': self._label_to_index,
-                        'index_to_label': self._index_to_label,
+                        'label_encoder': self._label_encoder,
                         'hyperparams': hyperparams
                     }, model_file)
 
                     print(f"Model saved with the best validation accuracy: {best_validation_accuracy:.4f}")
 
-        self.plot_training_validation_loss(epochs, train_losses, validation_losses, hyperparams)
+        if log_results:
+            self._plot_and_log_results(epochs, train_losses, validation_losses, hyperparams, best_results)
 
-    def plot_training_validation_loss(self, epochs, train_losses, validation_losses, hyperparams):
-        sns.set(style="whitegrid", palette="muted")
-        epochs_range = list(range(1, epochs + 1))
-
-        plt.figure(figsize=(12, 6))
-        plt.plot(epochs_range, train_losses, label='Training Loss', linewidth=2.5, marker='o', markersize=7)
-        plt.plot(epochs_range, validation_losses, label='Validation Loss', linewidth=2.5, marker='s', markersize=7)
-        plt.fill_between(epochs_range, train_losses, validation_losses, color="lightcoral", alpha=0.2)
-
-        plt.title("Training and Validation Loss Across Epochs", fontsize=18)
-        plt.xlabel("Epochs", fontsize=14)
-        plt.ylabel("Loss", fontsize=14)
-        plt.xticks(epochs_range)
-        plt.legend(loc="upper right", fontsize=12, bbox_to_anchor=(1.15, 1))
-        plt.grid(visible=True, color="gray", linestyle="--", linewidth=0.5, alpha=0.7)
-
-        hyperparams_text = '\n'.join([f"{k}: {v}" for k, v in hyperparams.items()])
-        plt.text(0.95, 0.05, hyperparams_text, fontsize=10, ha='right', va='bottom', transform=plt.gca().transAxes,
-                 bbox=dict(facecolor='white', alpha=0.6, edgecolor='black'))
-
-        plt.tight_layout()
-        timestamp = datetime.now().strftime("%d_%m_%Y_%H_%M")
-        filename = f"runs/train_run_{timestamp}.png"
-        plt.savefig(filename)
-        print(f"Metrics file stored as '{filename}'")
-        self._save_info_file(filename, hyperparams)
-        plt.show()
-
-    def _save_info_file(self, filename, hyperparams):
-        """
-        """
-        info_file_path = filename.replace(".png", ".info")
-        with open(info_file_path, "w", encoding="utf-8") as f:
-            f.write("*****************************************************\n")
-            f.write("* Experiment Configuration and Results\n")
-            f.write("*****************************************************\n\n")
-            f.write("Hyperparameters:\n")
-            for key, value in hyperparams.items():
-                f.write(f"{key}: {value}\n")
-            f.write("\nData Configuration:\n")
-            f.write(self.config_dump_info)
-            f.write("\n")
-        print(f"Data configuration file saved as: {info_file_path}")
 
     @LoreNexusWrapper._train_mode_only
     def display_batch_info(self, train_batch_names, train_batch_labels, predicted_labels, char_vocab):
         """
         """
 
-        print("Label to Index mapping:", self._label_to_index)
-        print("Index to Label mapping:", self._index_to_label)
+        print("Label to Index mapping:", self._label_encoder.label_to_index)
+        print("Index to Label mapping:", self._label_encoder.index_to_label)
 
         # pongo cap de 12, para que no se me vaya de madre el output
         decoded_names = [char_vocab.decode(name)[:12] for name in train_batch_names.tolist()]
@@ -463,8 +472,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         checkpoint = torch.load(model_path, map_location=self._device, weights_only=False)
 
         self._char_vocab = checkpoint['char_vocab']
-        self._label_to_index = checkpoint['label_to_index']
-        self._index_to_label = checkpoint['index_to_label']
+        self._label_encoder = checkpoint['label_encoder']
 
         hyperparams = checkpoint.get('hyperparams', {})
         embedding_dim = hyperparams.get('embedding_dim', 256)
@@ -477,13 +485,12 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         print(f"Loaded Hyperparameters: embedding_dim={embedding_dim}, hidden_dim={hidden_dim}, "
               f"num_layers={num_layers}, dropout={dropout}")
 
-        unique_labels = set(self._label_to_index.values())
 
         self._model = self.BiLSTMCharacterLevel(
             vocab_size=len(self._char_vocab),
             embedding_dim=embedding_dim,
             hidden_dim=hidden_dim,
-            output_dim=len(unique_labels),
+            output_dim=len(self._label_encoder),
             n_layers=num_layers,
             dropout=dropout
         ).to(self._device)
@@ -515,7 +522,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
 
             results = {}
             for i, index in enumerate(top_indices):
-                label = self._index_to_label[index.item()]
+                label = self._label_encoder.decode(index.item())
                 score = probabilities[index].item()
                 results[f"Prediction {i + 1}"] = (label, score)
 
@@ -560,9 +567,10 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                 all_labels.extend(batch_labels.cpu().numpy())
 
 
+        indexes, label_str = self._label_encoder.unpack_indexes()
         report = classification_report(all_labels, all_preds,
-                                       labels=list(self._index_to_label.keys()),
-                                       target_names=list(self._index_to_label.values()))
+                                       labels=list(indexes),
+                                       target_names=list(label_str))
 
         accuracy = accuracy_score(all_labels, all_preds)
         if verbose:
@@ -582,5 +590,5 @@ def predict_test(name):
 
 
 ln_pytorch_model = LoreNexusPytorchModel(mode='train')
-ln_pytorch_model.train(save_model=True, epochs=2,  hidden_dim=128, batch_size=32, dropout=0.1, num_layers=1, weight_decay=0.02)
-# ln_pytorch_model.evaluate()
+ln_pytorch_model.train(save_model=True, epochs=5, hidden_dim=256, embeddings_dim=128, batch_size=32, dropout=0.2, num_layers=1, weight_decay=0.01)
+ln_pytorch_model.evaluate()

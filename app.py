@@ -49,7 +49,7 @@ class LoreNexusApp:
     def load_config(self):
         """
         """
-        config_path = os.path.join(BASE_DIR, "config.yaml")
+        config_path = os.path.join(BASE_DIR, "models.yaml")
         with open(config_path, 'r') as file:
             config = yaml.safe_load(file)
         return config

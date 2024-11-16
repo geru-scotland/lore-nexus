@@ -94,3 +94,18 @@ tmp/
 temp/
 
 __pycache__/
+
+# Proyect specific, they are a nuisance
+models/flair/resources/
+models/flair/checkpoints/
+models/pytorch/checkpoints/
+models/pytorch/runs/
+
+
+dataset/preprocessing/apis/mythology/processed_data/
+dataset/preprocessing/apis/wikidata/processed_data/
+dataset/preprocessing/apis/slurs/processed_data/
+dataset/preprocessing/ner/processed_data/
+
+dataset/output/
+
