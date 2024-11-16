@@ -11,6 +11,7 @@
  * Description:
  *****************************************************
 """
+import argparse
 import json
 
 import logging
@@ -158,11 +159,33 @@ models = {
 }
 
 if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser(description="Load models and execute tuner")
+    parser.add_argument(
+        "-m",
+        "--model",
+        type=str,
+        choices=["pytorch", "flair"],
+        required=True,
+        help="Select the model to load: 'pytorch' or 'flair'"
+    )
+    args = parser.parse_args()
+
+    if args.model == "pytorch":
+        selected_model = {"PytorchModel": LoreNexusPytorchModel(mode="train")}
+    elif args.model == "flair":
+        selected_model = {"FlairModel": LoreNexusFlairModel(mode="train")}
+    else:
+        selected_model = {
+            "PytorchModel": LoreNexusPytorchModel(mode="train"),
+            "FlairModel": LoreNexusFlairModel(mode="train"),
+        }
+
     with open("param_grids.json", "r") as f:
         param_grid = json.load(f)
 
     # TODO: Hacer que busque el mejor valor de learning rate (generar una grid con rango de valores en lugar de cargarla)
-    tuner = HyperparameterTuner(models, param_grid)
+    tuner = HyperparameterTuner(selected_model, param_grid)
     tuner.run()
 
     # Hack feo para borrar los modelos de flair que se generan en cada iteración
