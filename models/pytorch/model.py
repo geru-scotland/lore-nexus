@@ -412,11 +412,11 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                 best_validation_accuracy = validation_accuracy
 
                 indexes, label_str = self._label_encoder.unpack_indexes()
-                report = classification_report(epoch_all_true_labels, epoch_all_true_labels,
+                report = classification_report(epoch_all_true_labels, epoch_all_predicted_labels,
                                                labels=list(indexes),
                                                target_names=list(label_str))
 
-                acc_score = accuracy_score(epoch_all_true_labels, epoch_all_true_labels)
+                acc_score = accuracy_score(epoch_all_true_labels, epoch_all_predicted_labels)
 
                 best_results = {
                     "accuracy": validation_accuracy,

@@ -144,6 +144,7 @@ class DataPipeline:
             data_processor = DataProcessor(
                 datasets=self.config.config["datasets"],
                 labels=data_processor_config["labels"],
+                unique_names=data_processor_config["unique_names"],
                 augmentation=data_processor_config["augmentation"],
                 output_file=data_processor_config["output_file"],
                 train_file=data_processor_config["train_file"],
