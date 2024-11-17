@@ -273,6 +273,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         unique_labels = set()
         train_losses = []
         validation_losses = []
+        epoch_stats = []
 
         hyperparams = {
             'lr': lr,
@@ -312,6 +313,9 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
         # Me devuelve iterables, que son los batches
         train_batches = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
         dev_batches = DataLoader(dev_dataset, batch_size=batch_size, shuffle=False)
+
+        total_train_samples = len(train_dataset)
+        total_dev_samples = len(dev_dataset)
 
         # Creo el modelo
         self._model = self.BiLSTMCharacterLevel(
@@ -360,7 +364,8 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
 
             average_train_loss = train_loss / len(train_batches)
 
-            # TODO: mejorar el output
+            # TODO: mejorar el output Y GUARDAR EN UN LOG, output.log, importante, validation también
+            # TODO: Incluir también en ese log, el learning rate es interesante ver cómo se va reduciendo
             print(f"Epoch {epoch + 1}/{epochs} - Training Loss: {average_train_loss:.4f}")
 
             # Por último, validación, SIN updatear los gradientes, solo forward
@@ -403,6 +408,15 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
             scheduler.step()
 
             current_lr = scheduler.get_last_lr()[0]
+
+            epoch_stats.append({
+                'epoch': epoch + 1,
+                'train_loss': average_train_loss,
+                'val_loss': average_validation_loss,
+                'val_accuracy': validation_accuracy,
+                'learning_rate': current_lr
+            })
+
             print(f"Epoch {epoch + 1}/{epochs} - Learning rate adjusted to: {current_lr:.6f}")
 
             train_losses.append(average_train_loss)
@@ -412,11 +426,11 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                 best_validation_accuracy = validation_accuracy
 
                 indexes, label_str = self._label_encoder.unpack_indexes()
-                report = classification_report(epoch_all_true_labels, epoch_all_true_labels,
+                report = classification_report(epoch_all_true_labels, epoch_all_predicted_labels,
                                                labels=list(indexes),
                                                target_names=list(label_str))
 
-                acc_score = accuracy_score(epoch_all_true_labels, epoch_all_true_labels)
+                acc_score = accuracy_score(epoch_all_true_labels, epoch_all_predicted_labels)
 
                 best_results = {
                     "accuracy": validation_accuracy,
@@ -444,7 +458,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                     print(f"Model saved with the best validation accuracy: {best_validation_accuracy:.4f}")
 
         if log_results:
-            self._plot_and_log_results(epochs, train_losses, validation_losses, hyperparams, best_results)
+            self._plot_and_log_results(epoch_stats, epochs, total_train_samples, total_dev_samples, train_losses, validation_losses, hyperparams, best_results)
 
 
     @LoreNexusWrapper._train_mode_only
@@ -590,5 +604,5 @@ def predict_test(name):
 
 
 ln_pytorch_model = LoreNexusPytorchModel(mode='train')
-ln_pytorch_model.train(save_model=True, epochs=5, hidden_dim=256, embeddings_dim=128, batch_size=32, dropout=0.2, num_layers=1, weight_decay=0.01)
+ln_pytorch_model.train(save_model=True, epochs=30, hidden_dim=512, embeddings_dim=128, batch_size=32, dropout=0.5, num_layers=2, weight_decay=0.03)
 ln_pytorch_model.evaluate()

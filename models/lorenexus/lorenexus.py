@@ -80,7 +80,7 @@ class LoreNexusWrapper(ABC):
         pass
 
     # Esto de logger, fuera. Tiene que ir en la clase base LoreNexusWrapper
-    def _plot_and_log_results(self, epochs, train_losses, validation_losses, hyperparams, best_results):
+    def _plot_and_log_results(self, epoch_stats, epochs, total_train_samples, total_dev_samples, train_losses, validation_losses, hyperparams, best_results):
         sns.set(style="whitegrid", palette="muted")
         epochs_range = list(range(1, epochs + 1))
 
@@ -115,6 +115,12 @@ class LoreNexusWrapper(ABC):
 
         with open(info_file_path, "w", encoding="utf-8") as f:
             f.write("*****************************************************\n")
+            f.write("* Dataset Sizes\n")
+            f.write("*****************************************************\n")
+            f.write(f"Training samples: {total_train_samples}\n")
+            f.write(f"Validation samples: {total_dev_samples}\n")
+
+            f.write("*****************************************************\n")
             f.write("* Best Results\n")
             f.write("*****************************************************\n")
             f.write(f"Best validation accuracy: {best_results['accuracy']:.4f}\n")
@@ -144,6 +150,17 @@ class LoreNexusWrapper(ABC):
             f.write("*****************************************************\n")
             f.write(self.config_dump_info)
             f.write("\n")
+
+            f.write("\n*****************************************************\n")
+            f.write("* Epoch Output\n")
+            f.write("*****************************************************\n")
+            for epoch_stat in epoch_stats:
+                f.write(f"Epoch {epoch_stat['epoch']}:\n")
+                f.write(f"  Training Loss: {epoch_stat['train_loss']:.4f}\n")
+                f.write(f"  Validation Loss: {epoch_stat['val_loss']:.4f}\n")
+                f.write(f"  Validation Accuracy: {epoch_stat['val_accuracy']:.4f}\n")
+                f.write(f"  Learning Rate: {epoch_stat['learning_rate']:.6f}\n")
+                f.write("\n")
 
         print(f"Configuration and results file saved as: {info_file_path}")
 

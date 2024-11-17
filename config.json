@@ -7,6 +7,7 @@
             "output_folder": "processed_data",
             "labels_folder": "labels",
             "labels_file": "labels.txt",
+            "historical_file": "extremely_relevant_figures2.txt",
             "dataset_file": "wikidata-universes.csv",
             "output_file": "wikidata_dataset_FastText.txt"
         },
@@ -47,6 +48,7 @@
         "test_size": 0,
         "augmentation": {
             "enabled": true,
+            "intensity": 2,
             "swap_characters": {
                 "enabled": true,
                 "pct_words_to_swap": 0.4,
@@ -84,7 +86,7 @@
                 "enabled": true,
                 "excluded_labels": [
                     "Mythology",
-                    "Offensive"
+                    "Historical"
                 ]
             },
             "internal_swap": {
@@ -107,6 +109,7 @@
             "Discworld",
             "Mythology",
             "Offensive"
+            "Historical"
         ]
     }
 }

@@ -81,11 +81,13 @@ class DataPipeline:
                 input_file_path =  os.path.join(str(wikidata_path), wikidata_config['input_folder'], wikidata_config['dataset_file'])
                 output_file_path = os.path.join(str(wikidata_path), wikidata_config['output_folder'], wikidata_config['output_file'])
                 labels_path = os.path.join(str(wikidata_path), wikidata_config['labels_folder'], wikidata_config['labels_file'])
+                historical_file = os.path.join(str(wikidata_path), wikidata_config['input_folder'], wikidata_config['historical_file'])
 
                 wikidata_processor = WikidataProcessor(
                     input_file=f"{input_file_path}",
                     output_file=f"{output_file_path}",
-                    labels_file=f"{labels_path}"
+                    labels_file=f"{labels_path}",
+                    historical_file=f"{historical_file}"
                 )
 
                 wikidata_processor.process_data(DatasetFormats.FAST_TEXT)
@@ -144,6 +146,7 @@ class DataPipeline:
             data_processor = DataProcessor(
                 datasets=self.config.config["datasets"],
                 labels=data_processor_config["labels"],
+                unique_names=data_processor_config["unique_names"],
                 augmentation=data_processor_config["augmentation"],
                 output_file=data_processor_config["output_file"],
                 train_file=data_processor_config["train_file"],

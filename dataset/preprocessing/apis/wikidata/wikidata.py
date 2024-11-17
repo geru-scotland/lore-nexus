@@ -23,23 +23,27 @@ from paths import APIS_DIR
 
 class DatasetFormats(Enum):
     CoNLL = "CoNLL"
-    FAST_TEXT = "FastText" # https://flairnlp.github.io/docs/tutorial-training/how-to-load-custom-dataset#fasttext-format
+    FAST_TEXT = "FastText"  # https://flairnlp.github.io/docs/tutorial-training/how-to-load-custom-dataset#fasttext-format
     SEPARATED_DATA_LABELS = "separated-data-labels"
 
     def __str__(self):
         return self.value
 
+
 class WikidataProcessor:
     """
         TODO: Crear clase base de la que hereden todos los processors , como este, el de MythData etc, etc.
     """
-    def __init__(self, input_file, output_file, labels_file):
+
+    def __init__(self, input_file, output_file, labels_file, historical_file):
         """
         """
 
         self.input_file = input_file
         self.output_file = output_file
         self.labels_file = labels_file
+        self.historical_file = historical_file
+
         self.df = pd.read_csv(self.input_file)
         self.normalizer = DataNormalizer()
 
@@ -51,7 +55,7 @@ class WikidataProcessor:
             universe_count = text.lower().count("universe")
             if universe_count == 1:
                 text = re.sub(r"\bUniverse\b", "", text, flags=re.IGNORECASE)
-            elif universe_count > 1: # Si hay más de una vez la palabra Universe, que me la quite
+            elif universe_count > 1:  # Si hay más de una vez la palabra Universe, que me la quite
                 text = re.sub(r"(.*)\bUniverse\b", r"\1", text, count=1, flags=re.IGNORECASE)
             text = text.strip()
 
@@ -98,15 +102,33 @@ class WikidataProcessor:
         self.df['itemLabel'] = self.df['itemLabel'].apply(self.normalizer.normalize)
         print("Names processing completed.")
 
+    def label_append_historical_data(self):
+        """
+        """
+        data = []
+        with open(self.historical_file, 'r', encoding='utf-8') as file:
+            for line in file:
+                line = line.strip()
+                if line:
+                    data.append(self.normalizer.normalize(line))
+
+        historical_df = pd.DataFrame({
+            "universeLabel": ["Historical"] * len(data),
+            "itemLabel": data
+        })
+
+        self.df = pd.concat([self.df, historical_df], ignore_index=True)
+        print("Historical data appended.")
+
     def process_data(self, dataset_format=None):
         """
         """
-
+        # TODO: Incluir el fichero de personajes históricos, simplemente hacer un append
         self.process_labels()
         self.process_names()
+        self.label_append_historical_data()
         self.save_processed_data(dataset_format)
         print("Data processing completed.")
-
 
     def save_processed_data(self, dataset_format=None):
         """

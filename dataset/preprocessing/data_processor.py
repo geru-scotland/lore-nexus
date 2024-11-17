@@ -74,7 +74,9 @@ class DataProcessor:
                 with open(dataset_path, 'r', encoding='utf-8') as file:
                     for line in file:
                         if any(line.startswith(label) for label in self.allowed_labels):
-                            filtered_data.append(line.strip())
+                            name = line.split(" ", 1)[1].strip()
+                            if len(name) >= 3:
+                                filtered_data.append(line.strip())
             except FileNotFoundError:
                 print(f"Dataset {dataset['name']} not found in path {data_dir}")
         return filtered_data
@@ -84,6 +86,8 @@ class DataProcessor:
             def __init__(self, config):
 
                 self.config = config
+
+                self.augmentation_intensity = config["intensity"]
 
                 self.swap_augmenter = self._create_augmenter(
                     "swap_characters", WordSwapNeighboringCharacterSwap()
@@ -160,37 +164,40 @@ class DataProcessor:
                         if label in excluded_labels:
                             continue
 
-                    # swap de chars internos, sin tocar el primero y último
-                    if self.config.internal_swap_enabled:
-                        internal_swap_name = self._internal_swap(name)
-                        augmented_data.append(f"{label} {internal_swap_name}")
+                    # TODO: Ahora que puedo ajustar intensidad desde config,
+                    #  quizá hacer por peso de labels en base a frecuencias como he hecho en train?
+                    for _ in range(self.config.augmentation_intensity):
+                        # swap de chars internos, sin tocar el primero y último
+                        if self.config.internal_swap_enabled:
+                            internal_swap_name = self._internal_swap(name)
+                            augmented_data.append(f"{label} {internal_swap_name}")
 
-                    # duplico aleatoriamente un char, para casos como Jon Snow -> Jonn Snow
-                    if self.config.duplicate_char_augmenter:
-                        duplicated_char_names = self.config.duplicate_char_augmenter.augment(name)
-                        augmented_data.extend([f"{label} {dup_name}" for dup_name in duplicated_char_names])
+                        # duplico aleatoriamente un char, para casos como Jon Snow -> Jonn Snow
+                        if self.config.duplicate_char_augmenter:
+                            duplicated_char_names = self.config.duplicate_char_augmenter.augment(name)
+                            augmented_data.extend([f"{label} {dup_name}" for dup_name in duplicated_char_names])
 
 
-                    # Y ahora, si el nombre tiene más de una palabra, la agrego
-                    # como instancia también, CREO que puede ayudar.
-                    if self.config.split_names_enabled:
-                        name_parts = name.split()
-                        if len(name_parts) > 1:
-                            for part in name_parts:
-                                augmented_data.append(f"{label} {part}")
+                        # Y ahora, si el nombre tiene más de una palabra, la agrego
+                        # como instancia también, CREO que puede ayudar.
+                        if self.config.split_names_enabled:
+                            name_parts = name.split()
+                            if len(name_parts) > 1:
+                                for part in name_parts:
+                                    augmented_data.append(f"{label} {part}")
 
-                    # Esto es de textattack, creo que será buena idea... veamos.
-                    if self.config.swap_augmenter:
-                        swapped_names = self.config.swap_augmenter.augment(name)
-                        augmented_data.extend([f"{label} {aug_name}" for aug_name in swapped_names])
+                        # Esto es de textattack, creo que será buena idea... veamos.
+                        if self.config.swap_augmenter:
+                            swapped_names = self.config.swap_augmenter.augment(name)
+                            augmented_data.extend([f"{label} {aug_name}" for aug_name in swapped_names])
 
-                    if self.config.insert_augmenter:
-                        insertions_names = self.config.insert_augmenter.augment(name)
-                        augmented_data.extend([f"{label} {aug_name}" for aug_name in insertions_names])
+                        if self.config.insert_augmenter:
+                            insertions_names = self.config.insert_augmenter.augment(name)
+                            augmented_data.extend([f"{label} {aug_name}" for aug_name in insertions_names])
 
-                    if self.config.delete_augmenter:
-                        deletions_names = self.config.delete_augmenter.augment(name)
-                        augmented_data.extend([f"{label} {aug_name}" for aug_name in deletions_names])
+                        if self.config.delete_augmenter:
+                            deletions_names = self.config.delete_augmenter.augment(name)
+                            augmented_data.extend([f"{label} {aug_name}" for aug_name in deletions_names])
 
             return augmented_data
 
