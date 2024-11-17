@@ -47,6 +47,7 @@
         "test_size": 0,
         "augmentation": {
             "enabled": true,
+            "intensity": 2,
             "swap_characters": {
                 "enabled": true,
                 "pct_words_to_swap": 0.4,
