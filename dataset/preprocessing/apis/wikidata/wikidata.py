@@ -23,16 +23,18 @@ from paths import APIS_DIR
 
 class DatasetFormats(Enum):
     CoNLL = "CoNLL"
-    FAST_TEXT = "FastText" # https://flairnlp.github.io/docs/tutorial-training/how-to-load-custom-dataset#fasttext-format
+    FAST_TEXT = "FastText"  # https://flairnlp.github.io/docs/tutorial-training/how-to-load-custom-dataset#fasttext-format
     SEPARATED_DATA_LABELS = "separated-data-labels"
 
     def __str__(self):
         return self.value
 
+
 class WikidataProcessor:
     """
         TODO: Crear clase base de la que hereden todos los processors , como este, el de MythData etc, etc.
     """
+
     def __init__(self, input_file, output_file, labels_file):
         """
         """
@@ -51,7 +53,7 @@ class WikidataProcessor:
             universe_count = text.lower().count("universe")
             if universe_count == 1:
                 text = re.sub(r"\bUniverse\b", "", text, flags=re.IGNORECASE)
-            elif universe_count > 1: # Si hay más de una vez la palabra Universe, que me la quite
+            elif universe_count > 1:  # Si hay más de una vez la palabra Universe, que me la quite
                 text = re.sub(r"(.*)\bUniverse\b", r"\1", text, count=1, flags=re.IGNORECASE)
             text = text.strip()
 
@@ -101,12 +103,11 @@ class WikidataProcessor:
     def process_data(self, dataset_format=None):
         """
         """
-
+        # TODO: Incluir el fichero de personajes históricos, simplemente hacer un append
         self.process_labels()
         self.process_names()
         self.save_processed_data(dataset_format)
         print("Data processing completed.")
-
 
     def save_processed_data(self, dataset_format=None):
         """
