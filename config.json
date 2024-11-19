@@ -43,12 +43,13 @@
         "dev_file": "dev.txt",
         "test_file": "test.txt",
         "config_dump": "data_config.info",
-        "train_size": 0.8,
+        "train_size": 0.85,
         "dev_size": 0.1,
-        "test_size": 0.1,
-        "unique_names": false,
+        "test_size": 0.05,
+        "unique_names": true,
         "augmentation": {
             "enabled": true,
+            "only_basic_augmentation": false,
             "intensity": 2,
             "swap_characters": {
                 "enabled": true,
