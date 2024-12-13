@@ -210,11 +210,10 @@ class DataProcessor:
 
             return augmented_data
 
-        def _phonetic_substitution(self, name):
-            if "oo" in name:
-                return name.replace("oo", "u")
-            if "ee" in name:
-                return name.replace("ee", "i")
+        def _phonetic_substitution(self, param):
+            name = param.replace("oo", "u")
+            name = name.replace("ee", "i")
+            return name
 
         def _internal_swap(self, name):
             name_chars = list(name)
