@@ -29,7 +29,7 @@ sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 from models.lorenexus.lorenexus import LoreNexusWrapper
 
-from sklearn.metrics import classification_report, accuracy_score
+from sklearn.metrics import classification_report, accuracy_score, confusion_matrix
 from torch.optim.lr_scheduler import StepLR
 from torch.utils.data import DataLoader
 from torch import tensor
@@ -431,6 +431,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                                                target_names=list(label_str))
 
                 acc_score = accuracy_score(epoch_all_true_labels, epoch_all_predicted_labels)
+                conf_matrix = confusion_matrix(epoch_all_true_labels, epoch_all_predicted_labels)
 
                 best_results = {
                     "accuracy": validation_accuracy,
@@ -438,7 +439,8 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                     "val_loss": average_validation_loss,
                     "epoch": epoch + 1,
                     "report": f"Classification Report for Epoch {epoch + 1}:\n{report}\n",
-                    "acc_score_sklearn": acc_score
+                    "acc_score_sklearn": acc_score,
+                    "conf_matrix": conf_matrix
                 }
 
                 if save_model:
@@ -458,7 +460,7 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
                     print(f"Model saved with the best validation accuracy: {best_validation_accuracy:.4f}")
 
         if log_results:
-            self._plot_and_log_results(epoch_stats, epochs, total_train_samples, total_dev_samples, train_losses, validation_losses, hyperparams, best_results)
+            self._plot_and_log_results(epoch_stats, epochs, total_train_samples, total_dev_samples, train_losses, validation_losses, hyperparams, best_results, conf_matrix)
 
 
     @LoreNexusWrapper._train_mode_only
