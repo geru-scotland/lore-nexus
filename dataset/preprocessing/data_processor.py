@@ -179,6 +179,9 @@ class DataProcessor:
                     if self.config.only_basic_augmentation:
                         continue
 
+                    phonetic_substitution = self._phonetic_substitution(name)
+                    augmented_data.append(f"{label} {phonetic_substitution.lower()}")
+
                     # TODO: Ahora que puedo ajustar intensidad desde config,
                     #  quizá hacer por peso de labels en base a frecuencias como he hecho en train?
                     for _ in range(self.config.augmentation_intensity):
@@ -206,6 +209,12 @@ class DataProcessor:
                             augmented_data.extend([f"{label} {aug_name.lower()}" for aug_name in deletions_names])
 
             return augmented_data
+
+        def _phonetic_substitution(self, name):
+            if "oo" in name:
+                return name.replace("oo", "u")
+            if "ee" in name:
+                return name.replace("ee", "i")
 
         def _internal_swap(self, name):
             name_chars = list(name)
