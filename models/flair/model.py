@@ -36,12 +36,12 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
         super().__init__(mode)
 
         self._mode = mode
+        self._embedding = None
+        self._classifier = None
 
         if self._mode == "train":
             self._corpus = self._load_data(data_folder)
             self._label_dict = self._create_vocab()
-            self._embedding = self._initialize_embeddings()
-            self._classifier = self._initialize_classifier()
         elif self._mode == "evaluate":
             self._corpus = self._load_data(data_folder)
             try:
@@ -79,15 +79,15 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
         return self._corpus.make_label_dictionary(label_type='class')
 
     @LoreNexusWrapper._train_mode_only
-    def _initialize_embeddings(self):
+    def _initialize_embeddings(self, hidden_dim, embedding_dim, dropout):
         """
         """
         embedding = DocumentRNNEmbeddings(
-            embeddings=[CharacterEmbeddings()],
-            hidden_size=768,
+            embeddings=[CharacterEmbeddings(char_embedding_dim=embedding_dim)],
+            hidden_size=hidden_dim,
             rnn_type='LSTM',
             bidirectional=True,
-            dropout=0.2
+            dropout=dropout
         )
         embedding.to(self._device)
         return embedding
@@ -111,6 +111,8 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
         """
         TODO: Cargar del config.json
         """
+        self._embedding = self._initialize_embeddings(hidden_dim, embeddings_dim, dropout)
+        self._classifier = self._initialize_classifier()
         trainer = self._setup_trainer()
         trainer.train(
             output_path,
@@ -122,6 +124,7 @@ class LoreNexusFlairModel(LoreNexusWrapper, ABC):
             embeddings_storage_mode='gpu' if torch.cuda.is_available() else 'cpu',
             save_final_model=save_model
         )
+
 
     @LoreNexusWrapper._train_mode_only
     def _setup_trainer(self):
