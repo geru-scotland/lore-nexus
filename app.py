@@ -77,7 +77,7 @@ class LoreNexusApp:
         """
         """
         print("\n" + "╔" + "═" * 52 + "╗")
-        title_text = f"✦ Ancient Lore Archive: Secrets of '{name}' ✦"
+        title_text = f"✦ Ancient Lore Archive: Secrets of: {name.capitalize()} ✦"
         print("║{:^52}║".format(title_text))
         print("╚" + "═" * 52 + "╝")
 
