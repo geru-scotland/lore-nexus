@@ -74,10 +74,10 @@ python3 hyperparameter_tuner.py
   - `LoreNexusFlair`
 
 
-- Se pueden pasar los siguientes argumentos para limitar los experimentos a uno de los modelos:
+- Se pueden pasar los siguientes argumentos para limitar el training a uno de los modelos:
 
-  - `-m pytorch`: Solo entrena el modelo basado en PyTorch.
-  - `-m flair`: Solo entrena el modelo basado en Flair.
+  - `-m pytorch`: Solo entrena el basado en PyTorch.
+  - `-m flair`: Solo entrena el basado en Flair.
 
 
 - Los conjuntos de hiperparámetros para los experimentos están definidos en `param_grids.json` y los logs se guardan en `training_grounds/logs`.
