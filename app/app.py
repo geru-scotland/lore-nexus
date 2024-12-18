@@ -112,7 +112,7 @@ class LoreNexusApp:
                 if choice == str(UserOptions.UNVEIL_LORE.value):
                     name = input("Enter a name to uncover its Lore: ").lower().strip()
 
-                    if not name or not re.match("^[a-zA-Z0-9 ]*$", name):
+                    if not name or not re.match("^[a-zA-Z]*$", name):
                         print("Please provide a correct name.")
                         continue
 
