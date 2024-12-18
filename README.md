@@ -134,7 +134,7 @@ No obstante, incluso para entrenamientos individuales, recomiendo usar `hyperpar
 Con Docker instalado ([Docker get-started](https://www.docker.com/get-started)): 
 
 
-### 1. Pull de la imagen en el repositorio de github:
+### 1. Pull de la imagen en el [registro de contenedores de github](https://github.com/geru-scotland/lore-nexus/pkgs/container/lore-nexus):
 ```bash
 docker pull ghcr.io/geru-scotland/lore-nexus:latest
 ```
