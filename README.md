@@ -29,6 +29,9 @@
 ## Sobre el proyecto
 LoreNexus es una plataforma para extraer el universo de origen e influencias de nombres en videojuegos online, mediante detección de patrones fonéticos y morfológicos. Hace uso de modelos de lenguaje implementados con Pytorch "_from scratch_" (LSTMs bidireccionales o `BiLSTM` y tokenización a nivel de carácter), así como de diferentes técnicas de NLP tanto para la extracción y preprocesamiento de los datos como para la inferencia.
 
+### Nota sobre el desarrollo
+
+Este proyecto se da por finalizado en cuanto a la entrega, sin embargo hay algunas tareas que yo he decidido aún están pendientes. No obstante, planeo continuar el desarrollo de forma gradual, me ha encantado. Se pueden consultar el progreso de algunas tareas en el [proyecto de GitHub](https://github.com/users/geru-scotland/projects/5). Cualquier sugerencia o bug, por favor reportalo en el [Bug Tracker](https://github.com/geru-scotland/lore-nexus/issues).
 ## Presentación
 
 La presentación del proyecto se puede encontrar aquí: [Presentación de LoreNexus](https://github.com/geru-scotland/lore-nexus/blob/development/doc/LoreNexus-presentacion.pdf)
