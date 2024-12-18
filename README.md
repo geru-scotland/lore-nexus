@@ -8,6 +8,9 @@
 
 ---
 
+## Sobre el proyecto
+LoreNexus es una plataforma para extraer el universo de origen e influencias de nombres en videojuegos online, mediante detección de patrones fonéticos y morfológicos. Hace uso de modelos de lenguaje implementados con Pytorch "_from scratch_" (LSTMs bidireccionales o `BiLSTM` y tokenización a nivel de carácter), así como de diferentes técnicas de NLP tanto para la extracción y preprocesamiento de los datos como para la inferencia.
+
 ## Presentación
 
 La presentación del proyecto se puede encontrar aquí: [Presentación de LoreNexus](https://github.com/geru-scotland/lore-nexus/blob/development/doc/LoreNexus-presentacion.pdf)
@@ -30,13 +33,14 @@ export PYTHONPATH=$PYTHONPATH:$(pwd)
 
 ## 2. Uso del CLI
 
-Para ejecutar la aplicación, navega al modulo `app` y ejecuta `app.py`:
+Se dispone de una aplicación en `CLI` para poder realizar inferencias. Para ejecutarla, navega al modulo `app` y lanza `app.py`:
 
 ```bash
-python3 app/app.py
+cd app/
+python3 app.py
 ```
 
-- Si el mejor modelo hasta el momento (`LoreNexusPytorch_v1.0.pth`) no se encuentra, la app lo descarga automáticamente desde Hugging Face:
+- Si el mejor modelo hasta el momento (`LoreNexusPytorch_v1.0.pth`) no se encuentra en el sistema, la app lo descarga automáticamente desde Hugging Face:
   [LoreNexusPytorch_v1.0](https://huggingface.co/basajaun-scotland/LoreNexusPytorch_v1.0/tree/main).
 
 ---
@@ -51,8 +55,8 @@ El dataset está disponible en `dataset/input`, pero se puede regenerar con  eje
    ```
 
 - La configuración para la regeneración de datos se encuentra en `pipeline/config.json`.
-- Los datos ya estratificados se guardan en `dataset/output` (ojo, se sobreescriben los datos existentes)
-- También se crea un archivo `data_config.info` que contiene detalles sobre cómo se han generado los datos.
+- Los datos ya **estratificados** se guardan en `dataset/output` (ojo, se **sobreescriben** los datos existentes)
+- También se crea un archivo `data_config.info` que contiene detalles sobre la configuración con la que se han generado los datos.
 
 ---
 
@@ -67,20 +71,20 @@ cd training_grounds
 python3 hyperparameter_tuner.py
 ```
 
-- Si no se pasan argumentos, se lanzarán experimentos con todos los modelos que implementen la clase `LoreNexusWrapper`, actualmente:
+- Si no se pasan argumentos, se lanzarán experimentos con **todos** los modelos que implementen la clase `LoreNexusWrapper`, actualmente:
 
 
   - `LoreNexusPytorch`
   - `LoreNexusFlair`
 
 
-- Se pueden pasar los siguientes argumentos para limitar el training a uno de los modelos:
+- Se le pueden pasar el modelo como argumento con `-m`, para que el sistema se limite a entrenar únicamente el especificado:
 
   - `-m pytorch`: Solo entrena el basado en PyTorch.
   - `-m flair`: Solo entrena el basado en Flair.
 
 
-- Los conjuntos de hiperparámetros para los experimentos están definidos en `param_grids.json` y los logs se guardan en `training_grounds/logs`.
+- Los conjuntos de hiperparámetros están definidos en `param_grids.json` y los logs se guardan en `training_grounds/logs`, donde se aglomeran por experimentos, llamados `arenas`. También se depositarán logs de cada modelo individualmente en `training_grounds/logs/`, con gráficas y otros detalles.
 
 ### Entrenar un modelo individualmente
 
@@ -100,7 +104,7 @@ Para entrenar un modelo específico:
    python3 models/flair/model.py
    ```
    
-En ese caso los logs se guardan en `models/pytorch/logs` o `models/flair/logs` respectivamente.
+En ese caso los logs se guardan en `models/pytorch/logs` o `models/flair/logs` respectivamente, donde se pueden encontrar tanto logs exhaustivos, como gráficas con la evolución durante epochs, e incluso matrices de confusión.
 
    
 No obstante, incluso para entrenamientos individuales, recomiendo usar `hyperparameter_tuner.py`.
