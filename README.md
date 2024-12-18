@@ -1,5 +1,4 @@
 
-
 <div align="center">
   <h1>LoreNexus</h1>
 </div>
@@ -7,144 +6,139 @@
   <img src="images/LoreNexus.png" width="600" alt="LoreNexus">
 </div>
 
-
 ---
-## Tabla de contenidos [WIP!]
-1. [Visión general del pipeline de datos](#visión-general-del-pipeline-de-datos)
-2. [Configuración](#configuracion)
-3. [Componentes de pipeline](#componentes-del-pipeline)
-   - [Data loaders y procesadores](#data-loaders-y-procesadores-de-datos)
-      - [Wikidata Processor](#wikidata-processor)
-      - [Mythdata Processor](#mythdata-processor)
-   - [Data Processing](#data-processing)
-      - [Data Augmentation](#data-augmentation)
-      - [Data Stratification](#data-stratification)
-4. [Extracción de Entidades (NER)](#extraccion-de-entidades-ner)
-5. [Modelos](#modelos)
-   - [Flair Model Wrapper](#flair-model-wrapper)
-6. [Aplicación](#aplicación)
-7. [Hyperparameter Tuner](#hyperparameter-tuner)
+
+## Presentación
+
+La presentación del proyecto se puede encontrar aquí: [Presentación de LoreNexus](https://github.com/geru-scotland/lore-nexus/blob/development/doc/LoreNexus-presentacion.pdf)
+
+Memoria en progreso.
 
 ---
 
-## Instrucciones de uso
+## 1. Instalación
+Para instalar el proyecto y las dependencias, simplemente ejecuta los siguientes comandos:
 
-Ejecutar esto en la terminal (TODO: Cambiar ruta antes de entregar proyecto):
 ```bash
+git clone git@github.com:geru-scotland/lore-nexus.git
+cd lore-nexus
+pip install -r requirements.txt
 export PYTHONPATH=$PYTHONPATH:$(pwd)
-python -m spacy download en_core_web_trf
-
 ```
-## Visión general del pipeline de datos
-La **Data pipeline de Lore Nexus** 
-- **Data loaders/processors** 
-- **Data Augmentation** 
-- **Data stratification**
 
 ---
 
-## Configuración
-Se puede configurar mediante `config.json`, a modo de ejemplo:
-```json
-{
-    "datasets": [
-        {
-            "name": "Wikidata",
-            "path": "dataset/preprocessing/apis/wikidata",
-            "input_folder": "raw_data",
-            "output_folder": "processed_data",
-            "dataset_file": "wikidata-universes.csv",
-            "processed_file": "wikidata_dataset_FastText.txt"
-        },
-        {
-            "name": "Mythdata",
-            "path": "dataset/preprocessing/apis/mythology",
-            "input_folder": "raw_data",
-            "output_folder": "processed_data",
-            "dataset_file": "myth_dataset.csv",
-            "output_file": "myth_dataset.txt",
-            "processed_file": "myth_dataset.txt"
-        }
-    ],
-    "data_processor": {
-        "path": "dataset/preprocessing",
-        "output_folder": "output",
-        "output_file": "dataset.txt",
-        "train_file": "train.txt",
-        "dev_file": "dev.txt",
-        "test_file": "test.txt",
-        "labels": [
-            "HarryPotter", "StarWars", "Tolkien", "Warcraft",
-            "DragonBall", "Naruto", "ForgottenRealms", 
-            "FinalFantasy", "GameofThrones", "Mythology"
-        ]
-    }
-}
+## 2. Uso del CLI
+
+Para ejecutar la aplicación, navega al modulo `app` y ejecuta `app.py`:
+
+```bash
+python3 app/app.py
 ```
----
 
-## Componentes del pipeline
-
-### Data Loaders y Procesadores de Datos
-
-#### Wikidata Processor
-- **Procesa datos** de la API de Wikidata, homogeiniza etiquetas y guarda datos formato FastText.
-- **Homogenización de etiquetas** 
-- **Normalización Unicode**
-
-#### Mythdata Processor
-- **Procesa dataset mitológico**, misma etiqueta para todos.
-- **Normalización de texto** 
-
-### Data Processing
-La pipeline principal utiliza todos los datos preprocesados, pero el meollo aquí es tanto el data augmentation como la estratificación de los datos.
-
-#### Data Augmentation
-- **Aumentos** utilizo TextAttack, EXPLICAR LOS CASOS, el char swap, char insert etc. Randomizado en cuanto a num de chars y no a todas instancias
-- **Aumentos personalizados** nombres con múltiples palabras, un factor que utilizo es el juntarlo, ya que muchos jugadores lo hace, por ejemplo "Arwen Undomiel" -> "Arwenundomiel". También separo todas las palabras y creo nuevas instancias con ellas, individualmente, para que el modelo les preste atención y "las conozca" más, que puede haber muchos casos diferentes. Obviamente misma etiqueta.
-- Mitológicos no he aumentado aún, que se comen al resto del dataset si no
-
-#### Data Stratification
-- **Estratifica los datos**, es decir, la idea es mantener equilibrio entre los datos de train, val y test.
+- Si el mejor modelo hasta el momento (`LoreNexusPytorch_v1.0.pth`) no se encuentra, la app lo descarga automáticamente desde Hugging Face:
+  [LoreNexusPytorch_v1.0](https://huggingface.co/basajaun-scotland/LoreNexusPytorch_v1.0/tree/main).
 
 ---
 
-## Extracción de Entidades NER 
-El **NER Corpus Builder** utilizo para extraer entidades de documentos (pdfs por ahora), utilizando un modelo preentrenado de **spaCy** ([RoBERTa](https://huggingface.co/docs/transformers/model_doc/roberta)).
+## 3. Regeneración de datos
 
-Idea original era para aportar más a nombres, pero realmente no es necesario, utilizo principalmente para `[LOC] [GPE]`
+El dataset está disponible en `dataset/input`, pero se puede regenerar con  ejecutando `pipeline.py`, simplemente:
 
----
+   ```bash
+   cd pipeline
+   python3 pipeline.py
+   ```
 
-## Modelos
-
-### Flair Model Wrapper
-**LoreNexusFlairModel** extiende **LoreNexusWrapper** para la clasificación de texto. Utilizo **Character Embeddings** y un **RNN LSTM** (bidireccional). Lo he subido a Hugging Face: [basajaun-scotland/lore-nexus-bilstm-flair](https://huggingface.co/basajaun-scotland/lore-nexus-bilstm-flair)
-- **Training mode** 
-- **CLI mode** inicializa una instancia del modelo para ser utilziada por la app y poder hacer predicciones en entradas del usuario de manera rápida, si no hay que levantar el modelo cuando se quiera hacer predicciones manualmente.
-
----
-
-## Aplicación
-La aplicación de **Lore Nexus** interfaz mediante CLI para predecir nombres - para pruebas rápidas. Algunos ejemplos curiosos:
----
-![Imagen 0](./images/cli-logo.png)
----
-![Imagen 1](./images/example-1.png)
----
-![Imagen 2](./images/example-2.png)
----
-![Imagen 3](./images/example-3.png)
---- 
-![Imagen 4](./images/example-4.png)
+- La configuración para la regeneración de datos se encuentra en `pipeline/config.json`.
+- Los datos ya estratificados se guardan en `dataset/output` (ojo, se sobreescriben los datos existentes)
+- También se crea un archivo `data_config.info` que contiene detalles sobre cómo se han generado los datos.
 
 ---
 
+## 4. Training Grounds
 
-## Modelos disponibles
-- Flair: [Huggin Face: basajaun-scotland/lore-nexus-bilstm-flair](https://huggingface.co/basajaun-scotland/lore-nexus-bilstm-flair)
-- LTSM: [Huggin Face: basajaun-scotland/lore-nexus-bilstm-pytorch](https://huggingface.co/basajaun-scotland/lore-nexus-bilstm-pytorch)
-- CharacterBert
+### Hiperparámetros y experimentos
 
-### Créditos y referencias
-- Imagen hecha por ChatGPT
+Para explorar el espacio de hiperparámetros y entrenar modelos, ejecuta `hyperparameter_tuner.py` desde el directorio `training_grounds`:
+
+```bash
+cd training_grounds
+python3 hyperparameter_tuner.py
+```
+
+- Si no se pasan argumentos, se lanzarán experimentos con todos los modelos que implementen la clase `LoreNexusWrapper`, actualmente:
+
+
+  - `LoreNexusPytorch`
+  - `LoreNexusFlair`
+
+
+- Se pueden pasar los siguientes argumentos para limitar los experimentos a uno de los modelos:
+
+  - `-m pytorch`: Solo entrena el modelo basado en PyTorch.
+  - `-m flair`: Solo entrena el modelo basado en Flair.
+
+
+- Los conjuntos de hiperparámetros para los experimentos están definidos en `param_grids.json` y los logs se guardan en `training_grounds/logs`.
+
+### Entrenar un modelo individualmente
+
+Para entrenar un modelo específico:
+1. Ve al archivo correspondiente:
+   - `/models/pytorch/model.py`  
+   - `/models/flair/model.py`
+2. Descomenta las líneas al final del archivo, ajusta los hiperparámetros que desees y ejecutalo:
+
+   ```bash
+   python3 models/pytorch/model.py
+   ```
+
+   ó
+
+   ```bash
+   python3 models/flair/model.py
+   ```
+   
+En ese caso los logs se guardan en `models/pytorch/logs` o `models/flair/logs` respectivamente.
+
+   
+No obstante, incluso para entrenamientos individuales, recomiendo usar `hyperparameter_tuner.py`.
+
+---
+
+---
+
+## Ejemplos de predicciones
+
+<div align="center">
+  <img src="images/cli-main.png" width="600" alt="CLI Principal">
+</div>
+
+---
+
+   <div align="center">
+     <img src="images/example-1.png" width="400" alt="Example 1">
+   </div>
+
+   <div align="center">
+     <img src="images/example-2.png" width="400" alt="Example 2">
+   </div>
+
+   <div align="center">
+     <img src="images/example-3.png" width="400" alt="Example 3">
+   </div>
+
+   <div align="center">
+     <img src="images/example-4.png" width="400" alt="Example 4">
+   </div>
+
+---
+
+### Tabla de inferencias
+
+<div align="center">
+  <img src="images/table-inferences.png" width="600" alt="Table of Inferences">
+</div>
+
+---
