@@ -84,7 +84,7 @@ python3 app.py
 
 ## Regeneración de datos
 
-El dataset está disponible en `dataset/input`, pero se puede regenerar con  ejecutando `pipeline.py`, simplemente:
+El dataset está disponible en `dataset/output`, pero se puede regenerar con  ejecutando `pipeline.py`, simplemente:
 
    ```bash
    cd pipeline
