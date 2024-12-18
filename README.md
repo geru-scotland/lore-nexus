@@ -148,7 +148,7 @@ No obstante, incluso para entrenamientos individuales, recomiendo usar `hyperpar
 
 ---
 
-# Guía de uso para la app con Docker (CLI)
+# Guía de uso de la app (CLI) con Docker
 
 Con Docker instalado ([Docker get-started](https://www.docker.com/get-started)): 
 
