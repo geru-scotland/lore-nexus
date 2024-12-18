@@ -29,6 +29,9 @@
 ## Sobre el proyecto
 LoreNexus es una plataforma para extraer el universo de origen e influencias de nombres en videojuegos online, mediante detección de patrones fonéticos y morfológicos. Hace uso de modelos de lenguaje implementados con Pytorch "_from scratch_" (LSTMs bidireccionales o `BiLSTM` y tokenización a nivel de carácter), así como de diferentes técnicas de NLP tanto para la extracción y preprocesamiento de los datos como para la inferencia.
 
+### Nota sobre el desarrollo
+
+Este proyecto se da por finalizado en cuanto a la entrega, sin embargo hay algunas tareas que yo he decidido aún están pendientes. No obstante, planeo continuar el desarrollo de forma gradual, me ha encantado. Se pueden consultar el progreso de algunas tareas en el [proyecto de GitHub](https://github.com/users/geru-scotland/projects/5). Cualquier sugerencia o bug, por favor reportalo en el [Bug Tracker](https://github.com/geru-scotland/lore-nexus/issues).
 ## Presentación
 
 La presentación del proyecto se puede encontrar aquí: [Presentación de LoreNexus](https://github.com/geru-scotland/lore-nexus/blob/development/doc/LoreNexus-presentacion.pdf)
@@ -134,14 +137,14 @@ No obstante, incluso para entrenamientos individuales, recomiendo usar `hyperpar
 Con Docker instalado ([Docker get-started](https://www.docker.com/get-started)): 
 
 
-### 1. Pull de la imagen en el [registro de contenedores de github](https://github.com/geru-scotland/lore-nexus/pkgs/container/lore-nexus):
+### 1. Pull de la imagen alojada en [Dockerhub](https://hub.docker.com/repository/docker/basajaun0/lore-nexus/general):
 ```bash
-docker pull ghcr.io/geru-scotland/lore-nexus:latest
+docker pull basajaun0/lore-nexus:latest
 ```
 
 ### 2. Y simplemente ejecutar el contenedor:
 ```bash
-docker run -it ghcr.io/geru-scotland/lore-nexus:latest
+docker run -it basajaun0/lore-nexus:latest
 ```
 
 **Nota**: Tengo pendiente la optimización de dependencias para reducir el tamaño de la imagen, ahora mismo ocupa mucho por `CUDA`, y no es necesario realmente al utilizar simplemente inferencias.
@@ -214,7 +217,7 @@ Este proyecto fue desarrollado por **Aingeru García** como parte de un proyecto
 Si tienes preguntas, comentarios o sugerencias, no dudes en contactarme:
 
 - **GitHub**: [@geru-scotland](https://github.com/geru-scotland)
-- **Email**: [aingeru.scotland@gmail.com)](mailto:aingeru.scotland@gmail.com)
+- **Email**: [aingeru.scotland@gmail.com](mailto:aingeru.scotland@gmail.com)
 
 ## Licencia
 
