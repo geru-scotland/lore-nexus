@@ -1,0 +1,336 @@
+2024-12-13 06:55:55,743 - FlairModel - INFO - Starting training with params: {'lr': 0.001, 'batch_size': 32, 'epochs': 5, 'weight_decay': 0.03, 'hidden_dim': 64, 'embeddings_dim': 32, 'num_layers': 1, 'dropout': 0.5}
+2024-12-13 08:35:48,735 - FlairModel - INFO - Model: FlairModel
+2024-12-13 08:35:48,735 - FlairModel - INFO - Hyperparameters: {'lr': 0.001, 'batch_size': 32, 'epochs': 5, 'weight_decay': 0.03, 'hidden_dim': 64, 'embeddings_dim': 32, 'num_layers': 1, 'dropout': 0.5}
+2024-12-13 08:35:48,735 - FlairModel - INFO - Accuracy: 0.7231
+2024-12-13 08:35:48,735 - FlairModel - INFO - Classification Report:
+2024-12-13 08:35:48,735 - FlairModel - INFO - 
+Results:
+- F-score (micro) 0.7231
+- F-score (macro) 0.3227
+- Accuracy 0.7231
+
+By class:
+                 precision    recall  f1-score   support
+
+     Historical     0.8206    0.9351    0.8741     34828
+      Mythology     0.4904    0.6772    0.5688      6983
+        Tolkien     0.4926    0.5728    0.5297      4457
+  GameofThrones     0.6209    0.4771    0.5396      3574
+      Offensive     0.6464    0.7010    0.6726      2819
+       StarWars     0.7991    0.1096    0.1928      3376
+    HarryPotter     0.7439    0.2438    0.3672      2740
+         Naruto     0.7548    0.3474    0.4758       567
+      DoctorWho     0.9818    0.0867    0.1593       623
+     TheWitcher     0.7516    0.2972    0.4259       387
+ForgottenRealms     0.0000    0.0000    0.0000       502
+     DragonBall     0.0000    0.0000    0.0000       423
+       Warcraft     1.0000    0.0048    0.0096       413
+   FinalFantasy     1.0000    0.0070    0.0139       285
+      Discworld     1.0000    0.0057    0.0114       174
+
+       accuracy                         0.7231     62151
+      macro avg     0.6735    0.2977    0.3227     62151
+   weighted avg     0.7270    0.7231    0.6887     62151
+
+2024-12-13 08:35:48,735 - FlairModel - INFO - ==================================================
+2024-12-13 08:35:48,735 - FlairModel - INFO - Starting training with params: {'lr': 0.001, 'batch_size': 32, 'epochs': 7, 'weight_decay': 0.03, 'hidden_dim': 128, 'embeddings_dim': 64, 'num_layers': 2, 'dropout': 0.4}
+2024-12-13 10:56:12,481 - FlairModel - INFO - Model: FlairModel
+2024-12-13 10:56:12,487 - FlairModel - INFO - Hyperparameters: {'lr': 0.001, 'batch_size': 32, 'epochs': 7, 'weight_decay': 0.03, 'hidden_dim': 128, 'embeddings_dim': 64, 'num_layers': 2, 'dropout': 0.4}
+2024-12-13 10:56:12,487 - FlairModel - INFO - Accuracy: 0.7625
+2024-12-13 10:56:12,487 - FlairModel - INFO - Classification Report:
+2024-12-13 10:56:12,487 - FlairModel - INFO - 
+Results:
+- F-score (micro) 0.7625
+- F-score (macro) 0.4905
+- Accuracy 0.7625
+
+By class:
+                 precision    recall  f1-score   support
+
+     Historical     0.8750    0.9250    0.8993     34828
+      Mythology     0.5251    0.7311    0.6112      6983
+        Tolkien     0.5185    0.6179    0.5639      4457
+  GameofThrones     0.5849    0.5968    0.5908      3574
+      Offensive     0.7179    0.7205    0.7192      2819
+       StarWars     0.7793    0.3827    0.5133      3376
+    HarryPotter     0.8053    0.3865    0.5223      2740
+         Naruto     0.8662    0.4109    0.5574       567
+      DoctorWho     0.9695    0.2039    0.3369       623
+ForgottenRealms     0.9800    0.0976    0.1775       502
+     TheWitcher     0.9937    0.4057    0.5761       387
+     DragonBall     1.0000    0.1489    0.2593       423
+       Warcraft     0.9273    0.1235    0.2179       413
+   FinalFantasy     0.9868    0.2632    0.4155       285
+      Discworld     0.9167    0.2529    0.3964       174
+
+       accuracy                         0.7625     62151
+      macro avg     0.8297    0.4178    0.4905     62151
+   weighted avg     0.7823    0.7625    0.7503     62151
+
+2024-12-13 10:56:12,487 - FlairModel - INFO - ==================================================
+2024-12-13 10:56:12,487 - FlairModel - INFO - Starting training with params: {'lr': 0.001, 'batch_size': 64, 'epochs': 7, 'weight_decay': 0.03, 'hidden_dim': 128, 'embeddings_dim': 64, 'num_layers': 2, 'dropout': 0.3}
+2024-12-13 13:13:51,400 - FlairModel - INFO - Model: FlairModel
+2024-12-13 13:13:51,406 - FlairModel - INFO - Hyperparameters: {'lr': 0.001, 'batch_size': 64, 'epochs': 7, 'weight_decay': 0.03, 'hidden_dim': 128, 'embeddings_dim': 64, 'num_layers': 2, 'dropout': 0.3}
+2024-12-13 13:13:51,406 - FlairModel - INFO - Accuracy: 0.7933
+2024-12-13 13:13:51,406 - FlairModel - INFO - Classification Report:
+2024-12-13 13:13:51,406 - FlairModel - INFO - 
+Results:
+- F-score (micro) 0.7933
+- F-score (macro) 0.6013
+- Accuracy 0.7933
+
+By class:
+                 precision    recall  f1-score   support
+
+     Historical     0.9030    0.9366    0.9195     34828
+      Mythology     0.5134    0.7842    0.6205      6983
+        Tolkien     0.5808    0.5991    0.5898      4457
+  GameofThrones     0.6569    0.6108    0.6330      3574
+      Offensive     0.7816    0.7425    0.7615      2819
+       StarWars     0.8979    0.4689    0.6161      3376
+    HarryPotter     0.8367    0.5106    0.6342      2740
+         Naruto     0.9229    0.5697    0.7045       567
+      DoctorWho     0.9813    0.4205    0.5888       623
+     TheWitcher     0.9858    0.5375    0.6957       387
+ForgottenRealms     0.9863    0.1434    0.2504       502
+     DragonBall     0.9806    0.2388    0.3840       423
+       Warcraft     0.9720    0.2518    0.4000       413
+   FinalFantasy     0.9733    0.5123    0.6713       285
+      Discworld     1.0000    0.3793    0.5500       174
+
+       accuracy                         0.7933     62151
+      macro avg     0.8648    0.5137    0.6013     62151
+   weighted avg     0.8170    0.7933    0.7882     62151
+
+2024-12-13 13:13:51,406 - FlairModel - INFO - ==================================================
+2024-12-13 13:13:51,406 - FlairModel - INFO - Starting training with params: {'lr': 0.001, 'batch_size': 32, 'epochs': 10, 'weight_decay': 0.02, 'hidden_dim': 192, 'embeddings_dim': 96, 'num_layers': 2, 'dropout': 0.3}
+2024-12-13 16:35:44,264 - FlairModel - INFO - Model: FlairModel
+2024-12-13 16:35:44,265 - FlairModel - INFO - Hyperparameters: {'lr': 0.001, 'batch_size': 32, 'epochs': 10, 'weight_decay': 0.02, 'hidden_dim': 192, 'embeddings_dim': 96, 'num_layers': 2, 'dropout': 0.3}
+2024-12-13 16:35:44,265 - FlairModel - INFO - Accuracy: 0.8197
+2024-12-13 16:35:44,265 - FlairModel - INFO - Classification Report:
+2024-12-13 16:35:44,265 - FlairModel - INFO - 
+Results:
+- F-score (micro) 0.8197
+- F-score (macro) 0.688
+- Accuracy 0.8197
+
+By class:
+                 precision    recall  f1-score   support
+
+     Historical     0.9505    0.9241    0.9371     34828
+      Mythology     0.5418    0.8359    0.6575      6983
+        Tolkien     0.5815    0.6549    0.6160      4457
+  GameofThrones     0.7008    0.6553    0.6773      3574
+       StarWars     0.8410    0.6049    0.7037      3376
+      Offensive     0.7733    0.7939    0.7835      2819
+    HarryPotter     0.8304    0.5934    0.6922      2740
+      DoctorWho     0.9495    0.6340    0.7603       623
+         Naruto     0.8575    0.6896    0.7644       567
+ForgottenRealms     0.9744    0.3028    0.4620       502
+     TheWitcher     0.9793    0.6098    0.7516       387
+     DragonBall     0.9245    0.3475    0.5052       423
+       Warcraft     0.9662    0.3462    0.5098       413
+   FinalFantasy     0.9662    0.7018    0.8130       285
+      Discworld     0.9787    0.5287    0.6866       174
+
+       accuracy                         0.8197     62151
+      macro avg     0.8544    0.6149    0.6880     62151
+   weighted avg     0.8441    0.8197    0.8219     62151
+
+2024-12-13 16:35:44,265 - FlairModel - INFO - ==================================================
+2024-12-13 16:35:44,265 - FlairModel - INFO - Starting training with params: {'lr': 0.0005, 'batch_size': 32, 'epochs': 12, 'weight_decay': 0.02, 'hidden_dim': 256, 'embeddings_dim': 128, 'num_layers': 3, 'dropout': 0.3}
+2024-12-13 20:42:52,653 - FlairModel - INFO - Model: FlairModel
+2024-12-13 20:42:52,659 - FlairModel - INFO - Hyperparameters: {'lr': 0.0005, 'batch_size': 32, 'epochs': 12, 'weight_decay': 0.02, 'hidden_dim': 256, 'embeddings_dim': 128, 'num_layers': 3, 'dropout': 0.3}
+2024-12-13 20:42:52,659 - FlairModel - INFO - Accuracy: 0.8353
+2024-12-13 20:42:52,659 - FlairModel - INFO - Classification Report:
+2024-12-13 20:42:52,659 - FlairModel - INFO - 
+Results:
+- F-score (micro) 0.8353
+- F-score (macro) 0.7214
+- Accuracy 0.8353
+
+By class:
+                 precision    recall  f1-score   support
+
+     Historical     0.9461    0.9395    0.9428     34828
+      Mythology     0.5897    0.8251    0.6878      6983
+        Tolkien     0.5949    0.6967    0.6418      4457
+  GameofThrones     0.6817    0.6855    0.6836      3574
+      Offensive     0.7895    0.7943    0.7919      2819
+       StarWars     0.9181    0.6108    0.7335      3376
+    HarryPotter     0.8879    0.6073    0.7213      2740
+      DoctorWho     0.9605    0.6629    0.7844       623
+         Naruto     0.8807    0.7160    0.7899       567
+ForgottenRealms     0.9797    0.3845    0.5522       502
+     TheWitcher     0.9844    0.6512    0.7838       387
+     DragonBall     0.8775    0.4232    0.5710       423
+       Warcraft     0.9745    0.3705    0.5368       413
+   FinalFantasy     0.9813    0.7368    0.8417       285
+      Discworld     0.9907    0.6149    0.7589       174
+
+       accuracy                         0.8353     62151
+      macro avg     0.8691    0.6479    0.7214     62151
+   weighted avg     0.8546    0.8353    0.8364     62151
+
+2024-12-13 20:42:52,659 - FlairModel - INFO - ==================================================
+2024-12-13 20:42:52,659 - FlairModel - INFO - 
+Best Result for FlairModel:
+Best Accuracy: 0.8353
+Best Hyperparameters: {'lr': 0.0005, 'batch_size': 32, 'epochs': 12, 'weight_decay': 0.02, 'hidden_dim': 256, 'embeddings_dim': 128, 'num_layers': 3, 'dropout': 0.3}
+Best Classification Report:
+
+Results:
+- F-score (micro) 0.8353
+- F-score (macro) 0.7214
+- Accuracy 0.8353
+
+By class:
+                 precision    recall  f1-score   support
+
+     Historical     0.9461    0.9395    0.9428     34828
+      Mythology     0.5897    0.8251    0.6878      6983
+        Tolkien     0.5949    0.6967    0.6418      4457
+  GameofThrones     0.6817    0.6855    0.6836      3574
+      Offensive     0.7895    0.7943    0.7919      2819
+       StarWars     0.9181    0.6108    0.7335      3376
+    HarryPotter     0.8879    0.6073    0.7213      2740
+      DoctorWho     0.9605    0.6629    0.7844       623
+         Naruto     0.8807    0.7160    0.7899       567
+ForgottenRealms     0.9797    0.3845    0.5522       502
+     TheWitcher     0.9844    0.6512    0.7838       387
+     DragonBall     0.8775    0.4232    0.5710       423
+       Warcraft     0.9745    0.3705    0.5368       413
+   FinalFantasy     0.9813    0.7368    0.8417       285
+      Discworld     0.9907    0.6149    0.7589       174
+
+       accuracy                         0.8353     62151
+      macro avg     0.8691    0.6479    0.7214     62151
+   weighted avg     0.8546    0.8353    0.8364     62151
+
+==================================================
+2024-12-13 20:42:52,659 - FlairModel - INFO - 
+Configuration Used:
+*****************************************************
+* Data Processing Configuration
+*****************************************************
+path: dataset/preprocessing
+output_file: dataset.txt
+train_file: train.txt
+dev_file: dev.txt
+test_file: test.txt
+config_dump: data_config.info
+train_size: 0.8
+dev_size: 0.1
+test_size: 0.1
+unique_names: True
+augmentation:
+  enabled: True
+  only_basic_augmentation: False
+  intensity: 2
+  swap_characters: {'enabled': True, 'pct_words_to_swap': 0.5, 'transformations_per_example': {'min': 1, 'max': 4}}
+  insert_characters: {'enabled': True, 'pct_words_to_swap': 0.6, 'transformations_per_example': {'min': 1, 'max': 4}}
+  delete_characters: {'enabled': True, 'pct_words_to_swap': 0.5, 'transformations_per_example': {'min': 1, 'max': 3}}
+  duplicate_characters: {'enabled': True, 'pct_words_to_swap': 0.4, 'transformations_per_example': 2}
+  split_names: {'enabled': True, 'join_parts': True}
+  label_exclusion: {'enabled': False, 'excluded_labels': []}
+  internal_swap: {'enabled': True, 'swap_probability': 0.5}
+labels: ['HarryPotter', 'StarWars', 'Tolkien', 'Warcraft', 'DragonBall', 'Naruto', 'ForgottenRealms', 'FinalFantasy', 'GameofThrones', 'TheWitcher', 'DoctorWho', 'Discworld', 'Mythology', 'Offensive', 'Historical']
+
+Datasets:
+  - Wikidata:
+      name: Wikidata
+      path: wikidata
+      input_folder: raw_data
+      output_folder: processed_data
+      labels_folder: labels
+      labels_file: labels.txt
+      historical_file: extremely_relevant_figures2.txt
+      dataset_file: wikidata-universes.csv
+      output_file: wikidata_dataset_FastText.txt
+  - Mythdata:
+      name: Mythdata
+      path: mythology
+      input_folder: raw_data
+      output_folder: processed_data
+      dataset_file: myth_dataset.csv
+      output_file: myth_dataset.txt
+  - NERdata:
+      name: NERdata
+      path: ner
+      input_folder: raw_data
+      output_folder: processed_data
+      output_file: ner_dataset.txt
+  - Slurs:
+      name: Slurs
+      path: slurs
+      input_folder: raw_data
+      output_folder: processed_data
+      dataset_file: profanity.csv
+      output_file: slurs.txt
+
+==================================================
+Final Summary of Best Results:
+==================================================
+
+Model: PytorchModel
+Best Accuracy: 0.9585
+Best Hyperparameters: {'lr': 0.0005, 'batch_size': 32, 'epochs': 12, 'weight_decay': 0.02, 'hidden_dim': 256, 'embeddings_dim': 128, 'num_layers': 3, 'dropout': 0.3}
+Best Classification Report:
+                 precision    recall  f1-score   support
+
+     Historical       0.99      0.98      0.98     34828
+        Tolkien       0.90      0.93      0.91      4457
+       Warcraft       0.96      0.94      0.95       413
+      Offensive       0.95      0.96      0.96      2819
+       StarWars       0.96      0.92      0.94      3376
+         Naruto       0.92      0.98      0.95       567
+    HarryPotter       0.91      0.91      0.91      2740
+      Mythology       0.90      0.93      0.92      6983
+  GameofThrones       0.93      0.96      0.94      3574
+   FinalFantasy       0.95      0.96      0.96       285
+      DoctorWho       0.96      0.91      0.94       623
+     TheWitcher       0.94      0.96      0.95       387
+ForgottenRealms       0.93      0.86      0.89       502
+     DragonBall       0.89      0.95      0.92       423
+      Discworld       0.99      0.91      0.95       174
+
+       accuracy                           0.96     62151
+      macro avg       0.94      0.94      0.94     62151
+   weighted avg       0.96      0.96      0.96     62151
+
+==================================================
+
+Model: FlairModel
+Best Accuracy: 0.8353
+Best Hyperparameters: {'lr': 0.0005, 'batch_size': 32, 'epochs': 12, 'weight_decay': 0.02, 'hidden_dim': 256, 'embeddings_dim': 128, 'num_layers': 3, 'dropout': 0.3}
+Best Classification Report:
+
+Results:
+- F-score (micro) 0.8353
+- F-score (macro) 0.7214
+- Accuracy 0.8353
+
+By class:
+                 precision    recall  f1-score   support
+
+     Historical     0.9461    0.9395    0.9428     34828
+      Mythology     0.5897    0.8251    0.6878      6983
+        Tolkien     0.5949    0.6967    0.6418      4457
+  GameofThrones     0.6817    0.6855    0.6836      3574
+      Offensive     0.7895    0.7943    0.7919      2819
+       StarWars     0.9181    0.6108    0.7335      3376
+    HarryPotter     0.8879    0.6073    0.7213      2740
+      DoctorWho     0.9605    0.6629    0.7844       623
+         Naruto     0.8807    0.7160    0.7899       567
+ForgottenRealms     0.9797    0.3845    0.5522       502
+     TheWitcher     0.9844    0.6512    0.7838       387
+     DragonBall     0.8775    0.4232    0.5710       423
+       Warcraft     0.9745    0.3705    0.5368       413
+   FinalFantasy     0.9813    0.7368    0.8417       285
+      Discworld     0.9907    0.6149    0.7589       174
+
+       accuracy                         0.8353     62151
+      macro avg     0.8691    0.6479    0.7214     62151
+   weighted avg     0.8546    0.8353    0.8364     62151
+
+==================================================

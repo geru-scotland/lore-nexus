@@ -1,0 +1,197 @@
+2024-12-12 05:31:34,849 - PytorchModel - INFO - Starting training with params: {'lr': 0.001, 'batch_size': 32, 'epochs': 10, 'weight_decay': 0.02, 'hidden_dim': 256, 'embeddings_dim': 256, 'num_layers': 1, 'dropout': 0.2}
+2024-12-12 05:43:36,796 - PytorchModel - INFO - Model: PytorchModel
+2024-12-12 05:43:36,796 - PytorchModel - INFO - Hyperparameters: {'lr': 0.001, 'batch_size': 32, 'epochs': 10, 'weight_decay': 0.02, 'hidden_dim': 256, 'embeddings_dim': 256, 'num_layers': 1, 'dropout': 0.2}
+2024-12-12 05:43:36,796 - PytorchModel - INFO - Accuracy: 0.9375
+2024-12-12 05:43:36,796 - PytorchModel - INFO - Classification Report:
+2024-12-12 05:43:36,796 - PytorchModel - INFO -                  precision    recall  f1-score   support
+
+     Historical       0.97      0.97      0.97     34828
+        Tolkien       0.85      0.91      0.88      4457
+       Warcraft       0.95      0.87      0.91       413
+      Offensive       0.93      0.92      0.93      2819
+       StarWars       0.93      0.85      0.89      3376
+         Naruto       0.96      0.92      0.94       567
+    HarryPotter       0.89      0.87      0.88      2740
+      Mythology       0.85      0.90      0.88      6983
+  GameofThrones       0.93      0.91      0.92      3574
+   FinalFantasy       0.95      0.88      0.92       285
+      DoctorWho       0.94      0.85      0.89       623
+     TheWitcher       0.94      0.89      0.92       387
+ForgottenRealms       0.91      0.75      0.82       502
+     DragonBall       0.89      0.88      0.88       423
+      Discworld       0.97      0.83      0.90       174
+
+       accuracy                           0.94     62151
+      macro avg       0.93      0.88      0.90     62151
+   weighted avg       0.94      0.94      0.94     62151
+
+2024-12-12 05:43:36,796 - PytorchModel - INFO - ==================================================
+2024-12-12 05:43:36,796 - PytorchModel - INFO - Starting training with params: {'lr': 0.001, 'batch_size': 32, 'epochs': 10, 'weight_decay': 0.02, 'hidden_dim': 756, 'embeddings_dim': 256, 'num_layers': 1, 'dropout': 0.2}
+2024-12-12 06:27:52,434 - PytorchModel - INFO - Model: PytorchModel
+2024-12-12 06:27:52,434 - PytorchModel - INFO - Hyperparameters: {'lr': 0.001, 'batch_size': 32, 'epochs': 10, 'weight_decay': 0.02, 'hidden_dim': 756, 'embeddings_dim': 256, 'num_layers': 1, 'dropout': 0.2}
+2024-12-12 06:27:52,434 - PytorchModel - INFO - Accuracy: 0.9483
+2024-12-12 06:27:52,434 - PytorchModel - INFO - Classification Report:
+2024-12-12 06:27:52,434 - PytorchModel - INFO -                  precision    recall  f1-score   support
+
+     Historical       0.97      0.98      0.98     34828
+        Tolkien       0.91      0.90      0.90      4457
+       Warcraft       0.97      0.90      0.93       413
+      Offensive       0.94      0.95      0.94      2819
+       StarWars       0.94      0.89      0.91      3376
+         Naruto       0.93      0.95      0.94       567
+    HarryPotter       0.91      0.87      0.89      2740
+      Mythology       0.87      0.92      0.90      6983
+  GameofThrones       0.94      0.93      0.93      3574
+   FinalFantasy       0.96      0.93      0.95       285
+      DoctorWho       0.94      0.87      0.91       623
+     TheWitcher       0.97      0.93      0.95       387
+ForgottenRealms       0.94      0.81      0.87       502
+     DragonBall       0.94      0.89      0.92       423
+      Discworld       0.96      0.91      0.94       174
+
+       accuracy                           0.95     62151
+      macro avg       0.94      0.91      0.92     62151
+   weighted avg       0.95      0.95      0.95     62151
+
+2024-12-12 06:27:52,434 - PytorchModel - INFO - ==================================================
+2024-12-12 06:27:52,434 - PytorchModel - INFO - Starting training with params: {'lr': 0.001, 'batch_size': 32, 'epochs': 10, 'weight_decay': 0.02, 'hidden_dim': 756, 'embeddings_dim': 256, 'num_layers': 1, 'dropout': 0.4}
+2024-12-12 07:11:29,367 - PytorchModel - INFO - Model: PytorchModel
+2024-12-12 07:11:29,367 - PytorchModel - INFO - Hyperparameters: {'lr': 0.001, 'batch_size': 32, 'epochs': 10, 'weight_decay': 0.02, 'hidden_dim': 756, 'embeddings_dim': 256, 'num_layers': 1, 'dropout': 0.4}
+2024-12-12 07:11:29,367 - PytorchModel - INFO - Accuracy: 0.9493
+2024-12-12 07:11:29,367 - PytorchModel - INFO - Classification Report:
+2024-12-12 07:11:29,367 - PytorchModel - INFO -                  precision    recall  f1-score   support
+
+     Historical       0.98      0.97      0.98     34828
+        Tolkien       0.89      0.91      0.90      4457
+       Warcraft       0.97      0.92      0.95       413
+      Offensive       0.94      0.94      0.94      2819
+       StarWars       0.91      0.92      0.92      3376
+         Naruto       0.97      0.95      0.96       567
+    HarryPotter       0.90      0.89      0.90      2740
+      Mythology       0.88      0.92      0.90      6983
+  GameofThrones       0.93      0.93      0.93      3574
+   FinalFantasy       0.91      0.95      0.93       285
+      DoctorWho       0.95      0.88      0.91       623
+     TheWitcher       0.96      0.95      0.95       387
+ForgottenRealms       0.88      0.86      0.87       502
+     DragonBall       0.93      0.90      0.92       423
+      Discworld       0.96      0.84      0.90       174
+
+       accuracy                           0.95     62151
+      macro avg       0.93      0.92      0.92     62151
+   weighted avg       0.95      0.95      0.95     62151
+
+2024-12-12 07:11:29,367 - PytorchModel - INFO - ==================================================
+2024-12-12 07:11:29,367 - PytorchModel - INFO - Starting training with params: {'lr': 0.001, 'batch_size': 64, 'epochs': 15, 'weight_decay': 0.0, 'hidden_dim': 512, 'embeddings_dim': 128, 'num_layers': 2, 'dropout': 0.3}
+2024-12-12 08:27:36,063 - PytorchModel - INFO - Model: PytorchModel
+2024-12-12 08:27:36,063 - PytorchModel - INFO - Hyperparameters: {'lr': 0.001, 'batch_size': 64, 'epochs': 15, 'weight_decay': 0.0, 'hidden_dim': 512, 'embeddings_dim': 128, 'num_layers': 2, 'dropout': 0.3}
+2024-12-12 08:27:36,063 - PytorchModel - INFO - Accuracy: 0.9520
+2024-12-12 08:27:36,063 - PytorchModel - INFO - Classification Report:
+2024-12-12 08:27:36,063 - PytorchModel - INFO -                  precision    recall  f1-score   support
+
+     Historical       0.98      0.97      0.98     34828
+        Tolkien       0.91      0.91      0.91      4457
+       Warcraft       0.94      0.94      0.94       413
+      Offensive       0.94      0.95      0.95      2819
+       StarWars       0.92      0.92      0.92      3376
+         Naruto       0.95      0.96      0.96       567
+    HarryPotter       0.90      0.90      0.90      2740
+      Mythology       0.89      0.93      0.91      6983
+  GameofThrones       0.94      0.93      0.94      3574
+   FinalFantasy       0.93      0.94      0.94       285
+      DoctorWho       0.94      0.89      0.91       623
+     TheWitcher       0.96      0.94      0.95       387
+ForgottenRealms       0.91      0.87      0.89       502
+     DragonBall       0.91      0.92      0.91       423
+      Discworld       0.96      0.92      0.94       174
+
+       accuracy                           0.95     62151
+      macro avg       0.93      0.93      0.93     62151
+   weighted avg       0.95      0.95      0.95     62151
+
+2024-12-12 08:27:36,063 - PytorchModel - INFO - ==================================================
+2024-12-12 08:27:36,063 - PytorchModel - INFO - Starting training with params: {'lr': 0.001, 'batch_size': 64, 'epochs': 15, 'weight_decay': 0.03, 'hidden_dim': 512, 'embeddings_dim': 128, 'num_layers': 2, 'dropout': 0.5}
+2024-12-12 09:42:56,305 - PytorchModel - INFO - Model: PytorchModel
+2024-12-12 09:42:56,305 - PytorchModel - INFO - Hyperparameters: {'lr': 0.001, 'batch_size': 64, 'epochs': 15, 'weight_decay': 0.03, 'hidden_dim': 512, 'embeddings_dim': 128, 'num_layers': 2, 'dropout': 0.5}
+2024-12-12 09:42:56,305 - PytorchModel - INFO - Accuracy: 0.9576
+2024-12-12 09:42:56,305 - PytorchModel - INFO - Classification Report:
+2024-12-12 09:42:56,305 - PytorchModel - INFO -                  precision    recall  f1-score   support
+
+     Historical       0.99      0.98      0.98     34828
+        Tolkien       0.91      0.92      0.92      4457
+       Warcraft       0.97      0.94      0.96       413
+      Offensive       0.94      0.96      0.95      2819
+       StarWars       0.91      0.94      0.93      3376
+         Naruto       0.94      0.98      0.96       567
+    HarryPotter       0.92      0.91      0.91      2740
+      Mythology       0.91      0.93      0.92      6983
+  GameofThrones       0.94      0.95      0.95      3574
+   FinalFantasy       0.95      0.96      0.96       285
+      DoctorWho       0.96      0.90      0.93       623
+     TheWitcher       0.95      0.96      0.96       387
+ForgottenRealms       0.93      0.88      0.90       502
+     DragonBall       0.91      0.94      0.92       423
+      Discworld       0.95      0.93      0.94       174
+
+       accuracy                           0.96     62151
+      macro avg       0.94      0.94      0.94     62151
+   weighted avg       0.96      0.96      0.96     62151
+
+2024-12-12 09:42:56,305 - PytorchModel - INFO - ==================================================
+2024-12-12 09:42:56,306 - PytorchModel - INFO - Starting training with params: {'lr': 0.001, 'batch_size': 64, 'epochs': 20, 'weight_decay': 0.03, 'hidden_dim': 756, 'embeddings_dim': 128, 'num_layers': 2, 'dropout': 0.5}
+2024-12-12 13:45:33,883 - PytorchModel - INFO - Model: PytorchModel
+2024-12-12 13:45:33,883 - PytorchModel - INFO - Hyperparameters: {'lr': 0.001, 'batch_size': 64, 'epochs': 20, 'weight_decay': 0.03, 'hidden_dim': 756, 'embeddings_dim': 128, 'num_layers': 2, 'dropout': 0.5}
+2024-12-12 13:45:33,883 - PytorchModel - INFO - Accuracy: 0.9596
+2024-12-12 13:45:33,883 - PytorchModel - INFO - Classification Report:
+2024-12-12 13:45:33,883 - PytorchModel - INFO -                  precision    recall  f1-score   support
+
+     Historical       0.99      0.98      0.98     34828
+        Tolkien       0.91      0.93      0.92      4457
+       Warcraft       0.98      0.95      0.96       413
+      Offensive       0.94      0.97      0.95      2819
+       StarWars       0.95      0.93      0.94      3376
+         Naruto       0.95      0.96      0.96       567
+    HarryPotter       0.91      0.91      0.91      2740
+      Mythology       0.91      0.94      0.92      6983
+  GameofThrones       0.95      0.95      0.95      3574
+   FinalFantasy       0.95      0.95      0.95       285
+      DoctorWho       0.95      0.89      0.92       623
+     TheWitcher       0.95      0.95      0.95       387
+ForgottenRealms       0.92      0.90      0.91       502
+     DragonBall       0.91      0.94      0.92       423
+      Discworld       0.95      0.92      0.94       174
+
+       accuracy                           0.96     62151
+      macro avg       0.94      0.94      0.94     62151
+   weighted avg       0.96      0.96      0.96     62151
+
+2024-12-12 13:45:33,883 - PytorchModel - INFO - ==================================================
+2024-12-12 13:45:33,883 - PytorchModel - INFO - Starting training with params: {'lr': 0.001, 'batch_size': 64, 'epochs': 20, 'weight_decay': 0.03, 'hidden_dim': 756, 'embeddings_dim': 128, 'num_layers': 3, 'dropout': 0.5}
+2024-12-12 20:46:38,682 - PytorchModel - INFO - Model: PytorchModel
+2024-12-12 20:46:38,688 - PytorchModel - INFO - Hyperparameters: {'lr': 0.001, 'batch_size': 64, 'epochs': 20, 'weight_decay': 0.03, 'hidden_dim': 756, 'embeddings_dim': 128, 'num_layers': 3, 'dropout': 0.5}
+2024-12-12 20:46:38,688 - PytorchModel - INFO - Accuracy: 0.9597
+2024-12-12 20:46:38,688 - PytorchModel - INFO - Classification Report:
+2024-12-12 20:46:38,688 - PytorchModel - INFO -                  precision    recall  f1-score   support
+
+     Historical       0.99      0.98      0.98     34828
+        Tolkien       0.91      0.94      0.92      4457
+       Warcraft       0.97      0.96      0.96       413
+      Offensive       0.95      0.95      0.95      2819
+       StarWars       0.94      0.93      0.93      3376
+         Naruto       0.95      0.98      0.96       567
+    HarryPotter       0.92      0.91      0.91      2740
+      Mythology       0.91      0.93      0.92      6983
+  GameofThrones       0.94      0.95      0.95      3574
+   FinalFantasy       0.96      0.95      0.96       285
+      DoctorWho       0.96      0.91      0.93       623
+     TheWitcher       0.93      0.96      0.94       387
+ForgottenRealms       0.90      0.89      0.89       502
+     DragonBall       0.90      0.94      0.92       423
+      Discworld       0.98      0.93      0.95       174
+
+       accuracy                           0.96     62151
+      macro avg       0.94      0.94      0.94     62151
+   weighted avg       0.96      0.96      0.96     62151
+
+2024-12-12 20:46:38,688 - PytorchModel - INFO - ==================================================
+2024-12-12 20:46:38,688 - PytorchModel - INFO - Starting training with params: {'lr': 0.005, 'batch_size': 128, 'epochs': 10, 'weight_decay': 0.03, 'hidden_dim': 756, 'dropout': 0.5, 'num_layers': 3}

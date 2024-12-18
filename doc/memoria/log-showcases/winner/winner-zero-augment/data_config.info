@@ -1,0 +1,57 @@
+*****************************************************
+* Data Processing Configuration
+*****************************************************
+path: dataset/preprocessing
+output_file: dataset.txt
+train_file: train.txt
+dev_file: dev.txt
+test_file: test.txt
+config_dump: data_config.info
+train_size: 0.8
+dev_size: 0.1
+test_size: 0.1
+unique_names: True
+augmentation:
+  enabled: False
+  only_basic_augmentation: False
+  intensity: 3
+  swap_characters: {'enabled': True, 'pct_words_to_swap': 0.6, 'transformations_per_example': {'min': 1, 'max': 5}}
+  insert_characters: {'enabled': True, 'pct_words_to_swap': 0.6, 'transformations_per_example': {'min': 1, 'max': 5}}
+  delete_characters: {'enabled': True, 'pct_words_to_swap': 0.6, 'transformations_per_example': {'min': 1, 'max': 4}}
+  duplicate_characters: {'enabled': True, 'pct_words_to_swap': 0.6, 'transformations_per_example': 3}
+  split_names: {'enabled': True, 'join_parts': True}
+  label_exclusion: {'enabled': False, 'excluded_labels': []}
+  internal_swap: {'enabled': True, 'swap_probability': 0.7}
+labels: ['HarryPotter', 'StarWars', 'Tolkien', 'Warcraft', 'DragonBall', 'Naruto', 'ForgottenRealms', 'FinalFantasy', 'GameofThrones', 'TheWitcher', 'DoctorWho', 'Discworld', 'Mythology', 'Offensive', 'Historical']
+
+Datasets:
+  - Wikidata:
+      name: Wikidata
+      path: wikidata
+      input_folder: raw_data
+      output_folder: processed_data
+      labels_folder: labels
+      labels_file: labels.txt
+      historical_file: extremely_relevant_figures2.txt
+      dataset_file: wikidata-universes.csv
+      output_file: wikidata_dataset_FastText.txt
+  - Mythdata:
+      name: Mythdata
+      path: mythology
+      input_folder: raw_data
+      output_folder: processed_data
+      dataset_file: myth_dataset.csv
+      output_file: myth_dataset.txt
+  - NERdata:
+      name: NERdata
+      path: ner
+      input_folder: raw_data
+      output_folder: processed_data
+      output_file: ner_dataset.txt
+  - Slurs:
+      name: Slurs
+      path: slurs
+      input_folder: raw_data
+      output_folder: processed_data
+      dataset_file: profanity.csv
+      output_file: slurs.txt

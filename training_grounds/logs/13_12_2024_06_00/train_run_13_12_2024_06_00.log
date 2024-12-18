@@ -1,0 +1,183 @@
+*****************************************************
+* Dataset Sizes
+*****************************************************
+Training samples: 497252
+Validation samples: 62151
+*****************************************************
+* Best Results
+*****************************************************
+Best validation accuracy: 0.9485
+Best Epoch: 10
+Best training loss: 0.1260
+Best validation loss: 0.1589
+
+*****************************************************
+* Hyperparameters
+*****************************************************
+lr: 0.001
+batch_size: 32
+epochs: 10
+weight_decay: 0.02
+hidden_dim: 192
+embedding_dim: 96
+num_layers: 2
+dropout: 0.3
+
+*****************************************************
+* Best Classification Report
+*****************************************************
+Classification Report for Epoch 10:
+                 precision    recall  f1-score   support
+
+     Historical       0.98      0.97      0.98     34828
+        Tolkien       0.89      0.92      0.90      4457
+       Warcraft       0.96      0.91      0.93       413
+      Offensive       0.94      0.95      0.94      2819
+       StarWars       0.93      0.91      0.92      3376
+         Naruto       0.94      0.92      0.93       567
+    HarryPotter       0.91      0.88      0.90      2740
+      Mythology       0.86      0.94      0.90      6983
+  GameofThrones       0.94      0.92      0.93      3574
+   FinalFantasy       0.97      0.92      0.94       285
+      DoctorWho       0.92      0.90      0.91       623
+     TheWitcher       0.96      0.95      0.95       387
+ForgottenRealms       0.90      0.84      0.87       502
+     DragonBall       0.89      0.90      0.89       423
+      Discworld       0.99      0.87      0.92       174
+
+       accuracy                           0.95     62151
+      macro avg       0.93      0.91      0.92     62151
+   weighted avg       0.95      0.95      0.95     62151
+
+
+*****************************************************
+* SK Learn Accuracy score
+*****************************************************
+Best score: 0.9485
+
+
+*****************************************************
+* Data Configuration
+*****************************************************
+*****************************************************
+* Data Processing Configuration
+*****************************************************
+path: dataset/preprocessing
+output_file: dataset.txt
+train_file: train.txt
+dev_file: dev.txt
+test_file: test.txt
+config_dump: data_config.info
+train_size: 0.8
+dev_size: 0.1
+test_size: 0.1
+unique_names: True
+augmentation:
+  enabled: True
+  only_basic_augmentation: False
+  intensity: 2
+  swap_characters: {'enabled': True, 'pct_words_to_swap': 0.5, 'transformations_per_example': {'min': 1, 'max': 4}}
+  insert_characters: {'enabled': True, 'pct_words_to_swap': 0.6, 'transformations_per_example': {'min': 1, 'max': 4}}
+  delete_characters: {'enabled': True, 'pct_words_to_swap': 0.5, 'transformations_per_example': {'min': 1, 'max': 3}}
+  duplicate_characters: {'enabled': True, 'pct_words_to_swap': 0.4, 'transformations_per_example': 2}
+  split_names: {'enabled': True, 'join_parts': True}
+  label_exclusion: {'enabled': False, 'excluded_labels': []}
+  internal_swap: {'enabled': True, 'swap_probability': 0.5}
+labels: ['HarryPotter', 'StarWars', 'Tolkien', 'Warcraft', 'DragonBall', 'Naruto', 'ForgottenRealms', 'FinalFantasy', 'GameofThrones', 'TheWitcher', 'DoctorWho', 'Discworld', 'Mythology', 'Offensive', 'Historical']
+
+Datasets:
+  - Wikidata:
+      name: Wikidata
+      path: wikidata
+      input_folder: raw_data
+      output_folder: processed_data
+      labels_folder: labels
+      labels_file: labels.txt
+      historical_file: extremely_relevant_figures2.txt
+      dataset_file: wikidata-universes.csv
+      output_file: wikidata_dataset_FastText.txt
+  - Mythdata:
+      name: Mythdata
+      path: mythology
+      input_folder: raw_data
+      output_folder: processed_data
+      dataset_file: myth_dataset.csv
+      output_file: myth_dataset.txt
+  - NERdata:
+      name: NERdata
+      path: ner
+      input_folder: raw_data
+      output_folder: processed_data
+      output_file: ner_dataset.txt
+  - Slurs:
+      name: Slurs
+      path: slurs
+      input_folder: raw_data
+      output_folder: processed_data
+      dataset_file: profanity.csv
+      output_file: slurs.txt
+
+
+*****************************************************
+* Epoch Output
+*****************************************************
+Epoch 1:
+  Training Loss: 0.5954
+  Validation Loss: 0.3597
+  Validation Accuracy: 0.8815
+  Learning Rate: 0.001000
+
+Epoch 2:
+  Training Loss: 0.3386
+  Validation Loss: 0.2784
+  Validation Accuracy: 0.9071
+  Learning Rate: 0.001000
+
+Epoch 3:
+  Training Loss: 0.2754
+  Validation Loss: 0.2546
+  Validation Accuracy: 0.9147
+  Learning Rate: 0.001000
+
+Epoch 4:
+  Training Loss: 0.2451
+  Validation Loss: 0.2253
+  Validation Accuracy: 0.9265
+  Learning Rate: 0.001000
+
+Epoch 5:
+  Training Loss: 0.2262
+  Validation Loss: 0.2175
+  Validation Accuracy: 0.9289
+  Learning Rate: 0.000500
+
+Epoch 6:
+  Training Loss: 0.1581
+  Validation Loss: 0.1664
+  Validation Accuracy: 0.9450
+  Learning Rate: 0.000500
+
+Epoch 7:
+  Training Loss: 0.1406
+  Validation Loss: 0.1602
+  Validation Accuracy: 0.9475
+  Learning Rate: 0.000500
+
+Epoch 8:
+  Training Loss: 0.1335
+  Validation Loss: 0.1598
+  Validation Accuracy: 0.9481
+  Learning Rate: 0.000500
+
+Epoch 9:
+  Training Loss: 0.1290
+  Validation Loss: 0.1605
+  Validation Accuracy: 0.9480
+  Learning Rate: 0.000500
+
+Epoch 10:
+  Training Loss: 0.1260
+  Validation Loss: 0.1589
+  Validation Accuracy: 0.9485
+  Learning Rate: 0.000250
+

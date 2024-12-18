@@ -1,0 +1,116 @@
+{
+    "datasets": [
+        {
+            "name": "Wikidata",
+            "path": "wikidata",
+            "input_folder": "raw_data",
+            "output_folder": "processed_data",
+            "labels_folder": "labels",
+            "labels_file": "labels.txt",
+            "historical_file": "extremely_relevant_figures2.txt",
+            "dataset_file": "wikidata-universes.csv",
+            "output_file": "wikidata_dataset_FastText.txt"
+        },
+        {
+            "name": "Mythdata",
+            "path": "mythology",
+            "input_folder": "raw_data",
+            "output_folder": "processed_data",
+            "dataset_file": "myth_dataset.csv",
+            "output_file": "myth_dataset.txt"
+        },
+        {
+            "name": "NERdata",
+            "path": "ner",
+            "input_folder": "raw_data",
+            "output_folder": "processed_data",
+            "output_file": "ner_dataset.txt"
+        },
+        {
+            "name": "Slurs",
+            "path": "slurs",
+            "input_folder": "raw_data",
+            "output_folder": "processed_data",
+            "dataset_file": "profanity.csv",
+            "output_file": "slurs.txt"
+        }
+    ],
+
+    "data_processor": {
+        "path": "dataset/preprocessing",
+        "output_file": "dataset.txt",
+        "train_file": "train.txt",
+        "dev_file": "dev.txt",
+        "test_file": "test.txt",
+        "config_dump": "data_config.info",
+        "train_size": 0.8,
+        "dev_size": 0.1,
+        "test_size": 0.1,
+        "unique_names": true,
+        "augmentation": {
+            "enabled": true,
+            "only_basic_augmentation": false,
+            "intensity": 5,
+            "swap_characters": {
+                "enabled": true,
+                "pct_words_to_swap": 0.6,
+                "transformations_per_example": {
+                    "min": 1,
+                    "max": 3
+                }
+            },
+            "insert_characters": {
+                "enabled": true,
+                "pct_words_to_swap": 0.6,
+                "transformations_per_example": {
+                    "min": 1,
+                    "max": 3
+                }
+            },
+            "delete_characters": {
+                "enabled": true,
+                "pct_words_to_swap": 0.6,
+                "transformations_per_example": {
+                    "min": 1,
+                    "max": 3
+                }
+            },
+            "duplicate_characters": {
+                "enabled": true,
+                "pct_words_to_swap": 0.6,
+                "transformations_per_example": 2
+            },
+            "split_names": {
+                "enabled": true,
+                "join_parts": true
+            },
+            "label_exclusion": {
+                "enabled": false,
+                "excluded_labels": [
+
+                ]
+            },
+            "internal_swap": {
+                "enabled": true,
+                "swap_probability": 0.7
+            }
+        },
+        "labels": [
+            "HarryPotter",
+            "StarWars",
+            "Tolkien",
+            "Warcraft",
+            "DragonBall",
+            "Naruto",
+            "ForgottenRealms",
+            "FinalFantasy",
+            "GameofThrones",
+            "TheWitcher",
+            "DoctorWho",
+            "Discworld",
+            "Mythology",
+            "Offensive",
+            "Historical"
+        ]
+    }
+}

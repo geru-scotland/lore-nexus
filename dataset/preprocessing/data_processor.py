@@ -88,6 +88,8 @@ class DataProcessor:
                 self.config = config
 
                 self.augmentation_intensity = config["intensity"]
+                self.only_basic_augmentation = config["only_basic_augmentation"]
+                self.excluded_labels = []
 
                 self.swap_augmenter = self._create_augmenter(
                     "swap_characters", WordSwapNeighboringCharacterSwap()
@@ -108,6 +110,10 @@ class DataProcessor:
                 self.join_parts = config["split_names"].get("join_parts", False)
                 self.label_exclusion_enabled = config["label_exclusion"]["enabled"]
                 self.excluded_labels = config["label_exclusion"].get("excluded_labels", [])
+
+                if self.label_exclusion_enabled:
+                    for excluded_label in self.excluded_labels:
+                        self.excluded_labels.append(f"__label__{excluded_label}")
 
             def _create_augmenter(self, key, transformation):
                 if self.config[key]["enabled"]:
@@ -155,14 +161,26 @@ class DataProcessor:
                         name_no_spaces = "".join(name.split())
                         augmented_data.append(f"{label} {name_no_spaces}")
 
+                    # Y ahora, si el nombre tiene más de una palabra, la agrego
+                    # como instancia también, CREO que puede ayudar.
+                    if self.config.split_names_enabled:
+                        name_parts = name.split()
+                        if len(name_parts) > 1:
+                            for part in name_parts:
+                                augmented_data.append(f"{label} {part}")
+
                     # Modifico esto para exluir más lables, desde el config fácilmente
                     if self.config.label_exclusion_enabled:
-                        excluded_labels = []
-                        for excluded_label in self.config.excluded_labels:
-                            excluded_labels.append(f"__label__{excluded_label}")
-
-                        if label in excluded_labels:
+                        if label in self.config.excluded_labels:
                             continue
+
+                    # Nueva feature, solo basic augmentation para probar a
+                    # estratificar - dev con basic y train con intensa
+                    if self.config.only_basic_augmentation:
+                        continue
+
+                    phonetic_substitution = self._phonetic_substitution(name)
+                    augmented_data.append(f"{label} {phonetic_substitution.lower()}")
 
                     # TODO: Ahora que puedo ajustar intensidad desde config,
                     #  quizá hacer por peso de labels en base a frecuencias como he hecho en train?
@@ -170,36 +188,32 @@ class DataProcessor:
                         # swap de chars internos, sin tocar el primero y último
                         if self.config.internal_swap_enabled:
                             internal_swap_name = self._internal_swap(name)
-                            augmented_data.append(f"{label} {internal_swap_name}")
+                            augmented_data.append(f"{label} {internal_swap_name.lower()}")
 
                         # duplico aleatoriamente un char, para casos como Jon Snow -> Jonn Snow
                         if self.config.duplicate_char_augmenter:
                             duplicated_char_names = self.config.duplicate_char_augmenter.augment(name)
-                            augmented_data.extend([f"{label} {dup_name}" for dup_name in duplicated_char_names])
-
-
-                        # Y ahora, si el nombre tiene más de una palabra, la agrego
-                        # como instancia también, CREO que puede ayudar.
-                        if self.config.split_names_enabled:
-                            name_parts = name.split()
-                            if len(name_parts) > 1:
-                                for part in name_parts:
-                                    augmented_data.append(f"{label} {part}")
+                            augmented_data.extend([f"{label} {dup_name.lower()}" for dup_name in duplicated_char_names])
 
                         # Esto es de textattack, creo que será buena idea... veamos.
                         if self.config.swap_augmenter:
                             swapped_names = self.config.swap_augmenter.augment(name)
-                            augmented_data.extend([f"{label} {aug_name}" for aug_name in swapped_names])
+                            augmented_data.extend([f"{label} {aug_name.lower()}" for aug_name in swapped_names])
 
                         if self.config.insert_augmenter:
                             insertions_names = self.config.insert_augmenter.augment(name)
-                            augmented_data.extend([f"{label} {aug_name}" for aug_name in insertions_names])
+                            augmented_data.extend([f"{label} {aug_name.lower()}" for aug_name in insertions_names])
 
                         if self.config.delete_augmenter:
                             deletions_names = self.config.delete_augmenter.augment(name)
-                            augmented_data.extend([f"{label} {aug_name}" for aug_name in deletions_names])
+                            augmented_data.extend([f"{label} {aug_name.lower()}" for aug_name in deletions_names])
 
             return augmented_data
+
+        def _phonetic_substitution(self, param):
+            name = param.replace("oo", "u")
+            name = name.replace("ee", "i")
+            return name
 
         def _internal_swap(self, name):
             name_chars = list(name)

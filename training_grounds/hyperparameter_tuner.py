@@ -40,7 +40,7 @@ class HyperparameterTuner:
 
         def run(self, output_path):
             self.logger.info(f"Starting training with params: {self.params}")
-            self.model.train(output_path=output_path, save_model=False, log_results=False, **self.params)
+            self.model.train(output_path=output_path, save_model=False, log_results=True, **self.params)
             self.result = self.model.evaluate()
             return self.result
 
@@ -166,8 +166,7 @@ if __name__ == "__main__":
         "--model",
         type=str,
         choices=["pytorch", "flair"],
-        required=True,
-        help="Select the model to load: 'pytorch' or 'flair'"
+        help="Select the model to load: 'pytorch' or 'flair'",
     )
     args = parser.parse_args()
 

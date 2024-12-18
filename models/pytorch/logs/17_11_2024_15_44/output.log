@@ -1,0 +1,114 @@
+❯ python3 model.py
+Label indexes: dict_keys([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
+Label strings: dict_values(['StarWars', 'HarryPotter', 'Offensive', 'Tolkien', 'GameofThrones', 'TheWitcher', 'ForgottenRealms', 'DragonBall', 'Discworld', 'Mythology', 'Naruto', 'DoctorWho', 'FinalFantasy', 'Warcraft'])
+Label counts: Counter({3: 38172, 0: 35942, 4: 33080, 1: 26903, 2: 23806, 9: 6508, 10: 5803, 11: 5770, 7: 4766, 6: 4220, 5: 4162, 13: 3674, 12: 2842, 8: 1827})
+Class weights: tensor([  5.4943,   7.3403,   8.2952,   5.1733,   5.9696,  47.4471,  46.7950,
+         41.4341, 108.0870,  30.3434,  34.0298,  34.2244,  69.4845,  53.7493],
+       device='cuda:0')
+Epoch 1/30 - Training Loss: 0.7044
+Epoch 1/30 - Validation Loss: 0.3676, Validation Accuracy: 0.8805
+Epoch 1/30 - Learning rate adjusted to: 0.001000
+Model saved with the best validation accuracy: 0.8805
+Epoch 2/30 - Training Loss: 0.3534
+Epoch 2/30 - Validation Loss: 0.2939, Validation Accuracy: 0.9059
+Epoch 2/30 - Learning rate adjusted to: 0.001000
+Model saved with the best validation accuracy: 0.9059
+Epoch 3/30 - Training Loss: 0.2903
+Epoch 3/30 - Validation Loss: 0.2640, Validation Accuracy: 0.9155
+Epoch 3/30 - Learning rate adjusted to: 0.001000
+Model saved with the best validation accuracy: 0.9155
+Epoch 4/30 - Training Loss: 0.2557
+Epoch 4/30 - Validation Loss: 0.2570, Validation Accuracy: 0.9190
+Epoch 4/30 - Learning rate adjusted to: 0.001000
+Model saved with the best validation accuracy: 0.9190
+Epoch 5/30 - Training Loss: 0.2367
+Epoch 5/30 - Validation Loss: 0.2273, Validation Accuracy: 0.9291
+Epoch 5/30 - Learning rate adjusted to: 0.000500
+Model saved with the best validation accuracy: 0.9291
+Epoch 6/30 - Training Loss: 0.1540
+Epoch 6/30 - Validation Loss: 0.1677, Validation Accuracy: 0.9461
+Epoch 6/30 - Learning rate adjusted to: 0.000500
+Model saved with the best validation accuracy: 0.9461
+Epoch 7/30 - Training Loss: 0.1331
+Epoch 7/30 - Validation Loss: 0.1698, Validation Accuracy: 0.9435
+Epoch 7/30 - Learning rate adjusted to: 0.000500
+Epoch 8/30 - Training Loss: 0.1288
+Epoch 8/30 - Validation Loss: 0.1613, Validation Accuracy: 0.9481
+Epoch 8/30 - Learning rate adjusted to: 0.000500
+Model saved with the best validation accuracy: 0.9481
+Epoch 9/30 - Training Loss: 0.1229
+Epoch 9/30 - Validation Loss: 0.1581, Validation Accuracy: 0.9488
+Epoch 9/30 - Learning rate adjusted to: 0.000500
+Model saved with the best validation accuracy: 0.9488
+Epoch 10/30 - Training Loss: 0.1208
+Epoch 10/30 - Validation Loss: 0.1538, Validation Accuracy: 0.9505
+Epoch 10/30 - Learning rate adjusted to: 0.000250
+Model saved with the best validation accuracy: 0.9505
+Epoch 11/30 - Training Loss: 0.0916
+Epoch 11/30 - Validation Loss: 0.1372, Validation Accuracy: 0.9549
+Epoch 11/30 - Learning rate adjusted to: 0.000250
+Model saved with the best validation accuracy: 0.9549
+Epoch 12/30 - Training Loss: 0.0859
+Epoch 12/30 - Validation Loss: 0.1348, Validation Accuracy: 0.9562
+Epoch 12/30 - Learning rate adjusted to: 0.000250
+Model saved with the best validation accuracy: 0.9562
+Epoch 13/30 - Training Loss: 0.0838
+Epoch 13/30 - Validation Loss: 0.1327, Validation Accuracy: 0.9551
+Epoch 13/30 - Learning rate adjusted to: 0.000250
+Epoch 14/30 - Training Loss: 0.0827
+Epoch 14/30 - Validation Loss: 0.1334, Validation Accuracy: 0.9552
+Epoch 14/30 - Learning rate adjusted to: 0.000250
+Epoch 15/30 - Training Loss: 0.0815
+Epoch 15/30 - Validation Loss: 0.1381, Validation Accuracy: 0.9543
+Epoch 15/30 - Learning rate adjusted to: 0.000125
+Epoch 16/30 - Training Loss: 0.0696
+Epoch 16/30 - Validation Loss: 0.1251, Validation Accuracy: 0.9579
+Epoch 16/30 - Learning rate adjusted to: 0.000125
+Model saved with the best validation accuracy: 0.9579
+Epoch 17/30 - Training Loss: 0.0672
+Epoch 17/30 - Validation Loss: 0.1269, Validation Accuracy: 0.9561
+Epoch 17/30 - Learning rate adjusted to: 0.000125
+Epoch 18/30 - Training Loss: 0.0665
+Epoch 18/30 - Validation Loss: 0.1251, Validation Accuracy: 0.9571
+Epoch 18/30 - Learning rate adjusted to: 0.000125
+Epoch 19/30 - Training Loss: 0.0657
+Epoch 19/30 - Validation Loss: 0.1248, Validation Accuracy: 0.9577
+Epoch 19/30 - Learning rate adjusted to: 0.000125
+Epoch 20/30 - Training Loss: 0.0655
+Epoch 20/30 - Validation Loss: 0.1317, Validation Accuracy: 0.9568
+Epoch 20/30 - Learning rate adjusted to: 0.000063
+Epoch 21/30 - Training Loss: 0.0591
+Epoch 21/30 - Validation Loss: 0.1230, Validation Accuracy: 0.9582
+Epoch 21/30 - Learning rate adjusted to: 0.000063
+Model saved with the best validation accuracy: 0.9582
+Epoch 22/30 - Training Loss: 0.0585
+Epoch 22/30 - Validation Loss: 0.1218, Validation Accuracy: 0.9581
+Epoch 22/30 - Learning rate adjusted to: 0.000063
+Epoch 23/30 - Training Loss: 0.0578
+Epoch 23/30 - Validation Loss: 0.1234, Validation Accuracy: 0.9568
+Epoch 23/30 - Learning rate adjusted to: 0.000063
+Epoch 24/30 - Training Loss: 0.0576
+Epoch 24/30 - Validation Loss: 0.1240, Validation Accuracy: 0.9575
+Epoch 24/30 - Learning rate adjusted to: 0.000063
+Epoch 25/30 - Training Loss: 0.0572
+Epoch 25/30 - Validation Loss: 0.1235, Validation Accuracy: 0.9581
+Epoch 25/30 - Learning rate adjusted to: 0.000031
+Epoch 26/30 - Training Loss: 0.0543
+Epoch 26/30 - Validation Loss: 0.1225, Validation Accuracy: 0.9585
+Epoch 26/30 - Learning rate adjusted to: 0.000031
+Model saved with the best validation accuracy: 0.9585
+Epoch 27/30 - Training Loss: 0.0534
+Epoch 27/30 - Validation Loss: 0.1246, Validation Accuracy: 0.9579
+Epoch 27/30 - Learning rate adjusted to: 0.000031
+Epoch 28/30 - Training Loss: 0.0533
+Epoch 28/30 - Validation Loss: 0.1248, Validation Accuracy: 0.9585
+Epoch 28/30 - Learning rate adjusted to: 0.000031
+Model saved with the best validation accuracy: 0.9585
+Epoch 29/30 - Training Loss: 0.0532
+Epoch 29/30 - Validation Loss: 0.1249, Validation Accuracy: 0.9579
+Epoch 29/30 - Learning rate adjusted to: 0.000031
+Epoch 30/30 - Training Loss: 0.0532
+Epoch 30/30 - Validation Loss: 0.1254, Validation Accuracy: 0.9579
+Epoch 30/30 - Learning rate adjusted to: 0.000016
+Metrics file stored as 'logs/17_11_2024_15_44/train_run_17_11_2024_15_44.png'
+Configuration and results file saved as: logs/17_11_2024_15_44/train_run_17_11_2024_15_44.log

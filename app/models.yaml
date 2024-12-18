@@ -1,0 +1,5 @@
+models:
+  flair:
+    checkpoint: "../resources/taggers/universe_classifier/best-model.pt"
+  pytorch:
+    checkpoint: "LoreNexusPytorch_v1.0.pth"

@@ -51,7 +51,7 @@ class EntityCorpusBuilder:
                         if entity.label_ in ["LOC", "GPE"]:
                             # solo letras
                             # TODO: utilizar unicodedata para normalizar mejor
-                            clean_text = self.normalizer.normalize().replace(" ", "")
+                            clean_text = self.normalizer.normalize(entity.text).replace(" ", "")
                             if clean_text != entity.text:
                                 clean_text = clean_text.replace(" ", "")
                             if clean_text and len(clean_text) > 3:

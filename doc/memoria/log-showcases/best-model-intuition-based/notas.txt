@@ -1,0 +1,6 @@
+Label indexes: dict_keys([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])
+Label strings: dict_values(['GameofThrones', 'Historical', 'DoctorWho', 'Mythology', 'Offensive', 'Tolkien', 'Warcraft', 'FinalFantasy', 'StarWars', 'HarryPotter', 'TheWitcher', 'DragonBall', 'Naruto', 'ForgottenRealms', 'Discworld'])
+Label counts: Counter({1: 503269, 3: 95872, 5: 63185, 0: 50464, 8: 46136, 4: 39972, 9: 37961, 2: 8644, 12: 7713, 13: 7047, 6: 5824, 11: 5520, 10: 5377, 7: 3917, 14: 2440})
+Class weights: tensor([ 17.5044,   1.7552, 102.1912,   9.2138,  22.0990,  13.9802, 151.6726,
+        225.5147,  19.1465,  23.2697, 164.2814, 160.0255, 114.5263, 125.3499,
+        362.0250], device='cuda:0')

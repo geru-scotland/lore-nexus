@@ -1,0 +1,6 @@
+Sin nombres únicos, después de hablar con Oier.
+
+Ha subido la varianza.
+
+En el siguiente, pruebo con train fully augmented y dev con basic augmentations (nombres múltiples sin espacios, instancias por cada palabra...etc)
+Pero OJO, que tenias mayúsculas después de utilizar textattack, ahora tienes con lower() todo en minus.

@@ -1,0 +1,109 @@
+*****************************************************
+* Best Results
+*****************************************************
+Best validation accuracy: 0.7114
+Best Epoch: 2
+Best training loss: 0.6406
+Best validation loss: 0.6264
+
+*****************************************************
+* Hyperparameters
+*****************************************************
+lr: 0.001
+batch_size: 32
+epochs: 2
+weight_decay: 0.01
+hidden_dim: 256
+embedding_dim: 128
+num_layers: 1
+dropout: 0
+
+*****************************************************
+* Best Classification Report
+*****************************************************
+Classification Report for Epoch 2:
+                 precision    recall  f1-score   support
+
+        Tolkien       1.00      1.00      1.00      3286
+    HarryPotter       1.00      1.00      1.00      2452
+         Naruto       1.00      1.00      1.00       526
+       StarWars       1.00      1.00      1.00      3297
+  GameofThrones       1.00      1.00      1.00      2885
+      Mythology       1.00      1.00      1.00       610
+       Warcraft       1.00      1.00      1.00       323
+      DoctorWho       1.00      1.00      1.00       534
+ForgottenRealms       1.00      1.00      1.00       376
+     TheWitcher       1.00      1.00      1.00       377
+     DragonBall       1.00      1.00      1.00       422
+      Offensive       1.00      1.00      1.00       239
+      Discworld       1.00      1.00      1.00       167
+   FinalFantasy       1.00      1.00      1.00       261
+
+       accuracy                           1.00     15755
+      macro avg       1.00      1.00      1.00     15755
+   weighted avg       1.00      1.00      1.00     15755
+
+
+*****************************************************
+* SK Learn Accuracy score
+*****************************************************
+Best score: 1.0000
+
+
+*****************************************************
+* Data Configuration
+*****************************************************
+*****************************************************
+* Data Processing Configuration
+*****************************************************
+path: dataset/preprocessing
+output_file: dataset.txt
+train_file: train.txt
+dev_file: dev.txt
+test_file: test.txt
+config_dump: data_config.info
+train_size: 0.85
+dev_size: 0.15
+test_size: 0
+augmentation:
+  enabled: True
+  swap_characters: {'enabled': True, 'pct_words_to_swap': 0.4, 'transformations_per_example': {'min': 1, 'max': 3}}
+  insert_characters: {'enabled': True, 'pct_words_to_swap': 0.4, 'transformations_per_example': {'min': 1, 'max': 3}}
+  delete_characters: {'enabled': True, 'pct_words_to_swap': 0.4, 'transformations_per_example': {'min': 1, 'max': 3}}
+  duplicate_characters: {'enabled': True, 'pct_words_to_swap': 0.2, 'transformations_per_example': 1}
+  split_names: {'enabled': True, 'join_parts': True}
+  label_exclusion: {'enabled': True, 'excluded_labels': ['Mythology', 'Offensive']}
+  internal_swap: {'enabled': True, 'swap_probability': 0.5}
+labels: ['HarryPotter', 'StarWars', 'Tolkien', 'Warcraft', 'DragonBall', 'Naruto', 'ForgottenRealms', 'FinalFantasy', 'GameofThrones', 'TheWitcher', 'DoctorWho', 'Discworld', 'Mythology', 'Offensive']
+
+Datasets:
+  - Wikidata:
+      name: Wikidata
+      path: wikidata
+      input_folder: raw_data
+      output_folder: processed_data
+      labels_folder: labels
+      labels_file: labels.txt
+      dataset_file: wikidata-universes.csv
+      output_file: wikidata_dataset_FastText.txt
+  - Mythdata:
+      name: Mythdata
+      path: mythology
+      input_folder: raw_data
+      output_folder: processed_data
+      dataset_file: myth_dataset.csv
+      output_file: myth_dataset.txt
+  - NERdata:
+      name: NERdata
+      path: ner
+      input_folder: raw_data
+      output_folder: processed_data
+      output_file: ner_dataset.txt
+  - Slurs:
+      name: Slurs
+      path: slurs
+      input_folder: raw_data
+      output_folder: processed_data
+      dataset_file: profanity.csv
+      output_file: slurs.txt
+

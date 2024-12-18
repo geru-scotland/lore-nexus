@@ -18,11 +18,14 @@ from datetime import datetime
 import torch
 import matplotlib.pyplot as plt
 import seaborn as sns
+import numpy as np
 
 from paths import DATA_OUTPUT_DIR
 
 
 class LoreNexusWrapper(ABC):
+    """
+    """
     def __init__(self, mode="train", config_info_dump="data_config.info"):
         """
         """
@@ -79,8 +82,7 @@ class LoreNexusWrapper(ABC):
         """
         pass
 
-    # Esto de logger, fuera. Tiene que ir en la clase base LoreNexusWrapper
-    def _plot_and_log_results(self, epoch_stats, epochs, total_train_samples, total_dev_samples, train_losses, validation_losses, hyperparams, best_results):
+    def _plot_and_log_results(self, epoch_stats, epochs, total_train_samples, total_dev_samples, train_losses, validation_losses, hyperparams, best_results, conf_matrix = None):
         sns.set(style="whitegrid", palette="muted")
         epochs_range = list(range(1, epochs + 1))
 
@@ -110,6 +112,19 @@ class LoreNexusWrapper(ABC):
         plt.savefig(filename)
 
         print(f"Metrics file stored as '{filename}'")
+
+        cm_filename = None
+        if conf_matrix is not None:
+            plt.figure(figsize=(10, 7))
+            sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues')
+            plt.title('Best Confusion Matrix')
+            plt.xlabel('Predicted Labels')
+            plt.ylabel('True Labels')
+            plt.tight_layout()
+
+            cm_filename = os.path.join(log_dir, f"conf_matrix_{timestamp}.png")
+            plt.savefig(cm_filename)
+            print(f"Confusion matrix figure saved as {cm_filename}")
 
         info_file_path = filename.replace(".png", ".log")
 
@@ -161,6 +176,13 @@ class LoreNexusWrapper(ABC):
                 f.write(f"  Validation Accuracy: {epoch_stat['val_accuracy']:.4f}\n")
                 f.write(f"  Learning Rate: {epoch_stat['learning_rate']:.6f}\n")
                 f.write("\n")
+
+            if conf_matrix is not None:
+                f.write("*****************************************************\n")
+                f.write("* Confusion Matrix\n")
+                f.write("*****************************************************\n")
+                cm_str = np.array2string(conf_matrix, separator=', ')
+                f.write(f"{cm_str}\n")
 
         print(f"Configuration and results file saved as: {info_file_path}")
 
