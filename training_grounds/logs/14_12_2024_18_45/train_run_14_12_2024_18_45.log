@@ -1,0 +1,246 @@
+*****************************************************
+* Dataset Sizes
+*****************************************************
+Training samples: 402069
+Validation samples: 50252
+*****************************************************
+* Best Results
+*****************************************************
+Best validation accuracy: 0.8498
+Best Epoch: 15
+Best training loss: 0.2839
+Best validation loss: 0.4194
+
+*****************************************************
+* Hyperparameters
+*****************************************************
+lr: 0.001
+batch_size: 32
+epochs: 15
+weight_decay: 0.03
+hidden_dim: 128
+embedding_dim: 32
+num_layers: 1
+dropout: 0.5
+
+*****************************************************
+* Best Classification Report
+*****************************************************
+Classification Report for Epoch 15:
+                 precision    recall  f1-score   support
+
+      Mythology       0.70      0.77      0.73      5546
+     Historical       0.99      0.86      0.92     28527
+       StarWars       0.69      0.84      0.76      2674
+  GameofThrones       0.83      0.85      0.84      2829
+      DoctorWho       0.65      0.89      0.75       505
+     DragonBall       0.53      0.93      0.68       323
+     TheWitcher       0.60      0.94      0.73       307
+        Tolkien       0.76      0.82      0.79      3551
+      Offensive       0.80      0.91      0.85      2261
+    HarryPotter       0.71      0.85      0.77      2173
+       Warcraft       0.66      0.92      0.77       332
+         Naruto       0.63      0.93      0.75       448
+ForgottenRealms       0.47      0.85      0.61       407
+      Discworld       0.50      0.90      0.64       140
+   FinalFantasy       0.76      0.91      0.83       229
+
+       accuracy                           0.85     50252
+      macro avg       0.68      0.88      0.76     50252
+   weighted avg       0.87      0.85      0.86     50252
+
+
+*****************************************************
+* SK Learn Accuracy score
+*****************************************************
+Best score: 0.8498
+
+
+*****************************************************
+* Data Configuration
+*****************************************************
+*****************************************************
+* Data Processing Configuration
+*****************************************************
+path: dataset/preprocessing
+output_file: dataset.txt
+train_file: train.txt
+dev_file: dev.txt
+test_file: test.txt
+config_dump: data_config.info
+train_size: 0.8
+dev_size: 0.1
+test_size: 0.1
+unique_names: True
+augmentation:
+  enabled: True
+  only_basic_augmentation: False
+  intensity: 2
+  swap_characters: {'enabled': True, 'pct_words_to_swap': 0.6, 'transformations_per_example': {'min': 1, 'max': 3}}
+  insert_characters: {'enabled': True, 'pct_words_to_swap': 0.6, 'transformations_per_example': {'min': 1, 'max': 3}}
+  delete_characters: {'enabled': True, 'pct_words_to_swap': 0.6, 'transformations_per_example': {'min': 1, 'max': 3}}
+  duplicate_characters: {'enabled': True, 'pct_words_to_swap': 0.6, 'transformations_per_example': 2}
+  split_names: {'enabled': True, 'join_parts': True}
+  label_exclusion: {'enabled': False, 'excluded_labels': []}
+  internal_swap: {'enabled': True, 'swap_probability': 0.7}
+labels: ['HarryPotter', 'StarWars', 'Tolkien', 'Warcraft', 'DragonBall', 'Naruto', 'ForgottenRealms', 'FinalFantasy', 'GameofThrones', 'TheWitcher', 'DoctorWho', 'Discworld', 'Mythology', 'Offensive', 'Historical']
+
+Datasets:
+  - Wikidata:
+      name: Wikidata
+      path: wikidata
+      input_folder: raw_data
+      output_folder: processed_data
+      labels_folder: labels
+      labels_file: labels.txt
+      historical_file: extremely_relevant_figures2.txt
+      dataset_file: wikidata-universes.csv
+      output_file: wikidata_dataset_FastText.txt
+  - Mythdata:
+      name: Mythdata
+      path: mythology
+      input_folder: raw_data
+      output_folder: processed_data
+      dataset_file: myth_dataset.csv
+      output_file: myth_dataset.txt
+  - NERdata:
+      name: NERdata
+      path: ner
+      input_folder: raw_data
+      output_folder: processed_data
+      output_file: ner_dataset.txt
+  - Slurs:
+      name: Slurs
+      path: slurs
+      input_folder: raw_data
+      output_folder: processed_data
+      dataset_file: profanity.csv
+      output_file: slurs.txt
+
+
+*****************************************************
+* Epoch Output
+*****************************************************
+Epoch 1:
+  Training Loss: 1.3967
+  Validation Loss: 0.9847
+  Validation Accuracy: 0.5886
+  Learning Rate: 0.001000
+
+Epoch 2:
+  Training Loss: 0.8194
+  Validation Loss: 0.7597
+  Validation Accuracy: 0.6823
+  Learning Rate: 0.001000
+
+Epoch 3:
+  Training Loss: 0.6687
+  Validation Loss: 0.6843
+  Validation Accuracy: 0.7010
+  Learning Rate: 0.001000
+
+Epoch 4:
+  Training Loss: 0.5917
+  Validation Loss: 0.6570
+  Validation Accuracy: 0.7249
+  Learning Rate: 0.001000
+
+Epoch 5:
+  Training Loss: 0.5506
+  Validation Loss: 0.6036
+  Validation Accuracy: 0.7348
+  Learning Rate: 0.000500
+
+Epoch 6:
+  Training Loss: 0.4242
+  Validation Loss: 0.5127
+  Validation Accuracy: 0.8044
+  Learning Rate: 0.000500
+
+Epoch 7:
+  Training Loss: 0.3950
+  Validation Loss: 0.5026
+  Validation Accuracy: 0.8087
+  Learning Rate: 0.000500
+
+Epoch 8:
+  Training Loss: 0.3840
+  Validation Loss: 0.4912
+  Validation Accuracy: 0.8144
+  Learning Rate: 0.000500
+
+Epoch 9:
+  Training Loss: 0.3770
+  Validation Loss: 0.4790
+  Validation Accuracy: 0.8064
+  Learning Rate: 0.000500
+
+Epoch 10:
+  Training Loss: 0.3692
+  Validation Loss: 0.4885
+  Validation Accuracy: 0.8094
+  Learning Rate: 0.000250
+
+Epoch 11:
+  Training Loss: 0.3049
+  Validation Loss: 0.4375
+  Validation Accuracy: 0.8433
+  Learning Rate: 0.000250
+
+Epoch 12:
+  Training Loss: 0.2909
+  Validation Loss: 0.4222
+  Validation Accuracy: 0.8482
+  Learning Rate: 0.000250
+
+Epoch 13:
+  Training Loss: 0.2876
+  Validation Loss: 0.4218
+  Validation Accuracy: 0.8354
+  Learning Rate: 0.000250
+
+Epoch 14:
+  Training Loss: 0.2844
+  Validation Loss: 0.4233
+  Validation Accuracy: 0.8490
+  Learning Rate: 0.000250
+
+Epoch 15:
+  Training Loss: 0.2839
+  Validation Loss: 0.4194
+  Validation Accuracy: 0.8498
+  Learning Rate: 0.000125
+
+*****************************************************
+* Confusion Matrix
+*****************************************************
+[[ 4267,   150,   184,    65,    31,    72,    44,   231,   145,   106,
+     30,    83,    96,    25,    17],
+ [ 1213, 24539,   623,   271,   165,    84,   107,   429,   204,   428,
+     67,   134,   165,    56,    42],
+ [  140,    44,  2242,    26,    10,    26,    13,    56,    26,    42,
+     17,     6,    20,     6,     0],
+ [   83,    21,    42,  2408,    13,    15,     6,   111,    44,    42,
+      9,     2,    26,     6,     1],
+ [   11,    13,     5,     4,   447,     0,     0,     6,     3,     7,
+      0,     4,     4,     1,     0],
+ [    8,     1,     4,     1,     0,   300,     0,     0,     2,     1,
+      0,     3,     2,     0,     1],
+ [    7,     3,     2,     0,     0,     1,   290,     1,     1,     0,
+      1,     1,     0,     0,     0],
+ [  191,    33,    73,    81,     9,    24,    14,  2897,    35,   103,
+     25,     5,    51,     9,     1],
+ [   70,     9,    27,    12,     1,    14,     1,    17,  2064,    26,
+      1,     6,     7,     6,     0],
+ [   61,    30,    37,    32,     9,    17,     7,    50,    40,  1850,
+      6,     3,    13,    15,     3],
+ [    6,     3,     2,     3,     1,     1,     0,     9,     0,     1,
+    305,     0,     1,     0,     0],
+ [   15,     3,    10,     0,     0,     2,     0,     0,     1,     1,
+      0,   415,     1,     0,     0],
+ [   18,     2,     8,     9,     1,     4,     1,     9,     3,     1,
+      2,     1,   346,     2,     0],
+ [    3,     2,     1,     0,     1,     1,     0,     1,     5,     0,
+      0,     0,     0,   126,     0],
+ [   10,     4,     1,     2,     0,     0,     0,     3,     0,     0,
+      0,     0,     1,     0,   208]]

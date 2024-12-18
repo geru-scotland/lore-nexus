@@ -1,0 +1,1 @@
+2024-12-13 04:17:29,722 - PytorchModel - INFO - Starting training with params: {'lr': 0.001, 'batch_size': 64, 'epochs': 15, 'weight_decay': 0.03, 'hidden_dim': 128, 'embeddings_dim': 64, 'num_layers': 2, 'dropout': 0.4}

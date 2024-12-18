@@ -1,0 +1,111 @@
+*****************************************************
+* Best Results
+*****************************************************
+Best validation accuracy: 0.9585
+Best Epoch: 28
+Best training loss: 0.0533
+Best validation loss: 0.1248
+
+*****************************************************
+* Hyperparameters
+*****************************************************
+lr: 0.001
+batch_size: 32
+epochs: 30
+weight_decay: 0.03
+hidden_dim: 512
+embedding_dim: 128
+num_layers: 2
+dropout: 0.5
+
+*****************************************************
+* Best Classification Report
+*****************************************************
+Classification Report for Epoch 28:
+                 precision    recall  f1-score   support
+
+       StarWars       0.95      0.97      0.96      4492
+    HarryPotter       0.95      0.95      0.95      3362
+      Offensive       0.98      0.97      0.98      2975
+        Tolkien       0.95      0.95      0.95      4771
+  GameofThrones       0.97      0.97      0.97      4135
+     TheWitcher       0.96      0.99      0.98       520
+ForgottenRealms       0.96      0.90      0.93       527
+     DragonBall       0.94      0.97      0.96       595
+      Discworld       0.96      0.85      0.90       228
+      Mythology       0.94      0.89      0.91       813
+         Naruto       0.98      0.98      0.98       725
+      DoctorWho       0.96      0.95      0.96       721
+   FinalFantasy       0.99      0.95      0.97       355
+       Warcraft       0.98      0.96      0.97       459
+
+       accuracy                           0.96     24678
+      macro avg       0.96      0.95      0.95     24678
+   weighted avg       0.96      0.96      0.96     24678
+
+
+*****************************************************
+* SK Learn Accuracy score
+*****************************************************
+Best score: 0.9585
+
+
+*****************************************************
+* Data Configuration
+*****************************************************
+*****************************************************
+* Data Processing Configuration
+*****************************************************
+path: dataset/preprocessing
+output_file: dataset.txt
+train_file: train.txt
+dev_file: dev.txt
+test_file: test.txt
+config_dump: data_config.info
+train_size: 0.8
+dev_size: 0.1
+test_size: 0.1
+unique_names: False
+augmentation:
+  enabled: True
+  intensity: 2
+  swap_characters: {'enabled': True, 'pct_words_to_swap': 0.5, 'transformations_per_example': {'min': 1, 'max': 4}}
+  insert_characters: {'enabled': True, 'pct_words_to_swap': 0.6, 'transformations_per_example': {'min': 1, 'max': 4}}
+  delete_characters: {'enabled': True, 'pct_words_to_swap': 0.5, 'transformations_per_example': {'min': 1, 'max': 4}}
+  duplicate_characters: {'enabled': True, 'pct_words_to_swap': 0.4, 'transformations_per_example': 1}
+  split_names: {'enabled': True, 'join_parts': True}
+  label_exclusion: {'enabled': True, 'excluded_labels': ['Mythology']}
+  internal_swap: {'enabled': True, 'swap_probability': 0.6}
+labels: ['HarryPotter', 'StarWars', 'Tolkien', 'Warcraft', 'DragonBall', 'Naruto', 'ForgottenRealms', 'FinalFantasy', 'GameofThrones', 'TheWitcher', 'DoctorWho', 'Discworld', 'Mythology', 'Offensive']
+
+Datasets:
+  - Wikidata:
+      name: Wikidata
+      path: wikidata
+      input_folder: raw_data
+      output_folder: processed_data
+      labels_folder: labels
+      labels_file: labels.txt
+      dataset_file: wikidata-universes.csv
+      output_file: wikidata_dataset_FastText.txt
+  - Mythdata:
+      name: Mythdata
+      path: mythology
+      input_folder: raw_data
+      output_folder: processed_data
+      dataset_file: myth_dataset.csv
+      output_file: myth_dataset.txt
+  - NERdata:
+      name: NERdata
+      path: ner
+      input_folder: raw_data
+      output_folder: processed_data
+      output_file: ner_dataset.txt
+  - Slurs:
+      name: Slurs
+      path: slurs
+      input_folder: raw_data
+      output_folder: processed_data
+      dataset_file: profanity.csv
+      output_file: slurs.txt
+

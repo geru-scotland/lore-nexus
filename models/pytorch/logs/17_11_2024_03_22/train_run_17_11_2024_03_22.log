@@ -1,0 +1,110 @@
+*****************************************************
+* Best Results
+*****************************************************
+Best validation accuracy: 0.9404
+Best Epoch: 26
+Best training loss: 0.0452
+Best validation loss: 0.2097
+
+*****************************************************
+* Hyperparameters
+*****************************************************
+lr: 0.001
+batch_size: 32
+epochs: 30
+weight_decay: 0.03
+hidden_dim: 512
+embedding_dim: 128
+num_layers: 2
+dropout: 0.4
+
+*****************************************************
+* Best Classification Report
+*****************************************************
+Classification Report for Epoch 26:
+                 precision    recall  f1-score   support
+
+      Mythology       0.90      0.87      0.89       813
+  GameofThrones       0.95      0.96      0.96      2503
+    HarryPotter       0.93      0.93      0.93      2008
+        Tolkien       0.93      0.94      0.94      2909
+       StarWars       0.94      0.95      0.94      2677
+      DoctorWho       0.95      0.91      0.93       428
+      Offensive       0.97      0.97      0.97      1804
+ForgottenRealms       0.94      0.83      0.88       318
+     DragonBall       0.95      0.96      0.95       362
+       Warcraft       0.98      0.94      0.96       277
+   FinalFantasy       0.97      0.94      0.95       211
+         Naruto       0.95      0.98      0.96       435
+     TheWitcher       0.94      0.98      0.96       309
+      Discworld       0.96      0.79      0.87       135
+
+       accuracy                           0.94     15189
+      macro avg       0.95      0.92      0.93     15189
+   weighted avg       0.94      0.94      0.94     15189
+
+
+*****************************************************
+* SK Learn Accuracy score
+*****************************************************
+Best score: 0.9404
+
+
+*****************************************************
+* Data Configuration
+*****************************************************
+*****************************************************
+* Data Processing Configuration
+*****************************************************
+path: dataset/preprocessing
+output_file: dataset.txt
+train_file: train.txt
+dev_file: dev.txt
+test_file: test.txt
+config_dump: data_config.info
+train_size: 0.8
+dev_size: 0.1
+test_size: 0.1
+unique_names: False
+augmentation:
+  enabled: True
+  swap_characters: {'enabled': True, 'pct_words_to_swap': 0.5, 'transformations_per_example': {'min': 1, 'max': 4}}
+  insert_characters: {'enabled': True, 'pct_words_to_swap': 0.6, 'transformations_per_example': {'min': 1, 'max': 4}}
+  delete_characters: {'enabled': True, 'pct_words_to_swap': 0.5, 'transformations_per_example': {'min': 1, 'max': 4}}
+  duplicate_characters: {'enabled': True, 'pct_words_to_swap': 0.4, 'transformations_per_example': 1}
+  split_names: {'enabled': True, 'join_parts': True}
+  label_exclusion: {'enabled': True, 'excluded_labels': ['Mythology']}
+  internal_swap: {'enabled': True, 'swap_probability': 0.6}
+labels: ['HarryPotter', 'StarWars', 'Tolkien', 'Warcraft', 'DragonBall', 'Naruto', 'ForgottenRealms', 'FinalFantasy', 'GameofThrones', 'TheWitcher', 'DoctorWho', 'Discworld', 'Mythology', 'Offensive']
+
+Datasets:
+  - Wikidata:
+      name: Wikidata
+      path: wikidata
+      input_folder: raw_data
+      output_folder: processed_data
+      labels_folder: labels
+      labels_file: labels.txt
+      dataset_file: wikidata-universes.csv
+      output_file: wikidata_dataset_FastText.txt
+  - Mythdata:
+      name: Mythdata
+      path: mythology
+      input_folder: raw_data
+      output_folder: processed_data
+      dataset_file: myth_dataset.csv
+      output_file: myth_dataset.txt
+  - NERdata:
+      name: NERdata
+      path: ner
+      input_folder: raw_data
+      output_folder: processed_data
+      output_file: ner_dataset.txt
+  - Slurs:
+      name: Slurs
+      path: slurs
+      input_folder: raw_data
+      output_folder: processed_data
+      dataset_file: profanity.csv
+      output_file: slurs.txt
+
