@@ -112,25 +112,25 @@ No obstante, incluso para entrenamientos individuales, recomiendo usar `hyperpar
 ## Ejemplos de predicciones
 
 <div align="center">
-  <img src="images/cli-main.png" width="600" alt="CLI Principal">
+  <img src="images/cli-main.png" width="800" alt="CLI Principal">
 </div>
 
 ---
 
    <div align="center">
-     <img src="images/example-1.png" width="400" alt="Example 1">
+     <img src="images/example-1.png" width="660" alt="Example 1">
    </div>
 
    <div align="center">
-     <img src="images/example-2.png" width="400" alt="Example 2">
+     <img src="images/example-2.png" width="600" alt="Example 2">
    </div>
 
    <div align="center">
-     <img src="images/example-3.png" width="400" alt="Example 3">
+     <img src="images/example-3.png" width="600" alt="Example 3">
    </div>
 
    <div align="center">
-     <img src="images/example-4.png" width="400" alt="Example 4">
+     <img src="images/example-4.png" width="600" alt="Example 4">
    </div>
 
 ---
