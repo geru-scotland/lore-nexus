@@ -31,7 +31,7 @@ LoreNexus es una plataforma para extraer el universo de origen e influencias de 
 
 ### Nota sobre el desarrollo
 
-Este proyecto se da por finalizado en cuanto a la entrega, sin embargo hay algunas tareas que yo he decidido aún están pendientes. No obstante, planeo continuar el desarrollo de forma gradual, me ha encantado. Se pueden consultar el progreso de algunas tareas en el [proyecto de GitHub](https://github.com/users/geru-scotland/projects/5). Cualquier sugerencia o bug, por favor reportalo en el [Bug Tracker](https://github.com/geru-scotland/lore-nexus/issues).
+Este proyecto se da por finalizado en cuanto a la entrega, sin embargo hay algunas tareas que yo he decidido aún están pendientes. No obstante, planeo continuar el desarrollo de forma gradual, me ha encantado. Se pueden consultar el progreso de algunas tareas en el [proyecto de GitHub](https://github.com/users/geru-scotland/projects/5). Cualquier sugerencia o bug, por favor repórtalo en el [Bug Tracker](https://github.com/geru-scotland/lore-nexus/issues).
 ## Presentación
 
 La presentación del proyecto se puede encontrar aquí: [Presentación de LoreNexus](https://github.com/geru-scotland/lore-nexus/blob/development/doc/LoreNexus-presentacion.pdf)
@@ -41,20 +41,36 @@ Memoria en progreso.
 ---
 
 ## Instalación
-Para instalar el proyecto y las dependencias, simplemente ejecuta los siguientes comandos:
+Para instalar LoreNexus, simplemente sigue los siguientes pasos:
 
-```bash
-git clone git@github.com:geru-scotland/lore-nexus.git
-cd lore-nexus
-pip install -r requirements.txt
-export PYTHONPATH=$PYTHONPATH:$(pwd)
-```
+1. **Clonar el repo:**
+    ```bash
+    git clone git@github.com:geru-scotland/lore-nexus.git
+    cd lore-nexus
+    ```
+
+2. **Entorno virtual para aislar dependencias:**
+    ```bash
+    python3 -m venv .venv
+    source .venv/bin/activate
+    ```
+
+3. **Instala las dependencias:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Configura el entorno:**  
+    Hay que agregar el directorio actual (ojo, tiene que ser el root del proyecto) al `PYTHONPATH` para que los módulos se puedan importar sin problemas:
+    ```bash
+    export PYTHONPATH=$PYTHONPATH:$(pwd)
+    ```
 
 ---
 
 ## Uso del CLI
 
-Se dispone de una aplicación en `CLI` para poder realizar inferencias. Para ejecutarla, navega al modulo `app` y lanza `app.py`:
+Se dispone de una aplicación en `CLI` para poder realizar inferencias. Para ejecutarla, navega al módulo `app` y lanza `app.py`:
 
 ```bash
 cd app/
