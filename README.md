@@ -137,14 +137,14 @@ No obstante, incluso para entrenamientos individuales, recomiendo usar `hyperpar
 Con Docker instalado ([Docker get-started](https://www.docker.com/get-started)): 
 
 
-### 1. Pull de la imagen en el [registro de contenedores de github](https://github.com/geru-scotland/lore-nexus/pkgs/container/lore-nexus):
+### 1. Pull de la imagen alojada en [Dockerhub](https://hub.docker.com/repository/docker/basajaun0/lore-nexus/general):
 ```bash
-docker pull ghcr.io/geru-scotland/lore-nexus:latest
+docker pull basajaun0/lore-nexus:latest
 ```
 
 ### 2. Y simplemente ejecutar el contenedor:
 ```bash
-docker run -it ghcr.io/geru-scotland/lore-nexus:latest
+docker run -it basajaun0/lore-nexus:latest
 ```
 
 **Nota**: Tengo pendiente la optimización de dependencias para reducir el tamaño de la imagen, ahora mismo ocupa mucho por `CUDA`, y no es necesario realmente al utilizar simplemente inferencias.
