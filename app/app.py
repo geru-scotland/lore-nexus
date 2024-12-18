@@ -25,7 +25,8 @@ ROOT_DIR = Path(__file__).resolve().parents[1]
 sys.path.append(str(ROOT_DIR))
 from models.flair.model import LoreNexusFlairModel
 from models.pytorch.model import LoreNexusPytorchModel
-from paths import BASE_DIR, get_checkpoints_dir
+from paths import get_checkpoints_dir, APP_DIR
+
 
 class UserOptions(Enum):
     UNVEIL_LORE = 1
@@ -58,7 +59,7 @@ class LoreNexusApp:
     def load_config(self):
         """
         """
-        config_path = os.path.join(BASE_DIR, "models.yaml")
+        config_path = os.path.join(APP_DIR, "models.yaml")
         with open(config_path, 'r') as file:
             config = yaml.safe_load(file)
         return config

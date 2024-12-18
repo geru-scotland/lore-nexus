@@ -16,6 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 DATASET_DIR = os.path.join(BASE_DIR, 'dataset')
+APP_DIR = os.path.join(BASE_DIR, 'app')
 DATA_OUTPUT_DIR = os.path.join(DATASET_DIR, 'output')
 PREPROCESSING_DIR = os.path.join(DATASET_DIR, 'preprocessing')
 APIS_DIR = os.path.join(PREPROCESSING_DIR, 'apis')

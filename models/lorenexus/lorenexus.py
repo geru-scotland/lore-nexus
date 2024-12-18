@@ -24,6 +24,8 @@ from paths import DATA_OUTPUT_DIR
 
 
 class LoreNexusWrapper(ABC):
+    """
+    """
     def __init__(self, mode="train", config_info_dump="data_config.info"):
         """
         """
@@ -80,7 +82,6 @@ class LoreNexusWrapper(ABC):
         """
         pass
 
-    # Esto de logger, fuera. Tiene que ir en la clase base LoreNexusWrapper
     def _plot_and_log_results(self, epoch_stats, epochs, total_train_samples, total_dev_samples, train_losses, validation_losses, hyperparams, best_results, conf_matrix = None):
         sns.set(style="whitegrid", palette="muted")
         epochs_range = list(range(1, epochs + 1))
