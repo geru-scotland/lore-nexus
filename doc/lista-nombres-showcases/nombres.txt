@@ -1,13 +1,16 @@
-Lorecraft (Lovecraft)
-Harry Potta (Harry Potter)
-Tattuinne (Tatooine, Star Wars)
-Bhoromirian (Basado en Boromir, Tolkien)
-Dragomir (Inventado, con influencia de Tolkien)
-Gandalfuck (0.74 tolkien 0.26 offensive) (Gandalf + Fuck)
-Hitler/Hittler
-Riverssong (River Song)
-Ghaladirel (Galadriel)
-Orhochimaru (Orochimaru, Naruto)
+Lorecraft (Lovecraft, Historical): ⟡ Prediction 1: Historical with confidence 0.8698 Prediction 2: GameofThrones with confidence 0.1134
 
-Futhermucker (Offensive)
-Utwatxd (Offensive)
+Harry Potta (Harry Potter, Harry Potter): ⟡ Prediction 1: HarryPotter with confidence 0.9964
+Tattuinne (Tatooine, Star Wars): Prediction 1: StarWars with confidence 0.9945
+Bhoromirian (Boromir, Tolkien): ⟡ Prediction 1: Tolkien with confidence 0.9417 Prediction 2: Historical with confidence 0.0343
+Dragomir (Inventado, con influencia de Tolkien): Prediction 1: Tolkien with confidence 0.9998
+Gandalfuck (Gandalf + Fuck, Tolkien y Ofensivo): ⟡ Prediction 1: Tolkien with confidence 0.7448 Prediction 2: Offensive with confidence 0.2528
+Hitler (Historical y Ofensivo): ⟡ Prediction 1: Historical with confidence 0.8932
+Prediction 2: Offensive with confidence 0.0869
+Hittler (Historical y ofensivo):⟡ Prediction 1: Offensive with confidence 0.8915 Prediction 2: Historical with confidence 0.1025
+Riverssong (River Song, Doctor Who): Prediction 1: DoctorWho with confidence 0.9991
+Ghaladirel (Galadriel, Tolkien): Prediction 1: Tolkien with confidence 1.0000
+Orhootxiimarru (Orochimaru, Naruto): Prediction 1: Naruto with confidence 0.9999
+
+Futhermucker (Offensive): Prediction 1: Offensive with confidence 1.0000
+Utwatxd (Offensive): Prediction 1: Offensive with confidence 0.9998

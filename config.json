@@ -43,20 +43,20 @@
         "dev_file": "dev.txt",
         "test_file": "test.txt",
         "config_dump": "data_config.info",
-        "train_size": 0.85,
+        "train_size": 0.8,
         "dev_size": 0.1,
-        "test_size": 0.05,
+        "test_size": 0.1,
         "unique_names": true,
         "augmentation": {
             "enabled": true,
             "only_basic_augmentation": false,
-            "intensity": 2,
+            "intensity": 5,
             "swap_characters": {
                 "enabled": true,
-                "pct_words_to_swap": 0.5,
+                "pct_words_to_swap": 0.6,
                 "transformations_per_example": {
                     "min": 1,
-                    "max": 4
+                    "max": 3
                 }
             },
             "insert_characters": {
@@ -64,35 +64,35 @@
                 "pct_words_to_swap": 0.6,
                 "transformations_per_example": {
                     "min": 1,
-                    "max": 4
+                    "max": 3
                 }
             },
             "delete_characters": {
                 "enabled": true,
-                "pct_words_to_swap": 0.5,
+                "pct_words_to_swap": 0.6,
                 "transformations_per_example": {
                     "min": 1,
-                    "max": 4
+                    "max": 3
                 }
             },
             "duplicate_characters": {
                 "enabled": true,
-                "pct_words_to_swap": 0.4,
-                "transformations_per_example": 1
+                "pct_words_to_swap": 0.6,
+                "transformations_per_example": 2
             },
             "split_names": {
                 "enabled": true,
                 "join_parts": true
             },
             "label_exclusion": {
-                "enabled": true,
+                "enabled": false,
                 "excluded_labels": [
 
                 ]
             },
             "internal_swap": {
                 "enabled": true,
-                "swap_probability": 0.6
+                "swap_probability": 0.7
             }
         },
         "labels": [

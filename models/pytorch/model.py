@@ -308,8 +308,14 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
             weight = total_labels / label_counts[label]
             weights.append(weight)
 
+        # imprimo labels del encoder
+        indexes, label_str = self._label_encoder.unpack_indexes()
+        print("Label indexes:", indexes)
+        print("Label strings:", label_str)
+        # y el counter ahora
+        print("Label counts:", label_counts)
         class_weights = torch.tensor(weights, dtype=torch.float).to(self._device)
-
+        print("Class weights:", class_weights)
         # Me devuelve iterables, que son los batches
         train_batches = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
         dev_batches = DataLoader(dev_dataset, batch_size=batch_size, shuffle=False)
@@ -486,7 +492,6 @@ class LoreNexusPytorchModel(LoreNexusWrapper, ABC):
 
     def load_model(self, model_path='checkpoints/best_model.pth'):
         checkpoint = torch.load(model_path, map_location=self._device, weights_only=False)
-
         self._char_vocab = checkpoint['char_vocab']
         self._label_encoder = checkpoint['label_encoder']
 
@@ -605,6 +610,6 @@ def predict_test(name):
         print(f"{prediction}: {label} with probability {score:.4f}")
 
 
-ln_pytorch_model = LoreNexusPytorchModel(mode='train')
-ln_pytorch_model.train(save_model=True, epochs=30, hidden_dim=512, embeddings_dim=128, batch_size=32, dropout=0.5, num_layers=2, weight_decay=0.03)
-ln_pytorch_model.evaluate()
+# ln_pytorch_model = LoreNexusPytorchModel(mode='train')
+# ln_pytorch_model.train(save_model=True, lr=0.001, epochs=25, hidden_dim=512, embeddings_dim=128, batch_size=64, dropout=0.4, num_layers=2, weight_decay=0.03)
+# # ln_pytorch_model.evaluate()

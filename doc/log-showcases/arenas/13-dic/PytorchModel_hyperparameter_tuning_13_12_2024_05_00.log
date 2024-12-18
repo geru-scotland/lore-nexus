@@ -232,7 +232,8 @@ Final Summary of Best Results:
 
 Model: PytorchModel
 Best Accuracy: 0.9585
-Best Hyperparameters: {'lr': 0.0005, 'batch_size': 32, 'epochs': 12, 'weight_decay': 0.02, 'hidden_dim': 256, 'embeddings_dim': 128, 'num_layers': 3, 'dropout': 0.3}
+Best Hyperparameters: {'lr': 0.0005, 'batch_size': 32, 'epochs': 12, 'weight_decay': 0.02,
+                        'hidden_dim': 256, 'embeddings_dim': 128, 'num_layers': 3, 'dropout': 0.3}
 Best Classification Report:
                  precision    recall  f1-score   support
 
