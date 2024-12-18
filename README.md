@@ -6,6 +6,24 @@
   <img src="images/LoreNexus.png" width="600" alt="LoreNexus">
 </div>
 
+
+# Índice
+
+1. [Sobre el proyecto](#sobre-el-proyecto)
+2. [Presentación](#presentación)
+3. [Instalación](#instalación)
+4. [Uso del CLI](#uso-del-cli)
+5. [Regeneración de datos](#regeneración-de-datos)
+6. [Training Grounds](#training-grounds)
+   - [Hiperparámetros y experimentos](#hiperparámetros-y-experimentos)
+   - [Entrenar un modelo individualmente](#entrenar-un-modelo-individualmente)
+7. [Guía de uso para la app con Docker (CLI)](#guía-de-uso-para-la-app-con-docker-cli)
+8. [Universos disponibles en esta versión](#universos-disponibles-en-esta-versión)
+9. [Ejemplos de predicciones](#ejemplos-de-predicciones)
+   - [Tabla de inferencias](#tabla-de-inferencias)
+10. [Agradecimientos](#agradecimientos)
+11. [Sobre el autor](#sobre-el-autor)
+12. [Licencia](#licencia)
 ---
 
 ## Sobre el proyecto
@@ -19,7 +37,7 @@ Memoria en progreso.
 
 ---
 
-## 1. Instalación
+## Instalación
 Para instalar el proyecto y las dependencias, simplemente ejecuta los siguientes comandos:
 
 ```bash
@@ -31,7 +49,7 @@ export PYTHONPATH=$PYTHONPATH:$(pwd)
 
 ---
 
-## 2. Uso del CLI
+## Uso del CLI
 
 Se dispone de una aplicación en `CLI` para poder realizar inferencias. Para ejecutarla, navega al modulo `app` y lanza `app.py`:
 
@@ -45,7 +63,7 @@ python3 app.py
 
 ---
 
-## 3. Regeneración de datos
+## Regeneración de datos
 
 El dataset está disponible en `dataset/input`, pero se puede regenerar con  ejecutando `pipeline.py`, simplemente:
 
@@ -60,7 +78,7 @@ El dataset está disponible en `dataset/input`, pero se puede regenerar con  eje
 
 ---
 
-## 4. Training Grounds
+## Training Grounds
 
 ### Hiperparámetros y experimentos
 
@@ -111,7 +129,44 @@ No obstante, incluso para entrenamientos individuales, recomiendo usar `hyperpar
 
 ---
 
+# Guía de uso para la app con Docker (CLI)
+
+Con Docker instalado ([Docker get-started](https://www.docker.com/get-started)): 
+
+
+### 1. Pull de la imagen en el repositorio de github:
+```bash
+docker pull ghcr.io/geru-scotland/lore-nexus:latest
+```
+
+### 2. Y simplemente ejecutar el contenedor:
+```bash
+docker run -it ghcr.io/geru-scotland/lore-nexus:latest
+```
+
+**Nota**: Tengo pendiente la optimización de dependencias para reducir el tamaño de la imagen, ahora mismo ocupa mucho por `CUDA`, y no es necesario realmente al utilizar simplemente inferencias.
+
 ---
+
+## Universos disponibles en esta versión
+
+En ésta versión (modelo [LoreNexusPytorch_v1.0](https://huggingface.co/basajaun-scotland/LoreNexusPytorch_v1.0/tree/main)) se ha entrenado con los siguientes universos:
+
+- **Harry Potter**
+- **Star Wars**
+- **Tolkien**
+- **Warcraft**
+- **Dragon Ball**
+- **Naruto**
+- **Forgotten Realms**
+- **Final Fantasy**
+- **Game of Thrones**
+- **The Witcher**
+- **Doctor Who**
+- **Discworld**
+- **Mythology**
+- **Offensive**
+- **Historical**
 
 ## Ejemplos de predicciones
 
@@ -146,3 +201,23 @@ No obstante, incluso para entrenamientos individuales, recomiendo usar `hyperpar
 </div>
 
 ---
+
+## Agradecimientos
+
+Agradezco especialmente a **Oier López de Lacalle Lecuona** y  a **Itziar Aldabe Arregi** por su apoyo y guía durante el desarrollo de LoreNexus.
+
+
+## Sobre el autor
+
+Este proyecto fue desarrollado por **Aingeru García** como parte de un proyecto académico en la Universidad del País Vasco (UPV/EHU), asignatura de Procesamiento de Lenguaje Natural. 
+
+Si tienes preguntas, comentarios o sugerencias, no dudes en contactarme:
+
+- **GitHub**: [@geru-scotland](https://github.com/geru-scotland)
+- **Email**: [aingeru.scotland@gmail.com)](mailto:aingeru.scotland@gmail.com)
+
+## Licencia
+
+Este proyecto está licenciado bajo la [Licencia MIT](LICENSE). Esto significa que puedes usar, modificar y distribuir este software libremente, siempre que mantengas la atribución al autor original.
+
+Para más detalles, consulta el archivo [LICENSE](LICENSE) en este repositorio.
