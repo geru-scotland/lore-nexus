@@ -18,7 +18,11 @@ from enum import Enum
 from pathlib import Path
 import yaml
 
-sys.path.append(str(Path(__file__).resolve().parents[2]))
+from model_download import download_model
+
+
+ROOT_DIR = Path(__file__).resolve().parents[1]
+sys.path.append(str(ROOT_DIR))
 from models.flair.model import LoreNexusFlairModel
 from models.pytorch.model import LoreNexusPytorchModel
 from paths import BASE_DIR, get_checkpoints_dir
@@ -41,6 +45,11 @@ class LoreNexusApp:
         config = self.load_config()
         model_name = config['models']['pytorch']['checkpoint']
         model_path = f'{get_checkpoints_dir("pytorch")}/{model_name}'
+
+        if not Path(model_path).exists():
+            print(f"Model '{model_name}' not found. Downloading now...")
+            download_model()
+
         print(f"Loading model from {model_path}...")
         self.lore_nexus = LoreNexusPytorchModel(mode="cli_app", model_path=model_path)
         self.display_title()
