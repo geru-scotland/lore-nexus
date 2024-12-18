@@ -102,9 +102,5 @@ models/pytorch/checkpoints/
 models/pytorch/runs/
 
 
-dataset/preprocessing/apis/mythology/processed_data/
-dataset/preprocessing/apis/wikidata/processed_data/
-dataset/preprocessing/apis/slurs/processed_data/
-dataset/preprocessing/ner/processed_data/
 
 
