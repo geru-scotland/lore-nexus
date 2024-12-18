@@ -217,7 +217,7 @@ Este proyecto fue desarrollado por **Aingeru García** como parte de un proyecto
 Si tienes preguntas, comentarios o sugerencias, no dudes en contactarme:
 
 - **GitHub**: [@geru-scotland](https://github.com/geru-scotland)
-- **Email**: [aingeru.scotland@gmail.com)](mailto:aingeru.scotland@gmail.com)
+- **Email**: [aingeru.scotland@gmail.com](mailto:aingeru.scotland@gmail.com)
 
 ## Licencia
 
