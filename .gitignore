@@ -107,5 +107,4 @@ dataset/preprocessing/apis/wikidata/processed_data/
 dataset/preprocessing/apis/slurs/processed_data/
 dataset/preprocessing/ner/processed_data/
 
-dataset/output/
 
