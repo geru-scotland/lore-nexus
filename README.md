@@ -17,7 +17,7 @@
 6. [Training Grounds](#training-grounds)
    - [Hiperparámetros y experimentos](#hiperparámetros-y-experimentos)
    - [Entrenar un modelo individualmente](#entrenar-un-modelo-individualmente)
-7. [Guía de uso para la app con Docker (CLI)](#guía-de-uso-para-la-app-con-docker-cli)
+7. [Guía de uso para la app con Docker (CLI)](#guía-de-uso-de-la-app-cli-con-docker)
 8. [Universos disponibles en esta versión](#universos-disponibles-en-esta-versión)
 9. [Ejemplos de predicciones](#ejemplos-de-predicciones)
    - [Tabla de inferencias](#tabla-de-inferencias)
