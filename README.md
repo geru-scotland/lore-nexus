@@ -36,7 +36,7 @@ Este proyecto se da por finalizado en cuanto a la entrega, sin embargo hay algun
 
 La presentación del proyecto se puede encontrar aquí: [Presentación de LoreNexus](https://github.com/geru-scotland/lore-nexus/blob/development/doc/LoreNexus-presentacion.pdf)
 
-Memoria en progreso.
+Y, la memoria técnica, aquí: [Memoria técnica de LoreNexus](https://github.com/geru-scotland/lore-nexus/blob/development/doc/LoreNexus-memoria.pdf)
 
 ---
 
