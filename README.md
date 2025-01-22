@@ -163,7 +163,17 @@ docker pull basajaun0/lore-nexus:latest
 docker run -it basajaun0/lore-nexus:latest
 ```
 
-**Nota**: Tengo pendiente la optimización de dependencias para reducir el tamaño de la imagen, ahora mismo ocupa mucho por `CUDA`, y no es necesario realmente al utilizar simplemente inferencias.
+~~**Nota**: Tengo pendiente la optimización de dependencias para reducir el tamaño de la imagen, ahora mismo ocupa mucho por `CUDA`, y no es necesario realmente al utilizar simplemente inferencias.~~
+
+**Edit**: He creado una nueva imagen `lore-nexus:latest` que no incluye `CUDA` - únicamente versión `cpu` de PyTorch - el problema radicaba en que Pytorch no distribuye versión `cpu` para `Pip`, así que hay que instalar manualmente ([éste link me ha ayudado a encontrar la solución](https://stackoverflow.com/a/61842906/16001561)). También he optimizado dependencias para que la imagen final sea mucho más ligera. 
+
+Para instalar la versión `cpu` de PyTorch, se puede hacer con el siguiente comando:
+    
+```bash
+pip install torch --index-url https://download.pytorch.org/whl/cpu
+```
+
+Más info [aqui](https://github.com/geru-scotland/lore-nexus/issues/30).
 
 ---
 
