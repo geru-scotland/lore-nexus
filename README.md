@@ -17,7 +17,7 @@
 6. [Training Grounds](#training-grounds)
    - [Hiperparámetros y experimentos](#hiperparámetros-y-experimentos)
    - [Entrenar un modelo individualmente](#entrenar-un-modelo-individualmente)
-7. [Guía de uso para la app con Docker (CLI)](#guía-de-uso-para-la-app-con-docker-cli)
+7. [Guía de uso para la app con Docker (CLI)](#guía-de-uso-de-la-app-cli-con-docker)
 8. [Universos disponibles en esta versión](#universos-disponibles-en-esta-versión)
 9. [Ejemplos de predicciones](#ejemplos-de-predicciones)
    - [Tabla de inferencias](#tabla-de-inferencias)
@@ -36,7 +36,7 @@ Este proyecto se da por finalizado en cuanto a la entrega, sin embargo hay algun
 
 La presentación del proyecto se puede encontrar aquí: [Presentación de LoreNexus](https://github.com/geru-scotland/lore-nexus/blob/development/doc/LoreNexus-presentacion.pdf)
 
-Memoria en progreso.
+Y, la memoria técnica, aquí: [Memoria técnica de LoreNexus](https://github.com/geru-scotland/lore-nexus/blob/development/doc/LoreNexus-memoria.pdf)
 
 ---
 
@@ -163,7 +163,17 @@ docker pull basajaun0/lore-nexus:latest
 docker run -it basajaun0/lore-nexus:latest
 ```
 
-**Nota**: Tengo pendiente la optimización de dependencias para reducir el tamaño de la imagen, ahora mismo ocupa mucho por `CUDA`, y no es necesario realmente al utilizar simplemente inferencias.
+~~**Nota**: Tengo pendiente la optimización de dependencias para reducir el tamaño de la imagen, ahora mismo ocupa mucho por `CUDA`, y no es necesario realmente al utilizar simplemente inferencias.~~
+
+**Edit**: He creado una nueva imagen `lore-nexus:latest` que no incluye `CUDA` - únicamente versión `cpu` de PyTorch - el problema radicaba en que Pytorch no distribuye versión `cpu` para `Pip`, así que hay que instalar manualmente ([éste link me ha ayudado a encontrar la solución](https://stackoverflow.com/a/61842906/16001561)). También he optimizado dependencias para que la imagen final sea mucho más ligera. 
+
+Para instalar la versión `cpu` de PyTorch, se puede hacer con el siguiente comando:
+    
+```bash
+pip install torch --index-url https://download.pytorch.org/whl/cpu
+```
+
+Más info [aqui](https://github.com/geru-scotland/lore-nexus/issues/30).
 
 ---
 
